@@ -51,22 +51,26 @@
       .beeld .line { font-size: 52px; font-weight: 700; line-height: 1.15; }
       .beeld .arrow { color: var(--brand-warn); }
     
-      #hook { font-size: 96px; text-wrap: balance; }
+      #hook { font-size: 92px; text-wrap: balance; }
       #beeld-bg { display: none; }
-      .scene { position: absolute; left: 0; top: 1205px; width: 918px; height: 590px; opacity: 0; }
-      .ic { position: absolute; left: 56px; top: 30px; width: 300px; height: 300px; overflow: hidden;
+      /* yapping: tekst onder de kin, icoontjes daaronder, alles gecentreerd */
+      #captions { top: 1185px; height: 200px; }
+      .anchor-text { top: 1285px; }
+      .scene { position: absolute; left: 0; width: 1080px; top: 1400px; height: 390px; opacity: 0;
+        display: flex; justify-content: center; align-items: center; gap: 28px; }
+      .ic { position: relative; flex: none; width: 250px; height: 250px; overflow: hidden;
         filter: drop-shadow(0 8px 22px rgba(0,0,0,.6)); }
       .ic svg, .mini svg { width: 100%; height: 100%; overflow: visible; }
-      .tag { position: absolute; left: 390px; right: 20px; top: 30px; height: 300px; display: flex; align-items: center;
-        font-size: 66px; font-weight: 800; line-height: 1.05; -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+      .tag { position: relative; flex: none; max-width: 520px;
+        font-size: 62px; font-weight: 800; line-height: 1.05; -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
         text-shadow: 0 4px 18px rgba(0,0,0,.6); opacity: 0; }
       .tag b, .tg b { color: var(--brand-accent); }
-      .tag .big { font-size: 96px; letter-spacing: -0.02em; }
-      .item { position: absolute; top: 20px; opacity: 0; text-align: center; }
+      .tag .big { font-size: 92px; letter-spacing: -0.02em; white-space: nowrap; }
+      .item { position: relative; flex: none; opacity: 0; text-align: center; }
       .item .mini { margin: 0 auto; filter: drop-shadow(0 8px 22px rgba(0,0,0,.6)); overflow: hidden; }
-      .tg { font-size: 50px; font-weight: 800; line-height: 1.05; margin-top: 14px; -webkit-text-stroke: 3px var(--caption-stroke);
+      .tg { font-size: 46px; font-weight: 800; line-height: 1.05; margin-top: 12px; -webkit-text-stroke: 3px var(--caption-stroke);
         paint-order: stroke fill; text-shadow: 0 4px 18px rgba(0,0,0,.6); }
-      .of { position: absolute; left: 400px; width: 90px; top: 110px; text-align: center; font-size: 56px; font-weight: 800;
+      .of { position: relative; flex: none; font-size: 54px; font-weight: 800; margin-bottom: 90px;
         -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill; opacity: 0; }
     </style>
   </head>
@@ -147,11 +151,11 @@
         const end = Math.min(s.end, CONFIG.duration);
         if (s.type === "icon") el.innerHTML = `<div class="ic">${svg(s.icon)}</div><div class="tag"><div>${s.tag}</div></div>`;
         if (s.type === "twee") el.innerHTML =
-          `<div class="item ia" style="left:40px;width:340px"><div class="mini" style="width:240px;height:240px">${svg(s.a[0])}</div><div class="tg">${s.a[1]}</div></div>` +
+          `<div class="item ia" style="width:300px"><div class="mini" style="width:210px;height:210px">${svg(s.a[0])}</div><div class="tg">${s.a[1]}</div></div>` +
           `<div class="of">of</div>` +
-          `<div class="item ib" style="left:500px;width:340px"><div class="mini" style="width:240px;height:240px">${svg(s.b[0])}</div><div class="tg">${s.b[1]}</div></div>`;
+          `<div class="item ib" style="width:300px"><div class="mini" style="width:210px;height:210px">${svg(s.b[0])}</div><div class="tg">${s.b[1]}</div></div>`;
         if (s.type === "plan") el.innerHTML = s.steps.map((st, k) =>
-          `<div class="item st" style="left:${20 + k*290}px;width:270px"><div class="mini" style="width:200px;height:200px">${svg(st[0])}</div><div class="tg">${st[1]}</div></div>`).join("");
+          `<div class="item st" style="width:230px"><div class="mini" style="width:170px;height:170px">${svg(st[0])}</div><div class="tg">${st[1]}</div></div>`).join("");
         layer.appendChild(el);
         tl.set(el, { opacity: 1 }, s.start);
         tl.to(el, { opacity: 0, duration: 0.15, ease: "power2.in" }, end - 0.15);
