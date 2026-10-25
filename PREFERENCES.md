@@ -11,6 +11,7 @@ Elke regel eindigt met een datum.
 - Altijd het vaste Sardo-format uit `SARDO_FORMAT.md` (Last Shot Media-layout): Peter boven, captions in het midden, beeld-zone onder. (2026-10-25)
 - Merkkleuren: oranje #ffa62b accent, blauw #82c0cc spaarzaam, donker #19191e, wit tekst. Poppins. (2026-10-25)
 - MOTION_PHILOSOPHY's chrome-tekst, perspective-grid en grain zijn NIET de Sardo-stijl. Clean, vet, leesbaar. Peter's gezicht is de ster. (2026-10-25)
+- **Yapping-video's: Peter blijft de hele video FULL in beeld.** Geen grijs vlak/kaart in de beeld-zone, niet het beeld halveren. Rauw houden: alleen losse icoontjes (met schaduw) + kort woordje los over het beeld, linksonder in zone 3. Captions, hook en CTA blijven zoals normaal. (2026-10-25)
 - Nooit makelaarsfoto's of Funda-foto's in beeld. Funda Fixer = zelfgetekende plattegrond of animatie. (2026-10-25)
 
 ## Pacing

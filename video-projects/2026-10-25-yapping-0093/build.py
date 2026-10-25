@@ -37,26 +37,17 @@ def chunks(ws):
     groups = g2
     return [[[x[0], x[1], x[2]] for x in g] for g in groups]
 
-# ---------- scenes (tijd in de geknipte video) ----------
+# ---------- scenes (tijd in de geknipte video) — YAPPING: los over het beeld, geen kaart ----------
 SCENES = [
-    {'type': 'icon', 'start': 0.30, 'end': 4.72, 'icon': 'huishalf', 'label': 'Jouw huis',
-     'lines': [['Deels geïsoleerd', 1.0], ['Klaar voor een <b>warmtepomp</b>?', 2.9]]},
-    {'type': 'icon', 'start': 4.78, 'end': 7.30, 'icon': 'sneeuw', 'label': 'Doe dit nu',
-     'lines': [['Vóór de <b>kou</b> komt', 4.95]]},
-    {'type': 'icon', 'start': 7.36, 'end': 13.48, 'icon': 'ketel', 'label': 'Op je ketel',
-     'lines': [['Aanvoer-temperatuur', 8.8]], 'value': ['50-55°C', 11.36]},
-    {'type': 'icon', 'start': 13.52, 'end': 19.98, 'icon': 'thermo', 'label': 'De test',
-     'lines': [['Zet hem hoog', 16.9], ['Blijft het <b>warm</b>?', 14.6]], 'dial': 17.6},
-    {'type': 'icon', 'start': 20.02, 'end': 22.52, 'icon': 'huiswarm', 'label': 'Blijft het warm?',
-     'lines': [['Klaar voor een <b>warmtepomp</b>', 20.6]]},
-    {'type': 'icon', 'start': 22.58, 'end': 26.62, 'icon': 'huiskoud', 'label': 'Wordt het koud?',
-     'lines': [['Bij <b>50°C</b>', 25.5]]},
-    {'type': 'twee', 'start': 26.68, 'end': 35.96, 'kop': 'Dan ligt het aan:', 'a': ['Je radiator', 'Niet goed genoeg', 28.16],
-     'b': ['Je huis', 'Lekt warmte', 31.4], 'lek': 34.3},
-    {'type': 'plan', 'start': 36.00, 'end': 45.56, 'steps': [['sneeuw', 'Winter', 'Test het', 36.0],
-     ['bloem', 'Voorjaar', 'Samen kijken', 38.24], ['wp', 'Daarna', 'Warmtepomp erin', 43.9]]},
-    {'type': 'icon', 'start': 45.62, 'end': 999, 'icon': 'duim', 'label': 'Of misschien…',
-     'lines': [['Is er <b>niks</b> nodig', 46.3], ['Meteen aan de gang!', 47.4]]},
+    {'type': 'icon', 'start': 2.10, 'end': 4.70, 'icon': 'huishalf', 'tag': 'Deels geïsoleerd?', 'q': 2.9},
+    {'type': 'icon', 'start': 4.80, 'end': 7.25, 'icon': 'sneeuw', 'tag': 'Vóór de <b>kou</b>'},
+    {'type': 'icon', 'start': 8.60, 'end': 13.40, 'icon': 'ketel', 'tag': '<b class="big">50-55°C</b>', 'tagAt': 11.36},
+    {'type': 'icon', 'start': 16.80, 'end': 19.90, 'icon': 'thermo', 'tag': 'Zet hem <b>hoog</b>', 'dial': 17.6},
+    {'type': 'icon', 'start': 20.05, 'end': 22.50, 'icon': 'huiswarm', 'tag': 'Blijft warm?<br><b>Klaar!</b>', 'q': 20.6},
+    {'type': 'icon', 'start': 22.60, 'end': 26.60, 'icon': 'huiskoud', 'tag': 'Koud bij <b>50°C</b>?', 'q': 23.3},
+    {'type': 'twee', 'start': 28.16, 'end': 35.90, 'a': ['radiator', 'Radiator<br><b>te zwak</b>', 28.16], 'b': ['lek', 'Huis lekt<br><b>warmte</b>', 31.4]},
+    {'type': 'plan', 'start': 36.00, 'end': 45.50, 'steps': [['sneeuw', 'Winter:<br>testen', 36.0], ['bloem', 'Voorjaar:<br>praten', 38.24], ['wp', '<b>Warmte-<br>pomp</b>', 43.9]]},
+    {'type': 'icon', 'start': 45.70, 'end': 47.18, 'icon': 'duim', 'tag': '<b>Niks</b> nodig?'},
 ]
 
 ICONS = {
@@ -110,73 +101,56 @@ SVG['sneeuw2'] = SVG['sneeuw']
 
 EXTRA_CSS = r'''
       #hook { font-size: 96px; text-wrap: balance; }
-      .scene { position: absolute; left: 36px; top: 1225px; width: 846px; height: 560px; border-radius: 24px;
-        background: var(--brand-surface); border: 2px solid var(--brand-border); opacity: 0; overflow: hidden; }
-      .ic { overflow: hidden; position: absolute; left: 34px; top: 110px; width: 340px; height: 340px; }
-      .ic svg { width: 100%; height: 100%; overflow: visible; }
-      .txt { position: absolute; left: 400px; right: 34px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
-      .lab { font-size: 32px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
-      .ln { font-size: 50px; font-weight: 800; line-height: 1.08; opacity: 0; }
-      .ln b, .kop b { color: var(--brand-accent); font-weight: 800; }
-      .val { white-space: nowrap; font-size: 82px; font-weight: 800; color: var(--brand-accent); line-height: 1; opacity: 0; letter-spacing: -0.02em; }
-      .kop { position: absolute; left: 40px; right: 40px; top: 30px; font-size: 48px; font-weight: 800; opacity: 0; }
-      .kaart { position: absolute; top: 112px; width: 368px; height: 412px; border-radius: 20px; background: var(--brand-surface-2);
-        border: 3px solid var(--brand-border); opacity: 0; }
-      .kaart .mini { position: absolute; left: 54px; top: 26px; width: 260px; height: 220px; }
-      .kaart .mini svg { width: 100%; height: 100%; overflow: visible; }
-      .kaart .k1 { position: absolute; left: 0; right: 0; top: 262px; text-align: center; font-size: 30px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: .05em; }
-      .kaart .k2 { position: absolute; left: 10px; right: 10px; top: 306px; text-align: center; font-size: 46px; font-weight: 800; line-height: 1.05; color: var(--brand-accent); }
-      .of { position: absolute; left: 390px; width: 66px; top: 290px; text-align: center; font-size: 40px; font-weight: 800; color: var(--brand-text-dim); opacity: 0; }
-      .stap { position: absolute; top: 50px; width: 264px; height: 460px; border-radius: 20px; background: var(--brand-surface-2);
-        border: 3px solid var(--brand-border); opacity: 0; overflow: hidden; }
-      .stap.on { border-color: var(--brand-accent); }
-      .stap .mini { position: absolute; left: 42px; top: 34px; width: 180px; height: 180px; }
-      .stap .mini svg { width: 100%; height: 100%; overflow: visible; }
-      .stap .s1 { position: absolute; left: 0; right: 0; top: 250px; text-align: center; font-size: 30px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: .05em; }
-      .stap .s2 { position: absolute; left: 8px; right: 8px; top: 286px; text-align: center; font-size: 31px; font-weight: 800; line-height: 1.08; }
-      .stap .nr { position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 44px; font-weight: 800; color: var(--brand-accent); }
+      #beeld-bg { display: none; }
+      .scene { position: absolute; left: 0; top: 1205px; width: 918px; height: 590px; opacity: 0; }
+      .ic { position: absolute; left: 56px; top: 30px; width: 300px; height: 300px; overflow: hidden;
+        filter: drop-shadow(0 8px 22px rgba(0,0,0,.6)); }
+      .ic svg, .mini svg { width: 100%; height: 100%; overflow: visible; }
+      .tag { position: absolute; left: 390px; right: 20px; top: 30px; height: 300px; display: flex; align-items: center;
+        font-size: 66px; font-weight: 800; line-height: 1.05; -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 4px 18px rgba(0,0,0,.6); opacity: 0; }
+      .tag b, .tg b { color: var(--brand-accent); }
+      .tag .big { font-size: 96px; letter-spacing: -0.02em; }
+      .item { position: absolute; top: 20px; opacity: 0; text-align: center; }
+      .item .mini { margin: 0 auto; filter: drop-shadow(0 8px 22px rgba(0,0,0,.6)); overflow: hidden; }
+      .tg { font-size: 50px; font-weight: 800; line-height: 1.05; margin-top: 14px; -webkit-text-stroke: 3px var(--caption-stroke);
+        paint-order: stroke fill; text-shadow: 0 4px 18px rgba(0,0,0,.6); }
+      .of { position: absolute; left: 400px; width: 90px; top: 110px; text-align: center; font-size: 56px; font-weight: 800;
+        -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill; opacity: 0; }
 '''
 
 SCENE_JS = r'''
-      // ===== scenes in de beeld-zone (icoontjes) =====
+      // ===== icoontjes los over het beeld (yapping: geen kaart, geen grijs vlak) =====
       const layer = document.querySelector("#beeld-layer");
-      const svg = (k, vb) => `<svg viewBox="${vb || "0 0 300 300"}">${SVGS[k]}</svg>`;
+      const svg = (k) => `<svg viewBox="0 0 300 300">${SVGS[k]}</svg>`;
       SCENES.forEach((s) => {
         const el = document.createElement("div");
         el.className = "scene " + s.type;
         const end = Math.min(s.end, CONFIG.duration);
-        if (s.type === "icon") {
-          el.innerHTML = `<div class="ic">${svg(s.icon)}</div><div class="txt"><div class="lab">${s.label}</div>` +
-            s.lines.map((l) => `<div class="ln">${l[0]}</div>`).join("") + (s.value ? `<div class="val">${s.value[0]}</div>` : "") + `</div>`;
-        }
-        if (s.type === "twee") {
-          el.innerHTML = `<div class="kop">${s.kop}</div>` +
-            `<div class="kaart ka" style="left:20px"><div class="mini">${svg("radiator")}</div><div class="k1">${s.a[0]}</div><div class="k2">${s.a[1]}</div></div>` +
-            `<div class="of">of</div>` +
-            `<div class="kaart kb" style="left:456px"><div class="mini">${svg("lek")}</div><div class="k1">${s.b[0]}</div><div class="k2">${s.b[1]}</div></div>`;
-        }
-        if (s.type === "plan") {
-          el.innerHTML = s.steps.map((st, k) => `<div class="stap" style="left:${16 + k*276}px"><div class="mini">${svg(st[0])}</div><div class="s1">${st[1]}</div><div class="s2">${st[2]}</div><div class="nr">${k+1}</div></div>`).join("");
-        }
+        if (s.type === "icon") el.innerHTML = `<div class="ic">${svg(s.icon)}</div><div class="tag"><div>${s.tag}</div></div>`;
+        if (s.type === "twee") el.innerHTML =
+          `<div class="item ia" style="left:40px;width:340px"><div class="mini" style="width:240px;height:240px">${svg(s.a[0])}</div><div class="tg">${s.a[1]}</div></div>` +
+          `<div class="of">of</div>` +
+          `<div class="item ib" style="left:500px;width:340px"><div class="mini" style="width:240px;height:240px">${svg(s.b[0])}</div><div class="tg">${s.b[1]}</div></div>`;
+        if (s.type === "plan") el.innerHTML = s.steps.map((st, k) =>
+          `<div class="item st" style="left:${20 + k*290}px;width:270px"><div class="mini" style="width:200px;height:200px">${svg(st[0])}</div><div class="tg">${st[1]}</div></div>`).join("");
         layer.appendChild(el);
-        tl.set("#beeld-bg", { opacity: 1 }, s.start);
-        tl.fromTo(el, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, s.start);
-        if (s.end < CONFIG.duration) tl.to(el, { opacity: 0, duration: 0.12, ease: "power2.in" }, end - 0.12);
+        tl.set(el, { opacity: 1 }, s.start);
+        tl.to(el, { opacity: 0, duration: 0.15, ease: "power2.in" }, end - 0.15);
 
         if (s.type === "icon") {
           const ic = el.querySelector(".ic");
-          tl.fromTo(ic, { scale: 0.6, rotation: -8, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, s.start + 0.05);
-          el.querySelectorAll(".ln").forEach((ln, k) => tl.fromTo(ln, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out" }, s.lines[k][1]));
-          if (s.value) tl.fromTo(el.querySelector(".val"), { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.2)", transformOrigin: "left center" }, s.value[1]);
+          tl.fromTo(ic, { scale: 0.4, rotation: -10, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.45, ease: "back.out(2)" }, s.start);
+          tl.fromTo(el.querySelector(".tag"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, s.tagAt || s.start + 0.15);
           const q = (c) => ic.querySelectorAll(c);
           if (s.icon === "huishalf") {
-            q(".iso").forEach((n, k) => tl.fromTo(n, { opacity: 0 }, { opacity: 1, duration: 0.25 }, s.lines[0][1] + k * 0.15));
-            tl.fromTo(q(".vraag"), { scale: 0, svgOrigin: "242 62" }, { scale: 1, svgOrigin: "242 62", duration: 0.35, ease: "back.out(2.5)" }, s.lines[1][1]);
+            q(".iso").forEach((n, k) => tl.fromTo(n, { opacity: 0 }, { opacity: 1, duration: 0.25 }, s.start + 0.3 + k * 0.15));
+            tl.fromTo(q(".vraag"), { scale: 0, svgOrigin: "242 62" }, { scale: 1, svgOrigin: "242 62", duration: 0.35, ease: "back.out(2.5)" }, s.q);
           }
-          if (s.icon === "sneeuw") q(".flake").forEach((f, k) => tl.fromTo(f, { y: -60 - (k % 3) * 70 }, { y: 360, duration: 1.6 + (k % 3) * 0.3, ease: "none", repeat: 2 }, s.start + k * 0.12));
+          if (s.icon === "sneeuw") q(".flake").forEach((f, k) => tl.fromTo(f, { y: -60 - (k % 3) * 70 }, { y: 360, duration: 1.6 + (k % 3) * 0.3, ease: "none", repeat: 1 }, s.start + k * 0.1));
           if (s.icon === "ketel") {
-            tl.fromTo(q(".vlam"), { scaleY: 0.85, svgOrigin: "135 240" }, { scaleY: 1.08, svgOrigin: "135 240", duration: 0.3, yoyo: true, repeat: 19, ease: "sine.inOut" }, s.start);
-            tl.fromTo(q(".kwik"), { scaleY: 0.15, svgOrigin: "247 232" }, { scaleY: 0.72, svgOrigin: "247 232", duration: 0.8, ease: "power2.out" }, s.value[1] - 0.3);
+            tl.fromTo(q(".vlam"), { scaleY: 0.85, svgOrigin: "135 240" }, { scaleY: 1.08, svgOrigin: "135 240", duration: 0.3, yoyo: true, repeat: 15, ease: "sine.inOut" }, s.start);
+            tl.fromTo(q(".kwik"), { scaleY: 0.15, svgOrigin: "247 232" }, { scaleY: 0.72, svgOrigin: "247 232", duration: 0.8, ease: "power2.out" }, s.tagAt - 0.3);
           }
           if (s.icon === "thermo") {
             tl.fromTo(q(".naald"), { rotation: -120, svgOrigin: "150 150" }, { rotation: 100, svgOrigin: "150 150", duration: 0.9, ease: "power3.inOut" }, s.dial);
@@ -184,34 +158,30 @@ SCENE_JS = r'''
           }
           if (s.icon === "huiswarm") {
             tl.fromTo(q(".gloed"), { y: 10, opacity: 0.3 }, { y: -8, opacity: 1, duration: 0.6, yoyo: true, repeat: 3, ease: "sine.inOut" }, s.start);
-            tl.fromTo(q(".vink"), { scale: 0, svgOrigin: "232 232" }, { scale: 1, svgOrigin: "232 232", duration: 0.35, ease: "back.out(2.5)" }, s.lines[0][1]);
+            tl.fromTo(q(".vink"), { scale: 0, svgOrigin: "232 232" }, { scale: 1, svgOrigin: "232 232", duration: 0.35, ease: "back.out(2.5)" }, s.q);
           }
           if (s.icon === "huiskoud") {
             tl.fromTo(q(".fl2"), { rotation: 0, svgOrigin: "150 202" }, { rotation: 180, svgOrigin: "150 202", duration: 4, ease: "none" }, s.start);
-            tl.fromTo(q(".kruis"), { scale: 0, svgOrigin: "232 232" }, { scale: 1, svgOrigin: "232 232", duration: 0.35, ease: "back.out(2.5)" }, s.lines[0][1]);
+            tl.fromTo(q(".kruis"), { scale: 0, svgOrigin: "232 232" }, { scale: 1, svgOrigin: "232 232", duration: 0.35, ease: "back.out(2.5)" }, s.q);
           }
-          if (s.icon === "duim") tl.to(q(".v"), { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, s.start + 0.35);
+          if (s.icon === "duim") tl.to(q(".v"), { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, s.start + 0.3);
         }
         if (s.type === "twee") {
-          tl.fromTo(el.querySelector(".kop"), { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, s.start + 0.1);
-          tl.fromTo(el.querySelector(".ka"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.6)" }, s.a[2]);
-          tl.fromTo(el.querySelector(".of"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, s.b[2] - 0.2);
-          tl.fromTo(el.querySelector(".kb"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.6)" }, s.b[2]);
-          tl.fromTo(el.querySelectorAll(".ka .golf path"), { opacity: 0.6 }, { opacity: 0.1, duration: 0.5, yoyo: true, repeat: 7, stagger: 0.15 }, s.a[2] + 0.3);
-          el.querySelectorAll(".kb .pijl").forEach((p, k) => {
+          tl.fromTo(el.querySelector(".ia"), { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, s.a[2]);
+          tl.fromTo(el.querySelector(".of"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, s.b[2] - 0.25);
+          tl.fromTo(el.querySelector(".ib"), { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, s.b[2]);
+          tl.fromTo(el.querySelectorAll(".ia .golf path"), { opacity: 0.6 }, { opacity: 0.1, duration: 0.5, yoyo: true, repeat: 7, stagger: 0.15 }, s.a[2] + 0.3);
+          el.querySelectorAll(".ib .pijl").forEach((p, k) => {
             const dir = [[0, -14], [-14, 0], [14, 0]][k];
-            tl.fromTo(p, { x: 0, y: 0, opacity: 0.4 }, { x: dir[0], y: dir[1], opacity: 1, duration: 0.5, yoyo: true, repeat: 5, ease: "sine.inOut" }, s.b[2] + 0.2);
+            tl.fromTo(p, { x: 0, y: 0, opacity: 0.4 }, { x: dir[0], y: dir[1], opacity: 1, duration: 0.5, yoyo: true, repeat: 7, ease: "sine.inOut" }, s.b[2] + 0.2);
           });
-          tl.fromTo(el.querySelector(".kb"), { borderColor: "#3a3a45" }, { borderColor: "#ffa62b", duration: 0.2 }, s.lek);
         }
         if (s.type === "plan") {
-          el.querySelectorAll(".stap").forEach((st, k) => {
-            const t = s.steps[k][3];
-            tl.fromTo(st, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.6)" }, t);
-            tl.set(st, { className: "stap on" }, t);
-            if (k < 2) tl.set(st, { className: "stap" }, s.steps[k + 1][3]);
-            if (s.steps[k][0] === "wp") tl.fromTo(st.querySelector(".fan"), { rotation: 0, svgOrigin: "125 155" }, { rotation: 360 * 4, svgOrigin: "125 155", duration: end - t, ease: "none" }, t);
-            if (s.steps[k][0] === "sneeuw") st.querySelectorAll(".flake").forEach((f, j) => tl.fromTo(f, { y: -60 - (j % 3) * 70 }, { y: 360, duration: 1.8 + (j % 3) * 0.3, ease: "none", repeat: 3 }, t + j * 0.12));
+          el.querySelectorAll(".st").forEach((st, k) => {
+            const t = s.steps[k][2];
+            tl.fromTo(st, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, t);
+            if (s.steps[k][0] === "wp") tl.fromTo(st.querySelector(".fan"), { rotation: 0, svgOrigin: "125 155" }, { rotation: 360 * 3, svgOrigin: "125 155", duration: end - t, ease: "none" }, t);
+            if (s.steps[k][0] === "sneeuw") st.querySelectorAll(".flake").forEach((f, j) => tl.fromTo(f, { y: -60 - (j % 3) * 70 }, { y: 360, duration: 1.8 + (j % 3) * 0.3, ease: "none", repeat: 4 }, t + j * 0.12));
           });
         }
       });
@@ -279,8 +249,8 @@ CAP_JS = r'''      // Captions (eigen indeling: max 3 woorden / 19 tekens, nieuw
 html = html[:a] + CAP_JS + html[b:]
 a = html.index('      // Beeld-zone'); b = html.index('      // CTA')
 html = html[:a] + SCENE_JS + '\n' + html[b:]
-pops = sorted(set([s['start'] for s in SCENES] + [s['a'][2] for s in SCENES if 'a' in s] + [s['b'][2] for s in SCENES if 'b' in s] +
-                  [st[3] for s in SCENES for st in s.get('steps', [])]))
+pops = sorted(set([s['start'] for s in SCENES if s['type'] == 'icon'] + [s[k][2] for s in SCENES for k in ('a', 'b') if k in s] +
+                  [st[2] for s in SCENES for st in s.get('steps', [])]))
 pops = [p for p in pops if p < dur - 0.5]
 tags = ''.join(f'\n      <audio id="pop{i}" src="assets/pop.mp3" data-start="{p}" data-duration="0.6" data-track-index="{10+i}" data-volume="0.18"></audio>' for i, p in enumerate(pops))
 html = html.replace('data-track-index="9"></audio>', 'data-track-index="9"></audio>' + tags)
