@@ -9,9 +9,11 @@ M = os.path.join(ROOT, 'media')
 def dur(p):
     return float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', p]).decode())
 
+SHIFT = {'body': 0.28, 'cta-seg': 0.32}  # strakker geknipt na transcriptie
 def words(name):
     d = json.load(open(os.path.join(M, f'tr-{name}/transcript.json')))
-    return [[w['text'], w['start'], w['end']] for w in (d if isinstance(d, list) else d['words'])]
+    sh = SHIFT.get(name, 0)
+    return [[w['text'], max(0, round(w['start'] - sh, 2)), max(0.05, round(w['end'] - sh, 2))] for w in (d if isinstance(d, list) else d['words'])]
 
 FIX = {'1930.': 'jaren 30.', 'Arnem.': 'Arnhem.', 'Spanmuisoleren,': 'Spouw isoleren,', 'vloeisoleren,': 'vloer isoleren,',
        'haar': 'HR++', 'al': 'all-electric', 'electromtepomp': 'warmtepomp', 'ken': 'ketel', 'gijzer': 'geiser',
@@ -92,8 +94,11 @@ TEMPLATE = open(os.path.join(TPL, 'index.html')).read()
 bdur = dur(os.path.join(M, 'body.mp4'))
 for X in 'AB':
     d = os.path.join(ROOT, X)
+    keep = os.path.join(ROOT, f'.renders-{X}')
+    if os.path.exists(os.path.join(d, 'renders')): shutil.move(os.path.join(d, 'renders'), keep)
     if os.path.exists(d): shutil.rmtree(d)
     shutil.copytree(TPL, d)
+    if os.path.exists(keep): shutil.move(keep, os.path.join(d, 'renders'))
     os.remove(os.path.join(d, 'assets/source.mp4'))
     os.link(os.path.join(M, f'full-{X}.mp4'), os.path.join(d, 'assets/source.mp4'))
     shutil.copy(HUIS, os.path.join(d, 'assets/huis.png'))
@@ -108,6 +113,8 @@ for X in 'AB':
     cta_start = round(reageer, 2)
     beelden = []
     for b in BEELD:
+        b = dict(b, start=max(0.05, b['start'] - SHIFT['body']), end=b['end'] - SHIFT['body'], lines=[[l, t - SHIFT['body']] for l, t in b.get('lines', [])])
+        if not b['lines']: b.pop('lines')
         nb = dict(b); nb['start'] = round(b['start'] + off, 2); nb['end'] = round(min(b['end'], bdur - 0.05) + off, 2)
         if 'lines' in b: nb['lines'] = [[l, round(t + off, 2)] for l, t in b['lines']]
         beelden.append(nb)
@@ -149,6 +156,7 @@ for X in 'AB':
     html = html.replace('''const start = group[0][1], end = (words[i + CONFIG.chunkSize] || [null, group[group.length - 1][2]])[1];''',
         '''const start = group[0][1], end = nextG ? Math.min(GW[nextG[0]][1], group[group.length - 1][2] + 0.8) : group[group.length - 1][2] + 0.3;''')
     assert 'CONFIG.groups.length' in html and 'nextG ?' in html
+    html = html.replace('next.start > b.end + 0.05', 'next.start > b.end + 0.3')
     pops = ''.join(f'\n      <audio id="pop{i}" src="assets/pop.mp3" data-start="{b["start"]}" data-duration="0.7" data-track-index="{10+i}" data-volume="0.25"></audio>' for i, b in enumerate(beelden) if b['type'] != 'video')
     html = html.replace('data-track-index="9"></audio>', 'data-track-index="9"></audio>' + pops)
     open(os.path.join(d, 'index.html'), 'w').write(html)

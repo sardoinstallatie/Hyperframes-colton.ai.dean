@@ -3,3 +3,5 @@ media/
 *.wav
 huis.png
 .hyperframes/
+face.jpg
+.renders-*/

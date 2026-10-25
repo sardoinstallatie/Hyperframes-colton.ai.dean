@@ -6,3 +6,9 @@ Beeld: Funda-foto (op verzoek Peter) + feitenkaartje; Schermopname 2026-10-25 om
 - Hook C? 44.12–53.36 "hoekwoning uit 1930 … naar label A" (navragen)
 - Body: calculator 209–223 · isoleren 504–557 · ventilatie 558–571 · vloerverwarming 583–595 · warmtepomp 596–635 · panelen+batterij retake 644–660 · F→A + kosten 670–699 · posten 702–766 · maandlast 767–780 (325 €/mnd) · fixscore 790–822
 - Open vragen: lengte (kort/middel/lang), hook C, dak binnen/buiten, totaal excl. vloerverwarming+batterij, kW→kWh, 1930 vs 1932.
+
+## Final (25 okt)
+- Kort (68 s): 2 hooks (A "label F naar A in 1 minuut", B "Zou jij een huis met label F kopen"), body 57.6 s, CTA-clip 0085 (AANBOD).
+- Dak binnen/buiten-uitleg en kostenposten eruit. Captions: jaren 30, kWh, HR++, €325.
+- Calculator: Schermopname 15.28.48 (nepgegevens), kolom-crop, 58 s → 2 s, gestopt vóór de uitslag.
+- Funda-foto + feitenkaartje op Peter's verzoek (niet in git). Cover: cover/cover.html.
