@@ -1,6 +1,6 @@
 # D01-specifieke stukken die in de yapping-template (build_tpl.py) worden geplakt door make_build.py
 FIX_CLEAN = r'''FIX = {'aangerichten': 'aangericht', 'drie-fases': 'drie-fase', 'u': 'we', 'volden': 'volt door',
-       'Krijgen': 'Je krijgt', 'kosten': 'kostte', 'werkte': 'werkten', 'Blij': 'Blijf', 'was': 'was hem'}
+       'Krijgen': 'Je krijgt', 'kosten': 'kostte', 'werkte': 'werkten', 'Blij': 'Blijf'}
 def clean(ws):
     raw = [(w['text'], round(w['start'], 2), round(w['end'], 2)) for w in ws]
     out = []; i = 0

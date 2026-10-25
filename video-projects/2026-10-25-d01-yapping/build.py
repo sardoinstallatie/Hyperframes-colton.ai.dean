@@ -10,7 +10,7 @@ def probe(f):
 
 # ---------- captions ----------
 FIX = {'aangerichten': 'aangericht', 'drie-fases': 'drie-fase', 'u': 'we', 'volden': 'volt door',
-       'Krijgen': 'Je krijgt', 'kosten': 'kostte', 'werkte': 'werkten', 'Blij': 'Blijf', 'was': 'was hem'}
+       'Krijgen': 'Je krijgt', 'kosten': 'kostte', 'werkte': 'werkten', 'Blij': 'Blijf'}
 def clean(ws):
     raw = [(w['text'], round(w['start'], 2), round(w['end'], 2)) for w in ws]
     out = []; i = 0
