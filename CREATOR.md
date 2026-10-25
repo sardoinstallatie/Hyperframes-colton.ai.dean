@@ -1,63 +1,79 @@
-<!-- HYPERFRAMES_SETUP_INCOMPLETE -->
-<!-- ^ Leave this marker until /setup is complete. It tells Claude to greet a new user
-     and run onboarding before any video work. The setup skill removes it when finished. -->
+# Creator Profile — Peter / Sardo | Verduurzaming
 
-# Creator Profile — _(your name)_
+Identiteit, positionering en werkwijze. **Lees dit vóór elke videotaak** (samen met `PREFERENCES.md` en `SARDO_FORMAT.md`).
 
-Your identity, positioning, and workflow for video work in this workspace. **Read this before every video task** (alongside `PREFERENCES.md`). Use it for on-screen text, niche framing, and workflow assumptions.
-
-> 🚧 **This file is a blank template.** Run `/setup` (or just tell Claude "help me get set up") and it will fill these sections in from a short interview. You can also edit it by hand any time.
+> Setup is gedaan (okt 2026). Deze werkruimte is ingericht voor het Claude-project **"CONTENT: Short-Form editor"**. Elke chat in dat project = één video (of één set hook-versies). Volg de skill **`/sardo-edit`**.
 
 ## Identity
 
-- **Name on-screen**: _(your display name)_
-- **Instagram**: _(@handle or "—")_
-- **TikTok**: _(handle or "—")_
-- **YouTube**: _(handle or "—")_
-- **X / other**: _(handle or "—")_
-
-When putting handles on-screen (lower-thirds, outros, end-cards), use the platform-appropriate handle.
+- **Name on-screen**: Sardo | Verduurzaming
+- **Persoon**: Peter, eigenaar Sardo Bouw & Installatie (Arnhem, Gelderland)
+- **Instagram**: @sardobouw
+- **TikTok**: @sardobouw (secundair)
+- **YouTube**: —
+- **Website**: sardoinstallatie.nl
 
 ## Platform priority
 
-_(Which platform(s) matter most, and the default aspect ratio. Most short-form creators default to **9:16 vertical, 1080×1920**. Set during /setup.)_
+**Instagram Reels eerst**, TikTok tweede. Altijd **9:16, 1080×1920**. Peter filmt in **25 fps** → render ook op 25 fps (`--fps 25` waar ondersteund, anders 30 en melden).
 
 ## Content niche
 
-_(What you make videos about — e.g. AI tools, fitness, cooking, finance, comedy. Set during /setup. When planning a new video, the assistant assumes this niche unless told otherwise.)_
+Verduurzaming van woningen in Gelderland (Arnhem, Nijmegen, Doetinchem, Achterhoek): isolatie, warmtepompen, zonnepanelen, thuisbatterij, laadpaal, meterkast/groepenkast, subsidie (ISDE), saldering.
+**Doelgroep:** starters en mensen die net een huis kochten.
+**Kernboodschap:** "eerst je huis dicht, dan de techniek — en alles werkt samen."
+**Videotypes:** Funda Fixer (een huis doorlichten), 1 huis 3 budgetten, tips/lijstjes, fouten die Peter maakte (yapping), nieuws (saldering, subsidie).
 
 ## On-camera mix
 
-_(Do you appear on camera, go faceless, or both? Set during /setup.)_
-
-- **Face-cam** → use `/short-form-video` face-mode choreography (BOTTOM / FULLSCREEN modes).
-- **Faceless** → motion graphics + AI TTS narration (`npx hyperframes tts`) or screen-recordings.
+**Altijd face-cam.** Peter praat in beeld. Geen faceless, geen AI-stem.
 
 ## Workflow — division of labor
 
-_(Set during /setup. Two common modes:)_
+**Peter neemt ruw op, Claude doet ALLES in de edit** — dit overschrijft de standaardregel in CLAUDE.md:
+- Claude **mag en moet** de audio knippen: stiltes, "eh"s, ademhalingen, versprekingen en mislukte takes eruit.
+- Claude kiest de beste take als een zin dubbel is ingesproken.
+- Claude verandert **nooit de inhoud** van wat Peter zegt en voegt geen zinnen toe.
+- Per video neemt Peter **meerdere hooks** op (A, B, C …) gevolgd door **één body**. Claude maakt per hook een losse video met exact dezelfde body (voor hook-tests via Instagram Trial Reels).
 
-- **You record + pre-edit your own speaking video** → it's the source of truth; the assistant builds the visual layer on top and does NOT cut your audio, remove pauses, or change your pacing.
-- **You build from scratch with the assistant** → motion graphics, TTS narration, screen-recordings assembled together.
+## Taal
+
+- Alles in het **Nederlands**.
+- Tekst in beeld, captions en Instagram-captions in **taal van groep 3-4**: korte woorden, korte zinnen.
+- Praat met Peter direct, informeel, zonder gezeur.
 
 ## Brand identity
 
-_(Colors, fonts, logo. Often a blank slate at the start — `assets/brand-tokens.css` fills in over time. Set initial values during /setup.)_
+Zie `assets/brand-tokens.css`. Uit de Sardo-brochure:
+- Oranje **#ffa62b** — accent, actieve caption-woord, CTA, bedragen
+- Blauw **#82c0cc** — tweede accent (sparzaam)
+- Donker **#19191e** — achtergrond van animaties/kaarten
+- Wit **#ffffff** — tekst
+- Font: **Poppins** (800 voor hooks/captions, 600 voor labels)
+
+## Bestanden — waar alles staat (Peter's Mac)
+
+- **Ruwe opnames (input):** `~/Documents/videos/raw/` (in Finder: Documenten → videos → raw). Peter mag submappen per sessie maken.
+- **Klare video's (output):** `~/Documents/videos/<categorie>/<jaar>/<maand>/`
+  - Categorie kiest Claude zelf: `Funda`, `Yapping`, `info`, `overig`
+  - Maand: `01-januari` … `12-december`
+  - Naam: `<opnamedatum>-D<dag>-<onderwerp>-<hook>.mp4`, bv. `info/2026/10-oktober/2026-10-25-D04-saldering-A.mp4`
+- Mac niet gekoppeld? Video alleen in de chat sturen en dat melden.
 
 ## Inspiration creators
 
-_(Studied creators live in [`_reference/creator-library/`](_reference/creator-library/). Paste a TikTok / Instagram Reel / YouTube Short URL and run `/study-creator <url>` to add one. At build time, name a creator — "build this like @handle" — to apply their style fingerprint to the visual layer. /setup seeds your first few here.)_
+Format: "Last Shot Media"-layout (zie `SARDO_FORMAT.md`). Eerder bestudeerde reels (okt 2026): face-cam altijd, curiosity-hooks, genummerde lijstjes/stappen, korte vette captions, comment-keyword CTA's.
 
 ## Posting cadence & length defaults
 
-- _Cadence_: _(TBD — set during /setup)_
-- _Default length_: 15–45s short-form vertical is a common sweet spot. Adjust per video.
-- _Default fps_: 30 (matches TikTok + Instagram defaults).
+- _Cadence_: volgens het draaiboek (Peter levert per chat het concept aan)
+- _Default length_: 25–45 s
+- _CTA_: elke video eindigt met één woord: **CHECK** (calculator) of **AANBOD** (offerte)
 
 ## Project slug convention
 
-**Topic-only, kebab-case.** Each video gets a new subfolder under `video-projects/<topic-slug>/`. Examples: `ai-agents-intro`, `prompting-101`, `tool-of-the-week`. Keep slugs short and descriptive — scannable at a glance in `ls video-projects/`.
+`video-projects/<opnamedatum>-d<dag>-<onderwerp>/`, bv. `video-projects/2026-10-25-d04-saldering/`.
 
 ---
 
-*This file is updated as your creator profile evolves. Major changes (new handles, platform shifts, workflow changes) can be edited here directly.*
+*Grote wijzigingen (handles, mappen, werkwijze) direct hier aanpassen.*

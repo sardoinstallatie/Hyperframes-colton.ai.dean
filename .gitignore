@@ -40,3 +40,9 @@ _reference/creator-library/**/source.webm
 _reference/creator-library/**/source.info.json
 _reference/creator-library/**/frames/
 
+
+# Sardo — geen grote media in git (ruwe en geknipte video's blijven op Peter's Mac)
+video-projects/**/assets/*.mp4
+video-projects/**/assets/*.mov
+video-projects/**/assets/*.wav
+video-projects/**/*.mp4

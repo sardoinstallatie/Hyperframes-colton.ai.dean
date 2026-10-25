@@ -1,5 +1,8 @@
 # Hyperframes — Video Workspace
 
+> **SARDO-WERKRUIMTE.** Dit is de fork van Peter (Sardo | Verduurzaming). Setup is klaar. Elke chat in het project "CONTENT: Short-Form editor" volgt de skill **`/sardo-edit`** (`.claude/skills/sardo-edit/SKILL.md`). Lees `CREATOR.md`, `PREFERENCES.md` en `SARDO_FORMAT.md`. Begin elke sessie met `source scripts/sardo-session-setup.sh`. Praat Nederlands met Peter.
+> Waar deze CLAUDE.md iets anders zegt dan `CREATOR.md`/`PREFERENCES.md` (audio knippen, localhost-preview, motion-stijl): de Sardo-bestanden winnen.
+
 HTML-native video workspace built on [Hyperframes](https://hyperframes.heygen.com). A workspace for short-form content (Instagram Reels / TikTok / YouTube Shorts). Not a Remotion project — this is the HTML pipeline.
 
 **This workspace hosts multiple video projects, one folder each, all under `video-projects/`.** The workspace root holds shared tooling (`node_modules/`, `package.json`, `.claude/`, this `CLAUDE.md`, `MOTION_PHILOSOPHY.md`, `PREFERENCES.md`, `DESIGN.example.md`) — never put `index.html`, `assets/`, `compositions/`, or `renders/` directly at the root. Always work from inside a project subfolder.
