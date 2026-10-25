@@ -52,7 +52,7 @@ for X in "ABC":
     shutil.copy(SFX, f"{d}/assets/pop.mp3")
     os.link(f"{P}/assets/full-{X}.mp4", f"{d}/assets/source.mp4")
     hp = {"A": [3.2], "B": [1.76, 5.6], "C": [0.8]}[X]
-    pops = hp + [H + t for t in (4.08, 17.12, 29.68, 44.72, 47.68)]
+    pops = hp + [H + t for t in (4.08, 17.05, 31.04, 44.72, 47.68)]
     audio = "\n".join(f'      <audio id="pop{i}" src="assets/pop.mp3" data-start="{t:.2f}" data-duration="0.7" data-track-index="{10+i}" data-volume="0.3"></audio>' for i, t in enumerate(pops))
     out = (html.replace("__AUDIO__", audio).replace("__VERSION__", X).replace("__H__", f"{H:.3f}")
                .replace("__TOTAL__", f"{total:.3f}").replace("__WORDS__", json.dumps(words, ensure_ascii=False)))

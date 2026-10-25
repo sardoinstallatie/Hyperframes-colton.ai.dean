@@ -106,3 +106,10 @@ Zeg welke hook won en waarom (2–3 zinnen). Houd het hook-type bij; na 5+ video
 ## 10. Opslaan in de fork
 
 Na elke video: commit project-metadata (EDL.md, compositions, geen grote media — `renders/` en `raw-media/` staan in .gitignore) en eventuele PREFERENCES-updates, en push naar `main` van `sardoinstallatie/Hyperframes-colton.ai.dean`. Lukt push niet → meld het, werk gewoon door.
+
+## 11. Bekende valkuilen (geleerd bij D14, okt 2026)
+
+- **Overzetten Mac ↔ cloud is traag.** Stage/commit lukt alleen met stukjes van ~6 MB (één per call). 4K-bron eerst op de Mac knippen + verkleinen met ffmpeg in stukken van ≤20 s (anders timeout van 180 s), dan `split -b 6m` en stuk voor stuk stagen; in de cloud weer `cat` en md5 checken.
+- **`/mnt/user-data/outputs/` past mp4-headers aan.** Een bestand of stuk dat met een mp4-header begint wordt gewijzigd → checksum klopt niet. Pak het eerste stuk in (`gzip -1`) en pak het op de Mac weer uit. Altijd md5 vergelijken na `cat` op de Mac.
+- **Lang renderen in de achtergrond:** start met `setsid nohup bash render.sh … & disown` en laat het script met `sleep 3` beginnen; anders breekt de render af met `render_cancelled_parent_exited`.
+- Werkbestanden op de Mac: `videos/raw/_work/`, na afloop verplaatsen naar `videos/raw/_to_delete/` (verwijderen mag niet zonder toestemming).

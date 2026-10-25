@@ -97,8 +97,8 @@
       <audio id="face-audio" src="assets/source.mp4" data-start="0" data-duration="60.360" data-track-index="9"></audio>
       <audio id="pop0" src="assets/pop.mp3" data-start="0.80" data-duration="0.7" data-track-index="10" data-volume="0.3"></audio>
       <audio id="pop1" src="assets/pop.mp3" data-start="8.80" data-duration="0.7" data-track-index="11" data-volume="0.3"></audio>
-      <audio id="pop2" src="assets/pop.mp3" data-start="21.84" data-duration="0.7" data-track-index="12" data-volume="0.3"></audio>
-      <audio id="pop3" src="assets/pop.mp3" data-start="34.40" data-duration="0.7" data-track-index="13" data-volume="0.3"></audio>
+      <audio id="pop2" src="assets/pop.mp3" data-start="21.77" data-duration="0.7" data-track-index="12" data-volume="0.3"></audio>
+      <audio id="pop3" src="assets/pop.mp3" data-start="35.76" data-duration="0.7" data-track-index="13" data-volume="0.3"></audio>
       <audio id="pop4" src="assets/pop.mp3" data-start="49.44" data-duration="0.7" data-track-index="14" data-volume="0.3"></audio>
       <audio id="pop5" src="assets/pop.mp3" data-start="52.40" data-duration="0.7" data-track-index="15" data-volume="0.3"></audio>
       <div id="beeld-bg" class="clip" data-start="0" data-duration="60.360" data-track-index="3"></div>
@@ -206,7 +206,7 @@
       }
 
       // S5  uitzondering + tijdlijn 2026 | 2027
-      split(B(16.32), B(29.5));
+      split(B(16.95), B(29.5));
       {
         const el = card(`<div class="stamp">UITZONDERING</div>
           <div class="tline"></div>
@@ -215,10 +215,10 @@
           <div class="pin p1" style="left:21px"><b>KOPEN</b><span>vóór 31 december</span></div>
           <div class="pin p2" style="left:445px"><b>PLAATSEN</b><span>mag in 2027</span></div>
           <div class="chip c1" style="left:46px">€225 per kW ✓</div>
-          <div class="chip c2" style="left:470px">Geeft niet ✓</div>`, B(16.32), B(29.5));
+          <div class="chip c2" style="left:470px">Geeft niet ✓</div>`, B(16.95), B(29.5));
         tl.fromTo(q(el, ".stamp"), { scale: 2.2, opacity: 0, xPercent: -50, rotation: -14 },
-                  { scale: 1, opacity: 1, xPercent: -50, rotation: -5, duration: 0.35, ease: "back.out(2.2)" }, B(17.12));
-        tl.set(el.querySelectorAll(".tline,.year,.dot,.pin,.chip"), { opacity: 0 }, B(16.2));
+                  { scale: 1, opacity: 1, xPercent: -50, rotation: -5, duration: 0.35, ease: "back.out(2.2)" }, B(17.05));
+        tl.set(el.querySelectorAll(".tline,.year,.dot,.pin,.chip"), { opacity: 0 }, B(16.9));
         tl.fromTo(q(el, ".tline"), { scaleX: 0, opacity: 1 }, { scaleX: 1, opacity: 1, duration: 0.5, ease: "power2.out" }, B(18.72));
         tl.to(el.querySelectorAll(".year"), { opacity: 1, duration: 0.25, stagger: 0.1 }, B(18.8));
         pop(q(el, ".d1"), B(18.96)); pop(q(el, ".p1"), B(18.96), { opacity: 0, y: 30, scale: 0.9 });
@@ -228,14 +228,14 @@
       }
 
       // S6  offerte -> tekenen -> aanbetalen = bewijs
-      split(B(29.68), B(38.75));
+      split(B(30.85), B(38.75));
       {
         const el = card(`<div class="label">Zo doe je het</div>
           <div class="step s1" style="top:100px"><div class="num">1</div>Offerte aanvragen</div>
           <div class="step s2" style="top:205px"><div class="num">2</div>Tekenen</div>
           <div class="step s3" style="top:310px"><div class="num">3</div>Aanbetalen</div>
-          <div class="proof">= jouw bewijs ✓</div>`, B(29.68), B(38.75));
-        tl.set(el.querySelectorAll(".step,.proof"), { opacity: 0 }, B(29.6));
+          <div class="proof">= jouw bewijs ✓</div>`, B(30.85), B(38.75));
+        tl.set(el.querySelectorAll(".step,.proof"), { opacity: 0 }, B(30.8));
         [[".s1", 31.04], [".s2", 32.88], [".s3", 34.4]].forEach(([s, t]) =>
           tl.fromTo(q(el, s), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, B(t)));
         pop(q(el, ".proof"), B(35.68), { opacity: 0, scale: 0.7 });
@@ -247,10 +247,12 @@
       split(B(44.72), TOTAL);
       {
         const el = card(`<div class="label">Nog dit jaar kopen?</div>
+          <div class="bigq abs c" style="left:30px;right:30px;top:150px;font-size:76px;font-weight:800;line-height:1.1">Nog dit jaar een <span class="orange">warmtepomp</span> kopen?</div>
           <div class="bubble"><div class="avatar"></div><div><div class="who">jij</div><div class="txt">AANBOD</div></div></div>
           <div class="heart">♥</div>
           <div class="linkrow">Jij krijgt een link voor je <span class="orange">offerte</span></div>`, B(44.72), TOTAL + 1);
         tl.set(el.querySelectorAll(".bubble,.heart,.linkrow"), { opacity: 0 }, B(44.6));
+        tl.to(q(el, ".bigq"), { opacity: 0, y: -40, duration: 0.2, ease: "power2.in" }, B(47.4));
         pop(q(el, ".bubble"), B(47.68), { opacity: 0, scale: 0.6, y: 40 });
         pop(q(el, ".heart"), B(48.3));
         tl.fromTo(q(el, ".linkrow"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, B(49.52));
