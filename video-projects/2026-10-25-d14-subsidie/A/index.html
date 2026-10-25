@@ -1,0 +1,301 @@
+<!doctype html>
+<!-- D14 · Subsidie warmtepomp · versie A  (gegenereerd door build.py uit comp.html) -->
+<html lang="nl" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/brand-tokens.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--brand-bg); }
+      body { font-family: var(--font-display); color: var(--brand-text); }
+
+      #face-wrapper { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 625px; }
+      #face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+      .anchor-text { position: absolute; left: 50px; right: 50px; top: 960px; transform: translateY(-50%);
+        text-align: center; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em;
+        -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 6px 24px rgba(0,0,0,0.55); opacity: 0; }
+      #hook { font-size: 88px; }
+      #hook .hl, #cta .big { color: var(--brand-accent); }
+      #cta .small { display: block; font-size: 54px; font-weight: 700; margin-bottom: 6px; }
+      #cta .big { display: block; font-size: 160px; }
+
+      #captions { position: absolute; left: 40px; right: 40px; top: 970px; height: 220px;
+        display: flex; align-items: center; justify-content: center; }
+      .chunk { position: absolute; width: 100%; text-align: center; font-size: 78px; font-weight: 800;
+        line-height: 1.1; -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 4px 18px rgba(0,0,0,0.6); opacity: 0; }
+      .w { display: inline-block; margin: 0 0.12em; }
+      .w.on { color: var(--brand-accent); }
+
+      #beeld-bg { position: absolute; left: 0; top: 1190px; width: 1080px; height: 730px; background: var(--brand-bg); opacity: 0; }
+      .card { position: absolute; left: 36px; top: 1225px; width: 846px; height: 560px; border-radius: 24px;
+        background: var(--brand-surface); border: 2px solid var(--brand-border); opacity: 0; overflow: hidden; }
+      .card .label { position: absolute; left: 40px; top: 34px; font-size: 34px; font-weight: 700; color: var(--brand-text-dim);
+        text-transform: uppercase; letter-spacing: 0.06em; }
+      .abs { position: absolute; }
+      .c { text-align: center; }
+      .orange { color: var(--brand-accent); }
+      .blue { color: var(--brand-warn); }
+
+      /* kalender */
+      .cal { position: absolute; left: 273px; top: 110px; width: 300px; height: 330px; border-radius: 22px; background: #fff;
+        overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,0.45); }
+      .cal .top { height: 92px; background: var(--brand-accent); color: var(--brand-bg); font-size: 54px; font-weight: 800;
+        display: flex; align-items: center; justify-content: center; letter-spacing: 0.08em; }
+      .cal .day { color: var(--brand-bg); font-size: 170px; font-weight: 800; text-align: center; line-height: 1.15; }
+      .cal .yr { color: #6b6b75; font-size: 40px; font-weight: 700; text-align: center; margin-top: -14px; }
+      .ring { position: absolute; left: 228px; top: 92px; width: 390px; height: 368px; border: 8px solid var(--brand-accent);
+        border-radius: 50%; transform: rotate(-8deg); }
+
+      /* staafjes */
+      .bar { position: absolute; bottom: 110px; width: 190px; border-radius: 18px 18px 6px 6px; transform-origin: bottom; }
+      .bar.b26 { left: 150px; height: 300px; background: var(--brand-accent); }
+      .bar.b27 { left: 506px; height: 160px; background: var(--brand-warn); }
+      .bval { position: absolute; width: 300px; font-size: 76px; font-weight: 800; text-align: center; }
+      .byr { position: absolute; bottom: 40px; width: 300px; font-size: 48px; font-weight: 800; text-align: center; }
+      .badge { position: absolute; right: 34px; top: 26px; padding: 12px 24px; border-radius: 999px; background: #e5484d;
+        color: #fff; font-size: 40px; font-weight: 800; }
+
+      /* uitzondering + tijdlijn */
+      .stamp { position: absolute; left: 50%; top: 36px; padding: 10px 34px; border: 6px solid var(--brand-accent); border-radius: 16px;
+        color: var(--brand-accent); font-size: 64px; font-weight: 800; letter-spacing: 0.04em; transform: translateX(-50%) rotate(-5deg); }
+      .tline { position: absolute; left: 60px; right: 60px; top: 330px; height: 8px; border-radius: 4px; background: var(--brand-border); transform-origin: left; }
+      .year { position: absolute; top: 352px; width: 300px; font-size: 60px; font-weight: 800; text-align: center; }
+      .dot { position: absolute; top: 316px; width: 36px; height: 36px; border-radius: 50%; background: var(--brand-accent); border: 6px solid var(--brand-surface); }
+      .pin { position: absolute; top: 172px; width: 380px; text-align: center; }
+      .pin b { display: block; font-size: 54px; font-weight: 800; }
+      .pin span { display: block; font-size: 36px; font-weight: 700; color: var(--brand-text-dim); }
+      .chip { position: absolute; top: 450px; width: 330px; padding: 12px 0; border-radius: 999px; text-align: center;
+        font-size: 40px; font-weight: 800; background: var(--brand-accent); color: var(--brand-bg); }
+
+      /* stappen */
+      .step { position: absolute; left: 40px; height: 88px; display: flex; align-items: center; gap: 26px; font-size: 56px; font-weight: 800; }
+      .num { width: 80px; height: 80px; border-radius: 50%; background: var(--brand-surface-2); border: 4px solid var(--brand-accent);
+        color: var(--brand-accent); display: flex; align-items: center; justify-content: center; font-size: 46px; }
+      .proof { position: absolute; left: 40px; right: 40px; top: 430px; height: 96px; border-radius: 20px; background: var(--brand-accent);
+        color: var(--brand-bg); font-size: 54px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+      /* reactie-bubbel */
+      .bubble { position: absolute; left: 40px; top: 170px; width: 640px; height: 150px; border-radius: 28px; background: #fff;
+        display: flex; align-items: center; gap: 24px; padding: 0 30px; box-shadow: 0 16px 36px rgba(0,0,0,0.4); }
+      .avatar { width: 84px; height: 84px; border-radius: 50%; background: var(--brand-warn); flex: none; }
+      .bubble .who { font-size: 30px; font-weight: 700; color: #6b6b75; }
+      .bubble .txt { font-size: 60px; font-weight: 800; color: var(--brand-bg); letter-spacing: 0.02em; }
+      .heart { position: absolute; left: 700px; top: 215px; font-size: 64px; color: #e5484d; }
+      .linkrow { position: absolute; left: 40px; top: 380px; font-size: 50px; font-weight: 800; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="61.280" data-width="1080" data-height="1920">
+      <div id="face-wrapper">
+        <video id="face" src="assets/source.mp4" muted playsinline data-start="0" data-duration="61.280" data-track-index="0"></video>
+      </div>
+      <audio id="face-audio" src="assets/source.mp4" data-start="0" data-duration="61.280" data-track-index="9"></audio>
+      <audio id="pop0" src="assets/pop.mp3" data-start="3.20" data-duration="0.7" data-track-index="10" data-volume="0.3"></audio>
+      <audio id="pop1" src="assets/pop.mp3" data-start="9.72" data-duration="0.7" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="pop2" src="assets/pop.mp3" data-start="22.76" data-duration="0.7" data-track-index="12" data-volume="0.3"></audio>
+      <audio id="pop3" src="assets/pop.mp3" data-start="35.32" data-duration="0.7" data-track-index="13" data-volume="0.3"></audio>
+      <audio id="pop4" src="assets/pop.mp3" data-start="50.36" data-duration="0.7" data-track-index="14" data-volume="0.3"></audio>
+      <audio id="pop5" src="assets/pop.mp3" data-start="53.32" data-duration="0.7" data-track-index="15" data-volume="0.3"></audio>
+      <div id="beeld-bg" class="clip" data-start="0" data-duration="61.280" data-track-index="3"></div>
+      <div id="beeld-layer" class="clip" data-start="0" data-duration="61.280" data-track-index="4"></div>
+      <div id="captions" class="clip" data-start="0" data-duration="61.280" data-track-index="5"></div>
+      <div id="hook" class="anchor-text clip" data-start="0" data-duration="61.280" data-track-index="6"></div>
+      <div id="cta" class="anchor-text clip" data-start="0" data-duration="61.280" data-track-index="7"></div>
+    </div>
+
+    <script>
+      const VERSION = "A";
+      const H = 5.640;              // duur hook = start body
+      const TOTAL = 61.280;
+      const WORDS = [["Ben", 0, 0.16, 0], ["jij", 0.4, 0.64, 0], ["van", 0.64, 0.8, 0], ["plan", 0.8, 0.96, 0], ["om", 1.04, 1.12, 0], ["een", 1.12, 1.2, 0], ["warmtepomp", 1.2, 1.84, 0], ["te", 1.84, 1.92, 0], ["gaan", 1.92, 2.08, 0], ["kopen?", 2.08, 2.4, 1], ["Doe", 2.4, 2.64, 0], ["dat", 2.64, 2.88, 0], ["dan", 2.88, 3.2, 0], ["voor", 3.2, 3.52, 0], ["31", 3.52, 4.24, 0], ["december", 4.4, 5.28, 1], ["Denk", 5.8, 6.28, 0], ["aan", 6.28, 6.36, 0], ["een", 6.36, 6.44, 0], ["warmtepomp", 6.44, 7.08, 0], ["dan", 7.08, 7.24, 0], ["is", 7.24, 7.32, 0], ["dit", 7.32, 7.48, 0], ["echt", 7.48, 7.64, 0], ["heel", 7.64, 7.8, 0], ["belangrijk", 7.8, 8.2, 0], ["om", 8.2, 8.36, 0], ["te", 8.36, 8.52, 0], ["onthouden", 8.52, 9.4, 1], ["Nu", 9.72, 10.04, 0], ["in", 10.2, 10.36, 0], ["2026", 10.36, 11.32, 0], ["krijg", 11.32, 11.64, 0], ["je", 11.64, 11.8, 0], ["€225", 11.8, 12.84, 0], ["subsidie", 13.0, 13.64, 0], ["per", 13.64, 13.88, 0], ["kilowatt", 13.88, 14.68, 0], ["aan", 14.68, 14.92, 0], ["vermogen", 14.92, 15.4, 0], ["van", 15.4, 15.48, 0], ["je", 15.48, 15.64, 0], ["warmtepomp", 15.64, 16.84, 1], ["Vanaf", 17.24, 17.8, 0], ["januari", 17.8, 18.36, 0], ["2027", 18.36, 19.4, 0], ["wordt", 19.4, 19.56, 0], ["dat", 19.56, 19.72, 0], ["€120", 19.72, 20.68, 0], ["per", 20.68, 20.84, 0], ["kilowatt", 20.84, 21.72, 1], ["Maar", 21.96, 22.28, 0], ["ze", 22.28, 22.52, 0], ["hebben", 22.52, 22.68, 0], ["een", 22.68, 22.76, 0], ["uitzondering", 22.76, 23.48, 0], ["gemaakt", 23.48, 23.8, 0], ["op", 23.8, 23.88, 0], ["de", 23.88, 23.96, 0], ["regel", 23.96, 24.36, 1], ["Dus", 24.36, 24.6, 0], ["koop", 24.6, 24.92, 0], ["jij", 24.92, 25.08, 0], ["je", 25.08, 25.16, 0], ["warmtepomp", 25.16, 25.88, 0], ["voor", 25.88, 26.12, 0], ["31", 26.12, 26.76, 0], ["december", 26.76, 27.24, 0], ["2026", 27.24, 28.68, 1], ["Dan", 28.68, 28.84, 0], ["krijg", 28.84, 29.08, 0], ["je", 29.08, 29.24, 0], ["nog", 29.24, 29.32, 0], ["wel", 29.32, 29.48, 0], ["een", 29.48, 29.56, 0], ["subsidie", 29.56, 30.04, 0], ["uit", 30.04, 30.2, 0], ["2026", 30.2, 31.24, 1], ["Ook", 31.24, 31.48, 0], ["al", 31.48, 31.56, 0], ["wordt", 31.56, 31.8, 0], ["die", 31.8, 31.96, 0], ["in", 31.96, 32.04, 0], ["2027", 32.04, 33.08, 0], ["geïnstalleerd", 33.08, 33.64, 1], ["dat", 33.64, 33.8, 0], ["geeft", 33.8, 34.12, 0], ["dan", 34.12, 34.28, 0], ["niet", 34.28, 34.84, 1], ["Wat", 35.32, 35.56, 0], ["je", 35.56, 35.8, 0], ["dus", 35.8, 35.96, 0], ["moet", 35.96, 36.12, 0], ["doen", 36.12, 36.28, 0], ["is", 36.36, 36.52, 0], ["een", 36.52, 36.68, 0], ["offerte", 36.68, 37.24, 0], ["aanvragen", 37.24, 38.2, 1], ["die", 38.2, 38.52, 0], ["ondertekenen", 38.52, 39.32, 0], ["en", 39.48, 39.8, 0], ["hem", 39.8, 40.04, 0], ["aanbetalen", 40.04, 40.92, 1], ["Dat", 40.92, 41.08, 0], ["is", 41.08, 41.24, 0], ["het", 41.24, 41.32, 0], ["bewijs", 41.32, 41.64, 0], ["dat", 41.64, 41.8, 0], ["je", 41.8, 41.88, 0], ["hem", 41.88, 42.04, 0], ["hebt", 42.04, 42.28, 0], ["aangekocht", 42.28, 42.92, 0], ["in", 42.92, 43.08, 0], ["2026", 43.08, 44.52, 1], ["En", 44.52, 44.68, 0], ["wanneer", 44.68, 45.08, 0], ["dan", 45.08, 45.24, 0], ["wordt", 45.4, 45.56, 0], ["geïnstalleerd", 45.56, 46.2, 1], ["dat", 46.2, 46.36, 0], ["maakt", 46.36, 46.6, 0], ["dan", 46.6, 46.84, 0], ["niet", 47.16, 47.4, 0], ["uit", 47.4, 47.64, 0], ["als", 47.8, 48.04, 0], ["het", 48.04, 48.28, 0], ["2027", 48.28, 49.48, 0], ["is", 49.48, 50.12, 1], ["Wil", 50.36, 50.68, 0], ["jij", 50.68, 50.92, 0], ["dit", 50.92, 51.08, 0], ["jaar", 51.08, 51.24, 0], ["nog", 51.32, 51.48, 0], ["een", 51.48, 51.56, 0], ["warmtepomp", 51.56, 52.28, 0], ["kopen?", 52.28, 52.52, 1], ["Reageer", 52.6, 53.08, 0], ["dan", 53.08, 53.32, 0], ["AANBOD", 53.32, 53.8, 0], ["in", 53.8, 53.88, 0], ["de", 53.88, 53.96, 0], ["reacties", 53.96, 54.44, 1], ["Dan", 54.44, 54.6, 0], ["stuur", 54.6, 54.84, 0], ["ik", 54.84, 54.92, 0], ["je", 54.92, 55.08, 0], ["een", 55.08, 55.16, 0], ["link", 55.16, 55.4, 0], ["waarin", 55.4, 55.64, 0], ["je", 55.64, 55.8, 0], ["een", 55.8, 55.88, 0], ["offerte", 55.88, 56.28, 0], ["kan", 56.28, 56.44, 0], ["aanvragen", 56.44, 56.92, 1], ["En", 56.92, 57.0, 0], ["dan", 57.0, 57.16, 0], ["gaan", 57.16, 57.32, 0], ["wij", 57.32, 57.48, 0], ["zorgen", 57.48, 57.72, 0], ["dat", 57.8, 57.96, 0], ["jij", 57.96, 58.12, 0], ["nog", 58.12, 58.28, 0], ["die", 58.28, 58.44, 0], ["hoge", 58.44, 58.76, 0], ["subsidies", 58.76, 59.24, 0], ["kan", 59.24, 59.4, 0], ["krijgen", 59.4, 59.64, 0], ["voor", 59.64, 59.8, 0], ["je", 59.8, 59.88, 0], ["warmtepomp", 59.96, 61.16, 1]];      // [tekst, start, eind] — Parakeet, per versie
+      const B = (t) => H + t;       // body-tijd -> absolute tijd
+      const CTA_START = TOTAL - 2;
+
+      const HOOKS = {
+        A: { text: 'Warmtepomp? Koop vóór <span class="hl">31 december</span>', end: 2.0 },
+        B: { text: 'Subsidie warmtepomp <span class="hl">halveert bijna</span>', end: 2.0 },
+        C: { text: 'Nog <span class="hl">54 dagen</span> tot subsidie halveert', end: 2.0 },
+      };
+      const PUNCH = {
+        A: [[0, 1.08], [2.4, 1.16]],
+        B: [[0, 1.08], [4.0, 1.16]],
+        C: [[0, 1.08], [2.08, 1.16]],
+      }[VERSION].concat([[B(0), 1.08], [B(3.95), 1.16], [B(16.25), 1.08], [B(22.95), 1.16],
+                         [B(29.6), 1.08], [B(38.85), 1.16], [B(44.65), 1.08]]);
+
+      const tl = gsap.timeline({ paused: true });
+      const $ = (s) => document.querySelector(s);
+      const layer = $("#beeld-layer");
+
+      gsap.set("#face-wrapper", { y: -91 });           // ogen 625 -> 534
+      PUNCH.forEach(([t, s]) => tl.set("#face-wrapper", { scale: s }, t));
+
+      // ---------- helpers ----------
+      function card(html, start, end, splitOwner = true) {
+        const el = document.createElement("div");
+        el.className = "card";
+        el.innerHTML = html;
+        layer.appendChild(el);
+        tl.fromTo(el, { opacity: 0, y: 70, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "expo.out" }, start);
+        tl.to(el, { opacity: 0, y: -30, duration: 0.18, ease: "power2.in" }, end - 0.18);
+        return el;
+      }
+      const q = (el, s) => el.querySelector(s);
+      const pop = (target, t, from = { scale: 0, opacity: 0 }) =>
+        tl.fromTo(target, from, { scale: 1, opacity: 1, x: 0, y: 0, duration: 0.35, ease: "back.out(2)" }, t);
+      function countUp(el, from, to, t, d, fmt) {
+        const o = { v: from };
+        tl.set(el, { textContent: fmt(from) }, t - 0.001);
+        tl.to(o, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(o.v)); } }, t);
+      }
+      // split-vensters: beeld-bg aan (onderste helft dicht)
+      function split(a, b) { tl.set("#beeld-bg", { opacity: 1 }, a); tl.set("#beeld-bg", { opacity: 0 }, b); }
+
+      // ---------- HOOK-beelden ----------
+      const hookEnd = H;
+      function calendar(start, label) {
+        const el = card(`<div class="label">${label}</div>
+          <div class="cal"><div class="top">DEC</div><div class="day">31</div><div class="yr">2026</div></div>
+          <div class="ring"></div>`, start, hookEnd + 0.1);
+        pop(q(el, ".cal"), start + 0.05, { scale: 0.6, opacity: 0, rotation: -8 });
+        tl.fromTo(q(el, ".ring"), { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, start + 0.45);
+      }
+      if (VERSION === "A") { split(3.2, hookEnd); calendar(3.2, "Koop vóór"); }
+      if (VERSION === "B") {
+        split(1.76, hookEnd);
+        const el = card(`<div class="label">Subsidie warmtepomp</div>
+          <div class="abs c" style="left:0;right:0;top:110px;font-size:200px;font-weight:800;line-height:1" ><span class="arr orange" style="display:inline-block">↓</span></div>
+          <div class="abs c" style="left:0;right:0;top:340px;font-size:72px;font-weight:800">in <span class="orange">2027</span></div>
+          <div class="abs c" style="left:0;right:0;top:440px;font-size:46px;font-weight:700;color:var(--brand-text-dim)">bijna de helft minder</div>`, 1.76, 5.6);
+        tl.fromTo(q(el, ".arr"), { y: -60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "bounce.out" }, 1.85);
+        tl.to(q(el, ".arr"), { y: 14, duration: 0.35, yoyo: true, repeat: 4, ease: "sine.inOut" }, 2.3);
+        calendar(5.6, "Koop vóór");
+      }
+      if (VERSION === "C") {
+        split(0.8, hookEnd);
+        const el = card(`<div class="label">Aftellen</div>
+          <div class="abs c" style="left:0;right:0;top:100px;font-size:60px;font-weight:800">nog</div>
+          <div class="abs c n orange" style="left:0;right:0;top:160px;font-size:230px;font-weight:800;line-height:1">60</div>
+          <div class="abs c" style="left:0;right:0;top:400px;font-size:64px;font-weight:800">dagen</div>`, 0.8, hookEnd + 0.1);
+        countUp(q(el, ".n"), 60, 54, 0.85, 0.75, (v) => String(v));
+        tl.fromTo(q(el, ".n"), { scale: 1 }, { scale: 1.12, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 1.6);
+      }
+
+      // ---------- BODY-beelden (in alle versies gelijk) ----------
+      // S2  €225 -> €120 per kW
+      split(B(4.08), B(16.2));
+      {
+        const el = card(`<div class="label">Subsidie per kW</div>
+          <div class="bar b26"></div><div class="bar b27"></div>
+          <div class="bval v26 orange" style="left:95px;top:60px">€0</div>
+          <div class="bval v27 blue" style="left:451px;top:200px">€0</div>
+          <div class="byr" style="left:95px">2026</div><div class="byr y27" style="left:451px">2027</div>
+          <div class="badge">−€105 per kW</div>`, B(4.08), B(16.2));
+        tl.set([q(el, ".b27"), q(el, ".v27"), q(el, ".y27")], { opacity: 0 }, B(4.0));
+        tl.fromTo(q(el, ".b26"), { scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }, B(4.7));
+        countUp(q(el, ".v26"), 0, 225, B(4.7), 1.4, (v) => "€" + v);
+        tl.set([q(el, ".v27"), q(el, ".y27")], { opacity: 1 }, B(12.7));
+        tl.fromTo(q(el, ".b27"), { scaleY: 0, opacity: 1 }, { scaleY: 1, opacity: 1, duration: 0.8, ease: "power3.out" }, B(12.7));
+        countUp(q(el, ".v27"), 0, 120, B(12.7), 1.3, (v) => "€" + v);
+        pop(q(el, ".badge"), B(14.8));
+      }
+
+      // S5  uitzondering + tijdlijn 2026 | 2027
+      split(B(16.32), B(29.5));
+      {
+        const el = card(`<div class="stamp">UITZONDERING</div>
+          <div class="tline"></div>
+          <div class="year" style="left:61px">2026</div><div class="year" style="left:485px">2027</div>
+          <div class="dot d1" style="left:193px"></div><div class="dot d2" style="left:617px"></div>
+          <div class="pin p1" style="left:21px"><b>KOPEN</b><span>vóór 31 december</span></div>
+          <div class="pin p2" style="left:445px"><b>PLAATSEN</b><span>mag in 2027</span></div>
+          <div class="chip c1" style="left:46px">€225 per kW ✓</div>
+          <div class="chip c2" style="left:470px">Geeft niet ✓</div>`, B(16.32), B(29.5));
+        tl.fromTo(q(el, ".stamp"), { scale: 2.2, opacity: 0, xPercent: -50, rotation: -14 },
+                  { scale: 1, opacity: 1, xPercent: -50, rotation: -5, duration: 0.35, ease: "back.out(2.2)" }, B(17.12));
+        tl.set(el.querySelectorAll(".tline,.year,.dot,.pin,.chip"), { opacity: 0 }, B(16.2));
+        tl.fromTo(q(el, ".tline"), { scaleX: 0, opacity: 1 }, { scaleX: 1, opacity: 1, duration: 0.5, ease: "power2.out" }, B(18.72));
+        tl.to(el.querySelectorAll(".year"), { opacity: 1, duration: 0.25, stagger: 0.1 }, B(18.8));
+        pop(q(el, ".d1"), B(18.96)); pop(q(el, ".p1"), B(18.96), { opacity: 0, y: 30, scale: 0.9 });
+        pop(q(el, ".c1"), B(23.2), { opacity: 0, scale: 0.6 });
+        pop(q(el, ".d2"), B(25.92)); pop(q(el, ".p2"), B(25.92), { opacity: 0, y: 30, scale: 0.9 });
+        pop(q(el, ".c2"), B(28.16), { opacity: 0, scale: 0.6 });
+      }
+
+      // S6  offerte -> tekenen -> aanbetalen = bewijs
+      split(B(29.68), B(38.75));
+      {
+        const el = card(`<div class="label">Zo doe je het</div>
+          <div class="step s1" style="top:100px"><div class="num">1</div>Offerte aanvragen</div>
+          <div class="step s2" style="top:205px"><div class="num">2</div>Tekenen</div>
+          <div class="step s3" style="top:310px"><div class="num">3</div>Aanbetalen</div>
+          <div class="proof">= jouw bewijs ✓</div>`, B(29.68), B(38.75));
+        tl.set(el.querySelectorAll(".step,.proof"), { opacity: 0 }, B(29.6));
+        [[".s1", 31.04], [".s2", 32.88], [".s3", 34.4]].forEach(([s, t]) =>
+          tl.fromTo(q(el, s), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, B(t)));
+        pop(q(el, ".proof"), B(35.68), { opacity: 0, scale: 0.7 });
+      }
+
+      // S7  FULL face (38.88–44.6) — geen beeld
+
+      // S8  CTA-kaart
+      split(B(44.72), TOTAL);
+      {
+        const el = card(`<div class="label">Nog dit jaar kopen?</div>
+          <div class="bubble"><div class="avatar"></div><div><div class="who">jij</div><div class="txt">AANBOD</div></div></div>
+          <div class="heart">♥</div>
+          <div class="linkrow">Jij krijgt een link voor je <span class="orange">offerte</span></div>`, B(44.72), TOTAL + 1);
+        tl.set(el.querySelectorAll(".bubble,.heart,.linkrow"), { opacity: 0 }, B(44.6));
+        pop(q(el, ".bubble"), B(47.68), { opacity: 0, scale: 0.6, y: 40 });
+        pop(q(el, ".heart"), B(48.3));
+        tl.fromTo(q(el, ".linkrow"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, B(49.52));
+      }
+
+      // ---------- HOOK-tekst ----------
+      const hook = HOOKS[VERSION];
+      $("#hook").innerHTML = hook.text;
+      tl.fromTo("#hook", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(1.6)" }, 0.02);
+      tl.to("#hook", { opacity: 0, duration: 0.12, ease: "power2.in" }, hook.end);
+
+      // ---------- CAPTIONS (2–3 woorden, breek op pauzes) ----------
+      const cap = $("#captions");
+      const ws = WORDS.filter(([, s]) => s >= hook.end - 0.05 && s < CTA_START);
+      const groups = [];
+      ws.forEach((w, i) => {
+        const g = groups[groups.length - 1];
+        const gap = g ? w[1] - g[g.length - 1][2] : 99;
+        const prevEnd = g && g[g.length - 1][3];
+        if (!g || prevEnd || g.length >= 3 || gap > 0.35 || g.map((x) => x[0]).join(" ").length > 18) groups.push([w]);
+        else g.push(w);
+      });
+      groups.forEach((g, i) => {
+        const el = document.createElement("div");
+        el.className = "chunk";
+        el.innerHTML = g.map(([w]) => `<span class="w">${w}</span>`).join(" ");
+        cap.appendChild(el);
+        const start = g[0][1];
+        const next = groups[i + 1];
+        const end = Math.min(next ? next[0][1] : g[g.length - 1][2] + 0.3, g[g.length - 1][2] + 0.6, CTA_START);
+        tl.set(el, { opacity: 1 }, start);
+        tl.set(el, { opacity: 0 }, end);
+        g.forEach(([, s, e], j) => {
+          tl.set(el.children[j], { className: "w on" }, s);
+          tl.set(el.children[j], { className: "w" }, Math.min(e, end));
+        });
+      });
+
+      // ---------- CTA ----------
+      $("#cta").innerHTML = `<span class="small">Reageer</span><span class="big">AANBOD</span>`;
+      tl.fromTo("#cta", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.8)" }, CTA_START);
+
+      tl.set({}, {}, TOTAL);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

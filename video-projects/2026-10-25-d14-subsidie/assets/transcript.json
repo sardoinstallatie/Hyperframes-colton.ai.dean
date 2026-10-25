@@ -1,0 +1,2210 @@
+[
+  {
+    "id": "w0",
+    "text": "Dit",
+    "start": 0,
+    "end": 0.24
+  },
+  {
+    "id": "w1",
+    "text": "is",
+    "start": 0.24,
+    "end": 0.4
+  },
+  {
+    "id": "w2",
+    "text": "dag",
+    "start": 0.4,
+    "end": 0.72
+  },
+  {
+    "id": "w3",
+    "text": "14",
+    "start": 0.72,
+    "end": 1.12
+  },
+  {
+    "id": "w4",
+    "text": "op",
+    "start": 1.12,
+    "end": 1.28
+  },
+  {
+    "id": "w5",
+    "text": "zaterdag",
+    "start": 1.28,
+    "end": 1.76
+  },
+  {
+    "id": "w6",
+    "text": "8",
+    "start": 1.76,
+    "end": 2
+  },
+  {
+    "id": "w7",
+    "text": "november,",
+    "start": 2,
+    "end": 2.88
+  },
+  {
+    "id": "w8",
+    "text": "over",
+    "start": 2.88,
+    "end": 3.04
+  },
+  {
+    "id": "w9",
+    "text": "subsidies.",
+    "start": 3.36,
+    "end": 4.64
+  },
+  {
+    "id": "w10",
+    "text": "Ben",
+    "start": 5.52,
+    "end": 5.68
+  },
+  {
+    "id": "w11",
+    "text": "je",
+    "start": 5.84,
+    "end": 6
+  },
+  {
+    "id": "w12",
+    "text": "van",
+    "start": 6,
+    "end": 6.24
+  },
+  {
+    "id": "w13",
+    "text": "plan",
+    "start": 6.24,
+    "end": 6.4
+  },
+  {
+    "id": "w14",
+    "text": "om",
+    "start": 6.48,
+    "end": 6.64
+  },
+  {
+    "id": "w15",
+    "text": "een",
+    "start": 6.64,
+    "end": 6.72
+  },
+  {
+    "id": "w16",
+    "text": "warmtepom",
+    "start": 6.72,
+    "end": 7.28
+  },
+  {
+    "id": "w17",
+    "text": "te",
+    "start": 7.28,
+    "end": 7.36
+  },
+  {
+    "id": "w18",
+    "text": "gaan",
+    "start": 7.36,
+    "end": 7.52
+  },
+  {
+    "id": "w19",
+    "text": "kopen?",
+    "start": 7.52,
+    "end": 7.84
+  },
+  {
+    "id": "w20",
+    "text": "Doe",
+    "start": 7.84,
+    "end": 8.08
+  },
+  {
+    "id": "w21",
+    "text": "dat",
+    "start": 8.08,
+    "end": 8.32
+  },
+  {
+    "id": "w22",
+    "text": "dan",
+    "start": 8.32,
+    "end": 8.64
+  },
+  {
+    "id": "w23",
+    "text": "voor",
+    "start": 8.64,
+    "end": 8.96
+  },
+  {
+    "id": "w24",
+    "text": "31",
+    "start": 8.96,
+    "end": 9.76
+  },
+  {
+    "id": "w25",
+    "text": "december.",
+    "start": 9.76,
+    "end": 10.96
+  },
+  {
+    "id": "w26",
+    "text": "De",
+    "start": 15.68,
+    "end": 15.92
+  },
+  {
+    "id": "w27",
+    "text": "subsidie",
+    "start": 15.92,
+    "end": 16.48
+  },
+  {
+    "id": "w28",
+    "text": "op",
+    "start": 16.48,
+    "end": 16.64
+  },
+  {
+    "id": "w29",
+    "text": "warmtepompen",
+    "start": 16.64,
+    "end": 17.36
+  },
+  {
+    "id": "w30",
+    "text": "halveert",
+    "start": 17.36,
+    "end": 18.08
+  },
+  {
+    "id": "w31",
+    "text": "bijna",
+    "start": 18.08,
+    "end": 18.4
+  },
+  {
+    "id": "w32",
+    "text": "in",
+    "start": 18.4,
+    "end": 18.56
+  },
+  {
+    "id": "w33",
+    "text": "2027.",
+    "start": 18.56,
+    "end": 19.6
+  },
+  {
+    "id": "w34",
+    "text": "Dus",
+    "start": 19.6,
+    "end": 19.84
+  },
+  {
+    "id": "w35",
+    "text": "wil",
+    "start": 19.84,
+    "end": 19.92
+  },
+  {
+    "id": "w36",
+    "text": "jij",
+    "start": 20,
+    "end": 20.16
+  },
+  {
+    "id": "w37",
+    "text": "nou",
+    "start": 20.16,
+    "end": 20.32
+  },
+  {
+    "id": "w38",
+    "text": "een",
+    "start": 20.32,
+    "end": 20.4
+  },
+  {
+    "id": "w39",
+    "text": "warmtepomp",
+    "start": 20.4,
+    "end": 21.2
+  },
+  {
+    "id": "w40",
+    "text": "koop",
+    "start": 21.2,
+    "end": 21.6
+  },
+  {
+    "id": "w41",
+    "text": "dan",
+    "start": 21.6,
+    "end": 21.84
+  },
+  {
+    "id": "w42",
+    "text": "voor",
+    "start": 21.84,
+    "end": 22.08
+  },
+  {
+    "id": "w43",
+    "text": "31",
+    "start": 22.08,
+    "end": 22.8
+  },
+  {
+    "id": "w44",
+    "text": "december.",
+    "start": 22.8,
+    "end": 24
+  },
+  {
+    "id": "w45",
+    "text": "Nog",
+    "start": 27.76,
+    "end": 28.24
+  },
+  {
+    "id": "w46",
+    "text": "maar",
+    "start": 28.24,
+    "end": 28.48
+  },
+  {
+    "id": "w47",
+    "text": "54",
+    "start": 28.48,
+    "end": 29.36
+  },
+  {
+    "id": "w48",
+    "text": "dagen",
+    "start": 29.36,
+    "end": 29.76
+  },
+  {
+    "id": "w49",
+    "text": "tot",
+    "start": 29.76,
+    "end": 30
+  },
+  {
+    "id": "w50",
+    "text": "de",
+    "start": 30.16,
+    "end": 30.24
+  },
+  {
+    "id": "w51",
+    "text": "subsidies",
+    "start": 30.24,
+    "end": 30.72
+  },
+  {
+    "id": "w52",
+    "text": "van",
+    "start": 30.72,
+    "end": 30.88
+  },
+  {
+    "id": "w53",
+    "text": "warmtepompen",
+    "start": 30.88,
+    "end": 31.6
+  },
+  {
+    "id": "w54",
+    "text": "halveren.",
+    "start": 31.6,
+    "end": 32.4
+  },
+  {
+    "id": "w55",
+    "text": "Dus",
+    "start": 32.4,
+    "end": 32.64
+  },
+  {
+    "id": "w56",
+    "text": "wil",
+    "start": 32.64,
+    "end": 32.8
+  },
+  {
+    "id": "w57",
+    "text": "jij",
+    "start": 32.96,
+    "end": 33.12
+  },
+  {
+    "id": "w58",
+    "text": "de",
+    "start": 33.12,
+    "end": 33.2
+  },
+  {
+    "id": "w59",
+    "text": "volledige",
+    "start": 33.2,
+    "end": 33.76
+  },
+  {
+    "id": "w60",
+    "text": "subsidie",
+    "start": 33.76,
+    "end": 34.24
+  },
+  {
+    "id": "w61",
+    "text": "nog",
+    "start": 34.24,
+    "end": 34.4
+  },
+  {
+    "id": "w62",
+    "text": "krijgen,",
+    "start": 34.4,
+    "end": 34.88
+  },
+  {
+    "id": "w63",
+    "text": "koop",
+    "start": 34.88,
+    "end": 35.28
+  },
+  {
+    "id": "w64",
+    "text": "dan",
+    "start": 35.28,
+    "end": 35.44
+  },
+  {
+    "id": "w65",
+    "text": "voor",
+    "start": 35.44,
+    "end": 35.68
+  },
+  {
+    "id": "w66",
+    "text": "31",
+    "start": 35.68,
+    "end": 36.24
+  },
+  {
+    "id": "w67",
+    "text": "december",
+    "start": 36.24,
+    "end": 36.56
+  },
+  {
+    "id": "w68",
+    "text": "2026.",
+    "start": 36.72,
+    "end": 37.6
+  },
+  {
+    "id": "w69",
+    "text": "En",
+    "start": 37.6,
+    "end": 37.76
+  },
+  {
+    "id": "w70",
+    "text": "als",
+    "start": 37.76,
+    "end": 37.84
+  },
+  {
+    "id": "w71",
+    "text": "we",
+    "start": 37.84,
+    "end": 38
+  },
+  {
+    "id": "w72",
+    "text": "hem",
+    "start": 38,
+    "end": 38.16
+  },
+  {
+    "id": "w73",
+    "text": "dan",
+    "start": 38.16,
+    "end": 38.24
+  },
+  {
+    "id": "w74",
+    "text": "in",
+    "start": 38.24,
+    "end": 38.4
+  },
+  {
+    "id": "w75",
+    "text": "2027",
+    "start": 38.4,
+    "end": 39.36
+  },
+  {
+    "id": "w76",
+    "text": "installeren,",
+    "start": 39.36,
+    "end": 39.92
+  },
+  {
+    "id": "w77",
+    "text": "krijg",
+    "start": 39.92,
+    "end": 40.16
+  },
+  {
+    "id": "w78",
+    "text": "je",
+    "start": 40.16,
+    "end": 40.32
+  },
+  {
+    "id": "w79",
+    "text": "nog",
+    "start": 40.32,
+    "end": 40.4
+  },
+  {
+    "id": "w80",
+    "text": "wel",
+    "start": 40.4,
+    "end": 40.56
+  },
+  {
+    "id": "w81",
+    "text": "de",
+    "start": 40.56,
+    "end": 40.64
+  },
+  {
+    "id": "w82",
+    "text": "subsidie",
+    "start": 40.64,
+    "end": 41.12
+  },
+  {
+    "id": "w83",
+    "text": "van",
+    "start": 41.12,
+    "end": 41.36
+  },
+  {
+    "id": "w84",
+    "text": "dit",
+    "start": 41.36,
+    "end": 41.68
+  },
+  {
+    "id": "w85",
+    "text": "jaar.",
+    "start": 41.68,
+    "end": 42.32
+  },
+  {
+    "id": "w86",
+    "text": "Denk",
+    "start": 46.72,
+    "end": 47.12
+  },
+  {
+    "id": "w87",
+    "text": "je",
+    "start": 47.12,
+    "end": 47.28
+  },
+  {
+    "id": "w88",
+    "text": "aan",
+    "start": 47.28,
+    "end": 47.44
+  },
+  {
+    "id": "w89",
+    "text": "een",
+    "start": 47.44,
+    "end": 47.52
+  },
+  {
+    "id": "w90",
+    "text": "warmtepomp,",
+    "start": 47.52,
+    "end": 48.16
+  },
+  {
+    "id": "w91",
+    "text": "dan",
+    "start": 48.16,
+    "end": 48.32
+  },
+  {
+    "id": "w92",
+    "text": "is",
+    "start": 48.32,
+    "end": 48.4
+  },
+  {
+    "id": "w93",
+    "text": "dit",
+    "start": 48.4,
+    "end": 48.56
+  },
+  {
+    "id": "w94",
+    "text": "heel",
+    "start": 48.56,
+    "end": 48.8
+  },
+  {
+    "id": "w95",
+    "text": "belangrijk",
+    "start": 48.8,
+    "end": 49.36
+  },
+  {
+    "id": "w96",
+    "text": "om",
+    "start": 49.36,
+    "end": 49.6
+  },
+  {
+    "id": "w97",
+    "text": "te",
+    "start": 49.6,
+    "end": 49.84
+  },
+  {
+    "id": "w98",
+    "text": "onthouden.",
+    "start": 49.84,
+    "end": 51.2
+  },
+  {
+    "id": "w99",
+    "text": "Denk",
+    "start": 53.04,
+    "end": 53.52
+  },
+  {
+    "id": "w100",
+    "text": "aan",
+    "start": 53.52,
+    "end": 53.68
+  },
+  {
+    "id": "w101",
+    "text": "een",
+    "start": 53.68,
+    "end": 53.76
+  },
+  {
+    "id": "w102",
+    "text": "warmtepomp",
+    "start": 53.76,
+    "end": 54.4
+  },
+  {
+    "id": "w103",
+    "text": "dan",
+    "start": 54.4,
+    "end": 54.56
+  },
+  {
+    "id": "w104",
+    "text": "is",
+    "start": 54.56,
+    "end": 54.64
+  },
+  {
+    "id": "w105",
+    "text": "dit",
+    "start": 54.64,
+    "end": 54.8
+  },
+  {
+    "id": "w106",
+    "text": "echt",
+    "start": 54.8,
+    "end": 54.96
+  },
+  {
+    "id": "w107",
+    "text": "heel",
+    "start": 54.96,
+    "end": 55.12
+  },
+  {
+    "id": "w108",
+    "text": "belangrijk",
+    "start": 55.12,
+    "end": 55.44
+  },
+  {
+    "id": "w109",
+    "text": "om",
+    "start": 55.52,
+    "end": 55.68
+  },
+  {
+    "id": "w110",
+    "text": "te",
+    "start": 55.68,
+    "end": 55.84
+  },
+  {
+    "id": "w111",
+    "text": "onthouden.",
+    "start": 55.84,
+    "end": 56.8
+  },
+  {
+    "id": "w112",
+    "text": "Nu",
+    "start": 59.43,
+    "end": 59.75
+  },
+  {
+    "id": "w113",
+    "text": "in",
+    "start": 59.91,
+    "end": 60.07
+  },
+  {
+    "id": "w114",
+    "text": "2026",
+    "start": 60.07,
+    "end": 61.11
+  },
+  {
+    "id": "w115",
+    "text": "krijg",
+    "start": 61.11,
+    "end": 61.43
+  },
+  {
+    "id": "w116",
+    "text": "je",
+    "start": 61.43,
+    "end": 61.51
+  },
+  {
+    "id": "w117",
+    "text": "25",
+    "start": 61.51,
+    "end": 62.47
+  },
+  {
+    "id": "w118",
+    "text": "euro",
+    "start": 62.47,
+    "end": 62.63
+  },
+  {
+    "id": "w119",
+    "text": "subsidie",
+    "start": 62.79,
+    "end": 63.43
+  },
+  {
+    "id": "w120",
+    "text": "per",
+    "start": 63.43,
+    "end": 63.67
+  },
+  {
+    "id": "w121",
+    "text": "kilowatt",
+    "start": 63.67,
+    "end": 64.31
+  },
+  {
+    "id": "w122",
+    "text": "aan",
+    "start": 64.47,
+    "end": 64.63
+  },
+  {
+    "id": "w123",
+    "text": "vermogen",
+    "start": 64.71,
+    "end": 65.11
+  },
+  {
+    "id": "w124",
+    "text": "van",
+    "start": 65.11,
+    "end": 65.19
+  },
+  {
+    "id": "w125",
+    "text": "je",
+    "start": 65.19,
+    "end": 65.35
+  },
+  {
+    "id": "w126",
+    "text": "warmtepomp.",
+    "start": 65.35,
+    "end": 66.79
+  },
+  {
+    "id": "w127",
+    "text": "Vanaf",
+    "start": 68.31,
+    "end": 68.79
+  },
+  {
+    "id": "w128",
+    "text": "januari",
+    "start": 68.87,
+    "end": 69.43
+  },
+  {
+    "id": "w129",
+    "text": "2027",
+    "start": 69.43,
+    "end": 70.47
+  },
+  {
+    "id": "w130",
+    "text": "wordt",
+    "start": 70.47,
+    "end": 70.63
+  },
+  {
+    "id": "w131",
+    "text": "dat",
+    "start": 70.63,
+    "end": 70.79
+  },
+  {
+    "id": "w132",
+    "text": "120",
+    "start": 70.79,
+    "end": 71.43
+  },
+  {
+    "id": "w133",
+    "text": "euro",
+    "start": 71.43,
+    "end": 71.75
+  },
+  {
+    "id": "w134",
+    "text": "per",
+    "start": 71.75,
+    "end": 71.91
+  },
+  {
+    "id": "w135",
+    "text": "kilowatt.",
+    "start": 71.91,
+    "end": 72.79
+  },
+  {
+    "id": "w136",
+    "text": "Dat",
+    "start": 72.79,
+    "end": 73.03
+  },
+  {
+    "id": "w137",
+    "text": "is",
+    "start": 73.03,
+    "end": 73.27
+  },
+  {
+    "id": "w138",
+    "text": "bij",
+    "start": 73.27,
+    "end": 73.51
+  },
+  {
+    "id": "w139",
+    "text": "nog",
+    "start": 73.51,
+    "end": 73.67
+  },
+  {
+    "id": "w140",
+    "text": "meer",
+    "start": 73.67,
+    "end": 73.91
+  },
+  {
+    "id": "w141",
+    "text": "dan",
+    "start": 73.91,
+    "end": 74.07
+  },
+  {
+    "id": "w142",
+    "text": "de",
+    "start": 74.07,
+    "end": 74.23
+  },
+  {
+    "id": "w143",
+    "text": "helft",
+    "start": 74.23,
+    "end": 74.71
+  },
+  {
+    "id": "w144",
+    "text": "wat",
+    "start": 75.03,
+    "end": 75.35
+  },
+  {
+    "id": "w145",
+    "text": "je",
+    "start": 75.35,
+    "end": 75.67
+  },
+  {
+    "id": "w146",
+    "text": "eigenlijk",
+    "start": 75.67,
+    "end": 76.15
+  },
+  {
+    "id": "w147",
+    "text": "verliest",
+    "start": 76.15,
+    "end": 76.71
+  },
+  {
+    "id": "w148",
+    "text": "aan",
+    "start": 76.71,
+    "end": 76.87
+  },
+  {
+    "id": "w149",
+    "text": "subsidie.",
+    "start": 76.87,
+    "end": 77.99
+  },
+  {
+    "id": "w150",
+    "text": "Maar",
+    "start": 79.59,
+    "end": 79.91
+  },
+  {
+    "id": "w151",
+    "text": "ze",
+    "start": 80.07,
+    "end": 80.31
+  },
+  {
+    "id": "w152",
+    "text": "hebben",
+    "start": 80.31,
+    "end": 80.47
+  },
+  {
+    "id": "w153",
+    "text": "een",
+    "start": 80.47,
+    "end": 80.55
+  },
+  {
+    "id": "w154",
+    "text": "uitzondering",
+    "start": 80.55,
+    "end": 81.27
+  },
+  {
+    "id": "w155",
+    "text": "gemaakt",
+    "start": 81.27,
+    "end": 81.59
+  },
+  {
+    "id": "w156",
+    "text": "de",
+    "start": 81.67,
+    "end": 81.75
+  },
+  {
+    "id": "w157",
+    "text": "regel.",
+    "start": 81.75,
+    "end": 82.15
+  },
+  {
+    "id": "w158",
+    "text": "Koop",
+    "start": 82.39,
+    "end": 82.71
+  },
+  {
+    "id": "w159",
+    "text": "jij",
+    "start": 82.71,
+    "end": 82.87
+  },
+  {
+    "id": "w160",
+    "text": "je",
+    "start": 82.87,
+    "end": 82.95
+  },
+  {
+    "id": "w161",
+    "text": "warmtepomp",
+    "start": 82.95,
+    "end": 83.67
+  },
+  {
+    "id": "w162",
+    "text": "voor",
+    "start": 83.67,
+    "end": 83.91
+  },
+  {
+    "id": "w163",
+    "text": "31",
+    "start": 83.91,
+    "end": 84.55
+  },
+  {
+    "id": "w164",
+    "text": "december",
+    "start": 84.55,
+    "end": 85.03
+  },
+  {
+    "id": "w165",
+    "text": "2026",
+    "start": 85.03,
+    "end": 86.39
+  },
+  {
+    "id": "w166",
+    "text": "krijg",
+    "start": 87.03,
+    "end": 87.35
+  },
+  {
+    "id": "w167",
+    "text": "je",
+    "start": 87.35,
+    "end": 87.43
+  },
+  {
+    "id": "w168",
+    "text": "nog",
+    "start": 87.43,
+    "end": 87.59
+  },
+  {
+    "id": "w169",
+    "text": "wel",
+    "start": 87.59,
+    "end": 87.75
+  },
+  {
+    "id": "w170",
+    "text": "een",
+    "start": 87.75,
+    "end": 87.83
+  },
+  {
+    "id": "w171",
+    "text": "subsidie",
+    "start": 87.83,
+    "end": 88.31
+  },
+  {
+    "id": "w172",
+    "text": "uit",
+    "start": 88.31,
+    "end": 88.47
+  },
+  {
+    "id": "w173",
+    "text": "2026.",
+    "start": 88.47,
+    "end": 89.43
+  },
+  {
+    "id": "w174",
+    "text": "Ook",
+    "start": 89.43,
+    "end": 89.75
+  },
+  {
+    "id": "w175",
+    "text": "al",
+    "start": 89.75,
+    "end": 89.83
+  },
+  {
+    "id": "w176",
+    "text": "wordt",
+    "start": 89.83,
+    "end": 89.99
+  },
+  {
+    "id": "w177",
+    "text": "die",
+    "start": 89.99,
+    "end": 90.15
+  },
+  {
+    "id": "w178",
+    "text": "in",
+    "start": 90.15,
+    "end": 90.31
+  },
+  {
+    "id": "w179",
+    "text": "2027",
+    "start": 90.31,
+    "end": 91.35
+  },
+  {
+    "id": "w180",
+    "text": "geïnleerd.",
+    "start": 91.35,
+    "end": 91.91
+  },
+  {
+    "id": "w181",
+    "text": "Dat",
+    "start": 91.91,
+    "end": 92.07
+  },
+  {
+    "id": "w182",
+    "text": "geeft",
+    "start": 92.07,
+    "end": 92.39
+  },
+  {
+    "id": "w183",
+    "text": "dan",
+    "start": 92.39,
+    "end": 92.55
+  },
+  {
+    "id": "w184",
+    "text": "niet.",
+    "start": 92.55,
+    "end": 93.19
+  },
+  {
+    "id": "w185",
+    "text": "Wat",
+    "start": 97.35,
+    "end": 97.75
+  },
+  {
+    "id": "w186",
+    "text": "je",
+    "start": 97.75,
+    "end": 97.99
+  },
+  {
+    "id": "w187",
+    "text": "dus",
+    "start": 97.99,
+    "end": 98.15
+  },
+  {
+    "id": "w188",
+    "text": "moet",
+    "start": 98.15,
+    "end": 98.31
+  },
+  {
+    "id": "w189",
+    "text": "doen",
+    "start": 98.31,
+    "end": 98.47
+  },
+  {
+    "id": "w190",
+    "text": "is",
+    "start": 98.55,
+    "end": 98.71
+  },
+  {
+    "id": "w191",
+    "text": "een",
+    "start": 98.71,
+    "end": 98.87
+  },
+  {
+    "id": "w192",
+    "text": "offerte",
+    "start": 98.87,
+    "end": 99.43
+  },
+  {
+    "id": "w193",
+    "text": "aanvragen.",
+    "start": 99.43,
+    "end": 100.39
+  },
+  {
+    "id": "w194",
+    "text": "Die",
+    "start": 100.39,
+    "end": 100.71
+  },
+  {
+    "id": "w195",
+    "text": "ondertekenen",
+    "start": 100.71,
+    "end": 101.67
+  },
+  {
+    "id": "w196",
+    "text": "en",
+    "start": 101.67,
+    "end": 101.99
+  },
+  {
+    "id": "w197",
+    "text": "hem",
+    "start": 101.99,
+    "end": 102.23
+  },
+  {
+    "id": "w198",
+    "text": "aanbetalen.",
+    "start": 102.23,
+    "end": 103.03
+  },
+  {
+    "id": "w199",
+    "text": "Dat",
+    "start": 103.03,
+    "end": 103.27
+  },
+  {
+    "id": "w200",
+    "text": "is",
+    "start": 103.27,
+    "end": 103.35
+  },
+  {
+    "id": "w201",
+    "text": "het",
+    "start": 103.35,
+    "end": 103.51
+  },
+  {
+    "id": "w202",
+    "text": "bewijs",
+    "start": 103.51,
+    "end": 103.83
+  },
+  {
+    "id": "w203",
+    "text": "dat",
+    "start": 103.83,
+    "end": 103.99
+  },
+  {
+    "id": "w204",
+    "text": "je",
+    "start": 103.99,
+    "end": 104.07
+  },
+  {
+    "id": "w205",
+    "text": "hem",
+    "start": 104.07,
+    "end": 104.23
+  },
+  {
+    "id": "w206",
+    "text": "hebt",
+    "start": 104.23,
+    "end": 104.47
+  },
+  {
+    "id": "w207",
+    "text": "aangekocht",
+    "start": 104.47,
+    "end": 105.11
+  },
+  {
+    "id": "w208",
+    "text": "in",
+    "start": 105.11,
+    "end": 105.27
+  },
+  {
+    "id": "w209",
+    "text": "2026.",
+    "start": 105.27,
+    "end": 106.55
+  },
+  {
+    "id": "w210",
+    "text": "En",
+    "start": 106.71,
+    "end": 106.87
+  },
+  {
+    "id": "w211",
+    "text": "wanneer",
+    "start": 106.87,
+    "end": 107.27
+  },
+  {
+    "id": "w212",
+    "text": "dan",
+    "start": 107.27,
+    "end": 107.43
+  },
+  {
+    "id": "w213",
+    "text": "wordt",
+    "start": 107.59,
+    "end": 107.75
+  },
+  {
+    "id": "w214",
+    "text": "geïnstalleerd,",
+    "start": 107.75,
+    "end": 108.39
+  },
+  {
+    "id": "w215",
+    "text": "dat",
+    "start": 108.39,
+    "end": 108.55
+  },
+  {
+    "id": "w216",
+    "text": "maakt",
+    "start": 108.55,
+    "end": 108.79
+  },
+  {
+    "id": "w217",
+    "text": "dan",
+    "start": 108.79,
+    "end": 109.03
+  },
+  {
+    "id": "w218",
+    "text": "niet",
+    "start": 109.35,
+    "end": 109.67
+  },
+  {
+    "id": "w219",
+    "text": "uit,",
+    "start": 109.67,
+    "end": 110.15
+  },
+  {
+    "id": "w220",
+    "text": "als",
+    "start": 110.15,
+    "end": 110.31
+  },
+  {
+    "id": "w221",
+    "text": "het",
+    "start": 110.31,
+    "end": 110.47
+  },
+  {
+    "id": "w222",
+    "text": "2027",
+    "start": 110.87,
+    "end": 111.99
+  },
+  {
+    "id": "w223",
+    "text": "is.",
+    "start": 111.99,
+    "end": 112.63
+  },
+  {
+    "id": "w224",
+    "text": "En",
+    "start": 123.36,
+    "end": 123.68
+  },
+  {
+    "id": "w225",
+    "text": "dan",
+    "start": 123.68,
+    "end": 123.84
+  },
+  {
+    "id": "w226",
+    "text": "zijn",
+    "start": 124,
+    "end": 124.24
+  },
+  {
+    "id": "w227",
+    "text": "nog",
+    "start": 124.24,
+    "end": 124.4
+  },
+  {
+    "id": "w228",
+    "text": "twee",
+    "start": 124.4,
+    "end": 124.64
+  },
+  {
+    "id": "w229",
+    "text": "extra",
+    "start": 124.64,
+    "end": 125.04
+  },
+  {
+    "id": "w230",
+    "text": "dingen",
+    "start": 125.04,
+    "end": 125.28
+  },
+  {
+    "id": "w231",
+    "text": "waar",
+    "start": 125.44,
+    "end": 125.6
+  },
+  {
+    "id": "w232",
+    "text": "je",
+    "start": 125.76,
+    "end": 125.92
+  },
+  {
+    "id": "w233",
+    "text": "nog",
+    "start": 125.92,
+    "end": 126.08
+  },
+  {
+    "id": "w234",
+    "text": "eventueel",
+    "start": 126.08,
+    "end": 126.4
+  },
+  {
+    "id": "w235",
+    "text": "nog",
+    "start": 126.48,
+    "end": 126.56
+  },
+  {
+    "id": "w236",
+    "text": "meer",
+    "start": 126.56,
+    "end": 126.72
+  },
+  {
+    "id": "w237",
+    "text": "subsidies",
+    "start": 126.72,
+    "end": 127.2
+  },
+  {
+    "id": "w238",
+    "text": "zou",
+    "start": 127.2,
+    "end": 127.36
+  },
+  {
+    "id": "w239",
+    "text": "kunnen",
+    "start": 127.36,
+    "end": 127.6
+  },
+  {
+    "id": "w240",
+    "text": "krijgen.",
+    "start": 127.6,
+    "end": 127.92
+  },
+  {
+    "id": "w241",
+    "text": "En",
+    "start": 128.08,
+    "end": 128.24
+  },
+  {
+    "id": "w242",
+    "text": "dat",
+    "start": 128.24,
+    "end": 128.4
+  },
+  {
+    "id": "w243",
+    "text": "is",
+    "start": 128.4,
+    "end": 128.64
+  },
+  {
+    "id": "w244",
+    "text": "als",
+    "start": 128.64,
+    "end": 128.8
+  },
+  {
+    "id": "w245",
+    "text": "een",
+    "start": 128.8,
+    "end": 128.88
+  },
+  {
+    "id": "w246",
+    "text": "warmtepomp",
+    "start": 128.96,
+    "end": 129.68
+  },
+  {
+    "id": "w247",
+    "text": "smartgrid",
+    "start": 129.68,
+    "end": 130.24
+  },
+  {
+    "id": "w248",
+    "text": "is,",
+    "start": 130.56,
+    "end": 130.72
+  },
+  {
+    "id": "w249",
+    "text": "betekent",
+    "start": 130.96,
+    "end": 131.2
+  },
+  {
+    "id": "w250",
+    "text": "dat",
+    "start": 131.2,
+    "end": 131.36
+  },
+  {
+    "id": "w251",
+    "text": "je",
+    "start": 131.36,
+    "end": 131.44
+  },
+  {
+    "id": "w252",
+    "text": "kan",
+    "start": 131.44,
+    "end": 131.68
+  },
+  {
+    "id": "w253",
+    "text": "communiceren",
+    "start": 131.68,
+    "end": 132.56
+  },
+  {
+    "id": "w254",
+    "text": "met",
+    "start": 132.56,
+    "end": 132.88
+  },
+  {
+    "id": "w255",
+    "text": "andere",
+    "start": 133.04,
+    "end": 133.36
+  },
+  {
+    "id": "w256",
+    "text": "apparaten.",
+    "start": 133.52,
+    "end": 137.76
+  },
+  {
+    "id": "w257",
+    "text": "Daar",
+    "start": 157.92,
+    "end": 158.32
+  },
+  {
+    "id": "w258",
+    "text": "krijg",
+    "start": 158.32,
+    "end": 158.72
+  },
+  {
+    "id": "w259",
+    "text": "je",
+    "start": 158.72,
+    "end": 158.8
+  },
+  {
+    "id": "w260",
+    "text": "nog",
+    "start": 158.8,
+    "end": 158.96
+  },
+  {
+    "id": "w261",
+    "text": "eens",
+    "start": 158.96,
+    "end": 159.2
+  },
+  {
+    "id": "w262",
+    "text": "200",
+    "start": 159.2,
+    "end": 159.76
+  },
+  {
+    "id": "w263",
+    "text": "euro",
+    "start": 159.76,
+    "end": 160
+  },
+  {
+    "id": "w264",
+    "text": "extra",
+    "start": 160.16,
+    "end": 160.56
+  },
+  {
+    "id": "w265",
+    "text": "subsidie",
+    "start": 160.56,
+    "end": 161.28
+  },
+  {
+    "id": "w266",
+    "text": "op.",
+    "start": 161.28,
+    "end": 161.92
+  },
+  {
+    "id": "w267",
+    "text": "En",
+    "start": 164.8,
+    "end": 165.12
+  },
+  {
+    "id": "w268",
+    "text": "als",
+    "start": 165.12,
+    "end": 165.36
+  },
+  {
+    "id": "w269",
+    "text": "je",
+    "start": 165.36,
+    "end": 165.52
+  },
+  {
+    "id": "w270",
+    "text": "een",
+    "start": 165.52,
+    "end": 165.6
+  },
+  {
+    "id": "w271",
+    "text": "warmtepomp",
+    "start": 165.68,
+    "end": 166.48
+  },
+  {
+    "id": "w272",
+    "text": "en",
+    "start": 166.48,
+    "end": 166.64
+  },
+  {
+    "id": "w273",
+    "text": "energielabel",
+    "start": 166.64,
+    "end": 167.36
+  },
+  {
+    "id": "w274",
+    "text": "heeft",
+    "start": 167.44,
+    "end": 167.6
+  },
+  {
+    "id": "w275",
+    "text": "van",
+    "start": 167.68,
+    "end": 167.92
+  },
+  {
+    "id": "w276",
+    "text": "A",
+    "start": 167.92,
+    "end": 168.16
+  },
+  {
+    "id": "w277",
+    "text": "plus",
+    "start": 168.24,
+    "end": 168.4
+  },
+  {
+    "id": "w278",
+    "text": "Plus,",
+    "start": 168.56,
+    "end": 169.2
+  },
+  {
+    "id": "w279",
+    "text": "krijg",
+    "start": 169.2,
+    "end": 169.44
+  },
+  {
+    "id": "w280",
+    "text": "je",
+    "start": 169.44,
+    "end": 169.52
+  },
+  {
+    "id": "w281",
+    "text": "nog",
+    "start": 169.52,
+    "end": 169.68
+  },
+  {
+    "id": "w282",
+    "text": "eens",
+    "start": 169.68,
+    "end": 169.92
+  },
+  {
+    "id": "w283",
+    "text": "250",
+    "start": 169.92,
+    "end": 170.72
+  },
+  {
+    "id": "w284",
+    "text": "euro",
+    "start": 170.72,
+    "end": 170.96
+  },
+  {
+    "id": "w285",
+    "text": "extra",
+    "start": 170.96,
+    "end": 171.36
+  },
+  {
+    "id": "w286",
+    "text": "subsidie.",
+    "start": 171.36,
+    "end": 172.48
+  },
+  {
+    "id": "w287",
+    "text": "Sip,",
+    "start": 177.52,
+    "end": 178.16
+  },
+  {
+    "id": "w288",
+    "text": "skip.",
+    "start": 178.16,
+    "end": 180
+  },
+  {
+    "id": "w289",
+    "text": "En",
+    "start": 181.29,
+    "end": 181.53
+  },
+  {
+    "id": "w290",
+    "text": "als",
+    "start": 181.53,
+    "end": 181.69
+  },
+  {
+    "id": "w291",
+    "text": "jij",
+    "start": 181.69,
+    "end": 181.93
+  },
+  {
+    "id": "w292",
+    "text": "een",
+    "start": 181.93,
+    "end": 182.01
+  },
+  {
+    "id": "w293",
+    "text": "warmtepomp",
+    "start": 182.01,
+    "end": 182.65
+  },
+  {
+    "id": "w294",
+    "text": "kiest",
+    "start": 182.65,
+    "end": 182.89
+  },
+  {
+    "id": "w295",
+    "text": "met",
+    "start": 182.89,
+    "end": 183.05
+  },
+  {
+    "id": "w296",
+    "text": "label",
+    "start": 183.05,
+    "end": 183.37
+  },
+  {
+    "id": "w297",
+    "text": "A",
+    "start": 183.37,
+    "end": 183.69
+  },
+  {
+    "id": "w298",
+    "text": "plus",
+    "start": 183.69,
+    "end": 184.01
+  },
+  {
+    "id": "w299",
+    "text": "plus",
+    "start": 184.01,
+    "end": 184.25
+  },
+  {
+    "id": "w300",
+    "text": "plus,",
+    "start": 184.25,
+    "end": 184.57
+  },
+  {
+    "id": "w301",
+    "text": "krijg",
+    "start": 184.57,
+    "end": 184.81
+  },
+  {
+    "id": "w302",
+    "text": "je",
+    "start": 184.81,
+    "end": 184.89
+  },
+  {
+    "id": "w303",
+    "text": "nog",
+    "start": 184.89,
+    "end": 185.05
+  },
+  {
+    "id": "w304",
+    "text": "eens",
+    "start": 185.05,
+    "end": 185.29
+  },
+  {
+    "id": "w305",
+    "text": "200",
+    "start": 185.29,
+    "end": 185.69
+  },
+  {
+    "id": "w306",
+    "text": "euro",
+    "start": 185.69,
+    "end": 186.01
+  },
+  {
+    "id": "w307",
+    "text": "extra",
+    "start": 186.01,
+    "end": 186.33
+  },
+  {
+    "id": "w308",
+    "text": "subsidie",
+    "start": 186.33,
+    "end": 186.81
+  },
+  {
+    "id": "w309",
+    "text": "als",
+    "start": 186.89,
+    "end": 187.05
+  },
+  {
+    "id": "w310",
+    "text": "die",
+    "start": 187.05,
+    "end": 187.21
+  },
+  {
+    "id": "w311",
+    "text": "valt",
+    "start": 187.21,
+    "end": 187.53
+  },
+  {
+    "id": "w312",
+    "text": "onder",
+    "start": 187.53,
+    "end": 187.77
+  },
+  {
+    "id": "w313",
+    "text": "de",
+    "start": 187.77,
+    "end": 187.85
+  },
+  {
+    "id": "w314",
+    "text": "2026",
+    "start": 187.85,
+    "end": 188.81
+  },
+  {
+    "id": "w315",
+    "text": "regeling",
+    "start": 188.81,
+    "end": 189.21
+  },
+  {
+    "id": "w316",
+    "text": "en",
+    "start": 189.29,
+    "end": 189.45
+  },
+  {
+    "id": "w317",
+    "text": "250",
+    "start": 189.45,
+    "end": 190.17
+  },
+  {
+    "id": "w318",
+    "text": "euro",
+    "start": 190.17,
+    "end": 190.49
+  },
+  {
+    "id": "w319",
+    "text": "extra",
+    "start": 190.49,
+    "end": 190.81
+  },
+  {
+    "id": "w320",
+    "text": "subsidie",
+    "start": 190.81,
+    "end": 191.29
+  },
+  {
+    "id": "w321",
+    "text": "als",
+    "start": 191.29,
+    "end": 191.45
+  },
+  {
+    "id": "w322",
+    "text": "die",
+    "start": 191.45,
+    "end": 191.61
+  },
+  {
+    "id": "w323",
+    "text": "valt",
+    "start": 191.61,
+    "end": 191.85
+  },
+  {
+    "id": "w324",
+    "text": "onder",
+    "start": 191.85,
+    "end": 192.09
+  },
+  {
+    "id": "w325",
+    "text": "2027.",
+    "start": 192.09,
+    "end": 193.85
+  },
+  {
+    "id": "w326",
+    "text": "Wil",
+    "start": 198.17,
+    "end": 198.49
+  },
+  {
+    "id": "w327",
+    "text": "jij",
+    "start": 198.49,
+    "end": 198.73
+  },
+  {
+    "id": "w328",
+    "text": "dit",
+    "start": 198.73,
+    "end": 198.97
+  },
+  {
+    "id": "w329",
+    "text": "jaar",
+    "start": 198.97,
+    "end": 199.13
+  },
+  {
+    "id": "w330",
+    "text": "nog",
+    "start": 199.21,
+    "end": 199.37
+  },
+  {
+    "id": "w331",
+    "text": "een",
+    "start": 199.37,
+    "end": 199.45
+  },
+  {
+    "id": "w332",
+    "text": "warmtepomp",
+    "start": 199.45,
+    "end": 200.09
+  },
+  {
+    "id": "w333",
+    "text": "kopen?",
+    "start": 200.09,
+    "end": 200.41
+  },
+  {
+    "id": "w334",
+    "text": "Reageer",
+    "start": 200.41,
+    "end": 200.97
+  },
+  {
+    "id": "w335",
+    "text": "dan",
+    "start": 200.97,
+    "end": 201.13
+  },
+  {
+    "id": "w336",
+    "text": "aanbod",
+    "start": 201.13,
+    "end": 201.61
+  },
+  {
+    "id": "w337",
+    "text": "in",
+    "start": 201.61,
+    "end": 201.69
+  },
+  {
+    "id": "w338",
+    "text": "de",
+    "start": 201.69,
+    "end": 201.77
+  },
+  {
+    "id": "w339",
+    "text": "reacties.",
+    "start": 201.77,
+    "end": 202.25
+  },
+  {
+    "id": "w340",
+    "text": "Dan",
+    "start": 202.25,
+    "end": 202.33
+  },
+  {
+    "id": "w341",
+    "text": "stuur",
+    "start": 202.41,
+    "end": 202.65
+  },
+  {
+    "id": "w342",
+    "text": "ik",
+    "start": 202.65,
+    "end": 202.73
+  },
+  {
+    "id": "w343",
+    "text": "je",
+    "start": 202.73,
+    "end": 202.81
+  },
+  {
+    "id": "w344",
+    "text": "een",
+    "start": 202.89,
+    "end": 202.97
+  },
+  {
+    "id": "w345",
+    "text": "link",
+    "start": 202.97,
+    "end": 203.13
+  },
+  {
+    "id": "w346",
+    "text": "waarin",
+    "start": 203.21,
+    "end": 203.45
+  },
+  {
+    "id": "w347",
+    "text": "je",
+    "start": 203.45,
+    "end": 203.61
+  },
+  {
+    "id": "w348",
+    "text": "een",
+    "start": 203.61,
+    "end": 203.77
+  },
+  {
+    "id": "w349",
+    "text": "offerte",
+    "start": 203.77,
+    "end": 204.09
+  },
+  {
+    "id": "w350",
+    "text": "kan",
+    "start": 204.09,
+    "end": 204.25
+  },
+  {
+    "id": "w351",
+    "text": "aanvragen.",
+    "start": 204.25,
+    "end": 204.73
+  },
+  {
+    "id": "w352",
+    "text": "En",
+    "start": 204.73,
+    "end": 204.81
+  },
+  {
+    "id": "w353",
+    "text": "dan",
+    "start": 204.81,
+    "end": 204.97
+  },
+  {
+    "id": "w354",
+    "text": "gaan",
+    "start": 204.97,
+    "end": 205.13
+  },
+  {
+    "id": "w355",
+    "text": "wij",
+    "start": 205.13,
+    "end": 205.37
+  },
+  {
+    "id": "w356",
+    "text": "zorgen",
+    "start": 205.37,
+    "end": 205.69
+  },
+  {
+    "id": "w357",
+    "text": "dat",
+    "start": 205.69,
+    "end": 205.77
+  },
+  {
+    "id": "w358",
+    "text": "jij",
+    "start": 205.77,
+    "end": 205.93
+  },
+  {
+    "id": "w359",
+    "text": "nog",
+    "start": 205.93,
+    "end": 206.09
+  },
+  {
+    "id": "w360",
+    "text": "die",
+    "start": 206.09,
+    "end": 206.25
+  },
+  {
+    "id": "w361",
+    "text": "hoge",
+    "start": 206.25,
+    "end": 206.57
+  },
+  {
+    "id": "w362",
+    "text": "subsidies",
+    "start": 206.57,
+    "end": 207.05
+  },
+  {
+    "id": "w363",
+    "text": "kan",
+    "start": 207.13,
+    "end": 207.29
+  },
+  {
+    "id": "w364",
+    "text": "krijgen",
+    "start": 207.29,
+    "end": 207.53
+  },
+  {
+    "id": "w365",
+    "text": "voor",
+    "start": 207.53,
+    "end": 207.61
+  },
+  {
+    "id": "w366",
+    "text": "jouw",
+    "start": 207.61,
+    "end": 207.77
+  },
+  {
+    "id": "w367",
+    "text": "warmtepomp.",
+    "start": 207.77,
+    "end": 209.05
+  }
+]

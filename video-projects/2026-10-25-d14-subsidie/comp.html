@@ -1,0 +1,296 @@
+<!doctype html>
+<!-- D14 · Subsidie warmtepomp · versie __VERSION__  (gegenereerd door build.py uit comp.html) -->
+<html lang="nl" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/brand-tokens.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--brand-bg); }
+      body { font-family: var(--font-display); color: var(--brand-text); }
+
+      #face-wrapper { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 625px; }
+      #face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+      .anchor-text { position: absolute; left: 50px; right: 50px; top: 960px; transform: translateY(-50%);
+        text-align: center; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em;
+        -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 6px 24px rgba(0,0,0,0.55); opacity: 0; }
+      #hook { font-size: 88px; }
+      #hook .hl, #cta .big { color: var(--brand-accent); }
+      #cta .small { display: block; font-size: 54px; font-weight: 700; margin-bottom: 6px; }
+      #cta .big { display: block; font-size: 160px; }
+
+      #captions { position: absolute; left: 40px; right: 40px; top: 970px; height: 220px;
+        display: flex; align-items: center; justify-content: center; }
+      .chunk { position: absolute; width: 100%; text-align: center; font-size: 78px; font-weight: 800;
+        line-height: 1.1; -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 4px 18px rgba(0,0,0,0.6); opacity: 0; }
+      .w { display: inline-block; margin: 0 0.12em; }
+      .w.on { color: var(--brand-accent); }
+
+      #beeld-bg { position: absolute; left: 0; top: 1190px; width: 1080px; height: 730px; background: var(--brand-bg); opacity: 0; }
+      .card { position: absolute; left: 36px; top: 1225px; width: 846px; height: 560px; border-radius: 24px;
+        background: var(--brand-surface); border: 2px solid var(--brand-border); opacity: 0; overflow: hidden; }
+      .card .label { position: absolute; left: 40px; top: 34px; font-size: 34px; font-weight: 700; color: var(--brand-text-dim);
+        text-transform: uppercase; letter-spacing: 0.06em; }
+      .abs { position: absolute; }
+      .c { text-align: center; }
+      .orange { color: var(--brand-accent); }
+      .blue { color: var(--brand-warn); }
+
+      /* kalender */
+      .cal { position: absolute; left: 273px; top: 110px; width: 300px; height: 330px; border-radius: 22px; background: #fff;
+        overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,0.45); }
+      .cal .top { height: 92px; background: var(--brand-accent); color: var(--brand-bg); font-size: 54px; font-weight: 800;
+        display: flex; align-items: center; justify-content: center; letter-spacing: 0.08em; }
+      .cal .day { color: var(--brand-bg); font-size: 170px; font-weight: 800; text-align: center; line-height: 1.15; }
+      .cal .yr { color: #6b6b75; font-size: 40px; font-weight: 700; text-align: center; margin-top: -14px; }
+      .ring { position: absolute; left: 228px; top: 92px; width: 390px; height: 368px; border: 8px solid var(--brand-accent);
+        border-radius: 50%; transform: rotate(-8deg); }
+
+      /* staafjes */
+      .bar { position: absolute; bottom: 110px; width: 190px; border-radius: 18px 18px 6px 6px; transform-origin: bottom; }
+      .bar.b26 { left: 150px; height: 300px; background: var(--brand-accent); }
+      .bar.b27 { left: 506px; height: 160px; background: var(--brand-warn); }
+      .bval { position: absolute; width: 300px; font-size: 76px; font-weight: 800; text-align: center; }
+      .byr { position: absolute; bottom: 40px; width: 300px; font-size: 48px; font-weight: 800; text-align: center; }
+      .badge { position: absolute; right: 34px; top: 26px; padding: 12px 24px; border-radius: 999px; background: #e5484d;
+        color: #fff; font-size: 40px; font-weight: 800; }
+
+      /* uitzondering + tijdlijn */
+      .stamp { position: absolute; left: 50%; top: 36px; padding: 10px 34px; border: 6px solid var(--brand-accent); border-radius: 16px;
+        color: var(--brand-accent); font-size: 64px; font-weight: 800; letter-spacing: 0.04em; transform: translateX(-50%) rotate(-5deg); }
+      .tline { position: absolute; left: 60px; right: 60px; top: 330px; height: 8px; border-radius: 4px; background: var(--brand-border); transform-origin: left; }
+      .year { position: absolute; top: 352px; width: 300px; font-size: 60px; font-weight: 800; text-align: center; }
+      .dot { position: absolute; top: 316px; width: 36px; height: 36px; border-radius: 50%; background: var(--brand-accent); border: 6px solid var(--brand-surface); }
+      .pin { position: absolute; top: 172px; width: 380px; text-align: center; }
+      .pin b { display: block; font-size: 54px; font-weight: 800; }
+      .pin span { display: block; font-size: 36px; font-weight: 700; color: var(--brand-text-dim); }
+      .chip { position: absolute; top: 450px; width: 330px; padding: 12px 0; border-radius: 999px; text-align: center;
+        font-size: 40px; font-weight: 800; background: var(--brand-accent); color: var(--brand-bg); }
+
+      /* stappen */
+      .step { position: absolute; left: 40px; height: 88px; display: flex; align-items: center; gap: 26px; font-size: 56px; font-weight: 800; }
+      .num { width: 80px; height: 80px; border-radius: 50%; background: var(--brand-surface-2); border: 4px solid var(--brand-accent);
+        color: var(--brand-accent); display: flex; align-items: center; justify-content: center; font-size: 46px; }
+      .proof { position: absolute; left: 40px; right: 40px; top: 430px; height: 96px; border-radius: 20px; background: var(--brand-accent);
+        color: var(--brand-bg); font-size: 54px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+      /* reactie-bubbel */
+      .bubble { position: absolute; left: 40px; top: 170px; width: 640px; height: 150px; border-radius: 28px; background: #fff;
+        display: flex; align-items: center; gap: 24px; padding: 0 30px; box-shadow: 0 16px 36px rgba(0,0,0,0.4); }
+      .avatar { width: 84px; height: 84px; border-radius: 50%; background: var(--brand-warn); flex: none; }
+      .bubble .who { font-size: 30px; font-weight: 700; color: #6b6b75; }
+      .bubble .txt { font-size: 60px; font-weight: 800; color: var(--brand-bg); letter-spacing: 0.02em; }
+      .heart { position: absolute; left: 700px; top: 215px; font-size: 64px; color: #e5484d; }
+      .linkrow { position: absolute; left: 40px; top: 380px; font-size: 50px; font-weight: 800; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__TOTAL__" data-width="1080" data-height="1920">
+      <div id="face-wrapper">
+        <video id="face" src="assets/source.mp4" muted playsinline data-start="0" data-duration="__TOTAL__" data-track-index="0"></video>
+      </div>
+      <audio id="face-audio" src="assets/source.mp4" data-start="0" data-duration="__TOTAL__" data-track-index="9"></audio>
+__AUDIO__
+      <div id="beeld-bg" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="3"></div>
+      <div id="beeld-layer" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="4"></div>
+      <div id="captions" class="clip" data-start="0" data-duration="__TOTAL__" data-track-index="5"></div>
+      <div id="hook" class="anchor-text clip" data-start="0" data-duration="__TOTAL__" data-track-index="6"></div>
+      <div id="cta" class="anchor-text clip" data-start="0" data-duration="__TOTAL__" data-track-index="7"></div>
+    </div>
+
+    <script>
+      const VERSION = "__VERSION__";
+      const H = __H__;              // duur hook = start body
+      const TOTAL = __TOTAL__;
+      const WORDS = __WORDS__;      // [tekst, start, eind] — Parakeet, per versie
+      const B = (t) => H + t;       // body-tijd -> absolute tijd
+      const CTA_START = TOTAL - 2;
+
+      const HOOKS = {
+        A: { text: 'Warmtepomp? Koop vóór <span class="hl">31 december</span>', end: 2.0 },
+        B: { text: 'Subsidie warmtepomp <span class="hl">halveert bijna</span>', end: 2.0 },
+        C: { text: 'Nog <span class="hl">54 dagen</span> tot subsidie halveert', end: 2.0 },
+      };
+      const PUNCH = {
+        A: [[0, 1.08], [2.4, 1.16]],
+        B: [[0, 1.08], [4.0, 1.16]],
+        C: [[0, 1.08], [2.08, 1.16]],
+      }[VERSION].concat([[B(0), 1.08], [B(3.95), 1.16], [B(16.25), 1.08], [B(22.95), 1.16],
+                         [B(29.6), 1.08], [B(38.85), 1.16], [B(44.65), 1.08]]);
+
+      const tl = gsap.timeline({ paused: true });
+      const $ = (s) => document.querySelector(s);
+      const layer = $("#beeld-layer");
+
+      gsap.set("#face-wrapper", { y: -91 });           // ogen 625 -> 534
+      PUNCH.forEach(([t, s]) => tl.set("#face-wrapper", { scale: s }, t));
+
+      // ---------- helpers ----------
+      function card(html, start, end, splitOwner = true) {
+        const el = document.createElement("div");
+        el.className = "card";
+        el.innerHTML = html;
+        layer.appendChild(el);
+        tl.fromTo(el, { opacity: 0, y: 70, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "expo.out" }, start);
+        tl.to(el, { opacity: 0, y: -30, duration: 0.18, ease: "power2.in" }, end - 0.18);
+        return el;
+      }
+      const q = (el, s) => el.querySelector(s);
+      const pop = (target, t, from = { scale: 0, opacity: 0 }) =>
+        tl.fromTo(target, from, { scale: 1, opacity: 1, x: 0, y: 0, duration: 0.35, ease: "back.out(2)" }, t);
+      function countUp(el, from, to, t, d, fmt) {
+        const o = { v: from };
+        tl.set(el, { textContent: fmt(from) }, t - 0.001);
+        tl.to(o, { v: to, duration: d, ease: "power2.out", onUpdate: () => { el.textContent = fmt(Math.round(o.v)); } }, t);
+      }
+      // split-vensters: beeld-bg aan (onderste helft dicht)
+      function split(a, b) { tl.set("#beeld-bg", { opacity: 1 }, a); tl.set("#beeld-bg", { opacity: 0 }, b); }
+
+      // ---------- HOOK-beelden ----------
+      const hookEnd = H;
+      function calendar(start, label) {
+        const el = card(`<div class="label">${label}</div>
+          <div class="cal"><div class="top">DEC</div><div class="day">31</div><div class="yr">2026</div></div>
+          <div class="ring"></div>`, start, hookEnd + 0.1);
+        pop(q(el, ".cal"), start + 0.05, { scale: 0.6, opacity: 0, rotation: -8 });
+        tl.fromTo(q(el, ".ring"), { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, start + 0.45);
+      }
+      if (VERSION === "A") { split(3.2, hookEnd); calendar(3.2, "Koop vóór"); }
+      if (VERSION === "B") {
+        split(1.76, hookEnd);
+        const el = card(`<div class="label">Subsidie warmtepomp</div>
+          <div class="abs c" style="left:0;right:0;top:110px;font-size:200px;font-weight:800;line-height:1" ><span class="arr orange" style="display:inline-block">↓</span></div>
+          <div class="abs c" style="left:0;right:0;top:340px;font-size:72px;font-weight:800">in <span class="orange">2027</span></div>
+          <div class="abs c" style="left:0;right:0;top:440px;font-size:46px;font-weight:700;color:var(--brand-text-dim)">bijna de helft minder</div>`, 1.76, 5.6);
+        tl.fromTo(q(el, ".arr"), { y: -60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "bounce.out" }, 1.85);
+        tl.to(q(el, ".arr"), { y: 14, duration: 0.35, yoyo: true, repeat: 4, ease: "sine.inOut" }, 2.3);
+        calendar(5.6, "Koop vóór");
+      }
+      if (VERSION === "C") {
+        split(0.8, hookEnd);
+        const el = card(`<div class="label">Aftellen</div>
+          <div class="abs c" style="left:0;right:0;top:100px;font-size:60px;font-weight:800">nog</div>
+          <div class="abs c n orange" style="left:0;right:0;top:160px;font-size:230px;font-weight:800;line-height:1">60</div>
+          <div class="abs c" style="left:0;right:0;top:400px;font-size:64px;font-weight:800">dagen</div>`, 0.8, hookEnd + 0.1);
+        countUp(q(el, ".n"), 60, 54, 0.85, 0.75, (v) => String(v));
+        tl.fromTo(q(el, ".n"), { scale: 1 }, { scale: 1.12, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 1.6);
+      }
+
+      // ---------- BODY-beelden (in alle versies gelijk) ----------
+      // S2  €225 -> €120 per kW
+      split(B(4.08), B(16.2));
+      {
+        const el = card(`<div class="label">Subsidie per kW</div>
+          <div class="bar b26"></div><div class="bar b27"></div>
+          <div class="bval v26 orange" style="left:95px;top:60px">€0</div>
+          <div class="bval v27 blue" style="left:451px;top:200px">€0</div>
+          <div class="byr" style="left:95px">2026</div><div class="byr y27" style="left:451px">2027</div>
+          <div class="badge">−€105 per kW</div>`, B(4.08), B(16.2));
+        tl.set([q(el, ".b27"), q(el, ".v27"), q(el, ".y27")], { opacity: 0 }, B(4.0));
+        tl.fromTo(q(el, ".b26"), { scaleY: 0 }, { scaleY: 1, duration: 0.9, ease: "power3.out" }, B(4.7));
+        countUp(q(el, ".v26"), 0, 225, B(4.7), 1.4, (v) => "€" + v);
+        tl.set([q(el, ".v27"), q(el, ".y27")], { opacity: 1 }, B(12.7));
+        tl.fromTo(q(el, ".b27"), { scaleY: 0, opacity: 1 }, { scaleY: 1, opacity: 1, duration: 0.8, ease: "power3.out" }, B(12.7));
+        countUp(q(el, ".v27"), 0, 120, B(12.7), 1.3, (v) => "€" + v);
+        pop(q(el, ".badge"), B(14.8));
+      }
+
+      // S5  uitzondering + tijdlijn 2026 | 2027
+      split(B(16.32), B(29.5));
+      {
+        const el = card(`<div class="stamp">UITZONDERING</div>
+          <div class="tline"></div>
+          <div class="year" style="left:61px">2026</div><div class="year" style="left:485px">2027</div>
+          <div class="dot d1" style="left:193px"></div><div class="dot d2" style="left:617px"></div>
+          <div class="pin p1" style="left:21px"><b>KOPEN</b><span>vóór 31 december</span></div>
+          <div class="pin p2" style="left:445px"><b>PLAATSEN</b><span>mag in 2027</span></div>
+          <div class="chip c1" style="left:46px">€225 per kW ✓</div>
+          <div class="chip c2" style="left:470px">Geeft niet ✓</div>`, B(16.32), B(29.5));
+        tl.fromTo(q(el, ".stamp"), { scale: 2.2, opacity: 0, xPercent: -50, rotation: -14 },
+                  { scale: 1, opacity: 1, xPercent: -50, rotation: -5, duration: 0.35, ease: "back.out(2.2)" }, B(17.12));
+        tl.set(el.querySelectorAll(".tline,.year,.dot,.pin,.chip"), { opacity: 0 }, B(16.2));
+        tl.fromTo(q(el, ".tline"), { scaleX: 0, opacity: 1 }, { scaleX: 1, opacity: 1, duration: 0.5, ease: "power2.out" }, B(18.72));
+        tl.to(el.querySelectorAll(".year"), { opacity: 1, duration: 0.25, stagger: 0.1 }, B(18.8));
+        pop(q(el, ".d1"), B(18.96)); pop(q(el, ".p1"), B(18.96), { opacity: 0, y: 30, scale: 0.9 });
+        pop(q(el, ".c1"), B(23.2), { opacity: 0, scale: 0.6 });
+        pop(q(el, ".d2"), B(25.92)); pop(q(el, ".p2"), B(25.92), { opacity: 0, y: 30, scale: 0.9 });
+        pop(q(el, ".c2"), B(28.16), { opacity: 0, scale: 0.6 });
+      }
+
+      // S6  offerte -> tekenen -> aanbetalen = bewijs
+      split(B(29.68), B(38.75));
+      {
+        const el = card(`<div class="label">Zo doe je het</div>
+          <div class="step s1" style="top:100px"><div class="num">1</div>Offerte aanvragen</div>
+          <div class="step s2" style="top:205px"><div class="num">2</div>Tekenen</div>
+          <div class="step s3" style="top:310px"><div class="num">3</div>Aanbetalen</div>
+          <div class="proof">= jouw bewijs ✓</div>`, B(29.68), B(38.75));
+        tl.set(el.querySelectorAll(".step,.proof"), { opacity: 0 }, B(29.6));
+        [[".s1", 31.04], [".s2", 32.88], [".s3", 34.4]].forEach(([s, t]) =>
+          tl.fromTo(q(el, s), { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, B(t)));
+        pop(q(el, ".proof"), B(35.68), { opacity: 0, scale: 0.7 });
+      }
+
+      // S7  FULL face (38.88–44.6) — geen beeld
+
+      // S8  CTA-kaart
+      split(B(44.72), TOTAL);
+      {
+        const el = card(`<div class="label">Nog dit jaar kopen?</div>
+          <div class="bubble"><div class="avatar"></div><div><div class="who">jij</div><div class="txt">AANBOD</div></div></div>
+          <div class="heart">♥</div>
+          <div class="linkrow">Jij krijgt een link voor je <span class="orange">offerte</span></div>`, B(44.72), TOTAL + 1);
+        tl.set(el.querySelectorAll(".bubble,.heart,.linkrow"), { opacity: 0 }, B(44.6));
+        pop(q(el, ".bubble"), B(47.68), { opacity: 0, scale: 0.6, y: 40 });
+        pop(q(el, ".heart"), B(48.3));
+        tl.fromTo(q(el, ".linkrow"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, B(49.52));
+      }
+
+      // ---------- HOOK-tekst ----------
+      const hook = HOOKS[VERSION];
+      $("#hook").innerHTML = hook.text;
+      tl.fromTo("#hook", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(1.6)" }, 0.02);
+      tl.to("#hook", { opacity: 0, duration: 0.12, ease: "power2.in" }, hook.end);
+
+      // ---------- CAPTIONS (2–3 woorden, breek op pauzes) ----------
+      const cap = $("#captions");
+      const ws = WORDS.filter(([, s]) => s >= hook.end - 0.05 && s < CTA_START);
+      const groups = [];
+      ws.forEach((w, i) => {
+        const g = groups[groups.length - 1];
+        const gap = g ? w[1] - g[g.length - 1][2] : 99;
+        const prevEnd = g && g[g.length - 1][3];
+        if (!g || prevEnd || g.length >= 3 || gap > 0.35 || g.map((x) => x[0]).join(" ").length > 18) groups.push([w]);
+        else g.push(w);
+      });
+      groups.forEach((g, i) => {
+        const el = document.createElement("div");
+        el.className = "chunk";
+        el.innerHTML = g.map(([w]) => `<span class="w">${w}</span>`).join(" ");
+        cap.appendChild(el);
+        const start = g[0][1];
+        const next = groups[i + 1];
+        const end = Math.min(next ? next[0][1] : g[g.length - 1][2] + 0.3, g[g.length - 1][2] + 0.6, CTA_START);
+        tl.set(el, { opacity: 1 }, start);
+        tl.set(el, { opacity: 0 }, end);
+        g.forEach(([, s, e], j) => {
+          tl.set(el.children[j], { className: "w on" }, s);
+          tl.set(el.children[j], { className: "w" }, Math.min(e, end));
+        });
+      });
+
+      // ---------- CTA ----------
+      $("#cta").innerHTML = `<span class="small">Reageer</span><span class="big">AANBOD</span>`;
+      tl.fromTo("#cta", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.8)" }, CTA_START);
+
+      tl.set({}, {}, TOTAL);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

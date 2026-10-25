@@ -1,0 +1,27 @@
+/* Sardo | Verduurzaming — brand tokens
+   Kopieer per project: cp ../../assets/brand-tokens.css assets/ && cp -r ../../assets/fonts assets/
+   Fonts staan lokaal (geen netwerk tijdens renderen). */
+
+@font-face { font-family: "Poppins"; font-weight: 500; src: url("fonts/poppins-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 600; src: url("fonts/poppins-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 700; src: url("fonts/poppins-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 800; src: url("fonts/poppins-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 500; src: url("fonts/poppins-latin-ext-500-normal.woff2") format("woff2"); unicode-range: U+0100-024F, U+20AC; }
+@font-face { font-family: "Poppins"; font-weight: 800; src: url("fonts/poppins-latin-ext-800-normal.woff2") format("woff2"); unicode-range: U+0100-024F, U+20AC; }
+
+:root {
+  /* Kleuren uit de Sardo-brochure */
+  --brand-bg: #19191e;
+  --brand-surface: #24242b;
+  --brand-surface-2: #2e2e37;
+  --brand-border: #3a3a45;
+  --brand-accent: #ffa62b;            /* oranje: actief caption-woord, CTA, bedragen */
+  --brand-accent-glow: rgba(255, 166, 43, 0.45);
+  --brand-warn: #82c0cc;              /* blauw: tweede accent, spaarzaam */
+  --brand-text: #ffffff;
+  --brand-text-dim: #b8bcc6;
+  --caption-stroke: rgba(0, 0, 0, 0.85);
+
+  --font-mono: "Poppins", ui-monospace, Menlo, monospace;
+  --font-display: "Poppins", system-ui, sans-serif;
+}

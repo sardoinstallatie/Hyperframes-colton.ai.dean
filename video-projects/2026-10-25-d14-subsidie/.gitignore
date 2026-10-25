@@ -1,0 +1,10 @@
+raw-media/
+work/
+renders/
+*.mp4
+*.wav
+*.m4a
+*.mp3
+*/assets/fonts/
+*/assets/vendor/
+.hyperframes/
