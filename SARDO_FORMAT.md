@@ -55,3 +55,7 @@ Zoek de ooghoogte één keer op met een still (frame bij ~1 s) en noteer de offs
 - Foto's/screenshots/B-roll levert Peter aan in de raw-map. Ontbreekt iets? Animatie maken of vragen.
 - Achtergrond van kaarten: `--brand-bg` met afgeronde hoeken (24 px), padding 40 px.
 - Geen tekst in de onderste ~120 px (y > 1800): daar komt de Instagram-caption overheen.
+
+## Uitzondering: Yapping-video's
+
+Bij yapping (tip/verhaal/mening) geldt de beeld-zone NIET. Peter staat de hele video FULL in beeld, captions + hook + CTA onder de kin (midden y≈1285), losse icoontjes horizontaal gecentreerd in y 1400–1790. Zie `templates/sardo-yapping/README.md`.

@@ -73,6 +73,14 @@ Lagen volgens `SARDO_FORMAT.md`:
 
 `npx hyperframes lint` + `node ../../scripts/preflight.mjs .` moeten schoon zijn.
 
+## 5b. YAPPING-video's (tip/verhaal/mening) — andere look!
+
+Is het een yapping-video (Peter zegt het, of categorie = Yapping)? **Gebruik `templates/sardo-yapping/`** (lees de README) i.p.v. de beeld-zone-opzet hierboven:
+- Peter **de hele video FULL** in beeld — geen grijs vlak/kaart, beeld niet halveren.
+- Captions, hook en CTA **onder de kin** (midden y≈1285), nooit over het gezicht.
+- Losse icoontjes (met schaduw + kort woordje) **horizontaal gecentreerd** in y 1400–1790, alleen 2–5 s op het moment dat Peter het zegt.
+- Goedgekeurd door Peter op 25-10-2026 (video yapping-0093). Niet opnieuw vragen, gewoon zo bouwen.
+
 ## 6. Check vóór Peter iets ziet
 
 1. Render 3 stills van versie A (hook ~1 s, midden, CTA) → zelf bekijken (Read) → fouten fixen.
