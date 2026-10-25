@@ -9,3 +9,6 @@ work/tr.log
 */.hyperframes/
 */render.log
 qa/
+cover/*.jpg
+cover/*.png
+cover/fonts/
