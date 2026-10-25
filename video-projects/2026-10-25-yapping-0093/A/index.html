@@ -1,0 +1,238 @@
+<!doctype html>
+<!--
+  SARDO-FORMAT TEMPLATE (zie ../../SARDO_FORMAT.md)
+  Kopieer deze map per hook-versie:  cp -r templates/sardo-format video-projects/<slug>/<A|B|C>
+  Pas daarna alleen het CONFIG-blok onderaan aan (duur, bron, hook, woorden, beelden, CTA).
+  Lagen:  face (zone 1, ogen op y≈534) · hook/CTA op ankerpunt y=960 · captions zone 2 · beeld-zone 3
+-->
+<html lang="nl" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/brand-tokens.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--brand-bg); }
+      body { font-family: var(--font-display); color: var(--brand-text); }
+
+      /* ZONE 1 — Peter. Wrapper is altijd full-frame; FACE_OFFSET_Y zet de ogen op y≈534. */
+      #face-wrapper { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 768px; }
+      #face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+      /* ANKERPUNT y=960 — hook-tekst en CTA */
+      .anchor-text { position: absolute; left: 60px; right: 60px; top: 960px; transform: translateY(-50%);
+        text-align: center; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em;
+        -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 6px 24px rgba(0,0,0,0.55); opacity: 0; }
+      #hook { font-size: 92px; }
+      #hook .hl, #cta .big { color: var(--brand-accent); }
+      #cta .small { display: block; font-size: 54px; font-weight: 700; margin-bottom: 6px; }
+      #cta .big { display: block; font-size: 160px; }
+
+      /* ZONE 2 — captions 970–1190 */
+      #captions { position: absolute; left: 40px; right: 40px; top: 970px; height: 220px;
+        display: flex; align-items: center; justify-content: center; }
+      .chunk { position: absolute; width: 100%; text-align: center; font-size: 78px; font-weight: 800;
+        line-height: 1.1; -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 4px 18px rgba(0,0,0,0.6); opacity: 0; }
+      .w { display: inline-block; margin: 0 0.12em; }
+      .w.on { color: var(--brand-accent); }
+
+      /* ZONE 3 — beeld 1205–1905, x 0–918 */
+      #beeld-bg { position: absolute; left: 0; top: 1190px; width: 1080px; height: 730px;
+        background: var(--brand-bg); opacity: 0; }
+      .beeld { position: absolute; left: 36px; top: 1225px; width: 846px; height: 560px; border-radius: 24px;
+        background: var(--brand-surface); border: 2px solid var(--brand-border); padding: 40px;
+        display: flex; flex-direction: column; justify-content: center; gap: 18px; opacity: 0; overflow: hidden; }
+      .beeld img, .beeld video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .beeld .label { font-size: 34px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+      .beeld .value { font-size: 96px; font-weight: 800; color: var(--brand-accent); line-height: 1; }
+      .beeld .line { font-size: 52px; font-weight: 700; line-height: 1.15; }
+      .beeld .arrow { color: var(--brand-warn); }
+    
+      #hook { font-size: 96px; text-wrap: balance; }
+      .scene { position: absolute; left: 36px; top: 1225px; width: 846px; height: 560px; border-radius: 24px;
+        background: var(--brand-surface); border: 2px solid var(--brand-border); opacity: 0; overflow: hidden; }
+      .ic { overflow: hidden; position: absolute; left: 34px; top: 110px; width: 340px; height: 340px; }
+      .ic svg { width: 100%; height: 100%; overflow: visible; }
+      .txt { position: absolute; left: 400px; right: 34px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+      .lab { font-size: 32px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+      .ln { font-size: 50px; font-weight: 800; line-height: 1.08; opacity: 0; }
+      .ln b, .kop b { color: var(--brand-accent); font-weight: 800; }
+      .val { white-space: nowrap; font-size: 82px; font-weight: 800; color: var(--brand-accent); line-height: 1; opacity: 0; letter-spacing: -0.02em; }
+      .kop { position: absolute; left: 40px; right: 40px; top: 30px; font-size: 48px; font-weight: 800; opacity: 0; }
+      .kaart { position: absolute; top: 112px; width: 368px; height: 412px; border-radius: 20px; background: var(--brand-surface-2);
+        border: 3px solid var(--brand-border); opacity: 0; }
+      .kaart .mini { position: absolute; left: 54px; top: 26px; width: 260px; height: 220px; }
+      .kaart .mini svg { width: 100%; height: 100%; overflow: visible; }
+      .kaart .k1 { position: absolute; left: 0; right: 0; top: 262px; text-align: center; font-size: 30px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: .05em; }
+      .kaart .k2 { position: absolute; left: 10px; right: 10px; top: 306px; text-align: center; font-size: 46px; font-weight: 800; line-height: 1.05; color: var(--brand-accent); }
+      .of { position: absolute; left: 390px; width: 66px; top: 290px; text-align: center; font-size: 40px; font-weight: 800; color: var(--brand-text-dim); opacity: 0; }
+      .stap { position: absolute; top: 50px; width: 264px; height: 460px; border-radius: 20px; background: var(--brand-surface-2);
+        border: 3px solid var(--brand-border); opacity: 0; overflow: hidden; }
+      .stap.on { border-color: var(--brand-accent); }
+      .stap .mini { position: absolute; left: 42px; top: 34px; width: 180px; height: 180px; }
+      .stap .mini svg { width: 100%; height: 100%; overflow: visible; }
+      .stap .s1 { position: absolute; left: 0; right: 0; top: 250px; text-align: center; font-size: 30px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: .05em; }
+      .stap .s2 { position: absolute; left: 8px; right: 8px; top: 286px; text-align: center; font-size: 31px; font-weight: 800; line-height: 1.08; }
+      .stap .nr { position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 44px; font-weight: 800; color: var(--brand-accent); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="49.22" data-width="1080" data-height="1920">
+      <div id="face-wrapper">
+        <video id="face" src="assets/source.mp4" muted playsinline data-start="0" data-duration="49.22" data-track-index="0"></video>
+      </div>
+      <audio id="face-audio" src="assets/source.mp4" data-start="0" data-duration="49.22" data-track-index="9"></audio>
+      <audio id="pop0" src="assets/pop.mp3" data-start="0.3" data-duration="0.6" data-track-index="10" data-volume="0.18"></audio>
+      <audio id="pop1" src="assets/pop.mp3" data-start="4.78" data-duration="0.6" data-track-index="11" data-volume="0.18"></audio>
+      <audio id="pop2" src="assets/pop.mp3" data-start="7.36" data-duration="0.6" data-track-index="12" data-volume="0.18"></audio>
+      <audio id="pop3" src="assets/pop.mp3" data-start="13.52" data-duration="0.6" data-track-index="13" data-volume="0.18"></audio>
+      <audio id="pop4" src="assets/pop.mp3" data-start="20.02" data-duration="0.6" data-track-index="14" data-volume="0.18"></audio>
+      <audio id="pop5" src="assets/pop.mp3" data-start="22.58" data-duration="0.6" data-track-index="15" data-volume="0.18"></audio>
+      <audio id="pop6" src="assets/pop.mp3" data-start="26.68" data-duration="0.6" data-track-index="16" data-volume="0.18"></audio>
+      <audio id="pop7" src="assets/pop.mp3" data-start="28.16" data-duration="0.6" data-track-index="17" data-volume="0.18"></audio>
+      <audio id="pop8" src="assets/pop.mp3" data-start="31.4" data-duration="0.6" data-track-index="18" data-volume="0.18"></audio>
+      <audio id="pop9" src="assets/pop.mp3" data-start="36.0" data-duration="0.6" data-track-index="19" data-volume="0.18"></audio>
+      <audio id="pop10" src="assets/pop.mp3" data-start="38.24" data-duration="0.6" data-track-index="20" data-volume="0.18"></audio>
+      <audio id="pop11" src="assets/pop.mp3" data-start="43.9" data-duration="0.6" data-track-index="21" data-volume="0.18"></audio>
+      <audio id="pop12" src="assets/pop.mp3" data-start="45.62" data-duration="0.6" data-track-index="22" data-volume="0.18"></audio>
+
+      <div id="beeld-bg" class="clip" data-start="0" data-duration="49.22" data-track-index="3"></div>
+      <div id="beeld-layer" class="clip" data-start="0" data-duration="49.22" data-track-index="4"></div>
+      <div id="captions" class="clip" data-start="0" data-duration="49.22" data-track-index="5"></div>
+      <div id="hook" class="anchor-text clip" data-start="0" data-duration="49.22" data-track-index="6"></div>
+      <div id="cta" class="anchor-text clip" data-start="0" data-duration="49.22" data-track-index="7"></div>
+    </div>
+
+    <script>
+      /* ======================= CONFIG — alleen dit aanpassen ======================= */
+      const CONFIG = {"duration": 49.22, "faceOffsetY": -234, "hook": {"text": "Klaar voor een <span class=\"hl\">warmtepomp</span>?", "end": 2.0}, "cta": {"word": "AANBOD", "start": 47.22}, "words": [], "chunkSize": 3, "beelden": [], "punchIns": [[0, 1.21], [4.64, 1.33], [10.08, 1.21], [13.32, 1.33], [19.88, 1.21], [27.68, 1.33], [30.68, 1.21], [35.6, 1.33], [45.2, 1.21], [47.22, 1.21]]};
+      const GROUPS = [[["ben", 2, 2.16], ["je", 2.16, 2.24], ["benieuwd", 2.24, 2.64]], [["of", 2.64, 2.8], ["jouw", 2.8, 3.04], ["woning", 3.04, 3.36]], [["klaar", 3.36, 3.6], ["is", 3.6, 3.76], ["voor", 3.76, 3.92]], [["een", 3.92, 4], ["warmtepomp", 4, 4.64]], [["Voordat", 4.8, 5.2], ["de", 5.2, 5.36], ["echte", 5.36, 5.68]], [["koude", 5.68, 6], ["dagen", 6, 6.32], ["eraan", 6.32, 6.64]], [["gaan", 6.64, 6.8], ["komen", 6.8, 7.36]], [["zorg", 7.36, 7.68], ["dat", 7.68, 7.76], ["je", 7.76, 7.92]], [["op", 7.92, 8.08], ["jouw", 8.08, 8.24], ["ketel", 8.24, 8.64]], [["de", 8.64, 8.72], ["aanvoertemperatuur", 8.8, 10.08]], [["instelt", 10.08, 10.72], ["op", 10.72, 10.88], ["ongeveer", 10.88, 11.36]], [["50", 11.36, 11.84], ["à", 11.84, 12.08], ["55", 12.08, 12.8]], [["graden", 12.8, 13.52]], [["Als", 13.52, 13.68], ["je", 13.68, 13.84], ["dat", 13.84, 14.08]], [["test", 14.08, 14.24], ["en", 14.48, 14.64], ["de", 14.64, 14.72]], [["woning", 14.72, 15.12], ["blijft", 15.12, 15.44]], [["namelijk", 15.44, 15.76], ["warm", 15.76, 16.08], ["op", 16.08, 16.24]], [["het", 16.32, 16.4], ["moment", 16.4, 16.64], ["dat", 16.64, 16.72]], [["jij", 16.72, 16.88], ["de", 16.88, 16.96], ["thermostaat", 16.96, 17.68]], [["omhoog", 17.68, 18], ["draait", 18, 18.24], ["naar", 18.32, 18.4]], [["de", 18.4, 18.48], ["temperatuur", 18.48, 18.96], ["dat", 18.96, 19.04]], [["je", 19.04, 19.2], ["graag", 19.2, 19.44], ["zou", 19.44, 19.6]], [["willen", 19.6, 20]], [["Dan", 20, 20.16], ["weet", 20.24, 20.4], ["je", 20.4, 20.48]], [["dat", 20.48, 20.56], ["jij", 20.56, 20.8], ["ready", 20.8, 21.04]], [["bent", 21.12, 21.36], ["voor", 21.36, 21.52], ["een", 21.52, 21.76]], [["warmtepomp", 21.76, 22.56]], [["Word", 22.56, 22.8], ["je", 22.8, 22.96], ["woning", 22.96, 23.28]], [["koud", 23.28, 23.6], ["op", 23.6, 23.68], ["het", 23.68, 23.76]], [["moment", 23.76, 23.92], ["dat", 23.92, 24], ["je", 24, 24.16]], [["een", 24.16, 24.24], ["aanvoertemperatuur", 24.24, 25.2]], [["hebt", 25.2, 25.36], ["op", 25.36, 25.52], ["50", 25.52, 26]], [["graden", 26, 26.56]], [["Dat", 26.72, 26.88], ["betekent", 26.88, 27.36], ["dat", 27.36, 27.52]], [["dus", 27.52, 27.84], ["of", 27.84, 28], ["het", 28, 28.16]], [["warmteafgiftesysteem", 28.16, 29.84]], [["niet", 29.84, 30], ["goed", 30, 30.32], ["genoeg", 30.32, 30.64]], [["is", 30.64, 30.8], ["of", 31.2, 31.36], ["de", 31.44, 31.6]], [["woning", 31.6, 32], ["gewoon", 32, 32.24], ["nog", 32.24, 32.4]], [["niet", 32.4, 32.56], ["goed", 32.56, 32.72]], [["geïsoleerd", 32.72, 33.36], ["is", 33.36, 33.6]], [["En", 33.6, 33.76], ["dat", 33.76, 34], ["de", 34, 34.32]], [["hitte", 34.32, 34.72], ["dus", 34.72, 34.88], ["te", 34.96, 35.12]], [["snel", 35.12, 35.36], ["ontsnapt", 35.36, 36]], [["Test", 36, 36.32], ["dat", 36.32, 36.56], ["deze", 36.56, 36.8]], [["winter", 36.8, 37.28]], [["En", 37.28, 37.44], ["dan", 37.44, 37.6], ["kunnen", 37.6, 37.76]], [["we", 37.76, 37.92], ["in", 37.92, 38.08], ["het", 38.08, 38.24]], [["voorjaar", 38.24, 38.8], ["met", 38.8, 38.96], ["elkaar", 38.96, 39.44]], [["gaan", 39.44, 39.6], ["praten", 39.6, 39.84], ["om", 39.92, 40]], [["te", 40, 40.08], ["kijken", 40.08, 40.4]], [["oké", 40.4, 40.72]], [["wat", 40.72, 40.96], ["moeten", 40.96, 41.2], ["we", 41.2, 41.36]], [["doen", 41.36, 41.68], ["om", 41.68, 41.92], ["jouw", 41.92, 42.16]], [["woning", 42.16, 42.48], ["zo", 42.48, 42.64], ["ver", 42.64, 42.88]], [["te", 42.88, 43.04], ["krijgen", 43.04, 43.44], ["dat", 43.44, 43.6]], [["je", 43.6, 43.76], ["een", 43.76, 43.92], ["warmtepomp", 43.92, 44.72]], [["kan", 44.72, 44.88], ["gaan", 44.88, 45.04], ["plaatsen", 45.04, 45.6]], [["Of", 45.6, 45.84], ["misschien", 45.84, 46.16], ["is", 46.16, 46.32]], [["er", 46.32, 46.48], ["helemaal", 46.48, 46.72], ["niks", 46.72, 46.96]], [["nodig", 46.96, 47.28]]];
+      const SCENES = [{"type": "icon", "start": 0.3, "end": 4.72, "icon": "huishalf", "label": "Jouw huis", "lines": [["Deels geïsoleerd", 1.0], ["Klaar voor een <b>warmtepomp</b>?", 2.9]]}, {"type": "icon", "start": 4.78, "end": 7.3, "icon": "sneeuw", "label": "Doe dit nu", "lines": [["Vóór de <b>kou</b> komt", 4.95]]}, {"type": "icon", "start": 7.36, "end": 13.48, "icon": "ketel", "label": "Op je ketel", "lines": [["Aanvoer-temperatuur", 8.8]], "value": ["50-55°C", 11.36]}, {"type": "icon", "start": 13.52, "end": 19.98, "icon": "thermo", "label": "De test", "lines": [["Zet hem hoog", 16.9], ["Blijft het <b>warm</b>?", 14.6]], "dial": 17.6}, {"type": "icon", "start": 20.02, "end": 22.52, "icon": "huiswarm", "label": "Blijft het warm?", "lines": [["Klaar voor een <b>warmtepomp</b>", 20.6]]}, {"type": "icon", "start": 22.58, "end": 26.62, "icon": "huiskoud", "label": "Wordt het koud?", "lines": [["Bij <b>50°C</b>", 25.5]]}, {"type": "twee", "start": 26.68, "end": 35.96, "kop": "Dan ligt het aan:", "a": ["Je radiator", "Niet goed genoeg", 28.16], "b": ["Je huis", "Lekt warmte", 31.4], "lek": 34.3}, {"type": "plan", "start": 36.0, "end": 45.56, "steps": [["sneeuw", "Winter", "Test het", 36.0], ["bloem", "Voorjaar", "Samen kijken", 38.24], ["wp", "Daarna", "Warmtepomp erin", 43.9]]}, {"type": "icon", "start": 45.62, "end": 999, "icon": "duim", "label": "Of misschien…", "lines": [["Is er <b>niks</b> nodig", 46.3], ["Meteen aan de gang!", 47.4]]}];
+      const SVGS = {"huishalf": "<path d=\"M30 140 L150 40 L270 140\" fill=\"none\" stroke=\"#fff\" stroke-width=\"14\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n   <rect x=\"60\" y=\"130\" width=\"180\" height=\"140\" rx=\"6\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"14\"/>\n   <rect x=\"128\" y=\"200\" width=\"44\" height=\"70\" fill=\"#ffa62b\"/><rect class=\"iso\" x=\"74\" y=\"144\" width=\"22\" height=\"112\" fill=\"#ffa62b\"/>\n   <rect class=\"iso\" x=\"74\" y=\"244\" width=\"76\" height=\"14\" fill=\"#ffa62b\"/>\n   <path class=\"iso\" d=\"M44 132 L150 46\" stroke=\"#ffa62b\" stroke-width=\"10\" stroke-linecap=\"round\"/>\n   <g class=\"vraag\"><circle cx=\"242\" cy=\"62\" r=\"44\" fill=\"#ffa62b\"/><text x=\"242\" y=\"84\" font-size=\"64\" font-weight=\"800\" fill=\"#19191e\" text-anchor=\"middle\" font-family=\"Poppins\">?</text></g>", "sneeuw": "<g class=\"flake\" data-x=\"50\"><text x=\"50\" y=\"0\" font-size=\"54\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"120\"><text x=\"120\" y=\"0\" font-size=\"70\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"200\"><text x=\"200\" y=\"0\" font-size=\"48\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"260\"><text x=\"260\" y=\"0\" font-size=\"62\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"90\"><text x=\"90\" y=\"0\" font-size=\"40\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"170\"><text x=\"170\" y=\"0\" font-size=\"58\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"235\"><text x=\"235\" y=\"0\" font-size=\"44\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g>", "ketel": "<rect x=\"60\" y=\"30\" width=\"150\" height=\"230\" rx=\"18\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"12\"/>\n   <rect x=\"85\" y=\"60\" width=\"100\" height=\"56\" rx=\"8\" fill=\"#19191e\"/>\n   <text class=\"kt\" x=\"135\" y=\"102\" font-size=\"34\" font-weight=\"800\" fill=\"#ffa62b\" text-anchor=\"middle\" font-family=\"Poppins\">°C</text>\n   <path class=\"vlam\" d=\"M135 150 C155 178 165 192 165 210 C165 228 151 240 135 240 C119 240 105 228 105 210 C105 196 114 186 121 174 C125 186 130 190 135 193 C133 178 130 166 135 150 Z\" fill=\"#ffa62b\"/>\n   <rect x=\"232\" y=\"40\" width=\"30\" height=\"200\" rx=\"15\" fill=\"#19191e\" stroke=\"#fff\" stroke-width=\"8\"/>\n   <rect class=\"kwik\" x=\"240\" y=\"60\" width=\"14\" height=\"172\" rx=\"7\" fill=\"#e8452c\"/>\n   <circle cx=\"247\" cy=\"246\" r=\"24\" fill=\"#e8452c\" stroke=\"#fff\" stroke-width=\"8\"/>", "thermo": "<circle cx=\"150\" cy=\"150\" r=\"118\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"12\"/>\n   <path d=\"M70 230 A112 112 0 1 1 230 230\" fill=\"none\" stroke=\"#3a3a45\" stroke-width=\"18\" stroke-linecap=\"round\"/>\n   <path class=\"boog\" d=\"M70 230 A112 112 0 1 1 230 230\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"18\" stroke-linecap=\"round\" stroke-dasharray=\"530\" stroke-dashoffset=\"440\"/>\n   <g class=\"naald\"><line x1=\"150\" y1=\"150\" x2=\"150\" y2=\"62\" stroke=\"#fff\" stroke-width=\"12\" stroke-linecap=\"round\"/></g>\n   <circle cx=\"150\" cy=\"150\" r=\"18\" fill=\"#ffa62b\"/>\n   <text x=\"150\" y=\"215\" font-size=\"38\" font-weight=\"800\" fill=\"#fff\" text-anchor=\"middle\" font-family=\"Poppins\">+</text>", "huiswarm": "<path d=\"M30 140 L150 40 L270 140\" fill=\"none\" stroke=\"#fff\" stroke-width=\"14\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n   <rect x=\"60\" y=\"130\" width=\"180\" height=\"140\" rx=\"6\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"14\"/>\n   <rect x=\"128\" y=\"200\" width=\"44\" height=\"70\" fill=\"#ffa62b\"/><g class=\"gloed\"><path d=\"M110 118 q-12 -18 0 -36 q12 -18 0 -36\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M150 118 q-12 -18 0 -36 q12 -18 0 -36\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M190 118 q-12 -18 0 -36 q12 -18 0 -36\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"8\" stroke-linecap=\"round\"/></g>\n   <g class=\"vink\"><circle cx=\"232\" cy=\"232\" r=\"48\" fill=\"#23a447\" stroke=\"#19191e\" stroke-width=\"6\"/><path d=\"M210 232 L226 249 L256 216\" fill=\"none\" stroke=\"#fff\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g>", "huiskoud": "<path d=\"M30 140 L150 40 L270 140\" fill=\"none\" stroke=\"#82c0cc\" stroke-width=\"14\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n   <rect x=\"60\" y=\"130\" width=\"180\" height=\"140\" rx=\"6\" fill=\"#2e2e37\" stroke=\"#82c0cc\" stroke-width=\"14\"/>\n   <text class=\"fl2\" x=\"150\" y=\"230\" font-size=\"80\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text>\n   <g class=\"kruis\"><circle cx=\"232\" cy=\"232\" r=\"48\" fill=\"#e8452c\" stroke=\"#19191e\" stroke-width=\"6\"/><path d=\"M214 214 L250 250 M250 214 L214 250\" stroke=\"#fff\" stroke-width=\"12\" stroke-linecap=\"round\"/></g>", "radiator": "<rect x=\"40\" y=\"70\" width=\"34\" height=\"170\" rx=\"14\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"9\"/><rect x=\"86\" y=\"70\" width=\"34\" height=\"170\" rx=\"14\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"9\"/><rect x=\"132\" y=\"70\" width=\"34\" height=\"170\" rx=\"14\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"9\"/><rect x=\"178\" y=\"70\" width=\"34\" height=\"170\" rx=\"14\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"9\"/><rect x=\"224\" y=\"70\" width=\"34\" height=\"170\" rx=\"14\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"9\"/><rect x=\"30\" y=\"232\" width=\"240\" height=\"14\" rx=\"7\" fill=\"#fff\"/><g class=\"golf\"><path d=\"M90 58 q-8 -12 0 -24 q8 -12 0 -24\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"6\" stroke-linecap=\"round\" opacity=\".5\"/><path d=\"M150 58 q-8 -12 0 -24 q8 -12 0 -24\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"6\" stroke-linecap=\"round\" opacity=\".5\"/><path d=\"M210 58 q-8 -12 0 -24 q8 -12 0 -24\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"6\" stroke-linecap=\"round\" opacity=\".5\"/></g>", "lek": "<path d=\"M30 140 L150 40 L270 140\" fill=\"none\" stroke=\"#fff\" stroke-width=\"14\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n   <rect x=\"60\" y=\"130\" width=\"180\" height=\"140\" rx=\"6\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"14\"/>\n   <rect x=\"128\" y=\"200\" width=\"44\" height=\"70\" fill=\"#ffa62b\"/><g class=\"pijl\"><path d=\"M150 90 L150 20 M136 34 L150 20 L164 34\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><g class=\"pijl\"><path d=\"M90 200 L20 200 M34 186 L20 200 L34 214\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><g class=\"pijl\"><path d=\"M210 200 L280 200 M266 186 L280 200 L266 214\" fill=\"none\" stroke=\"#ffa62b\" stroke-width=\"9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g>", "bloem": "<line x1=\"150\" y1=\"160\" x2=\"150\" y2=\"270\" stroke=\"#23a447\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n   <path d=\"M150 230 q-50 -10 -60 -50 q45 5 60 50\" fill=\"#23a447\"/><circle cx=\"196\" cy=\"110\" r=\"34\" fill=\"#ffa62b\"/><circle cx=\"150\" cy=\"156\" r=\"34\" fill=\"#ffa62b\"/><circle cx=\"104\" cy=\"110\" r=\"34\" fill=\"#ffa62b\"/><circle cx=\"150\" cy=\"64\" r=\"34\" fill=\"#ffa62b\"/><circle cx=\"182.2\" cy=\"142.2\" r=\"34\" fill=\"#ffa62b\"/><circle cx=\"117.80000000000001\" cy=\"142.2\" r=\"34\" fill=\"#ffa62b\"/><circle cx=\"182.2\" cy=\"77.80000000000001\" r=\"34\" fill=\"#ffa62b\"/><circle cx=\"117.80000000000001\" cy=\"77.80000000000001\" r=\"34\" fill=\"#ffa62b\"/><circle cx=\"150\" cy=\"110\" r=\"30\" fill=\"#fff\"/>", "wp": "<rect x=\"20\" y=\"60\" width=\"260\" height=\"190\" rx=\"22\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"12\"/>\n   <circle cx=\"125\" cy=\"155\" r=\"68\" fill=\"none\" stroke=\"#fff\" stroke-width=\"9\"/>\n   <g class=\"fan\"><path d=\"M125 155 L125 98 Q160 115 125 155 M125 155 L174 184 Q142 204 125 155 M125 155 L76 184 Q78 145 125 155\" fill=\"#ffa62b\"/></g>\n   <rect x=\"215\" y=\"95\" width=\"40\" height=\"10\" rx=\"5\" fill=\"#82c0cc\"/><rect x=\"215\" y=\"120\" width=\"40\" height=\"10\" rx=\"5\" fill=\"#82c0cc\"/><rect x=\"215\" y=\"145\" width=\"40\" height=\"10\" rx=\"5\" fill=\"#82c0cc\"/>", "duim": "<circle cx=\"150\" cy=\"150\" r=\"125\" fill=\"#23a447\"/>\n   <path class=\"v\" d=\"M88 152 L132 196 L214 108\" fill=\"none\" stroke=\"#fff\" stroke-width=\"26\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-dasharray=\"230\" stroke-dashoffset=\"230\"/>", "sneeuw2": "<g class=\"flake\" data-x=\"50\"><text x=\"50\" y=\"0\" font-size=\"54\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"120\"><text x=\"120\" y=\"0\" font-size=\"70\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"200\"><text x=\"200\" y=\"0\" font-size=\"48\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"260\"><text x=\"260\" y=\"0\" font-size=\"62\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"90\"><text x=\"90\" y=\"0\" font-size=\"40\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"170\"><text x=\"170\" y=\"0\" font-size=\"58\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g><g class=\"flake\" data-x=\"235\"><text x=\"235\" y=\"0\" font-size=\"44\" fill=\"#82c0cc\" text-anchor=\"middle\">❄</text></g>"};
+      /* ============================================================================ */
+
+      const tl = gsap.timeline({ paused: true });
+      const $ = (s) => document.querySelector(s);
+
+      // Face-positie
+      gsap.set("#face-wrapper", { y: CONFIG.faceOffsetY });
+      CONFIG.punchIns.forEach(([t, s]) => tl.set("#face-wrapper", { scale: s }, t));
+
+      // Hook op ankerpunt
+      $("#hook").innerHTML = CONFIG.hook.text;
+      tl.fromTo("#hook", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(1.6)" }, 0.02);
+      tl.to("#hook", { opacity: 0, duration: 0.12, ease: "power2.in" }, CONFIG.hook.end);
+
+      // Captions (eigen indeling: max 3 woorden / 19 tekens, nieuwe chunk na leesteken)
+      const cap = $("#captions");
+      GROUPS.forEach((group, i) => {
+        const el = document.createElement("div");
+        el.className = "chunk";
+        const n = group.map(([w]) => w).join(" ").length;
+        if (n > 17) el.style.fontSize = Math.round(78 * 17 / n) + "px";
+        el.innerHTML = group.map(([w]) => `<span class="w">${w}</span>`).join(" ");
+        cap.appendChild(el);
+        const start = group[0][1];
+        const next = GROUPS[i + 1];
+        const end = next ? next[0][1] : Math.min(group[group.length - 1][2] + 0.3, CONFIG.cta.start);
+        tl.set(el, { opacity: 1 }, start);
+        tl.set(el, { opacity: 0 }, Math.min(end, CONFIG.cta.start));
+        group.forEach(([, s, e], j) => {
+          const span = el.children[j];
+          tl.set(span, { className: "w on" }, s);
+          tl.set(span, { className: "w" }, (group[j + 1] ? group[j + 1][1] : e));
+        });
+      });
+
+
+      // ===== scenes in de beeld-zone (icoontjes) =====
+      const layer = document.querySelector("#beeld-layer");
+      const svg = (k, vb) => `<svg viewBox="${vb || "0 0 300 300"}">${SVGS[k]}</svg>`;
+      SCENES.forEach((s) => {
+        const el = document.createElement("div");
+        el.className = "scene " + s.type;
+        const end = Math.min(s.end, CONFIG.duration);
+        if (s.type === "icon") {
+          el.innerHTML = `<div class="ic">${svg(s.icon)}</div><div class="txt"><div class="lab">${s.label}</div>` +
+            s.lines.map((l) => `<div class="ln">${l[0]}</div>`).join("") + (s.value ? `<div class="val">${s.value[0]}</div>` : "") + `</div>`;
+        }
+        if (s.type === "twee") {
+          el.innerHTML = `<div class="kop">${s.kop}</div>` +
+            `<div class="kaart ka" style="left:20px"><div class="mini">${svg("radiator")}</div><div class="k1">${s.a[0]}</div><div class="k2">${s.a[1]}</div></div>` +
+            `<div class="of">of</div>` +
+            `<div class="kaart kb" style="left:456px"><div class="mini">${svg("lek")}</div><div class="k1">${s.b[0]}</div><div class="k2">${s.b[1]}</div></div>`;
+        }
+        if (s.type === "plan") {
+          el.innerHTML = s.steps.map((st, k) => `<div class="stap" style="left:${16 + k*276}px"><div class="mini">${svg(st[0])}</div><div class="s1">${st[1]}</div><div class="s2">${st[2]}</div><div class="nr">${k+1}</div></div>`).join("");
+        }
+        layer.appendChild(el);
+        tl.set("#beeld-bg", { opacity: 1 }, s.start);
+        tl.fromTo(el, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, s.start);
+        if (s.end < CONFIG.duration) tl.to(el, { opacity: 0, duration: 0.12, ease: "power2.in" }, end - 0.12);
+
+        if (s.type === "icon") {
+          const ic = el.querySelector(".ic");
+          tl.fromTo(ic, { scale: 0.6, rotation: -8, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, s.start + 0.05);
+          el.querySelectorAll(".ln").forEach((ln, k) => tl.fromTo(ln, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out" }, s.lines[k][1]));
+          if (s.value) tl.fromTo(el.querySelector(".val"), { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.2)", transformOrigin: "left center" }, s.value[1]);
+          const q = (c) => ic.querySelectorAll(c);
+          if (s.icon === "huishalf") {
+            q(".iso").forEach((n, k) => tl.fromTo(n, { opacity: 0 }, { opacity: 1, duration: 0.25 }, s.lines[0][1] + k * 0.15));
+            tl.fromTo(q(".vraag"), { scale: 0, svgOrigin: "242 62" }, { scale: 1, svgOrigin: "242 62", duration: 0.35, ease: "back.out(2.5)" }, s.lines[1][1]);
+          }
+          if (s.icon === "sneeuw") q(".flake").forEach((f, k) => tl.fromTo(f, { y: -60 - (k % 3) * 70 }, { y: 360, duration: 1.6 + (k % 3) * 0.3, ease: "none", repeat: 2 }, s.start + k * 0.12));
+          if (s.icon === "ketel") {
+            tl.fromTo(q(".vlam"), { scaleY: 0.85, svgOrigin: "135 240" }, { scaleY: 1.08, svgOrigin: "135 240", duration: 0.3, yoyo: true, repeat: 19, ease: "sine.inOut" }, s.start);
+            tl.fromTo(q(".kwik"), { scaleY: 0.15, svgOrigin: "247 232" }, { scaleY: 0.72, svgOrigin: "247 232", duration: 0.8, ease: "power2.out" }, s.value[1] - 0.3);
+          }
+          if (s.icon === "thermo") {
+            tl.fromTo(q(".naald"), { rotation: -120, svgOrigin: "150 150" }, { rotation: 100, svgOrigin: "150 150", duration: 0.9, ease: "power3.inOut" }, s.dial);
+            tl.fromTo(q(".boog"), { strokeDashoffset: 440 }, { strokeDashoffset: 60, duration: 0.9, ease: "power3.inOut" }, s.dial);
+          }
+          if (s.icon === "huiswarm") {
+            tl.fromTo(q(".gloed"), { y: 10, opacity: 0.3 }, { y: -8, opacity: 1, duration: 0.6, yoyo: true, repeat: 3, ease: "sine.inOut" }, s.start);
+            tl.fromTo(q(".vink"), { scale: 0, svgOrigin: "232 232" }, { scale: 1, svgOrigin: "232 232", duration: 0.35, ease: "back.out(2.5)" }, s.lines[0][1]);
+          }
+          if (s.icon === "huiskoud") {
+            tl.fromTo(q(".fl2"), { rotation: 0, svgOrigin: "150 202" }, { rotation: 180, svgOrigin: "150 202", duration: 4, ease: "none" }, s.start);
+            tl.fromTo(q(".kruis"), { scale: 0, svgOrigin: "232 232" }, { scale: 1, svgOrigin: "232 232", duration: 0.35, ease: "back.out(2.5)" }, s.lines[0][1]);
+          }
+          if (s.icon === "duim") tl.to(q(".v"), { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, s.start + 0.35);
+        }
+        if (s.type === "twee") {
+          tl.fromTo(el.querySelector(".kop"), { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, s.start + 0.1);
+          tl.fromTo(el.querySelector(".ka"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.6)" }, s.a[2]);
+          tl.fromTo(el.querySelector(".of"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, s.b[2] - 0.2);
+          tl.fromTo(el.querySelector(".kb"), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.6)" }, s.b[2]);
+          tl.fromTo(el.querySelectorAll(".ka .golf path"), { opacity: 0.6 }, { opacity: 0.1, duration: 0.5, yoyo: true, repeat: 7, stagger: 0.15 }, s.a[2] + 0.3);
+          el.querySelectorAll(".kb .pijl").forEach((p, k) => {
+            const dir = [[0, -14], [-14, 0], [14, 0]][k];
+            tl.fromTo(p, { x: 0, y: 0, opacity: 0.4 }, { x: dir[0], y: dir[1], opacity: 1, duration: 0.5, yoyo: true, repeat: 5, ease: "sine.inOut" }, s.b[2] + 0.2);
+          });
+          tl.fromTo(el.querySelector(".kb"), { borderColor: "#3a3a45" }, { borderColor: "#ffa62b", duration: 0.2 }, s.lek);
+        }
+        if (s.type === "plan") {
+          el.querySelectorAll(".stap").forEach((st, k) => {
+            const t = s.steps[k][3];
+            tl.fromTo(st, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(1.6)" }, t);
+            tl.set(st, { className: "stap on" }, t);
+            if (k < 2) tl.set(st, { className: "stap" }, s.steps[k + 1][3]);
+            if (s.steps[k][0] === "wp") tl.fromTo(st.querySelector(".fan"), { rotation: 0, svgOrigin: "125 155" }, { rotation: 360 * 4, svgOrigin: "125 155", duration: end - t, ease: "none" }, t);
+            if (s.steps[k][0] === "sneeuw") st.querySelectorAll(".flake").forEach((f, j) => tl.fromTo(f, { y: -60 - (j % 3) * 70 }, { y: 360, duration: 1.8 + (j % 3) * 0.3, ease: "none", repeat: 3 }, t + j * 0.12));
+          });
+        }
+      });
+
+      // CTA
+      $("#cta").innerHTML = `<span class="small">Reageer</span><span class="big">${CONFIG.cta.word}</span>`;
+      tl.fromTo("#cta", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.8)" }, CONFIG.cta.start);
+
+      tl.set({}, {}, CONFIG.duration);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
