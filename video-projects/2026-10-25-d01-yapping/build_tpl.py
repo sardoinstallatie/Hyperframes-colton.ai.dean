@@ -195,8 +195,8 @@ full = FULL
 dur = round(probe(full) - 0.04, 2)
 ws = clean(json.load(open(os.path.join(ROOT, 'work/transcript.json'))))
 cta_start = round(dur - 2.0, 2)
-hook_end = 2.0
-cap = [w for w in ws if w[1] >= hook_end - 0.05 and w[1] < cta_start]
+hook_end = 1.86
+cap = [w for w in ws if w[1] >= 1.95 and w[1] < cta_start]
 groups = chunks(cap)
 
 # punch-ins op de cuts
