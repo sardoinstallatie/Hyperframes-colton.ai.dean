@@ -16,3 +16,8 @@ Bron: DJI_20261025110001_0087_D.MP4 (1728×3072, 25 fps). Huis: hoekwoning Nijme
 
 Eruit: valse starts, calculator-invullen (50–345), herhaalde takes.
 Open: lengte (kort ~55 s vs lang ~2,5 min), CTA-woord.
+
+## Final (2026-10-25)
+- Kort ~61 s, alleen hook A (incl. "Here we go"), CTA CHECK. DM-zin eruit.
+- Body: intro (1948, E, 76 m²) → totaalblok (5 stappen, label A, €25.000 − €3.000 = €22.000, €195–325 → ±€50) → fixscore 7/10 → CTA.
+- Levering: Funda/2026/10-oktober/2026-10-25-D12-funda-nijmegen-A.mp4 (3,4 Mbps, <30 MB).
