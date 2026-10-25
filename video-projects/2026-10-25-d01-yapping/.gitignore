@@ -1,0 +1,10 @@
+work/
+media/
+assets/
+list.txt
+transcribe.log
+transcript-raw.json
+A/assets/source.mp4
+A/assets/pop.mp3
+A/.hyperframes/
+__pycache__/
