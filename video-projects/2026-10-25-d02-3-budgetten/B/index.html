@@ -1,0 +1,143 @@
+<!doctype html>
+<!--
+  SARDO-FORMAT TEMPLATE (zie ../../SARDO_FORMAT.md)
+  Kopieer deze map per hook-versie:  cp -r templates/sardo-format video-projects/<slug>/<A|B|C>
+  Pas daarna alleen het CONFIG-blok onderaan aan (duur, bron, hook, woorden, beelden, CTA).
+  Lagen:  face (zone 1, ogen op y≈534) · hook/CTA op ankerpunt y=960 · captions zone 2 · beeld-zone 3
+-->
+<html lang="nl" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/brand-tokens.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--brand-bg); }
+      body { font-family: var(--font-display); color: var(--brand-text); }
+
+      /* ZONE 1 — Peter. Wrapper is altijd full-frame; FACE_OFFSET_Y zet de ogen op y≈534. */
+      #face-wrapper { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 534px; }
+      #face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+      /* ANKERPUNT y=960 — hook-tekst en CTA */
+      .anchor-text { position: absolute; left: 60px; right: 60px; top: 960px; transform: translateY(-50%);
+        text-align: center; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em;
+        -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 6px 24px rgba(0,0,0,0.55); opacity: 0; }
+      #hook { font-size: 92px; }
+      #hook .hl, #cta .big { color: var(--brand-accent); }
+      #cta .small { display: block; font-size: 54px; font-weight: 700; margin-bottom: 6px; }
+      #cta .big { display: block; font-size: 160px; }
+
+      /* ZONE 2 — captions 970–1190 */
+      #captions { position: absolute; left: 40px; right: 40px; top: 970px; height: 220px;
+        display: flex; align-items: center; justify-content: center; }
+      .chunk { position: absolute; width: 100%; text-align: center; font-size: 78px; font-weight: 800;
+        line-height: 1.1; -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 4px 18px rgba(0,0,0,0.6); opacity: 0; }
+      .w { display: inline-block; margin: 0 0.12em; }
+      .w.on { color: var(--brand-accent); }
+
+      /* ZONE 3 — beeld 1205–1905, x 0–918 */
+      #beeld-bg { position: absolute; left: 0; top: 1190px; width: 1080px; height: 730px;
+        background: var(--brand-bg); opacity: 0; }
+      .beeld { position: absolute; left: 36px; top: 1225px; width: 846px; height: 560px; border-radius: 24px;
+        background: var(--brand-surface); border: 2px solid var(--brand-border); padding: 40px;
+        display: flex; flex-direction: column; justify-content: center; gap: 18px; opacity: 0; overflow: hidden; }
+      .beeld img, .beeld video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .beeld .label { font-size: 34px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+      .beeld .value { font-size: 96px; font-weight: 800; color: var(--brand-accent); line-height: 1; }
+      .beeld .line { font-size: 52px; font-weight: 700; line-height: 1.15; }
+      .beeld .arrow { color: var(--brand-warn); }
+    
+      .beeld.img { padding: 0; border: 0; }
+      .beeld .tag { position: absolute; left: 24px; bottom: 24px; background: rgba(25,25,30,0.88); padding: 14px 24px; border-radius: 16px; font-size: 40px; font-weight: 700; }
+      .beeld .badge { position: absolute; right: 24px; top: 24px; background: var(--brand-accent); color: #19191e; padding: 12px 26px; border-radius: 16px; font-size: 48px; font-weight: 800; }
+      .beeld .line { opacity: 0; }
+      .beeld .line::before { content: "✓ "; color: var(--brand-accent); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="72.06" data-width="1080" data-height="1920">
+      <div id="face-wrapper">
+        <video id="face" src="assets/source.mp4" muted playsinline data-start="0" data-duration="72.06" data-track-index="0"></video>
+      </div>
+      <audio id="face-audio" src="assets/source.mp4" data-start="0" data-duration="72.06" data-track-index="9"></audio>
+      <audio id="pop0" src="assets/pop.mp3" data-start="7.03" data-duration="0.7" data-track-index="10" data-volume="0.25"></audio>
+      <audio id="pop1" src="assets/pop.mp3" data-start="13.68" data-duration="0.7" data-track-index="11" data-volume="0.25"></audio>
+      <audio id="pop2" src="assets/pop.mp3" data-start="28.43" data-duration="0.7" data-track-index="12" data-volume="0.25"></audio>
+      <audio id="pop3" src="assets/pop.mp3" data-start="41.98" data-duration="0.7" data-track-index="13" data-volume="0.25"></audio>
+      <audio id="pop4" src="assets/pop.mp3" data-start="54.63" data-duration="0.7" data-track-index="14" data-volume="0.25"></audio>
+
+      <div id="beeld-bg" class="clip" data-start="0" data-duration="72.06" data-track-index="3"></div>
+      <div id="beeld-layer" class="clip" data-start="0" data-duration="72.06" data-track-index="4"></div>
+      <div id="captions" class="clip" data-start="0" data-duration="72.06" data-track-index="5"></div>
+      <div id="hook" class="anchor-text clip" data-start="0" data-duration="72.06" data-track-index="6"></div>
+      <div id="cta" class="anchor-text clip" data-start="0" data-duration="72.06" data-track-index="7"></div>
+    </div>
+
+    <script>
+      /* ======================= CONFIG — alleen dit aanpassen ======================= */
+      const CONFIG = {"duration": 72.06, "faceOffsetY": -111, "hook": {"text": "<span class=\"hl\">€5k, €20k</span> of <span class=\"hl\">€40k</span>?", "end": 3.7}, "cta": {"word": "CHECK", "start": 70.06}, "words": [["€5.000", 0.24, 1.44], ["€20.000", 1.44, 2.4], ["of", 2.48, 2.72], ["€40.000", 2.72, 3.76], ["Dit", 3.76, 4], ["is", 4, 4.16], ["wat", 4.16, 4.32], ["je", 4.32, 4.48], ["krijgt", 4.48, 4.72], ["voor", 4.72, 4.88], ["verduurzamen", 4.88, 5.44], ["bij", 5.6, 5.68], ["Sardo", 5.76, 6.72], ["Dit", 7.12, 7.28], ["is", 7.28, 7.52], ["een", 7.52, 7.84], ["hoekwoning", 8.0, 8.8], ["uit", 8.8, 9.04], ["1932", 9.04, 10.32], ["Het", 10.32, 10.48], ["staat", 10.48, 10.8], ["in", 10.8, 10.96], ["Arnhem", 10.96, 11.76], ["Het", 11.76, 11.92], ["heeft", 11.92, 12.16], ["energielabel", 12.24, 12.88], ["F", 13.12, 13.68], ["Wat", 13.68, 13.92], ["ik", 13.92, 14.08], ["zou", 14.08, 14.24], ["doen", 14.24, 14.4], ["met", 14.4, 14.56], ["een", 14.56, 14.64], ["budget", 14.64, 15.04], ["van", 15.04, 15.2], ["€5.000", 15.2, 16.48], ["is", 16.48, 16.56], ["zo", 16.8, 17.04], ["snel", 17.04, 17.36], ["mogelijk", 17.36, 17.68], ["gaan", 17.68, 17.84], ["isoleren", 17.84, 18.56], ["Dus", 18.56, 18.8], ["ik", 18.8, 18.96], ["zou", 18.96, 19.2], ["gaan", 19.2, 19.36], ["kijken", 19.36, 19.68], ["of", 19.68, 19.84], ["je", 19.84, 20.0], ["de", 20.0, 20.08], ["spouwmuur", 20.08, 20.72], ["kan", 20.8, 20.96], ["gaan", 20.96, 21.12], ["isoleren", 21.12, 21.6], ["en", 21.6, 21.76], ["de", 21.76, 21.84], ["vloer", 21.84, 22.16], ["isoleren", 22.24, 23.2], ["En", 23.2, 23.36], ["zeker", 23.36, 23.68], ["met", 23.68, 23.84], ["de", 23.84, 23.92], ["subsidies", 23.92, 24.48], ["die", 24.48, 24.56], ["je", 24.56, 24.72], ["er", 24.72, 24.8], ["nog", 24.8, 24.96], ["bij", 24.96, 25.12], ["krijgt", 25.2, 25.6], ["zou", 25.6, 25.76], ["dat", 25.76, 25.84], ["net", 26.0, 26.24], ["in", 26.24, 26.4], ["die", 26.4, 26.56], ["€5.000", 26.56, 27.44], ["moeten", 27.44, 27.76], ["passen", 27.76, 28.48], ["Als", 28.48, 28.72], ["je", 28.72, 28.96], ["een", 28.96, 29.12], ["€20.000", 29.12, 30.08], ["budget", 30.08, 30.48], ["hebt", 30.48, 30.64], ["voor", 30.64, 30.8], ["dit", 30.8, 30.96], ["huis", 30.96, 31.36], ["pak", 31.68, 31.92], ["het", 31.92, 32.16], ["isoleren", 32.16, 32.88], ["compleet", 32.88, 33.36], ["aan", 33.36, 33.92], ["Dus", 33.92, 34.08], ["isoleer", 34.16, 34.72], ["de", 34.72, 34.8], ["vloer", 34.8, 35.28], ["isoleer", 35.28, 35.68], ["de", 35.68, 35.84], ["spouw", 35.84, 36.24], ["isoleren", 36.32, 36.8], ["het", 36.8, 36.88], ["dak", 36.88, 37.12], ["van", 37.28, 37.44], ["binnenuit", 37.44, 38.56], ["Zorg", 38.64, 39.12], ["dat", 39.12, 39.28], ["overal", 39.28, 39.68], ["HR++", 39.68, 39.84], ["glas", 40.48, 40.8], ["in", 40.8, 40.96], ["komt", 40.96, 41.2], ["te", 41.2, 41.28], ["zitten", 41.28, 41.92], ["met", 42.0, 42.08], ["een", 42.24, 42.32], ["budget", 42.32, 42.96], ["van", 42.96, 43.28], ["€40.000", 43.36, 44.96], ["zou", 44.96, 45.36], ["dus", 45.36, 45.68], ["het", 45.68, 45.84], ["compleet", 45.84, 46.24], ["hetzelfde", 46.24, 46.72], ["doen", 46.72, 46.88], ["als", 46.88, 47.04], ["het", 47.04, 47.12], ["budget", 47.12, 47.44], ["met", 47.44, 47.6], ["€20.000", 47.6, 48.48], ["En", 48.56, 48.72], ["ga", 48.72, 48.8], ["daarna", 48.88, 49.28], ["meteen", 49.28, 49.6], ["over", 49.6, 49.84], ["naar", 49.84, 50.0], ["een", 50.0, 50.16], ["all-electric", 50.16, 50.96], ["warmtepomp", 50.96, 52.0], ["in", 52.0, 52.16], ["combinatie", 52.16, 52.72], ["met", 52.72, 52.88], ["vloerverwarming", 52.88, 54.4], ["Als", 54.72, 54.96], ["je", 54.96, 55.12], ["namelijk", 55.12, 55.44], ["op", 55.44, 55.6], ["Funda", 55.6, 56.0], ["deze", 56.16, 56.4], ["woning", 56.4, 56.8], ["opzoekt", 56.8, 57.44], ["dan", 57.44, 57.6], ["zie", 57.6, 57.76], ["je", 57.76, 57.84], ["dat", 57.84, 58.0], ["er", 58.0, 58.16], ["eigenlijk", 58.16, 58.4], ["nog", 58.4, 58.64], ["een", 58.64, 58.96], ["hele", 58.96, 59.28], ["oude", 59.28, 59.6], ["ketel", 59.6, 60.08], ["in", 60.24, 60.4], ["zit", 60.4, 60.64], ["van", 60.64, 60.8], ["1995", 60.8, 61.76], ["en", 62.0, 62.16], ["nog", 62.16, 62.32], ["een", 62.32, 62.48], ["oude", 62.48, 62.8], ["geiser", 62.8, 63.92], ["Wil", 64.08, 64.56], ["nou", 64.56, 64.72], ["jouw", 64.72, 64.88], ["eigen", 64.88, 65.12], ["woning", 65.12, 65.44], ["checken", 65.44, 65.76], ["wat", 65.76, 65.92], ["je", 65.92, 66.0], ["zou", 66.0, 66.16], ["kunnen", 66.16, 66.4], ["doen", 66.4, 66.56], ["om", 66.56, 66.72], ["te", 66.72, 66.88], ["gaan", 66.88, 67.04], ["verduurzamen", 67.04, 67.6], ["en", 67.68, 67.84], ["wat", 67.84, 68.0], ["dat", 68.0, 68.16], ["ongeveer", 68.16, 68.56], ["kost", 68.56, 68.72], ["Reageer", 68.8, 69.2], ["dan", 69.28, 69.36], ["CHECK", 69.44, 69.68], ["en", 69.68, 69.76], ["dan", 69.84, 70.0], ["stuur", 70.0, 70.16]], "chunkSize": 3, "beelden": [{"start": 7.03, "end": 13.58, "type": "img", "src": "assets/huis.png", "tag": "Hoekhuis · 1932 · Arnhem", "badge": "Label F"}, {"start": 13.68, "end": 28.28, "type": "kaart", "label": "Budget 1", "value": "€5.000", "lines": [["Spouwmuur isoleren", 20.08], ["Vloer isoleren", 21.78], ["+ subsidie", 23.88]]}, {"start": 28.43, "end": 41.88, "type": "kaart", "label": "Budget 2", "value": "€20.000", "lines": [["Vloer, spouw en dak", 33.88], ["HR++ glas", 38.58]]}, {"start": 41.98, "end": 54.48, "type": "kaart", "label": "Budget 3", "value": "€40.000", "lines": [["Alles van €20.000", 44.88], ["All-electric warmtepomp", 50.08], ["Vloerverwarming", 52.18]]}, {"start": 54.63, "end": 63.83, "type": "kaart", "label": "Nu in dit huis", "value": "1995", "lines": [["Oude cv-ketel", 59.48], ["Oude geiser", 62.28]]}], "punchIns": [[0, 1.09], [6.88, 1.17], [13.4, 1.09], [18.24, 1.17], [23.02, 1.09], [28.12, 1.17], [31.38, 1.09], [38.4, 1.17], [41.66, 1.09], [48.22, 1.17], [54.36, 1.09], [63.62, 1.17], [70.06, 1.09]]};
+      /* ============================================================================ */
+
+      const tl = gsap.timeline({ paused: true });
+      const $ = (s) => document.querySelector(s);
+
+      // Face-positie
+      gsap.set("#face-wrapper", { y: CONFIG.faceOffsetY });
+      CONFIG.punchIns.forEach(([t, s]) => tl.set("#face-wrapper", { scale: s }, t));
+
+      // Hook op ankerpunt
+      $("#hook").innerHTML = CONFIG.hook.text;
+      tl.fromTo("#hook", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(1.6)" }, 0.02);
+      tl.to("#hook", { opacity: 0, duration: 0.12, ease: "power2.in" }, CONFIG.hook.end);
+
+      // Captions (start pas na de hook-tekst zodat ze niet dubbel staan)
+      const cap = $("#captions");
+      const words = CONFIG.words.filter(([, s]) => s >= CONFIG.hook.end - 0.05);
+      for (let i = 0; i < words.length; i += CONFIG.chunkSize) {
+        const group = words.slice(i, i + CONFIG.chunkSize);
+        const el = document.createElement("div");
+        el.className = "chunk";
+        el.innerHTML = group.map(([w]) => `<span class="w">${w}</span>`).join(" ");
+        cap.appendChild(el);
+        const start = group[0][1], end = (words[i + CONFIG.chunkSize] || [null, group[group.length - 1][2]])[1];
+        tl.set(el, { opacity: 1 }, start);
+        tl.set(el, { opacity: 0 }, Math.min(end, CONFIG.cta.start));
+        group.forEach(([, s, e], j) => {
+          const span = el.children[j];
+          tl.set(span, { className: "w on" }, s);
+          tl.set(span, { className: "w" }, e);
+        });
+      }
+
+      // Beeld-zone
+      const layer = $("#beeld-layer");
+      CONFIG.beelden.forEach((b, i) => {
+        const el = document.createElement("div");
+        el.className = "beeld";
+        if (b.type === "img") { el.classList.add("img"); el.innerHTML = `<img src="${b.src}">` + (b.tag ? `<div class="tag">${b.tag}</div>` : "") + (b.badge ? `<div class="badge">${b.badge}</div>` : ""); }
+        else if (b.type === "video") el.innerHTML = `<video src="${b.src}" muted playsinline></video>`;
+        else el.innerHTML = (b.label ? `<div class="label">${b.label}</div>` : "") + (b.value ? `<div class="value">${b.value}</div>` : "") + (b.lines || []).map((l) => `<div class="line">${Array.isArray(l) ? l[0] : l}</div>`).join("");
+        layer.appendChild(el);
+        tl.set("#beeld-bg", { opacity: 1 }, b.start);
+        tl.fromTo(el, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, b.start);
+        (b.lines || []).forEach((l, j) => { const ln = el.querySelectorAll(".line")[j]; const t = Array.isArray(l) ? l[1] : b.start;
+          tl.fromTo(ln, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out" }, t); });
+        tl.to(el, { opacity: 0, duration: 0.15, ease: "power2.in" }, b.end - 0.15);
+        const next = CONFIG.beelden[i + 1];
+        if (!next || next.start > b.end + 0.05) tl.set("#beeld-bg", { opacity: 0 }, b.end);
+      });
+
+      // CTA
+      $("#cta").innerHTML = `<span class="small">Reageer</span><span class="big">${CONFIG.cta.word}</span>`;
+      tl.fromTo("#cta", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.8)" }, CONFIG.cta.start);
+
+      tl.set({}, {}, CONFIG.duration);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

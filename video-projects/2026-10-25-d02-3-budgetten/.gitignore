@@ -1,0 +1,9 @@
+media/
+stills-*/
+work/*.wav
+work/snip/
+work/tr.log
+*/assets/source.mp4
+*/assets/huis.png
+*/renders/
+*/.hyperframes/
