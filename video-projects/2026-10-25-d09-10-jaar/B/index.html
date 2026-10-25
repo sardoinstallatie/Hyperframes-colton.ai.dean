@@ -1,0 +1,262 @@
+<!doctype html>
+<!--
+  SARDO-FORMAT TEMPLATE (zie ../../SARDO_FORMAT.md)
+  Kopieer deze map per hook-versie:  cp -r templates/sardo-format video-projects/<slug>/<A|B|C>
+  Pas daarna alleen het CONFIG-blok onderaan aan (duur, bron, hook, woorden, beelden, CTA).
+  Lagen:  face (zone 1, ogen op y≈534) · hook/CTA op ankerpunt y=960 · captions zone 2 · beeld-zone 3
+-->
+<html lang="nl" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/brand-tokens.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--brand-bg); }
+      body { font-family: var(--font-display); color: var(--brand-text); }
+
+      /* ZONE 1 — Peter. Wrapper is altijd full-frame; FACE_OFFSET_Y zet de ogen op y≈534. */
+      #face-wrapper { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 534px; }
+      #face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+      /* ANKERPUNT y=960 — hook-tekst en CTA */
+      .anchor-text { position: absolute; left: 60px; right: 60px; top: 960px; transform: translateY(-50%);
+        text-align: center; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em;
+        -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 6px 24px rgba(0,0,0,0.55); opacity: 0; }
+      #hook { font-size: 92px; }
+      #hook .hl, #cta .big { color: var(--brand-accent); }
+      #cta .small { display: block; font-size: 54px; font-weight: 700; margin-bottom: 6px; }
+      #cta .big { display: block; font-size: 160px; }
+
+      /* ZONE 2 — captions 970–1190 */
+      #captions { position: absolute; left: 40px; right: 40px; top: 970px; height: 220px;
+        display: flex; align-items: center; justify-content: center; }
+      .chunk { position: absolute; width: 100%; text-align: center; font-size: 78px; font-weight: 800;
+        line-height: 1.1; -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 4px 18px rgba(0,0,0,0.6); opacity: 0; }
+      .w { display: inline-block; margin: 0 0.12em; }
+      .w.on { color: var(--brand-accent); }
+
+      /* ZONE 3 — beeld 1205–1905, x 0–918 */
+      #beeld-bg { position: absolute; left: 0; top: 1190px; width: 1080px; height: 730px;
+        background: var(--brand-bg); opacity: 0; }
+      .beeld { position: absolute; left: 36px; top: 1225px; width: 846px; height: 560px; border-radius: 24px;
+        background: var(--brand-surface); border: 2px solid var(--brand-border); padding: 40px;
+        display: flex; flex-direction: column; justify-content: center; gap: 18px; opacity: 0; overflow: hidden; }
+      .beeld img, .beeld video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .beeld .label { font-size: 34px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+      .beeld .value { font-size: 96px; font-weight: 800; color: var(--brand-accent); line-height: 1; }
+      .beeld .line { font-size: 52px; font-weight: 700; line-height: 1.15; }
+      .beeld .arrow { color: var(--brand-warn); }
+    
+      #hook { font-size: 84px; text-wrap: balance; }
+      .scene { position: absolute; left: 36px; top: 1225px; width: 846px; height: 560px; border-radius: 24px;
+        background: var(--brand-surface); border: 2px solid var(--brand-border); opacity: 0; overflow: hidden; }
+      .tl { position: absolute; left: 40px; right: 40px; top: 34px; height: 76px; }
+      .tl .bar { position: absolute; left: 38px; right: 38px; top: 36px; height: 6px; border-radius: 3px; background: var(--brand-border); }
+      .tl .fill { position: absolute; left: 38px; top: 36px; height: 6px; border-radius: 3px; background: var(--brand-accent); width: 0; }
+      .pill { position: absolute; top: 0; width: 76px; height: 76px; margin-left: -38px; border-radius: 50%; background: var(--brand-surface-2);
+        border: 4px solid var(--brand-border); color: var(--brand-text-dim); font-size: 38px; font-weight: 800;
+        display: flex; align-items: center; justify-content: center; }
+      .pill.done { border-color: var(--brand-accent); color: var(--brand-accent); }
+      .pill.now { background: var(--brand-accent); border-color: var(--brand-accent); color: #19191e; }
+      .jaar-big { position: absolute; left: 44px; top: 150px; font-size: 96px; font-weight: 800; color: var(--brand-accent); line-height: 1; }
+      .icon { position: absolute; right: 36px; top: 140px; width: 200px; height: 200px; }
+      .lines { position: absolute; left: 44px; top: 270px; right: 250px; display: flex; flex-direction: column; gap: 14px; }
+      .ln { font-size: 44px; font-weight: 700; line-height: 1.1; opacity: 0; }
+      .ln::before { content: "✓ "; color: var(--brand-accent); }
+      .intro-title { position: absolute; left: 0; right: 0; top: 120px; text-align: center; font-size: 76px; font-weight: 800; line-height: 1.05; }
+      .intro-title .hl { color: var(--brand-accent); }
+      .intro .tl { top: 330px; }
+      .intro .pill { width: 110px; height: 110px; margin-left: -55px; font-size: 52px; opacity: 0; }
+      .intro .tl .bar { top: 52px; }
+      .lbl { position: absolute; width: 140px; height: 140px; border-radius: 20px; color: #fff; font-size: 100px; font-weight: 800;
+        display: flex; align-items: center; justify-content: center; line-height: 1; }
+      .lbl small { position: absolute; top: -50px; left: 0; right: 0; text-align: center; font-size: 34px; font-weight: 700; color: var(--brand-text-dim); }
+      .lbl.f { background: #e8452c; } .lbl.a { background: #23a447; }
+      .huis-svg { position: absolute; left: 40px; top: 80px; width: 360px; height: 400px; }
+      .niks { position: absolute; left: 40px; top: 470px; width: 360px; text-align: center; font-size: 40px; font-weight: 700; color: var(--brand-text-dim); opacity: 0; }
+      .pijl { position: absolute; left: 572px; top: 222px; font-size: 72px; font-weight: 800; color: var(--brand-accent); opacity: 0; }
+      .pijl small { display: block; font-size: 30px; text-align: center; margin-top: -14px; }
+      .step { position: absolute; width: 150px; border-radius: 16px; background: var(--brand-surface-2); border: 3px solid var(--brand-accent);
+        display: flex; align-items: flex-start; justify-content: center; padding-top: 12px; font-size: 30px; line-height: 1.05; font-weight: 700; text-align: center; opacity: 0; }
+      .step b { position: absolute; bottom: 10px; left: 0; right: 0; font-size: 54px; color: var(--brand-accent); }
+      .k-title { position: absolute; left: 40px; right: 40px; top: 34px; font-size: 52px; font-weight: 800; line-height: 1.1; opacity: 0; }
+      .k-title .hl { color: var(--brand-accent); }
+      .eind-a { position: absolute; left: 0; right: 0; top: 110px; text-align: center; font-size: 70px; font-weight: 800; line-height: 1.1; opacity: 0; }
+      .eind-a .hl { color: var(--brand-accent); }
+      .eind-b { position: absolute; left: 90px; right: 90px; top: 330px; height: 140px; border-radius: 20px; background: var(--brand-accent); color: #19191e;
+        font-size: 52px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 20px; opacity: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="82.96" data-width="1080" data-height="1920">
+      <div id="face-wrapper">
+        <video id="face" src="assets/source.mp4" muted playsinline data-start="0" data-duration="82.96" data-track-index="0"></video>
+      </div>
+      <audio id="face-audio" src="assets/source.mp4" data-start="0" data-duration="82.96" data-track-index="9"></audio>
+      <audio id="pop0" src="assets/pop.mp3" data-start="2.66" data-duration="0.6" data-track-index="10" data-volume="0.2"></audio>
+      <audio id="pop1" src="assets/pop.mp3" data-start="6.56" data-duration="0.6" data-track-index="11" data-volume="0.2"></audio>
+      <audio id="pop2" src="assets/pop.mp3" data-start="10.26" data-duration="0.6" data-track-index="12" data-volume="0.2"></audio>
+      <audio id="pop3" src="assets/pop.mp3" data-start="14.82" data-duration="0.6" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="pop4" src="assets/pop.mp3" data-start="15.54" data-duration="0.6" data-track-index="14" data-volume="0.2"></audio>
+      <audio id="pop5" src="assets/pop.mp3" data-start="17.46" data-duration="0.6" data-track-index="15" data-volume="0.2"></audio>
+      <audio id="pop6" src="assets/pop.mp3" data-start="18.56" data-duration="0.6" data-track-index="16" data-volume="0.2"></audio>
+      <audio id="pop7" src="assets/pop.mp3" data-start="19.86" data-duration="0.6" data-track-index="17" data-volume="0.2"></audio>
+      <audio id="pop8" src="assets/pop.mp3" data-start="20.9" data-duration="0.6" data-track-index="18" data-volume="0.2"></audio>
+      <audio id="pop9" src="assets/pop.mp3" data-start="24.34" data-duration="0.6" data-track-index="19" data-volume="0.2"></audio>
+      <audio id="pop10" src="assets/pop.mp3" data-start="27.7" data-duration="0.6" data-track-index="20" data-volume="0.2"></audio>
+      <audio id="pop11" src="assets/pop.mp3" data-start="31.3" data-duration="0.6" data-track-index="21" data-volume="0.2"></audio>
+      <audio id="pop12" src="assets/pop.mp3" data-start="33.3" data-duration="0.6" data-track-index="22" data-volume="0.2"></audio>
+      <audio id="pop13" src="assets/pop.mp3" data-start="39.86" data-duration="0.6" data-track-index="23" data-volume="0.2"></audio>
+      <audio id="pop14" src="assets/pop.mp3" data-start="41.22" data-duration="0.6" data-track-index="24" data-volume="0.2"></audio>
+      <audio id="pop15" src="assets/pop.mp3" data-start="42.58" data-duration="0.6" data-track-index="25" data-volume="0.2"></audio>
+      <audio id="pop16" src="assets/pop.mp3" data-start="44.66" data-duration="0.6" data-track-index="26" data-volume="0.2"></audio>
+      <audio id="pop17" src="assets/pop.mp3" data-start="48.5" data-duration="0.6" data-track-index="27" data-volume="0.2"></audio>
+      <audio id="pop18" src="assets/pop.mp3" data-start="53.86" data-duration="0.6" data-track-index="28" data-volume="0.2"></audio>
+      <audio id="pop19" src="assets/pop.mp3" data-start="58.82" data-duration="0.6" data-track-index="29" data-volume="0.2"></audio>
+      <audio id="pop20" src="assets/pop.mp3" data-start="61.77" data-duration="0.6" data-track-index="30" data-volume="0.2"></audio>
+      <audio id="pop21" src="assets/pop.mp3" data-start="63.69" data-duration="0.6" data-track-index="31" data-volume="0.2"></audio>
+      <audio id="pop22" src="assets/pop.mp3" data-start="69.29" data-duration="0.6" data-track-index="32" data-volume="0.2"></audio>
+      <audio id="pop23" src="assets/pop.mp3" data-start="70.17" data-duration="0.6" data-track-index="33" data-volume="0.2"></audio>
+      <audio id="pop24" src="assets/pop.mp3" data-start="74.09" data-duration="0.6" data-track-index="34" data-volume="0.2"></audio>
+      <audio id="pop25" src="assets/pop.mp3" data-start="76.81" data-duration="0.6" data-track-index="35" data-volume="0.2"></audio>
+      <audio id="pop26" src="assets/pop.mp3" data-start="81.45" data-duration="0.6" data-track-index="36" data-volume="0.2"></audio>
+
+      <div id="beeld-bg" class="clip" data-start="0" data-duration="82.96" data-track-index="3"></div>
+      <div id="beeld-layer" class="clip" data-start="0" data-duration="82.96" data-track-index="4"></div>
+      <div id="captions" class="clip" data-start="0" data-duration="82.96" data-track-index="5"></div>
+      <div id="hook" class="anchor-text clip" data-start="0" data-duration="82.96" data-track-index="6"></div>
+      <div id="cta" class="anchor-text clip" data-start="0" data-duration="82.96" data-track-index="7"></div>
+    </div>
+
+    <script>
+      /* ======================= CONFIG — alleen dit aanpassen ======================= */
+      const CONFIG = {"duration": 82.96, "faceOffsetY": -115, "hook": {"text": "In <span class=\"hl\">5 jaar</span> van het gas af", "end": 2.55}, "cta": {"word": "CHECK", "start": 80.96}, "words": [["In", 0, 0.24], ["5", 0.24, 0.48], ["jaar", 0.48, 0.72], ["van", 0.72, 0.88], ["het", 1.04, 1.12], ["gas", 1.12, 1.44], ["af", 1.44, 1.84], ["Zo", 1.84, 2.08], ["doe", 2.08, 2.24], ["je", 2.24, 2.32], ["dat", 2.32, 2.64], ["Je", 2.66, 2.82], ["kan", 2.82, 3.06], ["het", 3.06, 3.14], ["bijvoorbeeld", 3.14, 3.46], ["ook", 3.46, 3.62], ["spreiden", 3.62, 3.94], ["over", 4.1, 4.26], ["5", 4.26, 4.5], ["jaar", 4.5, 4.74], ["En", 4.74, 4.82], ["dat", 4.82, 4.9], ["ga", 4.9, 5.06], ["ik", 5.06, 5.14], ["je", 5.14, 5.3], ["nou", 5.3, 5.46], ["laten", 5.46, 5.7], ["zien", 5.7, 5.86], ["in", 5.86, 5.94], ["deze", 5.94, 6.18], ["video", 6.18, 6.58], ["Ik", 6.58, 6.74], ["ga", 6.74, 6.9], ["er", 6.9, 7.06], ["even", 7.06, 7.22], ["vanuit", 7.22, 7.54], ["dat", 7.54, 7.62], ["die", 7.62, 7.78], ["woning", 7.78, 8.34], ["eigenlijk", 8.5, 8.74], ["helemaal", 8.74, 9.06], ["niks", 9.06, 9.3], ["heeft", 9.3, 9.54], ["Dus", 9.54, 9.7], ["zitten", 9.86, 10.18], ["op", 10.18, 10.26], ["label", 10.26, 10.58], ["F", 10.58, 10.9], ["Dan", 10.9, 10.98], ["kan", 11.06, 11.22], ["je", 11.22, 11.46], ["vervolgens", 11.46, 12.02], ["in", 12.02, 12.18], ["5", 12.18, 12.42], ["jaar", 12.5, 12.74], ["tijd", 12.74, 13.06], ["dit", 13.14, 13.46], ["helemaal", 13.54, 13.94], ["gaan", 13.94, 14.1], ["verduurzamen", 14.1, 14.66], ["naar", 14.74, 14.82], ["label", 14.82, 15.14], ["A", 15.14, 15.54], ["Jaar", 15.54, 15.86], ["1", 15.86, 16.34], ["Ga", 16.34, 16.66], ["isoleren", 16.66, 17.46], ["Vloer", 17.46, 17.78], ["isoleren", 17.86, 18.58], ["spouw", 18.58, 19.22], ["isoleren", 19.22, 19.86], ["Dat", 19.86, 20.02], ["doe", 20.02, 20.18], ["je", 20.18, 20.34], ["als", 20.34, 20.5], ["eerst", 20.5, 20.9], ["Jaar", 20.9, 21.3], ["2", 21.3, 21.54], ["ga", 21.78, 22.02], ["je", 22.02, 22.18], ["kijken", 22.18, 22.42], ["naar", 22.42, 22.58], ["beter", 22.58, 22.98], ["glas", 22.98, 23.38], ["Dus", 23.38, 23.54], ["zorg", 23.62, 23.86], ["ervoor", 23.86, 24.1], ["dat", 24.1, 24.26], ["de", 24.26, 24.34], ["HR++", 24.34, 25.22], ["glas", 25.22, 25.54], ["in", 25.54, 25.7], ["de", 25.7, 25.78], ["ramen", 25.78, 26.1], ["komt", 26.1, 26.66], ["En", 26.66, 26.9], ["je", 26.9, 26.98], ["gaat", 26.98, 27.22], ["kijken", 27.22, 27.46], ["naar", 27.46, 27.62], ["dak", 27.7, 28.18], ["Ga", 28.18, 28.34], ["dak", 28.42, 28.58], ["isoleren", 28.74, 29.3], ["van", 29.3, 29.46], ["binnen", 29.46, 30.02], ["of", 30.02, 30.18], ["van", 30.18, 30.34], ["buiten", 30.34, 30.74], ["af", 30.74, 31.3], ["Jaar", 31.3, 31.78], ["3", 31.78, 32.1], ["ga", 32.26, 32.5], ["je", 32.5, 32.66], ["kijken", 32.66, 32.98], ["naar", 32.98, 33.14], ["een", 33.14, 33.3], ["hybride", 33.3, 33.78], ["warmtepomp", 33.78, 34.82], ["Zorg", 34.82, 35.14], ["er", 35.14, 35.3], ["wel", 35.3, 35.46], ["voor", 35.46, 35.62], ["als", 35.78, 35.94], ["je", 35.94, 36.1], ["daar", 36.1, 36.26], ["naar", 36.26, 36.34], ["kijkt", 36.42, 36.82], ["dat", 36.82, 36.98], ["de", 36.98, 37.14], ["hybride", 37.14, 37.7], ["setup", 37.7, 38.18], ["zo", 38.18, 38.42], ["is", 38.42, 38.58], ["gemaakt", 38.58, 39.14], ["dat", 39.3, 39.54], ["je", 39.54, 39.86], ["all-electric", 39.86, 40.58], ["ready", 40.66, 40.82], ["is", 40.98, 41.22], ["In", 41.22, 41.38], ["jaar", 41.38, 41.46], ["4", 41.62, 41.86], ["ga", 41.86, 42.02], ["je", 42.02, 42.18], ["kijken", 42.18, 42.42], ["naar", 42.42, 42.58], ["zonnepanelen", 42.58, 43.38], ["En", 43.38, 43.46], ["dit", 43.46, 43.62], ["doen", 43.62, 43.78], ["we", 43.78, 43.94], ["ná", 43.94, 44.66], ["de", 44.66, 44.74], ["hybride", 44.74, 45.22], ["warmtepomp", 45.22, 45.86], ["is", 45.86, 46.02], ["geplaatst", 46.02, 46.58], ["En", 46.58, 46.74], ["niet", 46.74, 46.98], ["ervoor", 46.98, 47.7], ["Omdat", 47.7, 48.02], ["je", 48.02, 48.18], ["dan", 48.18, 48.5], ["even", 48.5, 48.82], ["een", 48.82, 48.98], ["jaar", 48.98, 49.3], ["kan", 49.3, 49.54], ["zien", 49.54, 49.86], ["wat", 50.02, 50.26], ["jouw", 50.26, 50.58], ["kosten", 50.58, 50.82], ["zijn", 50.98, 51.3], ["en", 51.3, 51.54], ["hoeveel", 51.54, 52.1], ["elektriciteit", 52.1, 52.82], ["je", 52.82, 52.98], ["gaat", 52.98, 53.22], ["verbruiken", 53.22, 53.86], ["In", 53.86, 54.02], ["jaar", 54.02, 54.26], ["5", 54.26, 54.5], ["kan", 54.58, 54.74], ["je", 54.74, 54.9], ["wat", 54.9, 55.06], ["gaan", 55.06, 55.22], ["fine-tunen", 55.22, 56.1], ["Rij", 56.1, 56.34], ["je", 56.42, 56.58], ["hybride", 56.58, 57.06], ["of", 57.06, 57.22], ["volledig", 57.22, 57.62], ["elektrisch", 57.62, 58.1], ["kijk", 58.1, 58.26], ["dan", 58.26, 58.42], ["eens", 58.42, 58.5], ["naar", 58.58, 58.74], ["een", 58.74, 58.82], ["laadpaal", 58.82, 59.78], ["Of", 60.25, 60.49], ["wat", 60.49, 60.65], ["je", 60.65, 60.81], ["kan", 60.81, 60.97], ["doen", 60.97, 61.13], ["dan", 61.13, 61.21], ["ga", 61.29, 61.45], ["ik", 61.45, 61.61], ["nu", 61.61, 61.77], ["helemaal", 61.77, 62.09], ["van", 62.09, 62.25], ["het", 62.25, 62.33], ["gas", 62.33, 62.65], ["af", 62.65, 63.05], ["haal", 63.21, 63.45], ["ik", 63.45, 63.53], ["de", 63.53, 63.69], ["ketel", 63.69, 64.17], ["weg", 64.17, 64.41], ["en", 64.49, 64.73], ["laat", 64.73, 64.97], ["ik", 64.97, 65.13], ["die", 65.13, 65.29], ["warmtepomp", 65.29, 65.93], ["omzetten", 65.93, 66.25], ["naar", 66.33, 66.41], ["een", 66.41, 66.57], ["all-electric", 66.57, 67.21], ["warmtepomp", 67.21, 68.17], ["En", 68.17, 68.49], ["ben", 68.57, 68.81], ["je", 68.81, 68.97], ["eigenlijk", 68.97, 69.29], ["helemaal", 69.29, 69.69], ["klaar", 69.69, 70.17], ["Nou", 70.17, 70.41], ["waarom", 70.41, 70.57], ["kies", 70.65, 70.89], ["ik", 70.89, 71.05], ["deze", 71.05, 71.21], ["volgorde", 71.21, 71.85], ["in", 71.93, 72.09], ["het", 72.09, 72.17], ["verduurzamen?", 72.17, 73.13], ["Dat", 73.13, 73.37], ["komt", 73.37, 73.69], ["omdat", 73.69, 74.01], ["elke", 74.09, 74.49], ["stap", 74.49, 74.89], ["maakt", 74.89, 75.13], ["de", 75.13, 75.29], ["volgende", 75.29, 75.69], ["stap", 75.69, 75.93], ["weer", 75.93, 76.09], ["beter", 76.17, 76.57], ["Wil", 76.81, 77.05], ["je", 77.05, 77.21], ["nou", 77.21, 77.45], ["je", 77.45, 77.61], ["eigen", 77.61, 77.93], ["5", 77.93, 78.09], ["jaar", 78.25, 78.57], ["plan", 78.57, 78.73], ["reageren", 78.81, 79.21], ["dan", 79.29, 79.37], ["CHECK", 79.45, 79.69], ["hier", 79.77, 79.93], ["in", 79.93, 80.01], ["de", 80.01, 80.09], ["reacties", 80.09, 80.49], ["en", 80.49, 80.57], ["dan", 80.57, 80.73], ["stuur", 80.73, 80.89]], "chunkSize": 3, "beelden": [], "punchIns": [[0, 1.0], [6.62, 1.12], [10.74, 1.0], [15.34, 1.12], [19.74, 1.0], [31.06, 1.12], [34.54, 1.0], [39.1, 1.12], [43.18, 1.0], [49.82, 1.12], [53.62, 1.0], [59.82, 1.12], [67.7, 1.0], [76.5, 1.12], [80.96, 1.0]]};
+      const SCENES = [{"type": "intro", "start": 2.66, "end": 6.51, "kop": "Jouw huis in 5 jaar", "pills": [3.62, 3.86, 4.1, 4.3, 4.5]}, {"type": "huis", "start": 6.56, "end": 15.48, "niks": 8.74, "labelF": 10.26, "labelA": 14.82}, {"type": "jaar", "start": 15.54, "end": 20.84, "n": 1, "icon": "iso", "lines": [["Vloer isoleren", 17.46], ["Spouw isoleren", 18.56], ["Dit doe je eerst", 19.86]]}, {"type": "jaar", "start": 20.9, "end": 31.24, "n": 2, "icon": "raam", "lines": [["Beter glas: HR++", 24.34], ["Dak isoleren", 27.7]]}, {"type": "jaar", "start": 31.3, "end": 41.16, "n": 3, "icon": "wp", "lines": [["Hybride warmtepomp", 33.3], ["All-electric ready", 39.86]]}, {"type": "jaar", "start": 41.22, "end": 53.8, "n": 4, "icon": "zon", "lines": [["Zonnepanelen", 42.58], ["Pas ná de warmtepomp", 44.66], ["Eerst je verbruik zien", 48.5]]}, {"type": "jaar", "start": 53.86, "end": 70.11, "n": 5, "icon": "gas", "lines": [["Laadpaal?", 58.82], ["Van het gas af", 61.77], ["Ketel weg", 63.69], ["Klaar!", 69.29]]}, {"type": "ketting", "start": 70.17, "end": 76.76, "steps": ["Isoleren", "Glas + dak", "Hybride", "Panelen", "Gas eraf"], "stepT": 73.13, "title": 74.09}, {"type": "eind", "start": 76.81, "end": 1001.66, "eigen": 77.61, "calc": 81.45}];
+      const ICONS = {"iso": "<svg viewBox=\"0 0 230 230\"><path d=\"M25 110 L115 35 L205 110\" fill=\"none\" stroke=\"#fff\" stroke-width=\"10\" stroke-linejoin=\"round\"/>\n   <rect x=\"45\" y=\"105\" width=\"140\" height=\"105\" fill=\"none\" stroke=\"#fff\" stroke-width=\"10\"/>\n   <rect class=\"laag\" x=\"55\" y=\"115\" width=\"18\" height=\"85\" fill=\"#ffa62b\"/><rect class=\"laag\" x=\"157\" y=\"115\" width=\"18\" height=\"85\" fill=\"#ffa62b\"/>\n   <rect class=\"laag\" x=\"55\" y=\"188\" width=\"120\" height=\"14\" fill=\"#ffa62b\"/></svg>", "raam": "<svg viewBox=\"0 0 230 230\"><rect x=\"40\" y=\"30\" width=\"150\" height=\"170\" rx=\"8\" fill=\"#82c0cc33\" stroke=\"#fff\" stroke-width=\"10\"/>\n   <line x1=\"115\" y1=\"30\" x2=\"115\" y2=\"200\" stroke=\"#fff\" stroke-width=\"8\"/><line x1=\"40\" y1=\"115\" x2=\"190\" y2=\"115\" stroke=\"#fff\" stroke-width=\"8\"/>\n   <path class=\"glans\" d=\"M58 95 L95 48\" stroke=\"#fff\" stroke-width=\"8\" stroke-linecap=\"round\" opacity=\".7\"/>\n   <text x=\"115\" y=\"226\" font-size=\"34\" font-weight=\"800\" fill=\"#ffa62b\" text-anchor=\"middle\" font-family=\"Poppins\">HR++</text></svg>", "wp": "<svg viewBox=\"0 0 230 230\"><rect x=\"20\" y=\"45\" width=\"190\" height=\"140\" rx=\"16\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"9\"/>\n   <circle cx=\"95\" cy=\"115\" r=\"50\" fill=\"none\" stroke=\"#fff\" stroke-width=\"7\"/>\n   <g class=\"fan\"><path d=\"M95 115 L95 72 Q120 85 95 115 M95 115 L132 137 Q108 152 95 115 M95 115 L58 137 Q60 108 95 115\" fill=\"#ffa62b\"/></g>\n   <rect x=\"160\" y=\"70\" width=\"30\" height=\"8\" rx=\"4\" fill=\"#82c0cc\"/><rect x=\"160\" y=\"90\" width=\"30\" height=\"8\" rx=\"4\" fill=\"#82c0cc\"/></svg>", "zon": "<svg viewBox=\"0 0 230 230\"><g class=\"zonnetje\"><circle cx=\"175\" cy=\"50\" r=\"24\" fill=\"#ffa62b\"/>\n   <g stroke=\"#ffa62b\" stroke-width=\"7\" stroke-linecap=\"round\"><line x1=\"175\" y1=\"8\" x2=\"175\" y2=\"16\"/><line x1=\"217\" y1=\"50\" x2=\"209\" y2=\"50\"/><line x1=\"145\" y1=\"20\" x2=\"151\" y2=\"26\"/><line x1=\"205\" y1=\"20\" x2=\"199\" y2=\"26\"/><line x1=\"205\" y1=\"80\" x2=\"199\" y2=\"74\"/></g></g>\n   <path d=\"M20 200 L70 100 L190 100 L140 200 Z\" fill=\"#82c0cc33\" stroke=\"#fff\" stroke-width=\"8\" stroke-linejoin=\"round\"/>\n   <path d=\"M45 150 L165 150 M103 100 L80 200 M147 100 L118 200\" stroke=\"#fff\" stroke-width=\"6\"/></svg>", "gas": "<svg viewBox=\"0 0 230 230\"><path class=\"vlam\" d=\"M115 25 C150 75 175 105 175 145 C175 180 148 205 115 205 C82 205 55 180 55 145 C55 115 75 95 88 70 C95 95 105 105 115 110 C112 80 105 55 115 25 Z\" fill=\"#82c0cc\"/>\n   <line class=\"kruis\" x1=\"30\" y1=\"30\" x2=\"200\" y2=\"200\" stroke=\"#e8452c\" stroke-width=\"18\" stroke-linecap=\"round\" stroke-dasharray=\"241\" stroke-dashoffset=\"241\"/></svg>"};
+      const HUIS = "<svg class=\"huis-svg\" viewBox=\"0 0 360 400\"><path d=\"M20 180 L180 40 L340 180\" fill=\"none\" stroke=\"#fff\" stroke-width=\"14\" stroke-linejoin=\"round\"/>\n  <rect x=\"55\" y=\"170\" width=\"250\" height=\"210\" fill=\"#2e2e37\" stroke=\"#fff\" stroke-width=\"14\"/>\n  <rect x=\"95\" y=\"215\" width=\"70\" height=\"70\" fill=\"#82c0cc55\" stroke=\"#fff\" stroke-width=\"8\"/><rect x=\"200\" y=\"215\" width=\"70\" height=\"70\" fill=\"#82c0cc55\" stroke=\"#fff\" stroke-width=\"8\"/>\n  <rect x=\"150\" y=\"300\" width=\"60\" height=\"80\" fill=\"#ffa62b\"/></svg>";
+      /* ============================================================================ */
+
+      const tl = gsap.timeline({ paused: true });
+      const $ = (s) => document.querySelector(s);
+
+      // Face-positie
+      gsap.set("#face-wrapper", { y: CONFIG.faceOffsetY });
+      CONFIG.punchIns.forEach(([t, s]) => tl.set("#face-wrapper", { scale: s }, t));
+
+      // Hook op ankerpunt
+      $("#hook").innerHTML = CONFIG.hook.text;
+      tl.fromTo("#hook", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(1.6)" }, 0.02);
+      tl.to("#hook", { opacity: 0, duration: 0.12, ease: "power2.in" }, CONFIG.hook.end);
+
+      // Captions (start pas na de hook-tekst zodat ze niet dubbel staan)
+      const cap = $("#captions");
+      const words = CONFIG.words.filter(([, s]) => s >= CONFIG.hook.end - 0.05);
+      for (let i = 0; i < words.length; i += CONFIG.chunkSize) {
+        const group = words.slice(i, i + CONFIG.chunkSize);
+        const el = document.createElement("div");
+        el.className = "chunk";
+        el.innerHTML = group.map(([w]) => `<span class="w">${w}</span>`).join(" ");
+        cap.appendChild(el);
+        const start = group[0][1], end = (words[i + CONFIG.chunkSize] || [null, group[group.length - 1][2]])[1];
+        tl.set(el, { opacity: 1 }, start);
+        tl.set(el, { opacity: 0 }, Math.min(end, CONFIG.cta.start));
+        group.forEach(([, s, e], j) => {
+          const span = el.children[j];
+          tl.set(span, { className: "w on" }, s);
+          tl.set(span, { className: "w" }, e);
+        });
+      }
+
+
+      // ===== Sardo D09: scenes in de beeld-zone =====
+      const layer = document.querySelector("#beeld-layer");
+      const PILLX = (k, n) => (k / (n - 1)) * 100;
+      function tlRow(n, cls) {
+        let h = `<div class="tl ${cls||''}"><div class="bar"></div><div class="fill"></div>`;
+        for (let k = 0; k < 5; k++) h += `<div class="pill" style="left:calc(38px + (100% - 76px) * ${k/4})">${k+1}</div>`;
+        return h + `</div>`;
+      }
+      const pop = [];
+      SCENES.forEach((s, i) => {
+        const el = document.createElement("div");
+        el.className = "scene " + s.type;
+        let html = "";
+        if (s.type === "intro") html = `<div class="intro-title">${s.kop.replace("5 jaar", '<span class="hl">5 jaar</span>')}</div>` + tlRow(5);
+        if (s.type === "huis") html = HUIS + `<div class="niks">Nog niks gedaan</div>` +
+            `<div class="lbl f" style="left:425px;top:210px;opacity:0"><small>Nu</small>F</div>` +
+            `<div class="pijl">➜<small>5 jaar</small></div>` +
+            `<div class="lbl a" style="left:660px;top:210px;opacity:0"><small>Straks</small>A</div>`;
+        if (s.type === "jaar") html = tlRow(5) + `<div class="jaar-big">Jaar ${s.n}</div><div class="icon">${ICONS[s.icon]}</div>` +
+            `<div class="lines">` + s.lines.map(l => `<div class="ln">${l[0]}</div>`).join("") + `</div>`;
+        if (s.type === "ketting") {
+          html = `<div class="k-title">Elke stap maakt de <span class="hl">volgende beter</span></div>`;
+          s.steps.forEach((t, k) => { const hgt = 150 + k * 50; html += `<div class="step" style="left:${40 + k*156}px;top:${520 - hgt}px;height:${hgt}px">${t}<b>${k+1}</b></div>`; });
+        }
+        if (s.type === "eind") html = `<div class="eind-a">Jouw eigen<br><span class="hl">5-jaren-plan?</span></div><div class="eind-b">Ik stuur je de calculator</div>`;
+        el.innerHTML = html;
+        layer.appendChild(el);
+        const end = Math.min(s.end, CONFIG.duration);
+        tl.set("#beeld-bg", { opacity: 1 }, s.start);
+        tl.fromTo(el, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, s.start);
+        if (s.end < CONFIG.duration) tl.to(el, { opacity: 0, duration: 0.12, ease: "power2.in" }, end - 0.12);
+        pop.push(s.start);
+
+        if (s.type === "intro") {
+          el.querySelectorAll(".pill").forEach((p, k) => tl.fromTo(p, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, s.pills[k]));
+          tl.fromTo(el.querySelector(".fill"), { width: 0 }, { width: "calc(100% - 76px)", duration: 1.0, ease: "power2.inOut" }, s.pills[0]);
+        }
+        if (s.type === "huis") {
+          tl.to(el.querySelector(".niks"), { opacity: 1, duration: 0.25 }, s.niks);
+          tl.fromTo(el.querySelector(".lbl.f"), { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, s.labelF);
+          tl.fromTo(el.querySelector(".pijl"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, s.labelA - 0.7);
+          tl.fromTo(el.querySelector(".lbl.a"), { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, s.labelA);
+          pop.push(s.labelF, s.labelA);
+        }
+        if (s.type === "jaar") {
+          const pills = el.querySelectorAll(".pill");
+          pills.forEach((p, k) => { if (k < s.n - 1) p.classList.add("done"); if (k === s.n - 1) p.classList.add("now"); });
+          const from = Math.max(0, s.n - 2) / 4, to = (s.n - 1) / 4;
+          tl.fromTo(el.querySelector(".fill"), { width: `calc((100% - 76px) * ${from})` }, { width: `calc((100% - 76px) * ${to})`, duration: 0.5, ease: "power2.inOut" }, s.start + 0.1);
+          tl.fromTo(pills[s.n - 1], { scale: 0.6 }, { scale: 1.12, duration: 0.3, ease: "back.out(3)" }, s.start + 0.45);
+          tl.fromTo(el.querySelector(".jaar-big"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, s.start + 0.1);
+          tl.fromTo(el.querySelector(".icon"), { opacity: 0, scale: 0.6, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.45, ease: "back.out(1.8)" }, s.start + 0.2);
+          el.querySelectorAll(".ln").forEach((ln, k) => { tl.fromTo(ln, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out" }, s.lines[k][1]); });
+          const ic = el.querySelector(".icon");
+          if (s.icon === "iso") ic.querySelectorAll(".laag").forEach((l, k) => tl.fromTo(l, { opacity: 0 }, { opacity: 1, duration: 0.3 }, s.lines[Math.min(k,1)][1]));
+          if (s.icon === "wp") tl.fromTo(ic.querySelector(".fan"), { rotation: 0, svgOrigin: "95 115" }, { rotation: 360 * 8, svgOrigin: "95 115", duration: end - s.start, ease: "none" }, s.start);
+          if (s.icon === "zon") tl.fromTo(ic.querySelector(".zonnetje"), { scale: 0.85, svgOrigin: "175 50" }, { scale: 1.1, svgOrigin: "175 50", duration: 0.8, ease: "sine.inOut", repeat: Math.floor((end - s.start) / 0.8) - 1, yoyo: true }, s.start);
+          if (s.icon === "raam") tl.fromTo(ic.querySelector(".glans"), { opacity: 0.2 }, { opacity: 0.9, duration: 0.6, yoyo: true, repeat: 5 }, s.start + 0.5);
+          if (s.icon === "gas") {
+            tl.fromTo(ic.querySelector(".vlam"), { scaleY: 0.9, svgOrigin: "115 205" }, { scaleY: 1.05, svgOrigin: "115 205", duration: 0.3, yoyo: true, repeat: Math.floor((s.lines[1][1] - s.start) / 0.3), ease: "sine.inOut" }, s.start);
+            tl.to(ic.querySelector(".kruis"), { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, s.lines[1][1]);
+            tl.to(ic.querySelector(".vlam"), { opacity: 0.35, duration: 0.3 }, s.lines[1][1] + 0.2);
+            tl.fromTo(pills[4], { scale: 1.12 }, { scale: 1.3, duration: 0.25, yoyo: true, repeat: 1 }, s.lines[3][1]);
+          }
+          s.lines.forEach(l => pop.push(l[1]));
+        }
+        if (s.type === "ketting") {
+          el.querySelectorAll(".step").forEach((st, k) => tl.fromTo(st, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.6)" }, s.start + 0.2 + k * 0.45));
+          tl.fromTo(el.querySelector(".k-title"), { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, s.title);
+          pop.push(s.title);
+        }
+        if (s.type === "eind") {
+          tl.fromTo(el.querySelector(".eind-a"), { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, s.eigen);
+          tl.fromTo(el.querySelector(".eind-b"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, s.calc);
+          pop.push(s.calc);
+        }
+      });
+
+      // CTA
+      $("#cta").innerHTML = `<span class="small">Reageer</span><span class="big">${CONFIG.cta.word}</span>`;
+      tl.fromTo("#cta", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.8)" }, CONFIG.cta.start);
+
+      tl.set({}, {}, CONFIG.duration);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
