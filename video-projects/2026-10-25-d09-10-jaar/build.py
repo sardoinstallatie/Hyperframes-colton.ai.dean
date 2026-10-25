@@ -45,7 +45,7 @@ SCENES = [
     {'type': 'jaar', 'start': 38.56, 'end': 51.14, 'n': 4, 'icon': 'zon', 'lines': [['Zonnepanelen', 39.92], ['Pas ná de warmtepomp', 42.0], ['Eerst je verbruik zien', 45.84]]},
     {'type': 'jaar', 'start': 51.2, 'end': 67.45, 'n': 5, 'icon': 'gas', 'lines': [['Laadpaal?', 56.16], ['Van het gas af', 59.11], ['Ketel weg', 61.03], ['Klaar!', 66.63]]},
     {'type': 'ketting', 'start': 67.51, 'end': 74.1, 'steps': ['Isoleren', 'Glas + dak', 'Hybride', 'Panelen', 'Gas eraf'], 'stepT': 70.47, 'title': 71.43},
-    {'type': 'eind', 'start': 74.15, 'end': 999, 'eigen': 74.95, 'calc': 78.79},
+    {'type': 'eind', 'start': 74.15, 'end': 999, 'eigen': 74.25, 'calc': 78.79},
 ]
 
 EXTRA_CSS = r'''

@@ -31,6 +31,7 @@ Is alles duidelijk? Ga direct door, niet wachten.
 
 Raw-map op de Mac: `/Users/peter/Documents/videos/raw/` (device_bash: `$HOME/mnt/Documents/videos/raw/`).
 - Lijst met `device_list_dir`. Haal de genoemde clips op met `device_stage_files` (komen in `/mnt/user-data/uploads/Documents/...`).
+- **Transfer is traag (getest D09):** stage/commit lukt alleen betrouwbaar met stukken van ±8 MB, 1–2 per call. Werkwijze: op de Mac alleen de benodigde tijd-ranges coderen (`ffmpeg -ss <start> -t <duur> … -vf scale=1080:-2 -preset ultrafast -crf 19`, 2 tegelijk binnen één device_bash-call — achtergrondprocessen overleven de call niet), dan `split -b 8000000`, stagen, in de cloud `cat` terug. Terugleveren net zo: `split -b 8000000` → commit naar `_sardo-tmp/out/` → `cat` op de Mac naar de eindmap.
 - Grote bestanden (4K): eerst op de Mac verkleinen kan sneller — als `ffmpeg` daar bestaat (`device_bash: which ffmpeg`): naar 1080 breed H.264 CRF 18, dan pas stagen.
 - Maak project: `video-projects/<opnamedatum>-d<dag>-<onderwerp>/` met `npx hyperframes init`, kopieer `assets/brand-tokens.css` en `assets/fonts/` erin.
 - Re-encode bron: `ffmpeg -i raw.mov -c:v libx264 -preset veryfast -crf 18 -r 25 -c:a aac -b:a 192k -movflags +faststart assets/source.mp4`
