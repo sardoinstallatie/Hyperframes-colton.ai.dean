@@ -18,3 +18,7 @@ Voor **Yapping**-video's (tip/verhaal/mening, praten in de camera). Referentie: 
 3. `cut.py`: alleen `KEEP` (ruwe tijden) aanpassen → `work/full.mp4` + `work/edl.json`. Transcribeer `work/full.mp4` → `work/transcript.json`.
 4. `build.py`: pas aan → `FIX` (transcript-fouten), `SCENES` (tijden in de geknipte video), hook-tekst, CTA-woord, `faceOffsetY` + transform-origin. Icoon-bibliotheek in `SVG` (huis, sneeuw, ketel, thermostaat, radiator, lek, bloem, warmtepomp, vink …). Nieuwe icoontjes in dezelfde stijl tekenen: wit lijnwerk 12–14 px, oranje accent, #2e2e37 vulling.
 5. `python3 build.py` → map `A/` → lint → `npx hyperframes snapshot A --at …` → 3 stills naar Peter → render.
+
+## Renderen
+`render.sh` (in de projectmap, NIET in `A/` — build.py wist `A/`). Start los: `(setsid nohup bash render.sh > /dev/null 2>&1 &)` en wacht in aparte commando's; anders wordt de render afgebroken. ±7 min voor 49 s.
+- Hook-tekst verdwijnt op 1,86 s; captions pas vanaf 1,95 s (anders 2–3 frames overlap).
