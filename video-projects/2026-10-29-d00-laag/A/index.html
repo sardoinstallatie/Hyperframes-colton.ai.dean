@@ -98,6 +98,13 @@
         g.forEach(([w, a, b], j) => { if (/^\d+%/.test(w)) return; tl.set(el.children[j], { className: "w on" }, a); tl.set(el.children[j], { className: "w" }, b); });
       });
 
+      // ---------- Opening: piramide met rode onderste balk (zonder tekst), dan huis ----------
+      tl.set("#house", { opacity: 0 }, 0); tl.set("#pyr", { opacity: 1 }, 0);
+      tl.set("#b90 .fill", { backgroundColor: "#e53935" }, 0);
+      loop("#b90", { scale: 1 }, { scale: 1.05 }, 0, C.hookEnd, 0.35);
+      tl.set("#pyr", { opacity: 0 }, C.hookEnd); tl.set("#house", { opacity: 1 }, C.hookEnd);
+      tl.fromTo("#house", { scale: 0.96 }, { scale: 1, duration: 0.25, ease: "power2.out", immediateRender: false }, C.hookEnd);
+
       // ---------- Wissel huis <-> piramide ----------
       C.layers.forEach((l, i) => {
         const t = P[l], next = C.layers[i + 1];

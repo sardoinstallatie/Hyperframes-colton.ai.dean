@@ -23,3 +23,4 @@ Layout: op verzoek zoals @therealbrianmark-screenshot — piramide boven (0–96
 - Shot 9 (top 10%) eindigt 0,44 s eerder: naar-voren-leunen eruit → raw-media/body2.mp4 (55,44 s).
 - Top-zone wisselt nu: huis-animatie (house.py) tijdens de zin, piramide + "TOP X%" op het moment dat Peter het percentage noemt. Afsluiter: rood beginhuis ➜ groen eindhuis.
 - Build: `python3 build2.py` (template tpl.html).
+- v3: eerste ~2,3 s piramide met rode onderste balk zonder tekst (nieuwsgierigheid), dan huis, dan 90%.
