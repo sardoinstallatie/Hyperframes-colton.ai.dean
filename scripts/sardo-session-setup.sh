@@ -52,10 +52,22 @@ else
   fi
   rm -rf "$TMP"
 fi
-( cd "$MODEL_DIR" && sha256sum encoder.int8.onnx 2>/dev/null | grep -q acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247 ) \
-  && echo "  checksum encoder ok" || echo "  ⚠ checksum encoder klopt niet"
-# Runtime (sherpa-onnx-node, via npm) installeren. Het model staat er al, dus deze stap
-# slaat de geblokkeerde huggingface-download over en controleert alleen.
+# De GitHub-release wordt af en toe vernieuwd; de Hyperframes-CLI pint oudere hashes/groottes
+# en gooit de bestanden dan weg (en probeert huggingface, wat geblokkeerd is). Daarom: de gepinde
+# waarden in de CLI gelijktrekken met wat er nu in $MODEL_DIR staat (alleen in de npx-cache, lokaal).
+CHUNK="$(grep -rl 'PARAKEET_MODEL_FILES = \[' ~/.npm/_npx/*/node_modules/hyperframes/dist/ 2>/dev/null | head -1)"
+if [ -n "$CHUNK" ] && [ -f "$MODEL_DIR/encoder.int8.onnx" ]; then
+  python3 - "$CHUNK" "$MODEL_DIR" <<'PY'
+import re,sys,hashlib,os
+chunk,mdir=sys.argv[1],sys.argv[2]
+src=open(chunk).read()
+for name in ["encoder.int8.onnx","decoder.int8.onnx","joiner.int8.onnx","tokens.txt"]:
+    f=os.path.join(mdir,name); b=os.path.getsize(f); h=hashlib.sha256(open(f,'rb').read()).hexdigest()
+    src=re.sub(r'(name: "%s",\s*bytes: )\d+(,\s*sha256: ")[a-f0-9]+(")'%re.escape(name), lambda m: f"{m.group(1)}{b}{m.group(2)}{h}{m.group(3)}", src)
+open(chunk,'w').write(src)
+print("  CLI-pins gelijkgetrokken met modelbestanden")
+PY
+fi
 echo "  runtime installeren…"
 timeout 400 npx --yes hyperframes models install parakeet 2>&1 | grep -q "Parakeet installed" \
   && echo "  Parakeet klaar" || echo "  ⚠ Parakeet-runtime niet gelukt — draai: npx hyperframes models install parakeet"
