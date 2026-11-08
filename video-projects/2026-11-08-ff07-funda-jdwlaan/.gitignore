@@ -1,0 +1,12 @@
+renders/
+raw-media/
+.hyperframes/
+.renders-*/
+*.mp4
+*.wav
+*.ogg
+assets/transcript-raw.json
+work/probe-*
+work/stills/
+work/seg/
+work/*.jpg
