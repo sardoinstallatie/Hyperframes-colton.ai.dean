@@ -55,7 +55,16 @@ fi
 # De GitHub-release wordt af en toe vernieuwd; de Hyperframes-CLI pint oudere hashes/groottes
 # en gooit de bestanden dan weg (en probeert huggingface, wat geblokkeerd is). Daarom: de gepinde
 # waarden in de CLI gelijktrekken met wat er nu in $MODEL_DIR staat (alleen in de npx-cache, lokaal).
-CHUNK="$(grep -rl 'PARAKEET_MODEL_FILES = \[' ~/.npm/_npx/*/node_modules/hyperframes/dist/ 2>/dev/null | head -1)"
+# De npx-cache bestaat pas na een eerste hyperframes-aanroep; die forceren we hier (anders is CHUNK leeg
+# en gooit "models install" de encoder weg — gebeurd op 8 nov 2026).
+npx --yes hyperframes --version >/dev/null 2>&1 || true
+CHUNK="$(grep -rl 'encoder.int8.onnx' ~/.npm/_npx/*/node_modules/hyperframes/dist/*.js 2>/dev/null | head -1)"
+# Encoder weg (eerdere mislukte install)? Opnieuw uit de GitHub-release halen.
+if [ ! -f "$MODEL_DIR/encoder.int8.onnx" ]; then
+  TMP="$(mktemp -d)"; URL="https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2"
+  curl -sSL --fail -o "$TMP/p.tar.bz2" "$URL" && tar -xjf "$TMP/p.tar.bz2" -C "$TMP" && SRC="$(find "$TMP" -maxdepth 2 -type d -name 'sherpa-onnx-nemo-parakeet*' | head -1)" && cp "$SRC"/encoder.int8.onnx "$SRC"/decoder.int8.onnx "$SRC"/joiner.int8.onnx "$SRC"/tokens.txt "$MODEL_DIR"/
+  rm -rf "$TMP"
+fi
 if [ -n "$CHUNK" ] && [ -f "$MODEL_DIR/encoder.int8.onnx" ]; then
   python3 - "$CHUNK" "$MODEL_DIR" <<'PY'
 import re,sys,hashlib,os
