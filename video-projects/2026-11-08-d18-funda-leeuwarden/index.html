@@ -69,7 +69,8 @@
       .beeld .net b { color: var(--brand-accent); }
 
       /* Bonnetje (het plan met kosten) */
-      .beeld.bon { top: 1210px; height: 600px; justify-content: flex-start; gap: 0; padding: 30px 40px 26px; }
+      .beeld.bon { top: 1210px; height: auto; min-height: 0; justify-content: flex-start; gap: 0; padding: 30px 40px 30px; }
+      .bon .row.hid { display: none; }
       .bon .label { margin-bottom: 10px; }
       .bon .row { display: flex; justify-content: space-between; align-items: baseline; font-size: 34px; font-weight: 700; line-height: 1.34; }
       .bon .row .p { color: var(--brand-accent); font-weight: 800; white-space: nowrap; }
@@ -197,7 +198,10 @@
           el.innerHTML = b.html;
           layer.appendChild(el);
         }
-        (b.pop||[]).forEach(([sel,t]) => el.querySelectorAll(sel).forEach((n) => tl.fromTo(n, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out" }, t)));
+        (b.pop||[]).forEach(([sel,t]) => el.querySelectorAll(sel).forEach((n) => {
+          if (b.cls === "bon" && (n.classList.contains("row") || n.classList.contains("tot"))) tl.set(n, { display: "none" }, 0).set(n, { display: "flex" }, t);
+          tl.fromTo(n, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out" }, t);
+        }));
         tl.set("#beeld-bg", { opacity: 1 }, b.start);
         tl.fromTo(el, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, b.start);
         tl.to(el, { opacity: 0, duration: 0.15, ease: "power2.in" }, b.end - 0.15);

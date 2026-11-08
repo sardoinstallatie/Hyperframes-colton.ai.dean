@@ -1,4 +1,4 @@
-# Funda Fixer #6 — Vermeerstraat 33, Leeuwarden — EDL
+# D18 · Funda Fixer #6 — tussenwoning Leeuwarden (Vermeerstraat, adres niet in beeld) — EDL
 
 Bron: DJI_20261108154510_0120_D.MP4 (1728×3072, 25 fps, 9:22). Funda (verkocht 1 okt 2026): tussenwoning, 1933, 89 m², label F, €225.000 k.k.
 Peter's keuzes (8 nov): snijvoorstel ±2:20 (uitleg-zijpaden eruit, geen maatregelen), alleen de laatste hook-take, kostenlijst afgestemd op €36.500, hooktekst "Label F naar A voor een kijker", serie-label "Funda Fixer #6" in shot 1, chat-screenshot van de kijker in de hook.
