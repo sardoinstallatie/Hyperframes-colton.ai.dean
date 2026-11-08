@@ -68,13 +68,13 @@ bon_pop = [[f".r{i+1}", t] for i, (_, _, t) in enumerate(BON)] + [[f".p{i+1}", r
 
 BEELDEN = [
     # 1 Eerste shot: Funda-foto + serie-label; prijs/feiten pas bij "Een villa uit 1953" (10.4)
-    {"start": 0.0, "end": 12.72, "html": '<img src="assets/huis.jpg"><div class="badge">Funda Fixer <b>#5</b></div>'
+    {"start": 0.0, "end": 12.92, "html": '<img src="assets/huis.jpg"><div class="badge">Funda Fixer <b>#5</b></div>'
      '<div class="tagbar t1"><span class="price">€ 795.000 <small>k.k.</small></span><span class="meta">Villa · Rheden · 1953 · Label G</span></div>',
      "pop": [[".t1", 10.4]]},
     # 2 Calculator (D07-schermopname, vertraagd naar 4,3 s)
-    {"start": 12.9, "end": 17.3, "el": "#calc-card", "pop": []},
+    {"start": 12.9, "end": 17.36, "el": "#calc-card", "pop": []},
     # 3 Het plan — bonnetje; namen tijdens het plan, prijzen bij "Dit zijn de kosten", totaal bij "46.000"
-    {"start": 17.5, "end": 49.3, "cls": "bon", "html": bon_html, "pop": bon_pop},
+    {"start": 17.34, "end": 49.3, "cls": "bon", "html": bon_html, "pop": bon_pop},
     # 4 Subsidie + netto
     {"start": 49.4, "end": 56.95, "html": '<div class="label">Kosten</div><div class="value">± €46.000</div>'
      '<div class="sub s1">− €4.000 à €6.000 subsidie</div><div class="net s2">Netto: <b>± €40.000 – €42.000</b></div>'
@@ -89,8 +89,8 @@ BEELDEN = [
      "pop": [[".f0", 69.8], [".f1", 70.75]]},
 ]
 
-PUNCH = [[4.25, 1.14], [10.14, 1.0], [12.9, 1.14], [17.5, 1.0], [22.7, 1.14], [27.3, 1.0], [31.0, 1.14], [35.0, 1.0], [40.1, 1.14], [44.2, 1.0],
-         [49.4, 1.14], [52.4, 1.0], [57.05, 1.14], [62.3, 1.0], [68.85, 1.14], [73.9, 1.0], [79.1, 1.12]]
+PUNCH = [[4.25, 1.14], [10.14, 1.0], [12.9, 1.14], [17.34, 1.0], [22.7, 1.14], [27.3, 1.0], [31.0, 1.14], [35.0, 1.0], [40.1, 1.14], [44.2, 1.0],
+         [49.4, 1.14], [52.4, 1.0], [57.05, 1.14], [62.3, 1.0], [68.85, 1.14], [73.9, 1.22], [79.1, 1.14]]
 
 CONFIG = {
     "duration": DUR,

@@ -1137,7 +1137,7 @@
  "beelden": [
   {
    "start": 0.0,
-   "end": 12.72,
+   "end": 12.92,
    "html": "<img src=\"assets/huis.jpg\"><div class=\"badge\">Funda Fixer <b>#5</b></div><div class=\"tagbar t1\"><span class=\"price\">€ 795.000 <small>k.k.</small></span><span class=\"meta\">Villa · Rheden · 1953 · Label G</span></div>",
    "pop": [
     [
@@ -1148,12 +1148,12 @@
   },
   {
    "start": 12.9,
-   "end": 17.3,
+   "end": 17.36,
    "el": "#calc-card",
    "pop": []
   },
   {
-   "start": 17.5,
+   "start": 17.34,
    "end": 49.3,
    "cls": "bon",
    "html": "<div class=\"label\">Het plan</div><div class=\"row r1\"><span class=\"n\">Spouw isoleren</span><span class=\"p p1\">€3k – 5k</span></div><div class=\"row r2\"><span class=\"n\">Dak isoleren (binnen)</span><span class=\"p p2\">€4k – 7k</span></div><div class=\"row r3\"><span class=\"n\">Vloer isoleren</span><span class=\"p p3\">€1,5k – 3k</span></div><div class=\"row r4\"><span class=\"n\">HR++ glas</span><span class=\"p p4\">€5k – 8k</span></div><div class=\"row r5\"><span class=\"n\">Ventilatie (type C)</span><span class=\"p p5\">€3k – 5k</span></div><div class=\"row r6\"><span class=\"n\">Hybride warmtepomp</span><span class=\"p p6\">€8,5k – 12k</span></div><div class=\"row r7\"><span class=\"n\">10–12 zonnepanelen</span><span class=\"p p7\">€5k – 6k</span></div><div class=\"row r8\"><span class=\"n\">Batterij 10–15 kWh</span><span class=\"p p8\">€6k – 10k</span></div><div class=\"tot\"><span>Totaal</span><span class=\"p\">± €46.000</span></div>",
@@ -1292,7 +1292,7 @@
    1.14
   ],
   [
-   17.5,
+   17.34,
    1.0
   ],
   [
@@ -1341,11 +1341,11 @@
   ],
   [
    73.9,
-   1.0
+   1.22
   ],
   [
    79.1,
-   1.12
+   1.14
   ]
  ]
 }
