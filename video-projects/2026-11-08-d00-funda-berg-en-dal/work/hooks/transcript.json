@@ -1,0 +1,218 @@
+[
+  {
+    "id": "w0",
+    "text": "Dit",
+    "start": 0,
+    "end": 0.24
+  },
+  {
+    "id": "w1",
+    "text": "is",
+    "start": 0.24,
+    "end": 0.4
+  },
+  {
+    "id": "w2",
+    "text": "de",
+    "start": 0.4,
+    "end": 0.56
+  },
+  {
+    "id": "w3",
+    "text": "zeven",
+    "start": 0.56,
+    "end": 1.12
+  },
+  {
+    "id": "w4",
+    "text": "heuvelenweg",
+    "start": 1.12,
+    "end": 2.08
+  },
+  {
+    "id": "w5",
+    "text": "in",
+    "start": 2.08,
+    "end": 2.24
+  },
+  {
+    "id": "w6",
+    "text": "Berg",
+    "start": 2.24,
+    "end": 2.72
+  },
+  {
+    "id": "w7",
+    "text": "en",
+    "start": 2.72,
+    "end": 2.8
+  },
+  {
+    "id": "w8",
+    "text": "Daal.",
+    "start": 2.96,
+    "end": 4.08
+  },
+  {
+    "id": "w9",
+    "text": "En",
+    "start": 5.92,
+    "end": 6.08
+  },
+  {
+    "id": "w10",
+    "text": "is",
+    "start": 7.04,
+    "end": 7.36
+  },
+  {
+    "id": "w11",
+    "text": "een.",
+    "start": 7.36,
+    "end": 8.64
+  },
+  {
+    "id": "w12",
+    "text": "Preci.",
+    "start": 28.24,
+    "end": 29.28
+  },
+  {
+    "id": "w13",
+    "text": "Deze",
+    "start": 31.52,
+    "end": 32
+  },
+  {
+    "id": "w14",
+    "text": "vrijstaande",
+    "start": 32,
+    "end": 32.64
+  },
+  {
+    "id": "w15",
+    "text": "woning",
+    "start": 32.64,
+    "end": 32.88
+  },
+  {
+    "id": "w16",
+    "text": "in",
+    "start": 32.88,
+    "end": 32.96
+  },
+  {
+    "id": "w17",
+    "text": "Berg",
+    "start": 32.96,
+    "end": 33.2
+  },
+  {
+    "id": "w18",
+    "text": "en",
+    "start": 33.2,
+    "end": 33.28
+  },
+  {
+    "id": "w19",
+    "text": "Dal",
+    "start": 33.36,
+    "end": 33.52
+  },
+  {
+    "id": "w20",
+    "text": "van",
+    "start": 33.6,
+    "end": 33.76
+  },
+  {
+    "id": "w21",
+    "text": "Lebel",
+    "start": 33.76,
+    "end": 34.08
+  },
+  {
+    "id": "w22",
+    "text": "G",
+    "start": 34.08,
+    "end": 34.16
+  },
+  {
+    "id": "w23",
+    "text": "en",
+    "start": 34.32,
+    "end": 34.4
+  },
+  {
+    "id": "w24",
+    "text": "Lebel",
+    "start": 34.4,
+    "end": 34.64
+  },
+  {
+    "id": "w25",
+    "text": "A",
+    "start": 34.64,
+    "end": 34.8
+  },
+  {
+    "id": "w26",
+    "text": "en",
+    "start": 34.88,
+    "end": 35.04
+  },
+  {
+    "id": "w27",
+    "text": "één",
+    "start": 35.04,
+    "end": 35.28
+  },
+  {
+    "id": "w28",
+    "text": "minuut.",
+    "start": 35.28,
+    "end": 35.68
+  },
+  {
+    "id": "w29",
+    "text": "Let's",
+    "start": 35.68,
+    "end": 36
+  },
+  {
+    "id": "w30",
+    "text": "go.",
+    "start": 36,
+    "end": 36.8
+  },
+  {
+    "id": "w31",
+    "text": "Dit",
+    "start": 46.8,
+    "end": 46.96
+  },
+  {
+    "id": "w32",
+    "text": "is",
+    "start": 46.96,
+    "end": 47.04
+  },
+  {
+    "id": "w33",
+    "text": "een",
+    "start": 47.04,
+    "end": 47.12
+  },
+  {
+    "id": "w34",
+    "text": "vrijstaande",
+    "start": 47.12,
+    "end": 47.52
+  },
+  {
+    "id": "w35",
+    "text": "woning.",
+    "start": 47.6,
+    "end": 47.84
+  }
+]

@@ -1,0 +1,6 @@
+*.wav
+*.ogg
+*.mp4
+*.log
+work/*.wav
+.hyperframes/

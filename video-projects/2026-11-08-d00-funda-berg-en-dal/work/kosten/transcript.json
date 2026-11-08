@@ -1,0 +1,626 @@
+[
+  {
+    "id": "w0",
+    "text": "10.000",
+    "start": 0.16,
+    "end": 0.8
+  },
+  {
+    "id": "w1",
+    "text": "euro",
+    "start": 0.8,
+    "end": 1.12
+  },
+  {
+    "id": "w2",
+    "text": "maak",
+    "start": 1.6,
+    "end": 1.92
+  },
+  {
+    "id": "w3",
+    "text": "ze",
+    "start": 1.92,
+    "end": 2.08
+  },
+  {
+    "id": "w4",
+    "text": "een",
+    "start": 2.08,
+    "end": 2.24
+  },
+  {
+    "id": "w5",
+    "text": "totaal",
+    "start": 2.24,
+    "end": 2.88
+  },
+  {
+    "id": "w6",
+    "text": "tussen",
+    "start": 2.88,
+    "end": 3.28
+  },
+  {
+    "id": "w7",
+    "text": "de",
+    "start": 3.28,
+    "end": 3.44
+  },
+  {
+    "id": "w8",
+    "text": "27.000",
+    "start": 3.44,
+    "end": 4.64
+  },
+  {
+    "id": "w9",
+    "text": "en",
+    "start": 4.96,
+    "end": 5.28
+  },
+  {
+    "id": "w10",
+    "text": "uh,",
+    "start": 5.88,
+    "end": 8.84
+  },
+  {
+    "id": "w11",
+    "text": "41.000",
+    "start": 8.48,
+    "end": 9.92
+  },
+  {
+    "id": "w12",
+    "text": "euro",
+    "start": 9.92,
+    "end": 10.24
+  },
+  {
+    "id": "w13",
+    "text": "gaat",
+    "start": 10.96,
+    "end": 11.2
+  },
+  {
+    "id": "w14",
+    "text": "ongeveer",
+    "start": 11.2,
+    "end": 11.6
+  },
+  {
+    "id": "w15",
+    "text": "een",
+    "start": 11.6,
+    "end": 11.68
+  },
+  {
+    "id": "w16",
+    "text": "3",
+    "start": 11.68,
+    "end": 11.92
+  },
+  {
+    "id": "w17",
+    "text": "tot",
+    "start": 11.92,
+    "end": 12.08
+  },
+  {
+    "id": "w18",
+    "text": "4000",
+    "start": 12.08,
+    "end": 12.56
+  },
+  {
+    "id": "w19",
+    "text": "euro",
+    "start": 12.64,
+    "end": 12.88
+  },
+  {
+    "id": "w20",
+    "text": "subsidie",
+    "start": 12.88,
+    "end": 13.36
+  },
+  {
+    "id": "w21",
+    "text": "van",
+    "start": 13.36,
+    "end": 13.6
+  },
+  {
+    "id": "w22",
+    "text": "af.",
+    "start": 13.6,
+    "end": 14.56
+  },
+  {
+    "id": "w23",
+    "text": "Dus",
+    "start": 15.2,
+    "end": 15.52
+  },
+  {
+    "id": "w24",
+    "text": "ik",
+    "start": 15.76,
+    "end": 16
+  },
+  {
+    "id": "w25",
+    "text": "ga",
+    "start": 16,
+    "end": 16.32
+  },
+  {
+    "id": "w26",
+    "text": "dan",
+    "start": 16.32,
+    "end": 16.56
+  },
+  {
+    "id": "w27",
+    "text": "nou",
+    "start": 16.56,
+    "end": 16.88
+  },
+  {
+    "id": "w28",
+    "text": "aanemen",
+    "start": 16.88,
+    "end": 18
+  },
+  {
+    "id": "w29",
+    "text": "37.000",
+    "start": 19.92,
+    "end": 21.2
+  },
+  {
+    "id": "w30",
+    "text": "euro,",
+    "start": 21.2,
+    "end": 21.6
+  },
+  {
+    "id": "w31",
+    "text": "ja?",
+    "start": 21.6,
+    "end": 22.24
+  },
+  {
+    "id": "w32",
+    "text": "Dat",
+    "start": 24.64,
+    "end": 24.96
+  },
+  {
+    "id": "w33",
+    "text": "ga",
+    "start": 24.96,
+    "end": 25.2
+  },
+  {
+    "id": "w34",
+    "text": "ik",
+    "start": 25.2,
+    "end": 25.44
+  },
+  {
+    "id": "w35",
+    "text": "ongeveer",
+    "start": 25.44,
+    "end": 26.08
+  },
+  {
+    "id": "w36",
+    "text": "checken",
+    "start": 26.08,
+    "end": 26.64
+  },
+  {
+    "id": "w37",
+    "text": "zeg",
+    "start": 26.64,
+    "end": 26.8
+  },
+  {
+    "id": "w38",
+    "text": "ik,",
+    "start": 26.96,
+    "end": 27.76
+  },
+  {
+    "id": "w39",
+    "text": "je",
+    "start": 27.76,
+    "end": 27.92
+  },
+  {
+    "id": "w40",
+    "text": "hebt",
+    "start": 27.92,
+    "end": 28.08
+  },
+  {
+    "id": "w41",
+    "text": "nog",
+    "start": 28.08,
+    "end": 28.24
+  },
+  {
+    "id": "w42",
+    "text": "32.000",
+    "start": 28.24,
+    "end": 28.96
+  },
+  {
+    "id": "w43",
+    "text": "euro,",
+    "start": 29.04,
+    "end": 29.6
+  },
+  {
+    "id": "w44",
+    "text": "dat",
+    "start": 31.04,
+    "end": 31.36
+  },
+  {
+    "id": "w45",
+    "text": "alles",
+    "start": 31.36,
+    "end": 31.68
+  },
+  {
+    "id": "w46",
+    "text": "bij",
+    "start": 31.68,
+    "end": 31.92
+  },
+  {
+    "id": "w47",
+    "text": "elkaar.",
+    "start": 31.92,
+    "end": 33.84
+  },
+  {
+    "id": "w48",
+    "text": "Dat",
+    "start": 34.8,
+    "end": 35.12
+  },
+  {
+    "id": "w49",
+    "text": "alles",
+    "start": 35.12,
+    "end": 35.36
+  },
+  {
+    "id": "w50",
+    "text": "bij",
+    "start": 35.36,
+    "end": 35.52
+  },
+  {
+    "id": "w51",
+    "text": "elkaar",
+    "start": 35.52,
+    "end": 35.92
+  },
+  {
+    "id": "w52",
+    "text": "brengt",
+    "start": 35.92,
+    "end": 36.16
+  },
+  {
+    "id": "w53",
+    "text": "dus",
+    "start": 36.16,
+    "end": 36.32
+  },
+  {
+    "id": "w54",
+    "text": "op",
+    "start": 36.32,
+    "end": 36.48
+  },
+  {
+    "id": "w55",
+    "text": "een",
+    "start": 36.48,
+    "end": 36.56
+  },
+  {
+    "id": "w56",
+    "text": "totaal",
+    "start": 36.56,
+    "end": 36.88
+  },
+  {
+    "id": "w57",
+    "text": "van",
+    "start": 36.88,
+    "end": 37.04
+  },
+  {
+    "id": "w58",
+    "text": "32.000",
+    "start": 37.04,
+    "end": 37.92
+  },
+  {
+    "id": "w59",
+    "text": "euro",
+    "start": 38.08,
+    "end": 38.4
+  },
+  {
+    "id": "w60",
+    "text": "als",
+    "start": 38.4,
+    "end": 38.64
+  },
+  {
+    "id": "w61",
+    "text": "investering,",
+    "start": 38.64,
+    "end": 39.28
+  },
+  {
+    "id": "w62",
+    "text": "maar",
+    "start": 39.28,
+    "end": 39.44
+  },
+  {
+    "id": "w63",
+    "text": "dan",
+    "start": 39.44,
+    "end": 39.6
+  },
+  {
+    "id": "w64",
+    "text": "krijg",
+    "start": 39.6,
+    "end": 39.84
+  },
+  {
+    "id": "w65",
+    "text": "je",
+    "start": 39.84,
+    "end": 40
+  },
+  {
+    "id": "w66",
+    "text": "nog",
+    "start": 40,
+    "end": 40.32
+  },
+  {
+    "id": "w67",
+    "text": "krijg",
+    "start": 40.96,
+    "end": 41.2
+  },
+  {
+    "id": "w68",
+    "text": "je",
+    "start": 41.2,
+    "end": 41.36
+  },
+  {
+    "id": "w69",
+    "text": "nog",
+    "start": 41.36,
+    "end": 41.52
+  },
+  {
+    "id": "w70",
+    "text": "een",
+    "start": 41.52,
+    "end": 41.6
+  },
+  {
+    "id": "w71",
+    "text": "3",
+    "start": 41.6,
+    "end": 41.84
+  },
+  {
+    "id": "w72",
+    "text": "tot",
+    "start": 41.84,
+    "end": 41.92
+  },
+  {
+    "id": "w73",
+    "text": "4000",
+    "start": 42,
+    "end": 42.56
+  },
+  {
+    "id": "w74",
+    "text": "euro",
+    "start": 42.56,
+    "end": 42.8
+  },
+  {
+    "id": "w75",
+    "text": "subsidie",
+    "start": 42.8,
+    "end": 43.28
+  },
+  {
+    "id": "w76",
+    "text": "van",
+    "start": 43.28,
+    "end": 43.52
+  },
+  {
+    "id": "w77",
+    "text": "terug.",
+    "start": 43.52,
+    "end": 44.4
+  },
+  {
+    "id": "w78",
+    "text": "betekent",
+    "start": 44.68,
+    "end": 45.16
+  },
+  {
+    "id": "w79",
+    "text": "dat",
+    "start": 45.16,
+    "end": 45.32
+  },
+  {
+    "id": "w80",
+    "text": "je",
+    "start": 45.32,
+    "end": 45.56
+  },
+  {
+    "id": "w81",
+    "text": "netto...",
+    "start": 45.56,
+    "end": 47.16
+  },
+  {
+    "id": "w82",
+    "text": "Ja,",
+    "start": 48.84,
+    "end": 49.24
+  },
+  {
+    "id": "w83",
+    "text": "wat",
+    "start": 49.24,
+    "end": 49.48
+  },
+  {
+    "id": "w84",
+    "text": "zou",
+    "start": 49.48,
+    "end": 49.56
+  },
+  {
+    "id": "w85",
+    "text": "Wat",
+    "start": 49.76,
+    "end": 50
+  },
+  {
+    "id": "w86",
+    "text": "was",
+    "start": 50,
+    "end": 50.16
+  },
+  {
+    "id": "w87",
+    "text": "het",
+    "start": 50.16,
+    "end": 50.24
+  },
+  {
+    "id": "w88",
+    "text": "nou?",
+    "start": 50.24,
+    "end": 50.64
+  },
+  {
+    "id": "w89",
+    "text": "37",
+    "start": 50.64,
+    "end": 51.2
+  },
+  {
+    "id": "w90",
+    "text": "32.000.",
+    "start": 51.44,
+    "end": 53.36
+  },
+  {
+    "id": "w91",
+    "text": "19.",
+    "start": 55.92,
+    "end": 57.28
+  },
+  {
+    "id": "w92",
+    "text": "Betekent",
+    "start": 58.15,
+    "end": 58.63
+  },
+  {
+    "id": "w93",
+    "text": "dat",
+    "start": 58.63,
+    "end": 58.71
+  },
+  {
+    "id": "w94",
+    "text": "je",
+    "start": 58.71,
+    "end": 58.87
+  },
+  {
+    "id": "w95",
+    "text": "netto",
+    "start": 58.87,
+    "end": 59.27
+  },
+  {
+    "id": "w96",
+    "text": "dus",
+    "start": 59.27,
+    "end": 59.51
+  },
+  {
+    "id": "w97",
+    "text": "28.000",
+    "start": 59.51,
+    "end": 60.15
+  },
+  {
+    "id": "w98",
+    "text": "29.000",
+    "start": 60.15,
+    "end": 61.03
+  },
+  {
+    "id": "w99",
+    "text": "euro",
+    "start": 61.11,
+    "end": 61.27
+  },
+  {
+    "id": "w100",
+    "text": "moet",
+    "start": 61.51,
+    "end": 61.75
+  },
+  {
+    "id": "w101",
+    "text": "investeren.",
+    "start": 61.75,
+    "end": 62.95
+  },
+  {
+    "id": "w102",
+    "text": "Daarmee",
+    "start": 67.83,
+    "end": 68.39
+  },
+  {
+    "id": "w103",
+    "text": "brengen...",
+    "start": 68.39,
+    "end": 68.87
+  }
+]
