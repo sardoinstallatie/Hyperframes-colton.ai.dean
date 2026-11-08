@@ -123,6 +123,16 @@ Na elke video: commit project-metadata (EDL.md, compositions, geen grote media �
 - Werkbestanden op de Mac: `videos/raw/_work/`, na afloop verplaatsen naar `videos/raw/_to_delete/` (verwijderen mag niet zonder toestemming).
 
 
+## Knippen op hele zinnen — techniek (D17 v2, 8 nov 2026; v1 werd afgekeurd: "niet midden in de zin knippen")
+1. Transcribeer de ruwe audio en zet het om naar een lijst ZINNEN (niet woorden). Kies per zin: erin of eruit. Nooit een stuk van een zin.
+2. Parakeet-eindtijden van het laatste woord lopen vaak door; gebruik `silencedetect=noise=-38dB:d=0.18` en knip IN de stilte vóór en ná de zin (±0,1 s marge).
+3. Meet per stuk het niveau van de eerste en laatste 60 ms in de ruwe audio: moet < −45 dB zijn. Hoger = je knipt in spraak → schuif op.
+4. Transcribeer elk stuk LOS na het knippen: begint en eindigt het op een hele zin? Zo niet: opnieuw.
+5. Een zin waarin Peter zich herpakt ("…oude situatie en in een nieuwe situatie. In een nieuwe situatie wordt dat…") blijft heel — niet de staart eraf halen.
+6. Zinnen waarin Peter wegkijkt of zacht praat (notitie voor zichzelf, bv. "Een villa uit 1953") niet gebruiken als intro.
+7. Niveau per stuk gelijktrekken (volume ±dB naar de mediaan) zodat zachte zinnen niet wegvallen.
+8. Render niet in een `setsid nohup … &` gevolgd door andere commando's in dezelfde Bash-call: de render wordt dan geannuleerd (render_cancelled_parent_exited). Gebruik Bash `run_in_background`.
+
 ## Leveren naar de Mac — snelste route (getest D17, 8 nov 2026)
 `SendUserFile` met de final mp4 → `device_commit_files` met die `fileUuid` en het eindpad. 47 MB in één keer, md5 klopte. Geen split/gzip nodig.
 

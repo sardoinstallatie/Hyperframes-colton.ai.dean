@@ -54,3 +54,6 @@ Resultaat 96,9 s.
 | maand-nieuw | 321.80–328.20 | 76.41–82.81 | In een nieuwe situatie wordt dat ongeveer 110 euro per maand. Dus dat betekent dat je een maandelijkse besparing hebt van 215 euro per maand. |
 | fix | 357.05–362.33 | 82.81–88.09 | Fixscore is 6 van de 10. Alles wat geïsoleerd moet worden, is redelijk goed bereikbaar. |
 | cta | 375.85–384.70 | 88.09–96.94 | Heb je nu ook net een huis gekocht? Stuur dan even de Funda-link naar mij, dan ga ik dit ook doen voor jouw woning. Of reageer CHECK onder dit bericht en dan zal ik jou even een berichtje doen. |
+
+## Final v2 (8 nov 2026, avond)
+Geleverd en v1 overschreven: `Funda/2026/11-november/2026-11-08-D17-funda-rheden-A.mp4` (97,1 s, md5 785cc5d7…). Frames 2 fps bekeken, geen zwarte frames, geen lange stiltes.
