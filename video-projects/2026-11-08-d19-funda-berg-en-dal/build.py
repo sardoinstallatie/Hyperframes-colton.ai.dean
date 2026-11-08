@@ -89,18 +89,19 @@ BEELDEN = [
      '<div class="sub s1">− €3.000 à €4.000 subsidie</div><div class="net s2">Netto: <b>± €28.000 – €29.000</b></div>'
      '<div class="note s1">Schatting. Check subsidie op rvo.nl</div>', "pop": [[".s1", 65.4], [".s2", 68.7]]},
     # 6 Energie per maand (Peter: "besparing" i.p.v. "investering")
-    {"start": 71.55, "end": 76.5, "html": '<div class="label">Energie per maand</div><div class="line m1">Nu: <b class="dim">± €300</b></div>'
+    {"start": 71.55, "end": 77.0, "html": '<div class="label">Energie per maand</div><div class="line m1">Nu: <b class="dim">± €300</b></div>'
      '<div class="line m2">Straks: <b class="acc">± €110</b></div><div class="line m3">Besparing: <b class="acc">€190</b> per maand</div>',
-     "pop": [[".m1", 73.9], [".m2", 75.1], [".m3", 75.65]]},
+     "pop": [[".m1", 73.7], [".m2", 75.1], [".m3", 75.5]]},
     # 7 Fixscore
-    {"start": 76.55, "end": 81.5, "html": '<div class="label">Fixscore <span style="text-transform:none;letter-spacing:0">· hoger = makkelijker</span></div>'
+    {"start": 77.0, "end": 81.5, "html": '<div class="label">Fixscore <span style="text-transform:none;letter-spacing:0">· hoger = makkelijker</span></div>'
      '<div class="value f0">7<span class="of">/10</span></div><div class="line f1">✓ Dak al geïsoleerd</div><div class="line f2">✓ Overal dubbel glas</div>',
-     "pop": [[".f0", 76.95], [".f1", 78.7], [".f2", 80.1]]},
+     "pop": [[".f0", 77.05], [".f1", 78.7], [".f2", 80.1]]},
 ]
 
 # punch-ins op de knippen (afwisselend in/uit), CTA weer in
 CUTS = [3.96, 7.24, 9.96, 13.28, 19.0, 22.12, 25.92, 31.28, 34.76, 36.0, 39.36, 42.84, 50.56, 52.6, 55.84, 59.28, 60.52, 64.8, 67.64, 71.52, 73.64, 76.0, 81.56, 84.8, 87.12]
-PUNCH = [[t, 1.14 if k % 2 == 0 else 1.0] for k, t in enumerate(CUTS)] + [[CTA_START, 1.14]]
+PUNCH = [[t, 1.14 if k % 2 == 0 else 1.0] for k, t in enumerate(CUTS) if t < 81.5]
+PUNCH += [[81.56, 1.14], [84.8, 1.22], [87.12, 1.14], [CTA_START, 1.22]]  # Peter FULL: nooit onder 1.14, anders zwarte rand onderin
 PUNCH.sort()
 
 CONFIG = {
@@ -119,6 +120,7 @@ head = re.sub(r"<!--.*?-->", "<!--\n  D19 · Funda Fixer #9 — Zevenheuvelenweg
 head = re.sub(r'data-duration="[0-9.]+"', f'data-duration="{DUR}"', head)
 head = re.sub(r'(src="assets/calc-slow.mp4" muted playsinline) data-start="[0-9.]+" data-duration="[0-9.]+"', r'\1 data-start="13.28" data-duration="5.72"', head)
 head = head.replace("/* Bonnetje", ".beeld .badge { position: absolute; left: 28px; top: 28px; padding: 14px 28px; border-radius: 999px; background: var(--brand-accent); color: var(--brand-bg); font-size: 40px; font-weight: 800; letter-spacing: 0.01em; box-shadow: 0 6px 20px rgba(0,0,0,0.35); }\n      .beeld .badge b { font-weight: 800; }\n      .beeld .tagbar .price small { font-size: 34px; font-weight: 700; color: var(--brand-text-dim); }\n      .beeld .labels .line { font-size: 46px; }\n      /* Bonnetje")
+head = head.replace("    </style>", "      .bon .row { font-size: 40px; line-height: 1.55; }\n      .bon .tot { font-size: 46px; margin-top: 16px; }\n      .beeld .line.m3 { font-size: 50px; }\n    </style>")
 cfg = "const CONFIG = " + json.dumps(CONFIG, ensure_ascii=False) + ";\n      "
 open("index.html", "w").write(head + cfg + tail)
 print("index.html geschreven · duur", DUR, "s ·", len(WORDS), "woorden")
