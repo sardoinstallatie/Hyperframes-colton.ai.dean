@@ -6,3 +6,7 @@ assets/*.jpg
 assets/*.png
 renders/
 raw-media/
+work/stills/
+work/chk.wav
+work/tr.json
+.hyperframes/
