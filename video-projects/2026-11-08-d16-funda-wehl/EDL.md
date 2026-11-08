@@ -1,0 +1,24 @@
+# D16 · Funda Fixer #4 — Nieuw-Wehlseweg 15, Wehl — EDL
+
+Bron: DJI_20261108152425_0118_D.MP4 (1728×3072, 25 fps, 5:25). Funda: vrijstaand, 1966, 144 m², perceel 495 m², label G, €450.000 k.k.
+
+| Stuk | Bron (s) | Duur |
+|---|---|---|
+| hook | 69.11–73.35 | 4.24 |
+| huis | 79.99–84.75 | 4.76 |
+| calc | 98.63–100.75 | 2.12 |
+| plan | 128.14–144.95 | 16.81 |
+| wp | 149.42–153.40 | 3.98 |
+| zon | 167.98–170.85 | 2.87 |
+| bat | 182.62–185.40 | 2.78 |
+| kost1 | 225.81–233.40 | 7.59 |
+| kost2 | 235.09–237.95 | 2.86 |
+| maand | 248.98–255.05 | 6.07 |
+| fix | 285.86–287.84 | 1.98 |
+| cta1 | 304.47–306.25 | 1.78 |
+| cta2 | 313.36–316.25 | 2.89 |
+
+Totaal ≈ 60.7 s. Alleen hook A opgenomen.
+
+Eruit (keuze Peter 8 nov): besparingszin (rekenfout 375→120 ≠ 155), 'Maar een all-electric hybride warmtepomp', ketel-2021-uitleg, tweede helft calculator-zin, 'Stuur mij de Funda-link…' (+ los 'Of'), fixscore-uitleg, alle mislukte takes en regie.
+Volgorde: hook → huis → calculator (D7-scherm) → plan → hybride wp → zonnepanelen → batterij → kosten (bonnetje) → netto → maand → fixscore → CTA (CHECK).

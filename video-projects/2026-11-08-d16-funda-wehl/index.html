@@ -1,0 +1,222 @@
+<!doctype html>
+<!--
+  D16 · Funda Fixer #4 — Nieuw-Wehlseweg 15, Wehl (versie A)
+  Sardo-format (zie ../../SARDO_FORMAT.md). Gebaseerd op D15/0117 (goedgekeurd Funda Fixer-format, 8 nov 2026).
+  Alleen het CONFIG-blok onderaan aanpassen.
+-->
+<html lang="nl" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/brand-tokens.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--brand-bg); }
+      body { font-family: var(--font-display); color: var(--brand-text); }
+
+      /* ZONE 1 — Peter. Wrapper full-frame; FACE_OFFSET zet de ogen op y≈534. */
+      #face-wrapper { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 534px; }
+      #face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+      /* ANKERPUNT y=960 — hook-tekst en CTA */
+      .anchor-text { position: absolute; left: 60px; right: 60px; top: 960px; transform: translateY(-50%);
+        text-align: center; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em;
+        -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 6px 24px rgba(0,0,0,0.55); opacity: 0; }
+      #hook { font-size: 92px; }
+      #hook .hl, #cta .big { color: var(--brand-accent); }
+      #cta .small { display: block; font-size: 54px; font-weight: 700; margin-bottom: 6px; }
+      #cta .big { display: block; font-size: 160px; }
+
+      /* ZONE 2 — captions 970–1190 */
+      #captions { position: absolute; left: 40px; right: 40px; top: 970px; height: 220px;
+        display: flex; align-items: center; justify-content: center; }
+      .chunk { position: absolute; width: 100%; text-align: center; font-size: 78px; white-space: nowrap; font-weight: 800;
+        line-height: 1.1; -webkit-text-stroke: 3px var(--caption-stroke); paint-order: stroke fill;
+        text-shadow: 0 4px 18px rgba(0,0,0,0.6); opacity: 0; }
+      .w { display: inline-block; margin: 0 0.14em; }
+      .w.on { color: var(--brand-accent); }
+
+      /* ZONE 3 — beeld 1205–1905, x 0–918 */
+      #beeld-bg { position: absolute; left: 0; top: 1190px; width: 1080px; height: 730px;
+        background: var(--brand-bg); opacity: 0; }
+      .beeld { position: absolute; left: 130px; top: 1225px; width: 820px; height: 560px; border-radius: 24px;
+        background: var(--brand-surface); border: 2px solid var(--brand-border); padding: 40px;
+        display: flex; flex-direction: column; justify-content: center; gap: 18px; opacity: 0; overflow: hidden; }
+      .beeld img, .beeld video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .beeld video.top { object-position: top; }
+      .beeld .label { font-size: 34px; font-weight: 600; color: var(--brand-text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+      .beeld .value { font-size: 96px; font-weight: 800; color: var(--brand-accent); line-height: 1; }
+      .beeld .line { font-size: 60px; font-weight: 700; line-height: 1.15; }
+      .beeld .tagbar { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 32px; background: rgba(25,25,30,0.88);
+        font-size: 40px; font-weight: 700; }
+      .beeld .tagbar .price { display: block; font-size: 64px; font-weight: 800; color: var(--brand-accent); line-height: 1.05; margin-bottom: 6px; }
+      .beeld .tagbar .meta { display: block; font-size: 36px; font-weight: 600; color: var(--brand-text); }
+      .beeld .value.big { font-size: 140px; }
+      .beeld .of { font-size: 60px; color: var(--brand-text-dim); }
+      .beeld .note { font-size: 28px; font-weight: 600; color: var(--brand-text-dim); }
+      .beeld .dim { color: var(--brand-text-dim); } .beeld .acc { color: var(--brand-accent); }
+      .beeld .sub { font-size: 44px; font-weight: 700; }
+      .beeld .labels { display: flex; align-items: center; gap: 36px; }
+      .beeld .lab { width: 150px; height: 150px; border-radius: 22px; display: flex; align-items: center; justify-content: center;
+        font-size: 118px; font-weight: 800; color: var(--brand-bg); }
+      .beeld .lab.g { background: var(--brand-accent); }
+      .beeld .lab.a { background: var(--brand-warn); }
+      .beeld .arr { font-size: 90px; font-weight: 800; color: var(--brand-text); }
+      .beeld .value .note { font-size: 30px; margin-left: 14px; }
+      .beeld .net { font-size: 46px; font-weight: 800; }
+      .beeld .net b { color: var(--brand-accent); }
+
+      .beeld .badge { position: absolute; top: 26px; left: 26px; background: var(--brand-accent); color: var(--brand-bg);
+        font-weight: 800; font-size: 36px; padding: 10px 24px; border-radius: 999px; letter-spacing: 0.04em; text-transform: uppercase; }
+      .bon.plan .row { font-size: 38px; line-height: 1.3; }
+      .bon .row .num { color: var(--brand-text-dim); margin-right: 14px; }
+      .bon .tot.lab { color: var(--brand-accent); justify-content: flex-start; gap: 18px; }
+
+      /* Bonnetje (het plan met kosten) */
+      .beeld.bon { top: 1210px; height: 600px; justify-content: flex-start; gap: 0; padding: 30px 40px 26px; }
+      .bon .label { margin-bottom: 10px; }
+      .bon .row { display: flex; justify-content: space-between; align-items: baseline; font-size: 34px; font-weight: 700; line-height: 1.34; }
+      .bon .row .p { color: var(--brand-accent); font-weight: 800; white-space: nowrap; }
+      .bon .row .n { white-space: nowrap; }
+      .bon .tot { display: flex; justify-content: space-between; align-items: baseline; margin-top: 10px; padding-top: 12px;
+        border-top: 2px dashed var(--brand-border); font-size: 40px; font-weight: 800; }
+      .bon .tot .p { color: var(--brand-accent); font-size: 52px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="61.32" data-width="1080" data-height="1920">
+      <div id="face-wrapper">
+        <video id="face" src="assets/source.mp4" muted playsinline data-start="0" data-duration="61.32" data-track-index="0"></video>
+      </div>
+      <audio id="face-audio" src="assets/source.mp4" data-start="0" data-duration="61.32" data-track-index="9"></audio>
+
+      <div id="beeld-bg" class="clip" data-start="0" data-duration="61.32" data-track-index="3"></div>
+      <div id="beeld-layer" class="clip" data-start="0" data-duration="61.32" data-track-index="4"></div>
+      <!-- Calculator-opname (hergebruikt uit D07, nepgegevens, 2,0 s). Wrapper is bewust niet getimed. -->
+      <div class="beeld" id="calc-card"><video id="calc-vid" class="top" src="assets/calc-d07.mp4" muted playsinline data-start="9.02" data-duration="2.0" data-track-index="1"></video></div>
+      <div id="captions" class="clip" data-start="0" data-duration="61.32" data-track-index="5"></div>
+      <div id="hook" class="anchor-text clip" data-start="0" data-duration="61.32" data-track-index="6"></div>
+      <div id="cta" class="anchor-text clip" data-start="0" data-duration="61.32" data-track-index="7"></div>
+    </div>
+
+    <script>
+      /* ======================= CONFIG — alleen dit aanpassen ======================= */
+      const CONFIG = {
+        duration: 61.32,
+        faceOffsetY: -295, faceOffsetX: -65, faceScale: 1.08,  // ogen op y≈534 (bron: ogen op ~860, gezicht x≈600)
+        hook: { text: 'Label <span class="hl">G</span> naar <span class="hl">A</span><br>in 1 minuut', end: 4.2 },
+        cta:  { word: "CHECK", start: 59.45 },
+        words: [["Deze", 0.24, 0.56], ["woning", 0.56, 0.88], ["in Wehl", 1.04, 1.2], ["met", 1.36, 1.52], ["nieuwe", 1.52, 1.76], ["ketel", 1.76, 2.16], ["van", 2.16, 2.32], ["label", 2.32, 2.48], ["G", 2.56, 2.72], ["naar", 2.8, 2.96], ["label", 2.96, 3.2], ["A", 3.2, 3.44], ["in", 3.44, 3.6], ["1", 3.6, 3.76], ["minuut.", 3.76, 4.16], ["Het", 4.64, 4.8], ["is", 4.8, 4.96], ["een", 4.96, 5.04], ["vrijstaande", 5.04, 5.76], ["woning", 5.76, 6.16], ["van", 6.16, 6.32], ["144", 6.32, 6.92], ["m²", 6.92, 7.6], ["met", 7.6, 7.92], ["label", 8.08, 8.48], ["G.", 8.48, 9.12], ["We gaan", 9.28, 9.36], ["eerst", 9.52, 9.76], ["even", 9.76, 9.92], ["de", 10, 10.08], ["calculator", 10.08, 10.56], ["invullen.", 10.56, 10.96], ["Omdat", 11.44, 11.6], ["de", 11.68, 11.76], ["woninglabel", 11.76, 12.32], ["G", 12.32, 12.56], ["is", 12.56, 12.64], ["starten", 12.8, 13.04], ["we", 13.04, 13.12], ["altijd", 13.2, 13.44], ["weer", 13.44, 13.6], ["met", 13.6, 13.68], ["hetzelfde.", 13.68, 14.24], ["Met", 14.24, 14.4], ["isoleren.", 14.4, 14.96], ["Dat", 14.96, 15.12], ["betekent", 15.12, 15.44], ["dat", 15.44, 15.52], ["we", 15.52, 15.68], ["de", 15.68, 15.76], ["gevel", 15.76, 16.08], ["gaan", 16.24, 16.32], ["isoleren.", 16.32, 16.8], ["Er", 16.8, 16.88], ["is", 16.88, 16.96], ["een", 16.96, 17.12], ["spouw", 17.12, 17.44], ["aanwezig.", 17.44, 17.92], ["Dus", 17.92, 18.08], ["we", 18.08, 18.24], ["kunnen", 18.32, 18.48], ["gewoon", 18.56, 18.72], ["de", 18.72, 18.8], ["spouw", 18.8, 19.12], ["meer", 19.12, 19.2], ["isoleren", 19.28, 19.76], ["met", 19.84, 20.08], ["bijvoorbeeld", 20.08, 20.32], ["EPS", 20.4, 20.88], ["parels.", 20.88, 21.6], ["dak", 21.84, 22], ["en", 22.16, 22.32], ["vloer", 22.32, 22.8], ["isoleren.", 22.8, 23.84], ["Overal", 23.84, 24.32], ["HR++", 24.32, 25.2], ["glas.", 25.2, 25.52], ["En", 25.52, 25.68], ["als", 25.68, 25.84], ["het", 25.84, 26], ["kan", 26, 26.16], ["ventilatie", 26.32, 26.8], ["type", 26.96, 27.28], ["C", 27.28, 27.6], ["aanbrengen.", 27.6, 28.72], ["Dan", 28.96, 29.06], ["zou", 29.06, 29.12], ["we", 29.12, 29.2], ["in", 29.28, 29.36], ["dit", 29.36, 29.52], ["geval", 29.52, 29.84], ["gaan", 29.84, 30.16], ["voor", 30.16, 30.32], ["een", 30.32, 30.4], ["hybride", 30.56, 31.04], ["warmtepomp", 31.04, 31.68], ["bij", 31.68, 31.84], ["te", 31.84, 32], ["plaatsen.", 32, 32.72], ["Dan", 32.72, 32.88], ["zonnepanelen", 33.04, 33.76], ["plaatsen", 33.76, 34.08], ["op", 34.08, 34.16], ["de", 34.16, 34.24], ["zuidkant", 34.24, 34.72], ["van", 34.72, 34.88], ["het", 34.88, 34.96], ["dak.", 34.96, 35.68], ["In", 35.68, 35.92], ["combinatie", 35.92, 36.48], ["met", 36.48, 36.64], ["een", 36.64, 36.72], ["10", 36.72, 37.04], ["kWh", 37.04, 37.36], ["batterij.", 37.84, 38.56], ["Alle", 38.56, 38.88], ["kosten", 38.88, 39.12], ["kan", 39.2, 39.28], ["je", 39.28, 39.44], ["hier", 39.44, 39.6], ["zien.", 39.6, 39.84], ["En", 39.84, 40], ["het", 40, 40.08], ["is", 40.08, 40.24], ["dus", 40.4, 40.56], ["een", 40.72, 40.88], ["totale", 40.88, 41.2], ["investering", 41.28, 41.84], ["van", 41.84, 42.08], ["€44.000", 42.08, 43.28], ["Waar", 43.36, 43.6], ["nog", 43.6, 43.68], ["wel", 43.84, 44], ["€6.000", 44, 44.64], ["subsidie", 44.8, 45.28], ["van", 45.28, 45.44], ["af", 45.44, 45.6], ["gaat.", 45.6, 46.08], ["Netto", 46.08, 46.48], ["betaal", 46.56, 46.88], ["je", 46.88, 46.96], ["dus", 46.96, 47.12], ["€38.000", 47.12, 48.56], ["De", 49.04, 49.2], ["maandlasten", 49.2, 49.92], ["zullen", 49.92, 50.16], ["dalen", 50.16, 50.48], ["van", 50.48, 50.64], ["gemiddeld", 50.64, 51.04], ["€375", 51.04, 52.32], ["per", 52.32, 52.4], ["maand", 52.4, 52.8], ["naar", 52.8, 53.04], ["€120", 53.04, 54.16], ["per", 54.16, 54.32], ["maand.", 54.32, 55.12], ["Fixscore", 55.25, 55.89], ["is", 55.97, 56.13], ["6", 56.13, 56.37], ["van", 56.37, 56.53], ["de", 56.53, 56.61], ["10.", 56.61, 57.09], ["Heb", 57.09, 57.33], ["je", 57.33, 57.49], ["nou", 57.49, 57.57], ["ook", 57.57, 57.73], ["net", 57.73, 57.89], ["een", 57.89, 58.05], ["huis", 58.05, 58.29], ["gekocht?", 58.29, 58.61], ["Of", 58.69, 58.77], ["reageer", 58.85, 59.33], ["gewoon", 59.33, 59.49], ["CHECK", 59.49, 59.81], ["onder", 59.81, 59.89], ["dit", 59.97, 60.13], ["bericht", 60.13, 60.37], ["en", 60.37, 60.45], ["dan", 60.45, 60.53], ["stuur", 60.53, 60.77], ["ik", 60.77, 60.85], ["jou", 60.85, 61.01], ["een", 61.01, 61.09], ["berichtje.", 61.09, 61.57]],
+        chunkSize: 3,
+        beelden: [
+          // 1+2 Hook + het huis: Funda-foto, serie-label, prijs direct in beeld
+          { start: 0.0, end: 8.98, html: '<img src="assets/huis.png"><div class="badge">Funda Fixer #4</div><div class="tagbar"><span class="price">€ 450.000</span><span class="meta">Vrijstaand · Wehl · 1966 · 144 m² · Label G</span></div>', pop: [] },
+          // 3 Calculator (video-in-video, element bestaat al: #calc-card)
+          { start: 9.02, end: 11.02, el: "#calc-card", pop: [] },
+          // 4 Het plan — regels verschijnen als Peter ze noemt, labelsprong als laatste regel
+          { start: 11.08, end: 38.00, cls: "bon plan", html:
+              '<div class="label">Het plan</div>' +
+              '<div class="row q1"><span class="n"><span class="num">1</span>Spouw isoleren · EPS-parels</span></div>' +
+              '<div class="row q2"><span class="n"><span class="num">2</span>Dak isoleren</span></div>' +
+              '<div class="row q3"><span class="n"><span class="num">3</span>Vloer isoleren</span></div>' +
+              '<div class="row q4"><span class="n"><span class="num">4</span>Overal HR++ glas</span></div>' +
+              '<div class="row q5"><span class="n"><span class="num">5</span>Ventilatie type C</span></div>' +
+              '<div class="row q6"><span class="n"><span class="num">6</span>Hybride warmtepomp</span></div>' +
+              '<div class="row q7"><span class="n"><span class="num">7</span>Zonnepanelen op het zuiden</span></div>' +
+              '<div class="row q8"><span class="n"><span class="num">8</span>10 kWh batterij</span></div>' +
+              '<div class="tot lab q9"><span>➜</span><span>Dan zit je op label A</span></div>',
+            pop: [[".q1", 17.12], [".q2", 21.84], [".q3", 22.32], [".q4", 24.32], [".q5", 26.32], [".q6", 30.56], [".q7", 33.04], [".q8", 36.72], [".q9", 37.95]] },
+          // 5 Kosten — bonnetje ("alle kosten kan je hier zien"), totaal + subsidie op het woord
+          { start: 38.56, end: 45.98, cls: "bon", html:
+              '<div class="label">Kosten</div>' +
+              '<div class="row k1"><span class="n">Spouw isoleren</span><span class="p">€3.500 – 6.000</span></div>' +
+              '<div class="row k2"><span class="n">Dak isoleren</span><span class="p">€5.000 – 9.000</span></div>' +
+              '<div class="row k3"><span class="n">Vloer isoleren</span><span class="p">€2.000 – 3.500</span></div>' +
+              '<div class="row k4"><span class="n">HR++ glas</span><span class="p">€6.000 – 10.000</span></div>' +
+              '<div class="row k5"><span class="n">Ventilatie type C</span><span class="p">€3.000 – 5.000</span></div>' +
+              '<div class="row k6"><span class="n">Hybride warmtepomp</span><span class="p">€8.500 – 12.000</span></div>' +
+              '<div class="row k7"><span class="n">12–14 zonnepanelen</span><span class="p">€6.000 – 7.000</span></div>' +
+              '<div class="tot k8"><span>Totaal</span><span class="p">± €44.000</span></div>' +
+              '<div class="row k9"><span class="n">Subsidie</span><span class="p">− €6.000</span></div>',
+            pop: [[".k1", 38.62], [".k2", 38.76], [".k3", 38.9], [".k4", 39.04], [".k5", 39.18], [".k6", 39.32], [".k7", 39.46], [".k8", 42.08], [".k9", 44.0]] },
+          // 6 Netto
+          { start: 46.02, end: 48.95, html: '<div class="label">Jij betaalt netto</div><div class="value big n1">± €38.000</div><div class="note">Schatting. Check subsidie op rvo.nl</div>', pop: [[".n1",47.12]] },
+          // 7 Energie per maand
+          { start: 49.0, end: 55.15, html: '<div class="label">Energie per maand</div><div class="line m1">Nu: <b class="dim">± €375</b></div><div class="line m2">Straks: <b class="acc">± €120</b></div>', pop: [[".m1",49.1],[".m2",53.04]] },
+          // 8 Fixscore
+          { start: 55.2, end: 57.05, html: '<div class="label">Fixscore <span style="text-transform:none;letter-spacing:0">· hoger = makkelijker</span></div><div class="value big">6<span class="of">/10</span></div>', pop: [] },
+        ],
+        punchIns: [ [0,1.0],[4.2,1.14],[9.02,1.0],[11.08,1.12],[14.96,1.0],[17.92,1.12],[21.84,1.0],[25.52,1.12],[28.96,1.0],[32.72,1.12],[35.68,1.0],[38.56,1.12],[42.08,1.0],[46.02,1.12],[49.0,1.0],[52.8,1.12],[55.2,1.0],[57.09,1.14],[59.45,1.0] ],
+      };
+      /* ============================================================================ */
+
+      const tl = gsap.timeline({ paused: true });
+      const $ = (s) => document.querySelector(s);
+
+      // Face-positie
+      gsap.set("#face-wrapper", { x: CONFIG.faceOffsetX, y: CONFIG.faceOffsetY, scale: CONFIG.faceScale });
+      CONFIG.punchIns.forEach(([t, s]) => tl.set("#face-wrapper", { scale: CONFIG.faceScale * s }, t));
+
+      // Hook op ankerpunt
+      $("#hook").innerHTML = CONFIG.hook.text;
+      tl.fromTo("#hook", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(1.6)" }, 0.02);
+      tl.to("#hook", { opacity: 0, duration: 0.12, ease: "power2.in" }, CONFIG.hook.end);
+
+      // Captions (na de hook-tekst, tot de CTA)
+      const cap = $("#captions");
+      const words = CONFIG.words.filter(([, s]) => s >= CONFIG.hook.end - 0.05 && s < CONFIG.cta.start - 0.05);
+      const chunks = []; let cur = [];
+      words.forEach((wd) => {
+        const len = cur.map(([t]) => t).join(" ").length + (cur.length ? 1 : 0) + wd[0].length;
+        const prevEndsSentence = cur.length && /[.?!]$/.test(cur[cur.length - 1][0]);
+        if (cur.length && (cur.length >= CONFIG.chunkSize || len > 18 || prevEndsSentence)) { chunks.push(cur); cur = []; }
+        cur.push(wd);
+      });
+      if (cur.length) chunks.push(cur);
+      chunks.forEach((group, i) => {
+        const el = document.createElement("div");
+        el.className = "chunk";
+        el.innerHTML = group.map(([w]) => `<span class="w">${w}</span>`).join("");
+        cap.appendChild(el);
+        const start = group[0][1];
+        const end = chunks[i + 1] ? chunks[i + 1][0][1] : Math.min(group[group.length - 1][2] + 0.3, CONFIG.cta.start);
+        tl.set(el, { opacity: 1 }, start);
+        tl.set(el, { opacity: 0 }, Math.min(end, CONFIG.cta.start));
+        group.forEach(([, s, e], j) => {
+          const span = el.children[j];
+          tl.set(span, { className: "w on" }, s);
+          tl.set(span, { className: "w" }, e);
+        });
+      });
+
+      // Beeld-zone
+      const layer = $("#beeld-layer");
+      CONFIG.beelden.forEach((b, i) => {
+        let el;
+        if (b.el) el = $(b.el);
+        else {
+          el = document.createElement("div");
+          el.className = "beeld" + (b.cls ? " " + b.cls : "");
+          el.innerHTML = b.html;
+          layer.appendChild(el);
+        }
+        (b.pop||[]).forEach(([sel,t]) => el.querySelectorAll(sel).forEach((n) => tl.fromTo(n, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out" }, t)));
+        tl.set("#beeld-bg", { opacity: 1 }, b.start);
+        tl.fromTo(el, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, b.start);
+        tl.to(el, { opacity: 0, duration: 0.15, ease: "power2.in" }, b.end - 0.15);
+        const next = CONFIG.beelden[i + 1];
+        if (!next || next.start > b.end + 0.05) tl.set("#beeld-bg", { opacity: 0 }, b.end);
+      });
+
+      // CTA
+      $("#cta").innerHTML = `<span class="small">Reageer</span><span class="big">${CONFIG.cta.word}</span>`;
+      tl.fromTo("#cta", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(1.8)" }, CONFIG.cta.start);
+
+      tl.set({}, {}, CONFIG.duration);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
