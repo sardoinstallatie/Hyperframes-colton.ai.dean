@@ -1,2 +1,8 @@
 assets/*.ogg
 assets/transcript-raw.json
+assets/tr-full.json
+assets/seg-*.wav
+assets/huis.png
+work/stills/
+work/seg/
+work/*.jpg
