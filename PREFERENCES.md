@@ -12,7 +12,9 @@ Elke regel eindigt met een datum.
 - Merkkleuren: oranje #ffa62b accent, blauw #82c0cc spaarzaam, donker #19191e, wit tekst. Poppins. (2026-10-25)
 - MOTION_PHILOSOPHY's chrome-tekst, perspective-grid en grain zijn NIET de Sardo-stijl. Clean, vet, leesbaar. Peter's gezicht is de ster. (2026-10-25)
 - **Yapping-video's: Peter blijft de hele video FULL in beeld.** Geen grijs vlak/kaart in de beeld-zone, niet het beeld halveren. Rauw houden: alleen losse icoontjes (met schaduw) + kort woordje los over het beeld, horizontaal gecentreerd (y≈1400–1790). Captions, hook en CTA ónder de kin (captions-midden y≈1285), nooit over het gezicht. (2026-10-25)
-- Nooit makelaarsfoto's of Funda-foto's in beeld. Funda Fixer = zelfgetekende plattegrond of animatie. (2026-10-25)
+- Funda Fixer: de Funda-hoofdfoto (met Peter's sleutel-sticker) mág op de huis-kaart en in het eerste shot, met de vraagprijs groot erbij. (2026-11-08, vervangt regel van 2026-10-25)
+- **Alles in de beeld-zone (onder Peter) horizontaal gecentreerd**, niet links uitgelijnd — links oogt "off". Geldt voor alle video's. (2026-11-08)
+- Funda Fixer: calculator-zin + schermopname van de calculator mogen erin blijven. Kostenlijst als bonnetje (regels verschijnen terwijl Peter ze noemt, totaal onderaan), daarna subsidie + netto. (2026-11-08)
 
 ## Pacing
 

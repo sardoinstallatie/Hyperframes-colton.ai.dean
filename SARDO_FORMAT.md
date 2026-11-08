@@ -13,10 +13,10 @@ Elke Sardo-video volgt dit format, tenzij Peter in de chat iets anders zegt.
         │   C A P T I O N S            │   ZONE 2 — CAPTIONS (blauw)
  y=1190 ├──────────────────────┐───────┤   970 – 1190
         │                      │       │
-        │   BEELD-ZONE         │ leeg  │   ZONE 3 — BEELD (groen)
-        │   screenshots, foto's│ (IG-  │   1205 – 1905, x 0 – 918
-        │   animaties, video-  │ knop- │
-        │   in-video           │ pen)  │
+        │     BEELD-ZONE (gecentreerd) │   ZONE 3 — BEELD (groen)
+        │     screenshots, foto's,     │   1205 – 1905, kaart 846 px
+        │     animaties, video-in-video│   breed, midden x = 540
+        │                              │
  y=1920 └──────────────────────┴───────┘
 ```
 
@@ -27,7 +27,7 @@ Elke Sardo-video volgt dit format, tenzij Peter in de chat iets anders zegt.
 | 1 Peter | 0 – 960 | 0 – 1080 | Gezicht. **Ogen op y ≈ 534** (stippellijn). Hoofd binnen x 350 – 730, y 207 – 766. |
 | Ankerpunt ● | midden y = 960 | midden x = 540 | Hook-tekst (eerste ~2 s) en CTA-woord (laatste 2 s). Gecentreerd op de naad. |
 | 2 Captions | 970 – 1190 | 40 – 1040 | 2–4 woorden, Poppins 800, ~78 px, wit + donkere rand, actief woord oranje. |
-| 3 Beeld | 1205 – 1905 | 0 – 918 | Screenshots, foto's, animaties, video-in-video. Rechts (x > 918) leeg. |
+| 3 Beeld | 1205 – 1905 | gecentreerd, kaart 846 px breed (x 117 – 963) | Screenshots, foto's, animaties, video-in-video. **Horizontaal gecentreerd** (Peter, 8 nov 2026: links uitlijnen oogt "off"). Niets belangrijks in de laatste ~15 % rechts of onderin. |
 
 ## Twee modes voor Peter
 
@@ -50,6 +50,7 @@ Zoek de ooghoogte één keer op met een still (frame bij ~1 s) en noteer de offs
 
 ## Beeld-zone (zone 3)
 
+- Kaarten en beelden **horizontaal gecentreerd** (midden x = 540, kaart 846 px breed). Niet links uitlijnen — dat oogt scheef (Peter, 8 nov 2026).
 - Laat zien wat Peter zegt: bedragen, stappen, het huis, de meterkast, een lijstje, een tijdlijn.
 - Animaties maakt Claude zelf in merkkleuren (bv. €225 ➜ €120, label F ➜ B, jaar 1 ➜ 5, 3 stappen, budgetkaarten €5k / €15k / €40k).
 - Foto's/screenshots/B-roll levert Peter aan in de raw-map. Ontbreekt iets? Animatie maken of vragen.
