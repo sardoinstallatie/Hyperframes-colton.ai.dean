@@ -15,4 +15,5 @@ Nummers worden NOOIT hergebruikt, ook niet als een video niet doorgaat.
 | D15 | #3 | 8 nov (0117) | funda-arnhem (Deelenseweg) | geleverd |
 | D16 | #4 | 8 nov (0118) | funda-wehl (Nieuw-Wehlseweg 15) | in productie — deze chat |
 | D17 | #5 | 8 nov (0119) | funda-rheden | **gereserveerd voor de Rheden-chat** (die had ook D16 gekozen → D17) |
+| D18 | #6 | 8 nov (0120) | funda-leeuwarden (Vermeerstraat, adres niet in beeld) | in productie — Leeuwarden-chat; map wordt 2026-11-08-d18-funda-leeuwarden |
 | FF07 | ? | – | funda-jdwlaan | aparte chat; nummering nog bepalen |
