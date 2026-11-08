@@ -84,4 +84,4 @@ timeout 400 npx --yes hyperframes models install parakeet 2>&1 | grep -q "Parake
 echo "▸ 4/4 controle"
 which ffmpeg >/dev/null && echo "  ffmpeg ok" || echo "  ⚠ ffmpeg ontbreekt"
 echo
-echo "Klaar. Transcriberen:  npx hyperframes transcribe <bestand> --engine parakeet --language nl --json"
+echo "Klaar. Transcriberen:  npx hyperframes transcribe <bestand> --engine parakeet --json   (GEEN --language: dan valt de CLI terug op whisper/huggingface)"

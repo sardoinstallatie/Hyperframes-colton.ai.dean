@@ -39,7 +39,7 @@ Raw-map op de Mac: `/Users/peter/Documents/videos/raw/` (device_bash: `$HOME/mnt
 ## 3. Transcriberen en indelen
 
 ```bash
-npx hyperframes transcribe assets/source.mp4 --engine parakeet --language nl --json
+npx hyperframes transcribe assets/source.mp4 --engine parakeet --json   # geen --language: anders valt hij terug op whisper (huggingface, geblokkeerd)
 ```
 Zoek in het transcript (vergelijk met de hooks en het script uit de brief):
 - Start/einde van **hook A, B, C** (Peter zegt ze achter elkaar, dan ~2 s stil).

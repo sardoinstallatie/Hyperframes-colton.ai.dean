@@ -1,0 +1,8 @@
+work/*.wav
+work/*.ogg
+work/seg*
+assets/*.mp4
+assets/*.jpg
+assets/*.png
+renders/
+raw-media/
