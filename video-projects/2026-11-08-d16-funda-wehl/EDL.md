@@ -22,3 +22,8 @@ Totaal ≈ 60.7 s. Alleen hook A opgenomen.
 
 Eruit (keuze Peter 8 nov): besparingszin (rekenfout 375→120 ≠ 155), 'Maar een all-electric hybride warmtepomp', ketel-2021-uitleg, tweede helft calculator-zin, 'Stuur mij de Funda-link…' (+ los 'Of'), fixscore-uitleg, alle mislukte takes en regie.
 Volgorde: hook → huis → calculator (D7-scherm) → plan → hybride wp → zonnepanelen → batterij → kosten (bonnetje) → netto → maand → fixscore → CTA (CHECK).
+
+## Geleverd 8 nov 2026
+- `~/Documents/videos/Funda/2026/11-november/2026-11-08-D16-funda-wehl-A.mp4` (61,3 s, 1080×1920, 25 fps)
+- Kosten per maatregel van Peter (ranges); batterij bewust niet op het bonnetje (Peter: "niet nodig").
+- Plan-kaart start op "gevel isoleren" (15,6 s), laatste regel "➜ Dan zit je op label A".
