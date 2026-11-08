@@ -1,4 +1,13 @@
-# D19 · Funda Fixer #9 — Zevenheuvelenweg 52, Berg en Dal — EDL (geleverd 8 nov 2026)
+# D19 · Funda Fixer #9 — Zevenheuvelenweg 52, Berg en Dal — EDL
+
+## v2 (geleverd 8 nov 2026, 2:49) — vervangt v1
+Peter's feedback op v1: midden in zinnen geknipt, inleiding van het plan miste, ventilatie te ver ingekort, einde raar.
+"Belangrijker dat er niet raar midden in zinnen wordt geknipt dan de lengte."
+v2 = alleen hele zinnen (work/v2-cuts.json, 21 stukken), elk stuk los getranscribeerd ter controle.
+Erin t.o.v. v1: "Oké, laat me dit even voorop stellen" + "nog geen nieuw label aangevraagd", inleiding plan ("het eerste wat ik zou doen: nieuw energielabel aanvragen" → kaart Stap 1), hele muren-uitleg (EPS, voorzetwanden), hele ventilatie-uitleg, hele ketel-zin, panelen tuin/dak, "maar dan krijg je nog… daar krijg je", hele maand-zin ("investering" → in beeld/caption "besparing"), hele fixscore, CTA 'Funda-link + berekening' + 'reageer CHECK + DM'tje, komen we er wel uit'.
+Eruit (hele blokken): "Let's go", straatnaam, garage, gedicteerde prijslijst (alleen op bonnetje), verwarde kosten-takes, CTA-take 1 einde (brak af).
+
+## v1 (vervangen)
 
 Bron: DJI_20261108161109_0123_D.MP4 (1728×3072, 25 fps, 6:49). Funda: vrijstaand, 1925, 105 m² (+61 m² inpandig), perceel 1.810 m², label G, €475.000 k.k., cv-ketel 2018, dakisolatie + dubbel glas.
 Keuze Peter: KORT, mét label-twijfel; "besparing" i.p.v. "investering" in beeld; knip en render direct. Eén hook → alleen A. Resultaat **91,4 s**.
