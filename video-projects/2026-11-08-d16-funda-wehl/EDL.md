@@ -32,3 +32,7 @@ Volgorde: hook → huis → calculator (D7-scherm) → plan → hybride wp → z
 Op verzoek van Peter: alleen knippen tussen hele zinnen. De volgende zinnen zijn nu heel: calculator-zin, de warmtepomp-zin (met de ketel uit 2021), "Netto … hiervoor", de fixscore-zin + "De rest is goed te doen", en de CTA in één take ("Heb je nou ook net een huis gekocht? Stuur mij de Funda-link … Of reageer gewoon CHECK onder dit bericht, dan stuur ik jou iets.").
 Oorzaak van de afgekapte einden in v1: wav-tijd liep achter op de MP4 + de fade-out zat verkeerd. Zie SARDO_FORMAT.md, "Knippen: techniek".
 Knippunten (MP4-tijd): work/edl-v4.json. De hook is ingekort tot na "minuut" (los "let's go" eruit).
+
+## Herzien 8 nov 2026 (v3, 81,8 s)
+- "Maar een all-electric hybride warmtepomp." hoort bij de warmtepomp-gedachte en zit er weer in (Peter: "all-electric ready bedoel ik"). Plan-regel 6: "All-electric hybride warmtepomp".
+- Captions stonden na 42 s dubbel verschoven; hersteld vanuit assets/words.json.

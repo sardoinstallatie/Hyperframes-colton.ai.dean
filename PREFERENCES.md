@@ -58,3 +58,4 @@ Elke regel eindigt met een datum.
 - **Prioriteit (Peter, 8 nov 2026, na Berg en Dal #9):** niet raar midden in zinnen knippen is BELANGRIJKER dan de lengte. Ook als de video dan 2–3 min wordt. Wil je korter: alleen hele zinnen of hele blokken weglaten.
 - Overgangen heel laten: de inleidende zin naar een blok (bv. "het eerste wat ik zou doen…" vóór het plan) blijft erin; uitleg-zinnen (bv. ventilatie: waarom + type D/C + wat het betekent) niet half inkorten; het einde/CTA moet natuurlijk aflopen (laatste zin van Peter helemaal).
 - Werkwijze: lees het hele transcript zin voor zin, kies per zin erin/eruit, en transcribeer daarna elk geknipt stuk los om te checken dat het begint en eindigt op een hele zin.
+- Vóór elke render: lees het transcript van de GEKNIPTE versie als één verhaal. Loopt een gedachte door in de volgende zin (bv. "…kan nog even mee. Maar een all-electric hybride warmtepomp."), dan hoort die zin erbij: niet weghalen.
