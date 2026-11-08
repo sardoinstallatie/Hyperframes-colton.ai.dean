@@ -17,3 +17,4 @@ Nummers worden NOOIT hergebruikt, ook niet als een video niet doorgaat.
 | D17 | #5 | 8 nov (0119) | funda-rheden | **gereserveerd voor de Rheden-chat** (die had ook D16 gekozen → D17) |
 | D18 | #6 | 8 nov (0120) | funda-leeuwarden (Vermeerstraat, adres niet in beeld) | in productie — Leeuwarden-chat; map wordt 2026-11-08-d18-funda-leeuwarden |
 | FF07 | ? | – | funda-jdwlaan | aparte chat; nummering nog bepalen |
+| D19 | #9 | 8 nov (0123) | funda-berg-en-dal (Zevenheuvelenweg 52) | in productie — Berg en Dal-chat; #9 opgegeven door Peter (#7 = JDW, #8 = 0122) |
