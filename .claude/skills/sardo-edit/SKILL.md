@@ -121,3 +121,7 @@ Na elke video: commit project-metadata (EDL.md, compositions, geen grote media �
 - **`/mnt/user-data/outputs/` past mp4-headers aan.** Een bestand of stuk dat met een mp4-header begint wordt gewijzigd → checksum klopt niet. Pak het eerste stuk in (`gzip -1`) en pak het op de Mac weer uit. Altijd md5 vergelijken na `cat` op de Mac.
 - **Lang renderen in de achtergrond:** start met `setsid nohup bash render.sh … & disown` en laat het script met `sleep 3` beginnen; anders breekt de render af met `render_cancelled_parent_exited`.
 - Werkbestanden op de Mac: `videos/raw/_work/`, na afloop verplaatsen naar `videos/raw/_to_delete/` (verwijderen mag niet zonder toestemming).
+
+
+## Nummer claimen (altijd eerst)
+`git pull`, lees `video-projects/NUMMERS.md`, voeg je D-nummer + Funda # toe, commit + push meteen. Botst het? Volgende vrije nummer.

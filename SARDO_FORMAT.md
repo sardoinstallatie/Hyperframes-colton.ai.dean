@@ -60,3 +60,6 @@ Zoek de ooghoogte één keer op met een still (frame bij ~1 s) en noteer de offs
 ## Uitzondering: Yapping-video's
 
 Bij yapping (tip/verhaal/mening) geldt de beeld-zone NIET. Peter staat de hele video FULL in beeld, captions + hook + CTA onder de kin (midden y≈1285), losse icoontjes horizontaal gecentreerd in y 1400–1790. Zie `templates/sardo-yapping/README.md`.
+
+## Nummers uniek
+Dagnummer (D) en Funda Fixer-volgnummer (#) staan in `video-projects/NUMMERS.md`. Altijd eerst pullen, je nummer claimen, committen en pushen vóór je bouwt. Nooit een nummer hergebruiken; bij botsing het volgende vrije nummer nemen. Peter wil dat parallelle chats elkaar niet overschrijven (8 nov 2026).
