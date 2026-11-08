@@ -49,3 +49,9 @@ video-projects/**/*.mp4
 
 # Hyperframes lokale studio-state
 **/.hyperframes/
+
+# Grote media per project (staan op Peter's Mac / in raw-map)
+video-projects/*/assets/source.mp4
+video-projects/*/assets/*.wav
+video-projects/*/assets/chat-raw.png
+video-projects/*/work/

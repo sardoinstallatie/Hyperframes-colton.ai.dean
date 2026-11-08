@@ -58,7 +58,8 @@ fi
 # De npx-cache bestaat pas na een eerste hyperframes-aanroep; die forceren we hier (anders is CHUNK leeg
 # en gooit "models install" de encoder weg — gebeurd op 8 nov 2026).
 npx --yes hyperframes --version >/dev/null 2>&1 || true
-CHUNK="$(grep -rl 'encoder.int8.onnx' ~/.npm/_npx/*/node_modules/hyperframes/dist/*.js 2>/dev/null | head -1)"
+# Let op: HOME=/root maar de npx-cache kan ook onder /home/claude/.npm staan — beide doorzoeken.
+CHUNK="$(grep -rl 'encoder.int8.onnx' ~/.npm/_npx/*/node_modules/hyperframes/dist/*.js /home/claude/.npm/_npx/*/node_modules/hyperframes/dist/*.js 2>/dev/null | head -1)"
 # Encoder weg (eerdere mislukte install)? Opnieuw uit de GitHub-release halen.
 if [ ! -f "$MODEL_DIR/encoder.int8.onnx" ]; then
   TMP="$(mktemp -d)"; URL="https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8.tar.bz2"
