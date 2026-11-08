@@ -5,6 +5,9 @@ raw-media/
 *.mp4
 *.wav
 *.ogg
+*.png
+*.jpg
+!cover/cover.html
 assets/transcript-raw.json
 work/probe-*
 work/stills/
