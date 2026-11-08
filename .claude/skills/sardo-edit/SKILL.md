@@ -123,5 +123,8 @@ Na elke video: commit project-metadata (EDL.md, compositions, geen grote media �
 - Werkbestanden op de Mac: `videos/raw/_work/`, na afloop verplaatsen naar `videos/raw/_to_delete/` (verwijderen mag niet zonder toestemming).
 
 
+## Leveren naar de Mac — snelste route (getest D17, 8 nov 2026)
+`SendUserFile` met de final mp4 → `device_commit_files` met die `fileUuid` en het eindpad. 47 MB in één keer, md5 klopte. Geen split/gzip nodig.
+
 ## Nummer claimen (altijd eerst)
 `git pull`, lees `video-projects/NUMMERS.md`, voeg je D-nummer + Funda # toe, commit + push meteen. Botst het? Volgende vrije nummer.

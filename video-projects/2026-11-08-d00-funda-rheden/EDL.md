@@ -25,3 +25,6 @@ Oké's en stiltes; "Een villa uit 1953"-fragment 19–30 s (half); spouw-uitleg 
 ## Bouw
 `work/mac_cut.sh` (stukken op de Mac, `raw/_work/0119/seg/`) → `work/concat.sh` → `assets/source.mp4` → Parakeet → `build.py` → `index.html`.
 Kaart: badge "Funda Fixer #5" + Funda-foto in eerste shot; tagbar (prijs/feiten) pas bij "Een villa uit 1953".
+
+## Final (8 nov 2026)
+Geleverd: `Funda/2026/11-november/2026-11-08-D17-funda-rheden-A.mp4` (80,6 s, md5 7bfddaaf…). Na eerste render gefixt: kaarten gecentreerd (x 117–963), geen flits tussen kaarten, punch-in 1.22/1.14 bij Peter vol in beeld (geen donkere band).
