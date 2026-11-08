@@ -3,228 +3,224 @@
   "name": "hook",
   "seg": "s00",
   "src": [
-   44.54,
-   48.785
+   44.85,
+   48.9
   ],
   "out": [
    0,
-   4.245
-  ]
- },
- {
-  "name": "intro-a",
-  "seg": "s01",
-  "src": [
-   3.66,
-   7.895
+   4.05
   ],
-  "out": [
-   4.245,
-   8.48
-  ]
- },
- {
-  "name": "intro-b",
-  "seg": "s01",
-  "src": [
-   8.209,
-   9.869
-  ],
-  "out": [
-   8.48,
-   10.14
-  ]
- },
- {
-  "name": "villa",
-  "seg": "s02",
-  "src": [
-   27.3,
-   29.889
-  ],
-  "out": [
-   10.14,
-   12.729
-  ]
+  "gain_db": -3.2,
+  "text": "Deze villa in Rheden, van label G naar label A in 1 minuut."
  },
  {
   "name": "calc",
   "seg": "s03",
   "src": [
-   59.93,
-   64.5
+   59.95,
+   66.3
   ],
   "out": [
-   12.729,
-   17.299
-  ]
+   4.05,
+   10.4
+  ],
+  "gain_db": 0,
+  "text": "We gaan hem eerst even invullen in de calculator, zodat we kunnen zien wat ongeveer de maandelijkse kosten zijn en wat de potentie is in deze woning."
  },
  {
   "name": "spouw",
-  "seg": "s04",
+  "seg": "n04",
   "src": [
-   75.45,
-   77.95
+   75.47,
+   83.3
   ],
   "out": [
-   17.299,
-   19.799
-  ]
+   10.4,
+   18.23
+  ],
+  "gain_db": 0,
+  "text": "Wat wij zouden doen is de spouw isoleren, indien aanwezig. Ik verwacht het wel, want het is een woning uit 1953, toen werd er al wel gebouwd met spouwen."
  },
  {
-  "name": "dak",
+  "name": "dak-vloer",
   "seg": "s05",
   "src": [
-   86.17,
-   90.346
+   86.55,
+   90.4
   ],
   "out": [
-   19.799,
-   23.975
-  ]
+   18.23,
+   22.08
+  ],
+  "gain_db": 0,
+  "text": "Dan vervolgens het dak van binnen isoleren. De vloer isoleren."
  },
  {
   "name": "hr",
   "seg": "s06",
   "src": [
-   95.01,
-   98.157
+   95.3,
+   98.3
   ],
   "out": [
-   23.975,
-   27.122
-  ]
+   22.08,
+   25.08
+  ],
+  "gain_db": 0,
+  "text": "HR++ glas in de hele woning."
  },
  {
   "name": "vent",
-  "seg": "s07",
+  "seg": "n07",
   "src": [
-   109.53,
-   113.15
+   109.6,
+   117.75
   ],
   "out": [
-   27.122,
-   30.742
-  ]
+   25.08,
+   33.23
+  ],
+  "gain_db": 0,
+  "text": "Dan moet er iets van ventilatie in gaan komen, dus dat kan type C of type D zijn. In dit geval ga ik even voor type C."
  },
  {
   "name": "wp",
   "seg": "s08",
   "src": [
-   123.28,
-   127.312
+   123.3,
+   127.35
   ],
   "out": [
-   30.742,
-   34.774
-  ]
+   33.23,
+   37.28
+  ],
+  "gain_db": 0,
+  "text": "Dan een hybride warmtepomp. De ketel is nog vrij nieuw."
  },
  {
   "name": "panelen",
   "seg": "s09",
   "src": [
-   144.4,
-   149.564
+   144.75,
+   153.4
   ],
   "out": [
-   34.774,
-   39.938
-  ]
+   37.28,
+   45.93
+  ],
+  "gain_db": 0,
+  "text": "En dan zouden we nog zonnepanelen in combinatie met micro-omvormers plaatsen op het schuine dak. Ongeveer 10 tot 12 panelen zou genoeg moeten zijn."
  },
  {
   "name": "batterij",
   "seg": "s10",
   "src": [
-   172.72,
-   176.8
+   172.95,
+   181.3
   ],
   "out": [
-   39.938,
-   44.018
-  ]
+   45.93,
+   54.28
+  ],
+  "gain_db": 0,
+  "text": "En dan installeren we nog een batterij van tussen de 10 en de 15 kWh, om in ieder geval de warmtepomp te kunnen compenseren, en kunnen laden op goedkope momenten."
  },
  {
-  "name": "kosten1",
+  "name": "kosten",
   "seg": "s11",
   "src": [
-   187.31,
-   189.368
+   187.12,
+   189.55
   ],
   "out": [
-   44.018,
-   46.076
-  ]
+   54.28,
+   56.71
+  ],
+  "gain_db": 2.1,
+  "text": "Dit zijn de kosten daarvan."
  },
  {
   "name": "totaal",
   "seg": "s12",
   "src": [
-   279.76,
-   285.8
+   279.9,
+   288.0
   ],
   "out": [
-   46.076,
-   52.116
-  ]
+   56.71,
+   64.81
+  ],
+  "gain_db": 0,
+  "text": "De totale kosten hiervan zijn ongeveer 46.000 euro. Maar er gaat nog 4 tot 6.000 euro subsidie vanaf. Afhankelijk van wanneer je het koopt natuurlijk."
  },
  {
   "name": "netto",
-  "seg": "s13",
+  "seg": "n13",
   "src": [
-   292.32,
-   296.977
+   292.55,
+   297.65
   ],
   "out": [
-   52.116,
-   56.773
-  ]
+   64.81,
+   69.91
+  ],
+  "gain_db": 0,
+  "text": "Dus netto kost dit ongeveer 40 tot 42.000 euro."
  },
  {
-  "name": "maandoud",
-  "seg": "s14",
+  "name": "maand-oud",
+  "seg": "n14",
   "src": [
-   305.23,
-   310.55
+   305.7,
+   312.2
   ],
   "out": [
-   56.773,
-   62.093
-  ]
+   69.91,
+   76.41
+  ],
+  "gain_db": -2.6,
+  "text": "De geschatte maandelijkse kosten waren ongeveer 325 euro per maand in de oude situatie en in een nieuwe situatie."
  },
  {
-  "name": "maandnieuw",
+  "name": "maand-nieuw",
   "seg": "s15",
   "src": [
-   321.55,
-   328.128
+   321.8,
+   328.2
   ],
   "out": [
-   62.093,
-   68.671
-  ]
+   76.41,
+   82.81
+  ],
+  "gain_db": 0,
+  "text": "In een nieuwe situatie wordt dat ongeveer 110 euro per maand. Dus dat betekent dat je een maandelijkse besparing hebt van 215 euro per maand."
  },
  {
-  "name": "fix1",
+  "name": "fix",
   "seg": "s16",
   "src": [
-   357.15,
-   362.35
+   357.05,
+   362.33
   ],
   "out": [
-   68.671,
-   73.871
-  ]
+   82.81,
+   88.09
+  ],
+  "gain_db": 0,
+  "text": "Fixscore is 6 van de 10. Alles wat geïsoleerd moet worden, is redelijk goed bereikbaar."
  },
  {
   "name": "cta",
   "seg": "s18",
   "src": [
-   375.82,
-   382.45
+   375.85,
+   384.7
   ],
   "out": [
-   73.871,
-   80.501
-  ]
+   88.09,
+   96.94
+  ],
+  "gain_db": 0,
+  "text": "Heb je nu ook net een huis gekocht? Stuur dan even de Funda-link naar mij, dan ga ik dit ook doen voor jouw woning. Of reageer CHECK onder dit bericht en dan zal ik jou even een berichtje doen."
  }
 ]
