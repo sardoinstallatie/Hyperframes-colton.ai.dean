@@ -1,0 +1,834 @@
+{
+"words": [
+{
+"text": "Dit",
+"start": 0,
+"end": 0.32
+},
+{
+"text": "monumentale",
+"start": 0.4,
+"end": 1.04
+},
+{
+"text": "pand",
+"start": 1.04,
+"end": 1.36
+},
+{
+"text": "in",
+"start": 1.36,
+"end": 1.52
+},
+{
+"text": "Druten",
+"start": 1.52,
+"end": 1.84
+},
+{
+"text": "gaan",
+"start": 2.08,
+"end": 2.24
+},
+{
+"text": "we",
+"start": 2.24,
+"end": 2.32
+},
+{
+"text": "verduurzamen",
+"start": 2.32,
+"end": 2.8
+},
+{
+"text": "van",
+"start": 2.88,
+"end": 3.04
+},
+{
+"text": "label",
+"start": 3.04,
+"end": 3.36
+},
+{
+"text": "G",
+"start": 3.44,
+"end": 3.76
+},
+{
+"text": "naar",
+"start": 3.76,
+"end": 4
+},
+{
+"text": "label",
+"start": 4,
+"end": 4.32
+},
+{
+"text": "A",
+"start": 4.48,
+"end": 4.8
+},
+{
+"text": "in",
+"start": 4.8,
+"end": 5.04
+},
+{
+"text": "1",
+"start": 5.04,
+"end": 5.28
+},
+{
+"text": "minuut.",
+"start": 5.28,
+"end": 6
+},
+{
+"text": "Het",
+"start": 6.08,
+"end": 6.24
+},
+{
+"text": "is",
+"start": 6.24,
+"end": 6.4
+},
+{
+"text": "een",
+"start": 6.4,
+"end": 6.56
+},
+{
+"text": "tilingkapwoning,",
+"start": 6.56,
+"end": 7.84
+},
+{
+"text": "gebouwd",
+"start": 7.84,
+"end": 8.24
+},
+{
+"text": "in",
+"start": 8.24,
+"end": 8.4
+},
+{
+"text": "1777.",
+"start": 8.4,
+"end": 9.36
+},
+{
+"text": "Het",
+"start": 9.6,
+"end": 9.76
+},
+{
+"text": "is",
+"start": 9.76,
+"end": 9.92
+},
+{
+"text": "label",
+"start": 9.92,
+"end": 10.4
+},
+{
+"text": "G.",
+"start": 10.4,
+"end": 11.2
+},
+{
+"text": "We",
+"start": 11.44,
+"end": 11.6
+},
+{
+"text": "gaan",
+"start": 11.6,
+"end": 11.84
+},
+{
+"text": "de",
+"start": 11.84,
+"end": 12
+},
+{
+"text": "won",
+"start": 12,
+"end": 12.4
+},
+{
+"text": "eerst",
+"start": 12.4,
+"end": 12.64
+},
+{
+"text": "even",
+"start": 12.64,
+"end": 12.88
+},
+{
+"text": "door",
+"start": 13.04,
+"end": 13.2
+},
+{
+"text": "onze",
+"start": 13.2,
+"end": 13.36
+},
+{
+"text": "calculator",
+"start": 13.36,
+"end": 13.92
+},
+{
+"text": "heen",
+"start": 13.92,
+"end": 14.16
+},
+{
+"text": "gooien.",
+"start": 14.16,
+"end": 14.56
+},
+{
+"text": "Het",
+"start": 14.88,
+"end": 14.96
+},
+{
+"text": "eerste",
+"start": 14.96,
+"end": 15.28
+},
+{
+"text": "wat",
+"start": 15.28,
+"end": 15.36
+},
+{
+"text": "wij",
+"start": 15.36,
+"end": 15.52
+},
+{
+"text": "zo",
+"start": 15.52,
+"end": 15.84
+},
+{
+"text": "doen,",
+"start": 15.84,
+"end": 16.16
+},
+{
+"text": "dat",
+"start": 16.16,
+"end": 16.24
+},
+{
+"text": "is",
+"start": 16.24,
+"end": 16.32
+},
+{
+"text": "het",
+"start": 16.48,
+"end": 16.56
+},
+{
+"text": "afdichten",
+"start": 16.56,
+"end": 17.12
+},
+{
+"text": "van",
+"start": 17.12,
+"end": 17.36
+},
+{
+"text": "kieren.",
+"start": 17.36,
+"end": 17.92
+},
+{
+"text": "Gan",
+"start": 18.32,
+"end": 18.48
+},
+{
+"text": "we",
+"start": 18.48,
+"end": 18.64
+},
+{
+"text": "vanuit",
+"start": 18.8,
+"end": 19.12
+},
+{
+"text": "de",
+"start": 19.12,
+"end": 19.2
+},
+{
+"text": "binnenkant",
+"start": 19.2,
+"end": 19.68
+},
+{
+"text": "isoleren",
+"start": 19.68,
+"end": 20.24
+},
+{
+"text": "door",
+"start": 20.24,
+"end": 20.4
+},
+{
+"text": "middel",
+"start": 20.4,
+"end": 20.56
+},
+{
+"text": "van",
+"start": 20.56,
+"end": 20.72
+},
+{
+"text": "voorzetwanden.",
+"start": 20.72,
+"end": 22.08
+},
+{
+"text": "Dan",
+"start": 22.08,
+"end": 22.32
+},
+{
+"text": "gaan",
+"start": 22.32,
+"end": 22.48
+},
+{
+"text": "we",
+"start": 22.48,
+"end": 22.64
+},
+{
+"text": "het",
+"start": 22.64,
+"end": 22.8
+},
+{
+"text": "dak",
+"start": 22.8,
+"end": 23.04
+},
+{
+"text": "sowieso",
+"start": 23.2,
+"end": 23.68
+},
+{
+"text": "van",
+"start": 23.68,
+"end": 23.84
+},
+{
+"text": "binnenuit",
+"start": 23.84,
+"end": 24.32
+},
+{
+"text": "isoleren.",
+"start": 24.32,
+"end": 25.36
+},
+{
+"text": "En",
+"start": 25.36,
+"end": 25.52
+},
+{
+"text": "zouden",
+"start": 25.68,
+"end": 25.92
+},
+{
+"text": "we",
+"start": 25.92,
+"end": 26
+},
+{
+"text": "ook",
+"start": 26,
+"end": 26.16
+},
+{
+"text": "de",
+"start": 26.16,
+"end": 26.24
+},
+{
+"text": "vloer",
+"start": 26.24,
+"end": 26.56
+},
+{
+"text": "van",
+"start": 26.56,
+"end": 26.72
+},
+{
+"text": "binnenuit",
+"start": 26.72,
+"end": 27.2
+},
+{
+"text": "moeten",
+"start": 27.2,
+"end": 27.36
+},
+{
+"text": "gaan",
+"start": 27.36,
+"end": 27.6
+},
+{
+"text": "isoleren.",
+"start": 27.6,
+"end": 28.16
+},
+{
+"text": "Dus",
+"start": 28.16,
+"end": 28.32
+},
+{
+"text": "je",
+"start": 28.32,
+"end": 28.48
+},
+{
+"text": "moet",
+"start": 28.48,
+"end": 28.72
+},
+{
+"text": "gaan",
+"start": 28.72,
+"end": 28.96
+},
+{
+"text": "naar",
+"start": 28.96,
+"end": 29.2
+},
+{
+"text": "voorzetramen",
+"start": 29.2,
+"end": 30.4
+},
+{
+"text": "of",
+"start": 30.4,
+"end": 30.72
+},
+{
+"text": "monumentenglas.",
+"start": 30.88,
+"end": 32.64
+},
+{
+"text": "Dan",
+"start": 32.64,
+"end": 32.8
+},
+{
+"text": "gaan",
+"start": 32.8,
+"end": 32.96
+},
+{
+"text": "we",
+"start": 32.96,
+"end": 33.04
+},
+{
+"text": "een",
+"start": 33.04,
+"end": 33.12
+},
+{
+"text": "hybride",
+"start": 33.2,
+"end": 33.68
+},
+{
+"text": "warmtepomp",
+"start": 33.68,
+"end": 34.32
+},
+{
+"text": "installeren.",
+"start": 34.32,
+"end": 35.04
+},
+{
+"text": "Zonnepanelen",
+"start": 35.04,
+"end": 35.84
+},
+{
+"text": "gaan",
+"start": 35.84,
+"end": 35.92
+},
+{
+"text": "we",
+"start": 35.92,
+"end": 36
+},
+{
+"text": "gewoon",
+"start": 36.16,
+"end": 36.4
+},
+{
+"text": "in",
+"start": 36.4,
+"end": 36.48
+},
+{
+"text": "de",
+"start": 36.48,
+"end": 36.56
+},
+{
+"text": "tuin",
+"start": 36.64,
+"end": 36.96
+},
+{
+"text": "plaatsen.",
+"start": 36.96,
+"end": 37.52
+},
+{
+"text": "De",
+"start": 37.52,
+"end": 37.68
+},
+{
+"text": "totale",
+"start": 37.68,
+"end": 38.08
+},
+{
+"text": "investering",
+"start": 38.08,
+"end": 38.64
+},
+{
+"text": "hiervan",
+"start": 38.64,
+"end": 38.88
+},
+{
+"text": "is",
+"start": 38.88,
+"end": 39.04
+},
+{
+"text": "60.000",
+"start": 39.04,
+"end": 39.76
+},
+{
+"text": "euro.",
+"start": 39.76,
+"end": 40.4
+},
+{
+"text": "Maar",
+"start": 40.48,
+"end": 40.64
+},
+{
+"text": "dan",
+"start": 40.64,
+"end": 40.8
+},
+{
+"text": "zou",
+"start": 40.8,
+"end": 41.04
+},
+{
+"text": "je",
+"start": 41.04,
+"end": 41.12
+},
+{
+"text": "ook",
+"start": 41.12,
+"end": 41.2
+},
+{
+"text": "nog",
+"start": 41.2,
+"end": 41.36
+},
+{
+"text": "eens",
+"start": 41.36,
+"end": 41.52
+},
+{
+"text": "een",
+"start": 41.52,
+"end": 41.6
+},
+{
+"text": "10.000",
+"start": 41.68,
+"end": 42.08
+},
+{
+"text": "euro",
+"start": 42.24,
+"end": 42.56
+},
+{
+"text": "ongeveer",
+"start": 42.56,
+"end": 43.28
+},
+{
+"text": "aan",
+"start": 43.28,
+"end": 43.6
+},
+{
+"text": "I",
+"start": 43.84,
+"end": 44.16
+},
+{
+"text": "subsidie",
+"start": 44.56,
+"end": 45.12
+},
+{
+"text": "krijgen.",
+"start": 45.12,
+"end": 45.84
+},
+{
+"text": "De",
+"start": 45.84,
+"end": 46
+},
+{
+"text": "maandelijks",
+"start": 46,
+"end": 46.48
+},
+{
+"text": "kosten",
+"start": 46.56,
+"end": 46.8
+},
+{
+"text": "zijn",
+"start": 46.88,
+"end": 47.12
+},
+{
+"text": "teruggebracht",
+"start": 47.12,
+"end": 47.68
+},
+{
+"text": "van",
+"start": 47.68,
+"end": 47.84
+},
+{
+"text": "425",
+"start": 47.84,
+"end": 48.8
+},
+{
+"text": "euro",
+"start": 48.8,
+"end": 49.12
+},
+{
+"text": "per",
+"start": 49.12,
+"end": 49.2
+},
+{
+"text": "maand",
+"start": 49.2,
+"end": 49.52
+},
+{
+"text": "naar",
+"start": 49.52,
+"end": 49.68
+},
+{
+"text": "175",
+"start": 49.68,
+"end": 50.64
+},
+{
+"text": "euro",
+"start": 50.64,
+"end": 50.88
+},
+{
+"text": "per",
+"start": 50.88,
+"end": 51.04
+},
+{
+"text": "maand.",
+"start": 51.04,
+"end": 51.68
+},
+{
+"text": "De",
+"start": 51.68,
+"end": 51.84
+},
+{
+"text": "fixcore",
+"start": 51.84,
+"end": 52.88
+},
+{
+"text": "is",
+"start": 52.88,
+"end": 53.04
+},
+{
+"text": "in",
+"start": 53.04,
+"end": 53.12
+},
+{
+"text": "mijn",
+"start": 53.12,
+"end": 53.36
+},
+{
+"text": "ogen",
+"start": 53.36,
+"end": 53.92
+},
+{
+"text": "2",
+"start": 53.92,
+"end": 54.32
+},
+{
+"text": "van",
+"start": 54.32,
+"end": 54.48
+},
+{
+"text": "de",
+"start": 54.48,
+"end": 54.64
+},
+{
+"text": "10.",
+"start": 54.64,
+"end": 55.44
+},
+{
+"text": "Heb",
+"start": 55.6,
+"end": 55.84
+},
+{
+"text": "jij",
+"start": 55.84,
+"end": 56.16
+},
+{
+"text": "nou",
+"start": 56.16,
+"end": 56.24
+},
+{
+"text": "ook",
+"start": 56.24,
+"end": 56.4
+},
+{
+"text": "net",
+"start": 56.4,
+"end": 56.56
+},
+{
+"text": "een",
+"start": 56.56,
+"end": 56.64
+},
+{
+"text": "huis",
+"start": 56.64,
+"end": 56.88
+},
+{
+"text": "gekocht",
+"start": 56.88,
+"end": 57.12
+},
+{
+"text": "of",
+"start": 57.2,
+"end": 57.36
+},
+{
+"text": "reageer",
+"start": 57.36,
+"end": 57.92
+},
+{
+"text": "gewoon",
+"start": 57.92,
+"end": 58.08
+},
+{
+"text": "check",
+"start": 58.08,
+"end": 58.4
+},
+{
+"text": "onder",
+"start": 58.4,
+"end": 58.56
+},
+{
+"text": "dit",
+"start": 58.56,
+"end": 58.72
+},
+{
+"text": "bericht.",
+"start": 58.72,
+"end": 59.28
+}
+]
+}

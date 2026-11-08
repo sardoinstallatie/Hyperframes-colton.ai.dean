@@ -1,0 +1,14 @@
+assets/*.ogg
+assets/transcript-raw.json
+assets/tr-full.json
+assets/seg-*.wav
+assets/huis.png
+work/stills/
+work/seg/
+work/*.jpg
+work/calcf/
+renders/
+work/
+assets/source.mp4
+assets/calc-d07.mp4
+assets/calc-slow.mp4
