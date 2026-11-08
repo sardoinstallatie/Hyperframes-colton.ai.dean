@@ -55,3 +55,6 @@ Elke regel eindigt met een datum.
 ## Knippen (Peter, 8 nov 2026)
 - Alleen knippen TUSSEN hele zinnen, of bij een echt lange pauze. Nooit midden in een zin, ook niet om een bijzin weg te halen. Liever iets langere video.
 - CTA-zin(nen) nooit opknippen; neem de take in één stuk.
+- **Prioriteit (Peter, 8 nov 2026, na Berg en Dal #9):** niet raar midden in zinnen knippen is BELANGRIJKER dan de lengte. Ook als de video dan 2–3 min wordt. Wil je korter: alleen hele zinnen of hele blokken weglaten.
+- Overgangen heel laten: de inleidende zin naar een blok (bv. "het eerste wat ik zou doen…" vóór het plan) blijft erin; uitleg-zinnen (bv. ventilatie: waarom + type D/C + wat het betekent) niet half inkorten; het einde/CTA moet natuurlijk aflopen (laatste zin van Peter helemaal).
+- Werkwijze: lees het hele transcript zin voor zin, kies per zin erin/eruit, en transcribeer daarna elk geknipt stuk los om te checken dat het begint en eindigt op een hele zin.
