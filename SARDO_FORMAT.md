@@ -63,3 +63,8 @@ Bij yapping (tip/verhaal/mening) geldt de beeld-zone NIET. Peter staat de hele v
 
 ## Nummers uniek
 Dagnummer (D) en Funda Fixer-volgnummer (#) staan in `video-projects/NUMMERS.md`. Altijd eerst pullen, je nummer claimen, committen en pushen vóór je bouwt. Nooit een nummer hergebruiken; bij botsing het volgende vrije nummer nemen. Peter wil dat parallelle chats elkaar niet overschrijven (8 nov 2026).
+
+## Knippen: techniek (les uit D16, 8 nov 2026)
+- Knippunten uit een los uitgepakt audiobestand (ogg/wav van de DJI-clip) lopen ~0,14% achter op de MP4-tijd (0,35 s na 5 min). Bepaal ze op de MP4 zelf of corrigeer: kruiscorrelatie van een paar geknipte stukken tegen de bron, lineair fitten.
+- Knippen met input-seek: `ffmpeg -ss <start> -i bron -t <duur> ... -af aresample=48000,asetpts=PTS-STARTPTS,afade=t=out:st=<duur-0.04>:d=0.04`. NIET `-ss start-1 -i … -ss 1` met een afade: dan valt de fade-out ~1 s te vroeg en wordt het zinseinde stil.
+- Controle: elk stuk los transcriberen (met `apad` erachter) en checken dat de laatste woorden erin zitten, en het dB-niveau van de laatste 0,8 s bekijken (geen -180 dB = digitale stilte).

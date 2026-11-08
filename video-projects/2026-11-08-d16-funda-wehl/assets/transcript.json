@@ -2,1141 +2,1321 @@
   {
     "id": "w0",
     "text": "Deze",
-    "start": 0.24,
+    "start": 0.16,
     "end": 0.56
   },
   {
     "id": "w1",
     "text": "woningen",
     "start": 0.56,
-    "end": 0.88
+    "end": 0.96
   },
   {
     "id": "w2",
-    "text": "we",
-    "start": 1.04,
-    "end": 1.2
+    "text": "met",
+    "start": 1.44,
+    "end": 1.6
   },
   {
     "id": "w3",
-    "text": "met",
-    "start": 1.36,
-    "end": 1.52
+    "text": "nieuwe",
+    "start": 1.6,
+    "end": 1.84
   },
   {
     "id": "w4",
-    "text": "nieuwe",
-    "start": 1.52,
-    "end": 1.76
+    "text": "ketel",
+    "start": 1.84,
+    "end": 2.24
   },
   {
     "id": "w5",
-    "text": "ketel",
-    "start": 1.76,
-    "end": 2.16
-  },
-  {
-    "id": "w6",
     "text": "van",
-    "start": 2.16,
+    "start": 2.24,
     "end": 2.32
   },
   {
-    "id": "w7",
+    "id": "w6",
     "text": "label",
     "start": 2.32,
-    "end": 2.48
+    "end": 2.64
   },
   {
-    "id": "w8",
+    "id": "w7",
     "text": "G",
-    "start": 2.56,
+    "start": 2.64,
     "end": 2.72
   },
   {
-    "id": "w9",
+    "id": "w8",
     "text": "naar",
     "start": 2.8,
     "end": 2.96
   },
   {
-    "id": "w10",
+    "id": "w9",
     "text": "label",
     "start": 2.96,
-    "end": 3.2
+    "end": 3.28
   },
   {
-    "id": "w11",
+    "id": "w10",
     "text": "A",
-    "start": 3.2,
+    "start": 3.28,
     "end": 3.44
   },
   {
-    "id": "w12",
-    "text": "in",
+    "id": "w11",
+    "text": "en",
     "start": 3.44,
     "end": 3.6
   },
   {
-    "id": "w13",
-    "text": "1",
-    "start": 3.6,
-    "end": 3.76
-  },
-  {
-    "id": "w14",
-    "text": "minuten.",
-    "start": 3.76,
-    "end": 4.16
-  },
-  {
-    "id": "w15",
-    "text": "Het",
-    "start": 4.64,
-    "end": 4.8
-  },
-  {
-    "id": "w16",
-    "text": "is",
-    "start": 4.8,
-    "end": 4.96
-  },
-  {
-    "id": "w17",
-    "text": "een",
-    "start": 4.96,
-    "end": 5.04
-  },
-  {
-    "id": "w18",
+    "id": "w12",
     "text": "vrijstaande",
-    "start": 5.04,
-    "end": 5.76
-  },
-  {
-    "id": "w19",
-    "text": "woning",
-    "start": 5.76,
+    "start": 5.44,
     "end": 6.16
   },
   {
-    "id": "w20",
-    "text": "van",
+    "id": "w13",
+    "text": "woning",
     "start": 6.16,
-    "end": 6.32
+    "end": 6.48
+  },
+  {
+    "id": "w14",
+    "text": "van",
+    "start": 6.56,
+    "end": 6.72
+  },
+  {
+    "id": "w15",
+    "text": "1440",
+    "start": 6.72,
+    "end": 8
+  },
+  {
+    "id": "w16",
+    "text": "meter.",
+    "start": 8,
+    "end": 8.88
+  },
+  {
+    "id": "w17",
+    "text": "We",
+    "start": 9.68,
+    "end": 9.84
+  },
+  {
+    "id": "w18",
+    "text": "gaan",
+    "start": 9.84,
+    "end": 10.08
+  },
+  {
+    "id": "w19",
+    "text": "eerst",
+    "start": 10.08,
+    "end": 10.32
+  },
+  {
+    "id": "w20",
+    "text": "even",
+    "start": 10.32,
+    "end": 10.56
   },
   {
     "id": "w21",
-    "text": "1440",
-    "start": 6.32,
-    "end": 7.6
+    "text": "de",
+    "start": 10.56,
+    "end": 10.64
   },
   {
     "id": "w22",
-    "text": "met",
-    "start": 7.6,
-    "end": 7.92
+    "text": "calculator",
+    "start": 10.64,
+    "end": 11.2
   },
   {
     "id": "w23",
-    "text": "label",
-    "start": 8.08,
-    "end": 8.48
+    "text": "invullen",
+    "start": 11.2,
+    "end": 11.68
   },
   {
     "id": "w24",
-    "text": "G.",
-    "start": 8.48,
-    "end": 9.12
+    "text": "om",
+    "start": 11.68,
+    "end": 11.84
   },
   {
     "id": "w25",
-    "text": "Gan",
-    "start": 9.28,
-    "end": 9.36
+    "text": "te",
+    "start": 11.84,
+    "end": 11.92
   },
   {
     "id": "w26",
-    "text": "eerst",
-    "start": 9.52,
-    "end": 9.76
+    "text": "zien",
+    "start": 11.92,
+    "end": 12.24
   },
   {
     "id": "w27",
-    "text": "even",
-    "start": 9.76,
-    "end": 9.92
+    "text": "wat",
+    "start": 12.24,
+    "end": 12.48
   },
   {
     "id": "w28",
     "text": "de",
-    "start": 10,
-    "end": 10.08
-  },
-  {
-    "id": "w29",
-    "text": "calculator",
-    "start": 10.08,
-    "end": 10.56
-  },
-  {
-    "id": "w30",
-    "text": "invullen.",
-    "start": 10.56,
-    "end": 10.96
-  },
-  {
-    "id": "w31",
-    "text": "Omdat",
-    "start": 11.44,
-    "end": 11.6
-  },
-  {
-    "id": "w32",
-    "text": "de",
-    "start": 11.68,
-    "end": 11.76
-  },
-  {
-    "id": "w33",
-    "text": "woninglabel",
-    "start": 11.76,
-    "end": 12.32
-  },
-  {
-    "id": "w34",
-    "text": "G",
-    "start": 12.32,
+    "start": 12.48,
     "end": 12.56
   },
   {
-    "id": "w35",
-    "text": "is",
+    "id": "w29",
+    "text": "maandelijkse",
     "start": 12.56,
-    "end": 12.64
-  },
-  {
-    "id": "w36",
-    "text": "starten",
-    "start": 12.8,
     "end": 13.04
   },
   {
-    "id": "w37",
-    "text": "we",
+    "id": "w30",
+    "text": "kosten",
     "start": 13.04,
-    "end": 13.12
+    "end": 13.28
   },
   {
-    "id": "w38",
-    "text": "altijd",
-    "start": 13.2,
-    "end": 13.44
+    "id": "w31",
+    "text": "zijn",
+    "start": 13.36,
+    "end": 13.52
   },
   {
-    "id": "w39",
-    "text": "weer",
-    "start": 13.44,
+    "id": "w32",
+    "text": "en",
+    "start": 13.52,
     "end": 13.6
   },
   {
-    "id": "w40",
-    "text": "met",
+    "id": "w33",
+    "text": "hoeveel",
     "start": 13.6,
-    "end": 13.68
+    "end": 13.92
   },
   {
-    "id": "w41",
-    "text": "hetzelfde.",
-    "start": 13.68,
-    "end": 14.24
+    "id": "w34",
+    "text": "potentie",
+    "start": 13.92,
+    "end": 14.32
   },
   {
-    "id": "w42",
-    "text": "Met",
-    "start": 14.24,
-    "end": 14.4
+    "id": "w35",
+    "text": "er",
+    "start": 14.32,
+    "end": 14.48
   },
   {
-    "id": "w43",
-    "text": "isoleren.",
-    "start": 14.4,
-    "end": 14.96
+    "id": "w36",
+    "text": "zit",
+    "start": 14.48,
+    "end": 14.64
   },
   {
-    "id": "w44",
-    "text": "Dat",
-    "start": 14.96,
-    "end": 15.12
+    "id": "w37",
+    "text": "in",
+    "start": 14.64,
+    "end": 14.72
   },
   {
-    "id": "w45",
-    "text": "betekent",
-    "start": 15.12,
-    "end": 15.44
+    "id": "w38",
+    "text": "hun",
+    "start": 14.72,
+    "end": 14.88
   },
   {
-    "id": "w46",
-    "text": "dat",
-    "start": 15.44,
+    "id": "w39",
+    "text": "woning.",
+    "start": 14.88,
     "end": 15.52
   },
   {
-    "id": "w47",
-    "text": "we",
-    "start": 15.52,
-    "end": 15.68
+    "id": "w40",
+    "text": "Omdat",
+    "start": 16.16,
+    "end": 16.4
   },
   {
-    "id": "w48",
+    "id": "w41",
     "text": "de",
-    "start": 15.68,
-    "end": 15.76
+    "start": 16.4,
+    "end": 16.48
   },
   {
-    "id": "w49",
-    "text": "geel",
-    "start": 15.76,
-    "end": 16.08
-  },
-  {
-    "id": "w50",
-    "text": "gaan",
-    "start": 16.24,
-    "end": 16.32
-  },
-  {
-    "id": "w51",
-    "text": "isoleren.",
-    "start": 16.32,
-    "end": 16.8
-  },
-  {
-    "id": "w52",
-    "text": "Er",
-    "start": 16.8,
-    "end": 16.88
-  },
-  {
-    "id": "w53",
-    "text": "is",
-    "start": 16.88,
-    "end": 16.96
-  },
-  {
-    "id": "w54",
-    "text": "een",
-    "start": 16.96,
+    "id": "w42",
+    "text": "woninglabel",
+    "start": 16.56,
     "end": 17.12
   },
   {
-    "id": "w55",
-    "text": "spouw",
+    "id": "w43",
+    "text": "G",
     "start": 17.12,
-    "end": 17.44
+    "end": 17.36
   },
   {
-    "id": "w56",
-    "text": "aanwezig.",
-    "start": 17.44,
+    "id": "w44",
+    "text": "is,",
+    "start": 17.36,
+    "end": 17.52
+  },
+  {
+    "id": "w45",
+    "text": "starten",
+    "start": 17.6,
+    "end": 17.84
+  },
+  {
+    "id": "w46",
+    "text": "we",
+    "start": 17.84,
     "end": 17.92
   },
   {
-    "id": "w57",
-    "text": "Dus",
-    "start": 17.92,
-    "end": 18.08
-  },
-  {
-    "id": "w58",
-    "text": "we",
-    "start": 18.08,
+    "id": "w47",
+    "text": "altijd",
+    "start": 18,
     "end": 18.24
   },
   {
-    "id": "w59",
-    "text": "kunnen",
-    "start": 18.32,
-    "end": 18.48
+    "id": "w48",
+    "text": "weer",
+    "start": 18.24,
+    "end": 18.4
   },
   {
-    "id": "w60",
-    "text": "gewoon",
+    "id": "w49",
+    "text": "met",
+    "start": 18.4,
+    "end": 18.56
+  },
+  {
+    "id": "w50",
+    "text": "hetzelfde.",
     "start": 18.56,
-    "end": 18.72
+    "end": 19.04
   },
   {
-    "id": "w61",
-    "text": "de",
-    "start": 18.72,
-    "end": 18.8
-  },
-  {
-    "id": "w62",
-    "text": "spouw",
-    "start": 18.8,
-    "end": 19.12
-  },
-  {
-    "id": "w63",
-    "text": "meer",
-    "start": 19.12,
+    "id": "w51",
+    "text": "Met",
+    "start": 19.04,
     "end": 19.2
   },
   {
-    "id": "w64",
-    "text": "isoleren",
-    "start": 19.28,
+    "id": "w52",
+    "text": "isoleren.",
+    "start": 19.2,
     "end": 19.76
   },
   {
-    "id": "w65",
-    "text": "met",
-    "start": 19.84,
-    "end": 20.08
+    "id": "w53",
+    "text": "Dat",
+    "start": 19.76,
+    "end": 19.92
   },
   {
-    "id": "w66",
-    "text": "bijvoorbeeld",
-    "start": 20.08,
+    "id": "w54",
+    "text": "betekent",
+    "start": 19.92,
+    "end": 20.24
+  },
+  {
+    "id": "w55",
+    "text": "dat",
+    "start": 20.24,
     "end": 20.32
   },
   {
-    "id": "w67",
-    "text": "EPS",
-    "start": 20.4,
+    "id": "w56",
+    "text": "we",
+    "start": 20.32,
+    "end": 20.48
+  },
+  {
+    "id": "w57",
+    "text": "de",
+    "start": 20.48,
+    "end": 20.56
+  },
+  {
+    "id": "w58",
+    "text": "geel",
+    "start": 20.56,
     "end": 20.88
   },
   {
-    "id": "w68",
-    "text": "parels,",
-    "start": 20.88,
+    "id": "w59",
+    "text": "gaan",
+    "start": 21.04,
+    "end": 21.2
+  },
+  {
+    "id": "w60",
+    "text": "isoleren.",
+    "start": 21.2,
     "end": 21.6
   },
   {
-    "id": "w69",
-    "text": "dak",
+    "id": "w61",
+    "text": "Er",
+    "start": 21.6,
+    "end": 21.68
+  },
+  {
+    "id": "w62",
+    "text": "is",
+    "start": 21.68,
+    "end": 21.84
+  },
+  {
+    "id": "w63",
+    "text": "een",
     "start": 21.84,
-    "end": 22
+    "end": 21.92
+  },
+  {
+    "id": "w64",
+    "text": "spou",
+    "start": 21.92,
+    "end": 22.24
+  },
+  {
+    "id": "w65",
+    "text": "aanwezig.",
+    "start": 22.24,
+    "end": 22.72
+  },
+  {
+    "id": "w66",
+    "text": "Dus",
+    "start": 22.72,
+    "end": 22.96
+  },
+  {
+    "id": "w67",
+    "text": "we",
+    "start": 22.96,
+    "end": 23.12
+  },
+  {
+    "id": "w68",
+    "text": "kunnen",
+    "start": 23.12,
+    "end": 23.36
+  },
+  {
+    "id": "w69",
+    "text": "gewoon",
+    "start": 23.36,
+    "end": 23.52
   },
   {
     "id": "w70",
-    "text": "en",
-    "start": 22.16,
-    "end": 22.32
+    "text": "de",
+    "start": 23.52,
+    "end": 23.6
   },
   {
     "id": "w71",
-    "text": "vloer",
-    "start": 22.32,
-    "end": 22.8
+    "text": "spouw",
+    "start": 23.6,
+    "end": 23.92
   },
   {
     "id": "w72",
-    "text": "isoleren.",
-    "start": 22.8,
-    "end": 23.84
+    "text": "meer",
+    "start": 23.92,
+    "end": 24
   },
   {
     "id": "w73",
-    "text": "Overal",
-    "start": 23.84,
-    "end": 24.32
+    "text": "isoleren",
+    "start": 24.16,
+    "end": 24.64
   },
   {
     "id": "w74",
-    "text": "haar",
-    "start": 24.32,
-    "end": 24.56
-  },
-  {
-    "id": "w75",
-    "text": "plus",
-    "start": 24.72,
+    "text": "met",
+    "start": 24.64,
     "end": 24.8
   },
   {
+    "id": "w75",
+    "text": "bijvoorbeeld",
+    "start": 24.88,
+    "end": 25.12
+  },
+  {
     "id": "w76",
-    "text": "plus",
-    "start": 24.96,
-    "end": 25.2
+    "text": "EPS",
+    "start": 25.2,
+    "end": 25.6
   },
   {
     "id": "w77",
-    "text": "glas.",
-    "start": 25.2,
-    "end": 25.52
+    "text": "parels.",
+    "start": 25.76,
+    "end": 26.4
   },
   {
     "id": "w78",
-    "text": "En",
-    "start": 25.52,
-    "end": 25.68
+    "text": "Dak",
+    "start": 26.64,
+    "end": 27.04
   },
   {
     "id": "w79",
-    "text": "als",
-    "start": 25.68,
-    "end": 25.84
+    "text": "en",
+    "start": 27.04,
+    "end": 27.2
   },
   {
     "id": "w80",
-    "text": "het",
-    "start": 25.84,
-    "end": 26
-  },
-  {
-    "id": "w81",
-    "text": "kan",
-    "start": 26,
-    "end": 26.16
-  },
-  {
-    "id": "w82",
-    "text": "ventilatie",
-    "start": 26.32,
-    "end": 26.8
-  },
-  {
-    "id": "w83",
-    "text": "type",
-    "start": 26.96,
-    "end": 27.28
-  },
-  {
-    "id": "w84",
-    "text": "C",
-    "start": 27.28,
+    "text": "vloer",
+    "start": 27.2,
     "end": 27.6
   },
   {
-    "id": "w85",
-    "text": "aanbrengen.",
+    "id": "w81",
+    "text": "isoleren.",
     "start": 27.6,
-    "end": 28.72
+    "end": 28.64
   },
   {
-    "id": "w86",
-    "text": "Zou",
-    "start": 28.96,
+    "id": "w82",
+    "text": "Overal",
+    "start": 28.64,
     "end": 29.12
   },
   {
-    "id": "w87",
-    "text": "we",
+    "id": "w83",
+    "text": "haar",
     "start": 29.12,
-    "end": 29.2
-  },
-  {
-    "id": "w88",
-    "text": "in",
-    "start": 29.28,
     "end": 29.36
   },
   {
-    "id": "w89",
-    "text": "dit",
-    "start": 29.36,
-    "end": 29.52
-  },
-  {
-    "id": "w90",
-    "text": "geval",
-    "start": 29.52,
-    "end": 29.84
-  },
-  {
-    "id": "w91",
-    "text": "gaan",
-    "start": 29.84,
-    "end": 30.16
-  },
-  {
-    "id": "w92",
-    "text": "voor",
-    "start": 30.16,
-    "end": 30.32
-  },
-  {
-    "id": "w93",
-    "text": "een",
-    "start": 30.32,
+    "id": "w84",
+    "text": "glas.",
+    "start": 30,
     "end": 30.4
   },
   {
-    "id": "w94",
-    "text": "hybride",
+    "id": "w85",
+    "text": "En",
+    "start": 30.4,
+    "end": 30.56
+  },
+  {
+    "id": "w86",
+    "text": "als",
     "start": 30.56,
+    "end": 30.72
+  },
+  {
+    "id": "w87",
+    "text": "het",
+    "start": 30.72,
+    "end": 30.8
+  },
+  {
+    "id": "w88",
+    "text": "kan,",
+    "start": 30.8,
     "end": 31.04
   },
   {
-    "id": "w95",
-    "text": "warmtepomp",
-    "start": 31.04,
-    "end": 31.68
+    "id": "w89",
+    "text": "ventilati",
+    "start": 31.12,
+    "end": 31.6
   },
   {
-    "id": "w96",
-    "text": "bij",
-    "start": 31.68,
-    "end": 31.84
+    "id": "w90",
+    "text": "type",
+    "start": 31.76,
+    "end": 32.08
   },
   {
-    "id": "w97",
-    "text": "te",
-    "start": 31.84,
-    "end": 32
+    "id": "w91",
+    "text": "C",
+    "start": 32.08,
+    "end": 32.32
   },
   {
-    "id": "w98",
-    "text": "plaatsen.",
-    "start": 32,
-    "end": 32.72
+    "id": "w92",
+    "text": "aanbrengen.",
+    "start": 32.48,
+    "end": 33.92
   },
   {
-    "id": "w99",
+    "id": "w93",
     "text": "Dan",
-    "start": 32.72,
-    "end": 32.88
-  },
-  {
-    "id": "w100",
-    "text": "zonpanelen",
-    "start": 33.04,
-    "end": 33.76
-  },
-  {
-    "id": "w101",
-    "text": "plaatsen",
-    "start": 33.76,
-    "end": 34.08
-  },
-  {
-    "id": "w102",
-    "text": "op",
-    "start": 34.08,
-    "end": 34.16
-  },
-  {
-    "id": "w103",
-    "text": "de",
-    "start": 34.16,
-    "end": 34.24
-  },
-  {
-    "id": "w104",
-    "text": "zuidkant",
     "start": 34.24,
+    "end": 34.4
+  },
+  {
+    "id": "w94",
+    "text": "zou",
+    "start": 34.56,
     "end": 34.72
   },
   {
-    "id": "w105",
-    "text": "van",
+    "id": "w95",
+    "text": "we",
     "start": 34.72,
-    "end": 34.88
+    "end": 34.8
   },
   {
-    "id": "w106",
-    "text": "het",
-    "start": 34.88,
-    "end": 34.96
-  },
-  {
-    "id": "w107",
-    "text": "dak.",
+    "id": "w96",
+    "text": "in",
     "start": 34.96,
-    "end": 35.68
+    "end": 35.04
   },
   {
-    "id": "w108",
-    "text": "In",
-    "start": 35.68,
-    "end": 35.92
+    "id": "w97",
+    "text": "dit",
+    "start": 35.04,
+    "end": 35.2
   },
   {
-    "id": "w109",
-    "text": "combinatie",
-    "start": 35.92,
-    "end": 36.48
+    "id": "w98",
+    "text": "geval",
+    "start": 35.2,
+    "end": 35.52
   },
   {
-    "id": "w110",
-    "text": "met",
-    "start": 36.48,
+    "id": "w99",
+    "text": "gaan",
+    "start": 35.52,
+    "end": 35.76
+  },
+  {
+    "id": "w100",
+    "text": "voor",
+    "start": 35.76,
+    "end": 36
+  },
+  {
+    "id": "w101",
+    "text": "een",
+    "start": 36,
+    "end": 36.16
+  },
+  {
+    "id": "w102",
+    "text": "hybride",
+    "start": 36.16,
     "end": 36.64
   },
   {
-    "id": "w111",
-    "text": "een",
+    "id": "w103",
+    "text": "warmtepomp",
     "start": 36.64,
-    "end": 36.72
-  },
-  {
-    "id": "w112",
-    "text": "10",
-    "start": 36.72,
-    "end": 37.04
-  },
-  {
-    "id": "w113",
-    "text": "kW",
-    "start": 37.04,
     "end": 37.36
   },
   {
-    "id": "w114",
-    "text": "batterij.",
-    "start": 37.84,
+    "id": "w104",
+    "text": "bij",
+    "start": 37.36,
+    "end": 37.52
+  },
+  {
+    "id": "w105",
+    "text": "te",
+    "start": 37.52,
+    "end": 37.68
+  },
+  {
+    "id": "w106",
+    "text": "plaatsen.",
+    "start": 37.68,
+    "end": 38.08
+  },
+  {
+    "id": "w107",
+    "text": "Omdat",
+    "start": 38.08,
+    "end": 38.4
+  },
+  {
+    "id": "w108",
+    "text": "er",
+    "start": 38.4,
     "end": 38.56
   },
   {
-    "id": "w115",
-    "text": "Alle",
+    "id": "w109",
+    "text": "al",
     "start": 38.56,
-    "end": 38.88
+    "end": 38.64
   },
   {
-    "id": "w116",
-    "text": "kosten",
-    "start": 38.88,
+    "id": "w110",
+    "text": "een",
+    "start": 38.72,
+    "end": 38.8
+  },
+  {
+    "id": "w111",
+    "text": "ketel",
+    "start": 38.8,
     "end": 39.12
   },
   {
-    "id": "w117",
-    "text": "kan",
-    "start": 39.2,
-    "end": 39.28
-  },
-  {
-    "id": "w118",
-    "text": "je",
-    "start": 39.28,
+    "id": "w112",
+    "text": "hangt.",
+    "start": 39.12,
     "end": 39.44
   },
   {
-    "id": "w119",
-    "text": "hier",
+    "id": "w113",
+    "text": "Die",
     "start": 39.44,
     "end": 39.6
   },
   {
-    "id": "w120",
-    "text": "zien.",
+    "id": "w114",
+    "text": "komt",
     "start": 39.6,
     "end": 39.84
   },
   {
-    "id": "w121",
-    "text": "En",
+    "id": "w115",
+    "text": "uit",
     "start": 39.84,
-    "end": 40
-  },
-  {
-    "id": "w122",
-    "text": "het",
-    "start": 40,
     "end": 40.08
   },
   {
-    "id": "w123",
-    "text": "is",
+    "id": "w116",
+    "text": "2021.",
     "start": 40.08,
-    "end": 40.24
+    "end": 41.12
   },
   {
-    "id": "w124",
-    "text": "dus",
-    "start": 40.4,
-    "end": 40.56
+    "id": "w117",
+    "text": "Dus",
+    "start": 41.12,
+    "end": 41.28
   },
   {
-    "id": "w125",
-    "text": "een",
-    "start": 40.72,
-    "end": 40.88
-  },
-  {
-    "id": "w126",
-    "text": "totale",
-    "start": 40.88,
-    "end": 41.2
-  },
-  {
-    "id": "w127",
-    "text": "investering",
+    "id": "w118",
+    "text": "die",
     "start": 41.28,
+    "end": 41.36
+  },
+  {
+    "id": "w119",
+    "text": "is",
+    "start": 41.36,
+    "end": 41.44
+  },
+  {
+    "id": "w120",
+    "text": "nog",
+    "start": 41.52,
+    "end": 41.68
+  },
+  {
+    "id": "w121",
+    "text": "vrij",
+    "start": 41.68,
     "end": 41.84
   },
   {
-    "id": "w128",
-    "text": "van",
+    "id": "w122",
+    "text": "nieuwe.",
     "start": 41.84,
-    "end": 42.08
+    "end": 42.48
   },
   {
-    "id": "w129",
-    "text": "44.000",
-    "start": 42.08,
-    "end": 42.96
-  },
-  {
-    "id": "w130",
-    "text": "euro.",
-    "start": 43.04,
+    "id": "w123",
+    "text": "Dan",
+    "start": 43.12,
     "end": 43.28
   },
   {
-    "id": "w131",
-    "text": "Waar",
-    "start": 43.36,
-    "end": 43.6
+    "id": "w124",
+    "text": "de",
+    "start": 43.44,
+    "end": 43.52
   },
   {
-    "id": "w132",
-    "text": "nog",
-    "start": 43.6,
-    "end": 43.68
+    "id": "w125",
+    "text": "zonnepanelen",
+    "start": 43.52,
+    "end": 44.16
   },
   {
-    "id": "w133",
-    "text": "wel",
-    "start": 43.84,
-    "end": 44
+    "id": "w126",
+    "text": "plaatsen",
+    "start": 44.32,
+    "end": 44.56
   },
   {
-    "id": "w134",
-    "text": "6000",
-    "start": 44,
-    "end": 44.48
-  },
-  {
-    "id": "w135",
-    "text": "euro",
-    "start": 44.48,
+    "id": "w127",
+    "text": "op",
+    "start": 44.56,
     "end": 44.64
   },
   {
-    "id": "w136",
-    "text": "subsidie",
-    "start": 44.8,
-    "end": 45.28
+    "id": "w128",
+    "text": "de",
+    "start": 44.64,
+    "end": 44.72
   },
   {
-    "id": "w137",
-    "text": "van",
-    "start": 45.28,
-    "end": 45.44
-  },
-  {
-    "id": "w138",
-    "text": "af",
-    "start": 45.44,
+    "id": "w129",
+    "text": "zij.",
+    "start": 44.72,
     "end": 45.6
   },
   {
-    "id": "w139",
-    "text": "gaat.",
-    "start": 45.6,
-    "end": 46.08
+    "id": "w130",
+    "text": "En",
+    "start": 45.92,
+    "end": 46.24
   },
   {
-    "id": "w140",
-    "text": "Net",
-    "start": 46.08,
-    "end": 46.32
-  },
-  {
-    "id": "w141",
-    "text": "al",
-    "start": 46.32,
-    "end": 46.48
-  },
-  {
-    "id": "w142",
-    "text": "betaal",
-    "start": 46.56,
+    "id": "w131",
+    "text": "combinatie",
+    "start": 46.24,
     "end": 46.88
   },
   {
-    "id": "w143",
-    "text": "je",
+    "id": "w132",
+    "text": "met",
     "start": 46.88,
-    "end": 46.96
+    "end": 47.04
   },
   {
-    "id": "w144",
-    "text": "dus",
-    "start": 46.96,
+    "id": "w133",
+    "text": "een",
+    "start": 47.04,
     "end": 47.12
   },
   {
-    "id": "w145",
-    "text": "38.000",
+    "id": "w134",
+    "text": "10",
     "start": 47.12,
-    "end": 47.92
+    "end": 47.44
   },
   {
-    "id": "w146",
-    "text": "euro.",
-    "start": 48,
-    "end": 48.56
+    "id": "w135",
+    "text": "kW",
+    "start": 47.44,
+    "end": 47.76
   },
   {
-    "id": "w147",
-    "text": "De",
-    "start": 49.04,
-    "end": 49.2
+    "id": "w136",
+    "text": "batterij.",
+    "start": 48.24,
+    "end": 48.96
   },
   {
-    "id": "w148",
-    "text": "maatlasten",
-    "start": 49.2,
+    "id": "w137",
+    "text": "Alle",
+    "start": 49.6,
     "end": 49.92
   },
   {
-    "id": "w149",
-    "text": "zullen",
-    "start": 49.92,
-    "end": 50.16
+    "id": "w138",
+    "text": "kosten",
+    "start": 50,
+    "end": 50.24
   },
   {
-    "id": "w150",
-    "text": "dalen",
-    "start": 50.16,
+    "id": "w139",
+    "text": "kan",
+    "start": 50.4,
     "end": 50.48
   },
   {
-    "id": "w151",
-    "text": "van",
+    "id": "w140",
+    "text": "je",
     "start": 50.48,
-    "end": 50.64
+    "end": 50.56
   },
   {
-    "id": "w152",
-    "text": "gemiddelde",
+    "id": "w141",
+    "text": "hier",
     "start": 50.64,
+    "end": 50.8
+  },
+  {
+    "id": "w142",
+    "text": "zien.",
+    "start": 50.8,
     "end": 51.04
   },
   {
-    "id": "w153",
-    "text": "375",
+    "id": "w143",
+    "text": "En",
     "start": 51.04,
-    "end": 52
+    "end": 51.2
   },
   {
-    "id": "w154",
-    "text": "euro",
-    "start": 52,
-    "end": 52.32
+    "id": "w144",
+    "text": "het",
+    "start": 51.2,
+    "end": 51.36
   },
   {
-    "id": "w155",
-    "text": "per",
-    "start": 52.32,
+    "id": "w145",
+    "text": "is",
+    "start": 51.36,
+    "end": 51.52
+  },
+  {
+    "id": "w146",
+    "text": "een",
+    "start": 51.92,
+    "end": 52.08
+  },
+  {
+    "id": "w147",
+    "text": "totale",
+    "start": 52.08,
     "end": 52.4
   },
   {
-    "id": "w156",
-    "text": "maand",
-    "start": 52.4,
-    "end": 52.8
-  },
-  {
-    "id": "w157",
-    "text": "naar",
-    "start": 52.8,
+    "id": "w148",
+    "text": "investering",
+    "start": 52.48,
     "end": 53.04
   },
   {
-    "id": "w158",
-    "text": "120",
+    "id": "w149",
+    "text": "van",
     "start": 53.04,
-    "end": 53.84
+    "end": 53.28
+  },
+  {
+    "id": "w150",
+    "text": "44.000",
+    "start": 53.28,
+    "end": 54.24
+  },
+  {
+    "id": "w151",
+    "text": "euro.",
+    "start": 54.24,
+    "end": 54.64
+  },
+  {
+    "id": "w152",
+    "text": "Maar",
+    "start": 54.64,
+    "end": 54.72
+  },
+  {
+    "id": "w153",
+    "text": "nog",
+    "start": 54.88,
+    "end": 55.04
+  },
+  {
+    "id": "w154",
+    "text": "wel",
+    "start": 55.04,
+    "end": 55.2
+  },
+  {
+    "id": "w155",
+    "text": "6000",
+    "start": 55.2,
+    "end": 55.68
+  },
+  {
+    "id": "w156",
+    "text": "euro",
+    "start": 55.68,
+    "end": 55.84
+  },
+  {
+    "id": "w157",
+    "text": "subsidie.",
+    "start": 55.92,
+    "end": 56.32
+  },
+  {
+    "id": "w158",
+    "text": "Netto",
+    "start": 57.31,
+    "end": 57.87
   },
   {
     "id": "w159",
-    "text": "euro",
-    "start": 53.84,
-    "end": 54.16
+    "text": "betaal",
+    "start": 57.87,
+    "end": 58.19
   },
   {
     "id": "w160",
-    "text": "per",
-    "start": 54.16,
-    "end": 54.32
+    "text": "je",
+    "start": 58.19,
+    "end": 58.35
   },
   {
     "id": "w161",
-    "text": "maand.",
-    "start": 54.32,
-    "end": 55.12
+    "text": "dus",
+    "start": 58.35,
+    "end": 58.51
   },
   {
     "id": "w162",
-    "text": "Fixcore",
-    "start": 55.25,
-    "end": 55.89
+    "text": "38.000",
+    "start": 58.51,
+    "end": 59.39
   },
   {
     "id": "w163",
-    "text": "is",
-    "start": 55.97,
-    "end": 56.13
+    "text": "euro.",
+    "start": 59.39,
+    "end": 60.27
   },
   {
     "id": "w164",
-    "text": "6",
-    "start": 56.13,
-    "end": 56.37
+    "text": "De",
+    "start": 61.15,
+    "end": 61.31
   },
   {
     "id": "w165",
-    "text": "van",
-    "start": 56.37,
-    "end": 56.53
+    "text": "maatlasten",
+    "start": 61.31,
+    "end": 62.11
   },
   {
     "id": "w166",
-    "text": "de",
-    "start": 56.53,
-    "end": 56.61
+    "text": "zullen",
+    "start": 62.11,
+    "end": 62.27
   },
   {
     "id": "w167",
-    "text": "10.",
-    "start": 56.61,
-    "end": 57.09
+    "text": "dalen",
+    "start": 62.35,
+    "end": 62.67
   },
   {
     "id": "w168",
-    "text": "Heb",
-    "start": 57.09,
-    "end": 57.33
+    "text": "van",
+    "start": 62.67,
+    "end": 62.83
   },
   {
     "id": "w169",
-    "text": "je",
-    "start": 57.33,
-    "end": 57.49
+    "text": "gemiddeld",
+    "start": 62.83,
+    "end": 63.15
   },
   {
     "id": "w170",
-    "text": "nou",
-    "start": 57.49,
-    "end": 57.57
+    "text": "375",
+    "start": 63.23,
+    "end": 64.19
   },
   {
     "id": "w171",
-    "text": "ook",
-    "start": 57.57,
-    "end": 57.73
+    "text": "euro",
+    "start": 64.19,
+    "end": 64.51
   },
   {
     "id": "w172",
-    "text": "net",
-    "start": 57.73,
-    "end": 57.89
+    "text": "per",
+    "start": 64.51,
+    "end": 64.67
   },
   {
     "id": "w173",
-    "text": "in",
-    "start": 57.89,
-    "end": 58.05
+    "text": "maand",
+    "start": 64.67,
+    "end": 64.99
   },
   {
     "id": "w174",
-    "text": "huis",
-    "start": 58.05,
-    "end": 58.29
+    "text": "naar",
+    "start": 64.99,
+    "end": 65.23
   },
   {
     "id": "w175",
-    "text": "gekocht",
-    "start": 58.29,
-    "end": 58.61
+    "text": "120",
+    "start": 65.23,
+    "end": 65.95
   },
   {
     "id": "w176",
-    "text": "of",
-    "start": 58.69,
-    "end": 58.77
+    "text": "euro.",
+    "start": 65.95,
+    "end": 66.59
   },
   {
     "id": "w177",
-    "text": "reageer",
-    "start": 58.85,
-    "end": 59.33
+    "text": "Fixerscore",
+    "start": 67.15,
+    "end": 68.03
   },
   {
     "id": "w178",
-    "text": "gewoon",
-    "start": 59.33,
-    "end": 59.49
+    "text": "is",
+    "start": 68.03,
+    "end": 68.11
   },
   {
     "id": "w179",
-    "text": "checken",
-    "start": 59.49,
-    "end": 59.81
+    "text": "6",
+    "start": 68.11,
+    "end": 68.35
   },
   {
     "id": "w180",
-    "text": "onder",
-    "start": 59.81,
-    "end": 59.89
+    "text": "van",
+    "start": 68.35,
+    "end": 68.51
   },
   {
     "id": "w181",
-    "text": "dit",
-    "start": 59.97,
-    "end": 60.13
+    "text": "de",
+    "start": 68.51,
+    "end": 68.67
   },
   {
     "id": "w182",
-    "text": "bericht",
-    "start": 60.13,
-    "end": 60.37
+    "text": "10",
+    "start": 68.67,
+    "end": 68.91
   },
   {
     "id": "w183",
     "text": "en",
-    "start": 60.37,
-    "end": 60.45
+    "start": 68.99,
+    "end": 69.23
   },
   {
     "id": "w184",
-    "text": "dan",
-    "start": 60.45,
-    "end": 60.53
+    "text": "het",
+    "start": 69.23,
+    "end": 69.31
   },
   {
     "id": "w185",
-    "text": "stuur",
-    "start": 60.53,
-    "end": 60.77
+    "text": "maakt",
+    "start": 69.31,
+    "end": 69.63
   },
   {
     "id": "w186",
-    "text": "ik",
-    "start": 60.77,
-    "end": 60.85
+    "text": "vooral",
+    "start": 69.63,
+    "end": 69.87
   },
   {
     "id": "w187",
-    "text": "jou",
-    "start": 60.85,
-    "end": 61.01
+    "text": "wat",
+    "start": 69.87,
+    "end": 70.03
   },
   {
     "id": "w188",
-    "text": "een",
-    "start": 61.01,
-    "end": 61.09
+    "text": "lastiger",
+    "start": 70.03,
+    "end": 70.43
   },
   {
     "id": "w189",
-    "text": "berichtje.",
-    "start": 61.09,
-    "end": 61.57
+    "text": "omdat",
+    "start": 70.43,
+    "end": 70.59
+  },
+  {
+    "id": "w190",
+    "text": "alles",
+    "start": 70.59,
+    "end": 70.83
+  },
+  {
+    "id": "w191",
+    "text": "geïsoleerd",
+    "start": 70.83,
+    "end": 71.55
+  },
+  {
+    "id": "w192",
+    "text": "moet",
+    "start": 71.55,
+    "end": 71.79
+  },
+  {
+    "id": "w193",
+    "text": "worden.",
+    "start": 71.79,
+    "end": 72.43
+  },
+  {
+    "id": "w194",
+    "text": "Heb",
+    "start": 73.55,
+    "end": 73.87
+  },
+  {
+    "id": "w195",
+    "text": "je",
+    "start": 73.87,
+    "end": 74.11
+  },
+  {
+    "id": "w196",
+    "text": "nou",
+    "start": 74.11,
+    "end": 74.19
+  },
+  {
+    "id": "w197",
+    "text": "ook",
+    "start": 74.19,
+    "end": 74.35
+  },
+  {
+    "id": "w198",
+    "text": "net",
+    "start": 74.35,
+    "end": 74.51
+  },
+  {
+    "id": "w199",
+    "text": "een",
+    "start": 74.51,
+    "end": 74.67
+  },
+  {
+    "id": "w200",
+    "text": "huis",
+    "start": 74.67,
+    "end": 74.83
+  },
+  {
+    "id": "w201",
+    "text": "gekocht?",
+    "start": 74.83,
+    "end": 75.23
+  },
+  {
+    "id": "w202",
+    "text": "Stuur",
+    "start": 75.23,
+    "end": 75.47
+  },
+  {
+    "id": "w203",
+    "text": "mij",
+    "start": 75.55,
+    "end": 75.71
+  },
+  {
+    "id": "w204",
+    "text": "de",
+    "start": 75.71,
+    "end": 75.79
+  },
+  {
+    "id": "w205",
+    "text": "funnerlink,",
+    "start": 75.79,
+    "end": 76.27
+  },
+  {
+    "id": "w206",
+    "text": "dan",
+    "start": 76.27,
+    "end": 76.35
+  },
+  {
+    "id": "w207",
+    "text": "zal",
+    "start": 76.43,
+    "end": 76.51
+  },
+  {
+    "id": "w208",
+    "text": "ik",
+    "start": 76.51,
+    "end": 76.59
+  },
+  {
+    "id": "w209",
+    "text": "hetzelfde",
+    "start": 76.67,
+    "end": 76.99
+  },
+  {
+    "id": "w210",
+    "text": "voor",
+    "start": 76.99,
+    "end": 77.07
+  },
+  {
+    "id": "w211",
+    "text": "jou",
+    "start": 77.07,
+    "end": 77.23
+  },
+  {
+    "id": "w212",
+    "text": "doen",
+    "start": 77.23,
+    "end": 77.31
+  },
+  {
+    "id": "w213",
+    "text": "of",
+    "start": 77.39,
+    "end": 77.47
+  },
+  {
+    "id": "w214",
+    "text": "reageer",
+    "start": 77.55,
+    "end": 78.03
+  },
+  {
+    "id": "w215",
+    "text": "gewoon",
+    "start": 78.03,
+    "end": 78.19
+  },
+  {
+    "id": "w216",
+    "text": "check",
+    "start": 78.27,
+    "end": 78.59
+  },
+  {
+    "id": "w217",
+    "text": "onder",
+    "start": 78.59,
+    "end": 78.75
+  },
+  {
+    "id": "w218",
+    "text": "dit",
+    "start": 78.75,
+    "end": 78.91
+  },
+  {
+    "id": "w219",
+    "text": "bericht.",
+    "start": 78.91,
+    "end": 79.87
   }
 ]

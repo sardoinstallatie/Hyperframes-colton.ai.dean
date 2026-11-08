@@ -51,3 +51,7 @@ Elke regel eindigt met een datum.
 
 - Geen [vul in] of zelf verzonnen bedragen/feiten in beeld. Melden en vragen. (2026-10-25)
 - Niets belangrijks rechts (~15%) of onderin (~15%) — daar zit de Instagram-UI. (2026-10-25)
+
+## Knippen (Peter, 8 nov 2026)
+- Alleen knippen TUSSEN hele zinnen, of bij een echt lange pauze. Nooit midden in een zin, ook niet om een bijzin weg te halen. Liever iets langere video.
+- CTA-zin(nen) nooit opknippen; neem de take in één stuk.

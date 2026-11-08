@@ -27,3 +27,8 @@ Volgorde: hook → huis → calculator (D7-scherm) → plan → hybride wp → z
 - `~/Documents/videos/Funda/2026/11-november/2026-11-08-D16-funda-wehl-A.mp4` (61,3 s, 1080×1920, 25 fps)
 - Kosten per maatregel van Peter (ranges); batterij bewust niet op het bonnetje (Peter: "niet nodig").
 - Plan-kaart start op "gevel isoleren" (15,6 s), laatste regel "➜ Dan zit je op label A".
+
+## Herzien 8 nov 2026 (v2, 79,5 s)
+Op verzoek van Peter: alleen knippen tussen hele zinnen. De volgende zinnen zijn nu heel: calculator-zin, de warmtepomp-zin (met de ketel uit 2021), "Netto … hiervoor", de fixscore-zin + "De rest is goed te doen", en de CTA in één take ("Heb je nou ook net een huis gekocht? Stuur mij de Funda-link … Of reageer gewoon CHECK onder dit bericht, dan stuur ik jou iets.").
+Oorzaak van de afgekapte einden in v1: wav-tijd liep achter op de MP4 + de fade-out zat verkeerd. Zie SARDO_FORMAT.md, "Knippen: techniek".
+Knippunten (MP4-tijd): work/edl-v4.json. De hook is ingekort tot na "minuut" (los "let's go" eruit).
