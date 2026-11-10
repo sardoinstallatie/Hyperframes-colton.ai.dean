@@ -2,7 +2,7 @@
 
 **Dit is de goedgekeurde look van #3, #5, #6, #8 en #9** (groot gezicht, badge gecentreerd, "Label X ➜ A" met blauwe pijl,
 huiskaart met oranje rand, "€…/mnd minder" rechtsboven, "Type · bouwjaar · plaats" linksonder).
-Let op: de Wehl-cover (#4) wijkt af — níét als voorbeeld gebruiken. (Peter, 10 nov 2026: "waarom maak je die cover nou weer anders dan de andere?")
+De Wehl-cover (#4) is op 10 nov opnieuw gemaakt met dit sjabloon en klopt nu ook. (Peter, 10 nov 2026: "waarom maak je die cover nou weer anders dan de andere?")
 
 Per aflevering:
 1. Kopieer deze map naar `video-projects/<project>/cover/`.

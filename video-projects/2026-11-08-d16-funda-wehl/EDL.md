@@ -43,3 +43,6 @@ Knippunten (MP4-tijd): work/edl-v4.json. De hook is ingekort tot na "minuut" (lo
 - Fixscore-stuk begon in "Fix…"; nu vanaf 285,80.
 - Les: bij input-seek (`-ss X -i bron`) kloppen de wav-tijden 1-op-1 met de MP4. De eerdere +0,35 s-correctie was onterecht (die drift kwam van de oude `-ss X-1 -i … -ss 1`-methode). Altijd per stuk begin/eind op dB meten.
 - Cover: cover/cover.html → templates/funda-fixer-cover/.
+
+## Cover opnieuw (10 nov 2026)
+Gemaakt met templates/funda-fixer-cover (look #3/#5/#6/#8). Lachmoment 52,3 s. "€255/mnd minder" = €375 − €120 (Peters eigen bedragen).
