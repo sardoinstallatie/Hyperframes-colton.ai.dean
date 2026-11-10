@@ -1,10 +1,15 @@
-# Funda Fixer — cover (vast sjabloon, sinds #4 Wehl, 10 nov 2026)
+# Funda Fixer — cover (vast sjabloon)
 
-1080×1920. Alle tekst binnen het 4:5-vlak (y 285–1635), zodat het profielraster niks afsnijdt.
+**Dit is de goedgekeurde look van #3, #5, #6, #8 en #9** (groot gezicht, badge gecentreerd, "Label X ➜ A" met blauwe pijl,
+huiskaart met oranje rand, "€…/mnd minder" rechtsboven, "Type · bouwjaar · plaats" linksonder).
+Let op: de Wehl-cover (#4) wijkt af — níét als voorbeeld gebruiken. (Peter, 10 nov 2026: "waarom maak je die cover nou weer anders dan de andere?")
 
 Per aflevering:
-1. `peter.jpg`: frame uit de geknipte video waar Peter in de camera kijkt (bv. hook).
-   `ffmpeg -ss <t> -i source.mp4 -frames:v 1 -vf "crop=900:1290:90:200,scale=1080:1548,eq=brightness=0.06:contrast=1.08:saturation=1.1" peter.jpg`
-2. `huis.png`: Funda-hoofdfoto (dezelfde als in de video).
-3. In `cover.html`: nummer (#), label-van (G → A), "Type · Plaats · Bouwjaar", prijs.
-4. Screenshot met Playwright (viewport 1080×1920, deviceScaleFactor 1) → `<opnamedatum>-D<dag>-funda-<plaats>-cover.png` naast de video.
+1. Kopieer deze map naar `video-projects/<project>/cover/`.
+2. `face.jpg` = één volle frame (1080×1920) uit de geknipte bron waar Peter in de lens kijkt:
+   `ffmpeg -ss <t> -i assets/source.mp4 -frames:v 1 -q:v 2 cover/face.jpg`
+   (positie/zoom zit in `#face` in cover.html; check dat de ogen net boven de badge staan, zoals bij #8/#9).
+3. `huis.jpg` = de Funda-hoofdfoto (dezelfde als in de video).
+4. In `cover.html` aanpassen: `Funda Fixer #n`, labelletter (G/F/…), `€…/mnd minder` (besparing per maand uit de video), `Type · bouwjaar · plaats`.
+5. Vanuit de repo-root: `node templates/funda-fixer-cover/shot.cjs` werkt alleen op de templatemap — in een project: `node video-projects/<project>/cover/shot.cjs` (pas de uitvoernaam aan) → `<opnamedatum>-D<dag>-funda-<plaats>-cover.png` naast de video.
+6. Leg hem naast een vorige cover (bv. D20 Druten) en check dat hij er hetzelfde uitziet.
