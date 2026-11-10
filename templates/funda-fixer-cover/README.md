@@ -6,7 +6,7 @@ Let op: de Wehl-cover (#4) wijkt af — níét als voorbeeld gebruiken. (Peter, 
 
 Per aflevering:
 1. Kopieer deze map naar `video-projects/<project>/cover/`.
-2. `face.jpg` = één volle frame (1080×1920) uit de geknipte bron waar Peter in de lens kijkt:
+2. `face.jpg` = één volle frame (1080×1920) uit de geknipte bron waar Peter in de lens kijkt **en een beetje lacht** (Peter, 10 nov — zoek een lachmoment, niet zomaar een praat-frame):
    `ffmpeg -ss <t> -i assets/source.mp4 -frames:v 1 -q:v 2 cover/face.jpg`
    (positie/zoom zit in `#face` in cover.html; check dat de ogen net boven de badge staan, zoals bij #8/#9).
 3. `huis.jpg` = de Funda-hoofdfoto (dezelfde als in de video).
