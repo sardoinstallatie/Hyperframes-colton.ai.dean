@@ -36,3 +36,10 @@ Knippunten (MP4-tijd): work/edl-v4.json. De hook is ingekort tot na "minuut" (lo
 ## Herzien 8 nov 2026 (v3, 81,8 s)
 - "Maar een all-electric hybride warmtepomp." hoort bij de warmtepomp-gedachte en zit er weer in (Peter: "all-electric ready bedoel ik"). Plan-regel 6: "All-electric hybride warmtepomp".
 - Captions stonden na 42 s dubbel verschoven; hersteld vanuit assets/words.json.
+
+## Herzien 10 nov 2026 (v4, 82,1 s) + cover
+- Hook weer heel incl. "Let's go!" (Peter wil die erin).
+- CTA: verspreking eruit. Nu: "…dan zal ik hetzelfde voor jou doen." + goede take "Of reageer gewoon CHECK onder dit bericht en dan stuur ik jou een berichtje." (bron 313,38–316,20). De versprekingen "…dan stur ik jou iets." en "Dan stuur je jou een berichtje." zijn eruit.
+- Fixscore-stuk begon in "Fix…"; nu vanaf 285,80.
+- Les: bij input-seek (`-ss X -i bron`) kloppen de wav-tijden 1-op-1 met de MP4. De eerdere +0,35 s-correctie was onterecht (die drift kwam van de oude `-ss X-1 -i … -ss 1`-methode). Altijd per stuk begin/eind op dB meten.
+- Cover: cover/cover.html → templates/funda-fixer-cover/.
