@@ -1,6 +1,9 @@
 # D19 · Funda Fixer #9 — Zevenheuvelenweg 52, Berg en Dal — EDL
 
-## v2 (geleverd 8 nov 2026, 2:49) — vervangt v1
+## v3 (geleverd 10 nov 2026, 2:47)
+Peter: "Knip die eerste zin van ventilatie weg." → "Dan moet je even kijken naar ventilatie." (v2-bron 62.64–65.00) eruit. Bron = work/source-v2.mp4 zonder dat stuk; build.py remapt alle v2-tijden (−2.36 s). Bonnetje-regel Ventilatie verschijnt nu bij "goed ventileren".
+
+## v2 (geleverd 8 nov 2026, 2:49) — vervangen door v3
 Peter's feedback op v1: midden in zinnen geknipt, inleiding van het plan miste, ventilatie te ver ingekort, einde raar.
 "Belangrijker dat er niet raar midden in zinnen wordt geknipt dan de lengte."
 v2 = alleen hele zinnen (work/v2-cuts.json, 21 stukken), elk stuk los getranscribeerd ter controle.
