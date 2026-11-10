@@ -22,3 +22,5 @@ Totaal ≈ 138 s.
 Eruit: intro voor Claude (0–21), hook-takes 1–3 (77–115), huis-take 1 "Het is 1933. Nee" (132–136), "Oké" + "Dit is dat" (164–171), "Omdat het natuurlijk label F is…" (193–197, dubbel met plan-a), tussenwoning/vrijstaand-uitleg (207.6–212.8), dak-staat "Want als ik het zo zie… kan nog even mee. Dus ik zou van binnenuit…" (220.5–228.8), glas-take 1 (237–252), kozijnen-stuk (263–280.4), type-C uitleg + hertakes (303–344), ketel-twijfel "Ik weet niet wat voor warmteopwekker…" (354–364), regie + prijzen-opsomming voor Claude (389–486), maand-take 1 (506–516), buitenwerkgebied-opmerking.
 
 Kostenlijst (Peter's ranges, afgestemd op zijn €36.500): Spouwmuur €2.000 · Dak €5.000 · Vloer €1.500 · HR++ glas €5.500 · Ventilatie €3.000 · Hybride warmtepomp €10.500 · 6–8 zonnepanelen €3.500 · Batterij 5–10 kWh €5.500. Subsidie −€3.000 à €5.000 (ISDE open, rvo.nl gecheckt 8 nov; exacte bedragen niet op de pagina) → netto ±€31.500–33.500. Maand €250 → €90 (−€160). Fixscore 6/10.
+
+Cover: cover/cover.html → cover.png ("Label F → A", €160/mnd minder = €250 − €90; huisnummers op de Funda-foto geblurd).
