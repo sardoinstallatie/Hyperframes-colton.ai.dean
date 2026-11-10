@@ -81,7 +81,7 @@ CTA_START = 165.95
 BON = [  # (regel, prijs, tijd dat de naam verschijnt = moment dat Peter het noemt)
     ("Muren isoleren (spouw)", "€3k – 5k", 44.8),
     ("Vloer isoleren", "€1,5k – 3k", 58.9),
-    ("Ventilatie (type D of C)", "€3k – 5k", 63.6),
+    ("Ventilatie (type D of C)", "€3k – 5k", 69.3),   # bij "goed ventileren" (eerste ventilatie-zin eruit, Peter 10 nov)
     ("Hybride warmtepomp", "€8,5k – 12k", 91.9),
     ("10–12 zonnepanelen", "€5k – 6k", 112.9),
     ("Batterij 10–15 kWh", "€6k – 10k", 117.7),
@@ -126,11 +126,24 @@ BEELDEN = [
 ]
 
 # punch-ins op de knippen (afwisselend in/uit), CTA weer in
-CUTS = [3.72, 7.64, 10.56, 14.36, 20.08, 21.6, 26.16, 29.76, 34.92, 37.12, 43.52, 46.64, 49.92, 52.8, 58.64, 62.64, 65.0, 70.65, 73.69, 77.13,
+CUTS = [3.72, 7.64, 10.56, 14.36, 20.08, 21.6, 26.16, 29.76, 34.92, 37.12, 43.52, 46.64, 49.92, 52.8, 58.64, 62.64, 70.65, 73.69, 77.13,
         80.65, 85.56, 88.65, 91.93, 95.77, 101.28, 104.65, 108.09, 112.28, 115.85, 120.84, 126.08, 129.6, 134.24, 138.0, 142.84, 144.82, 148.34, 151.46]
 PUNCH = [[t, 1.14 if k % 2 == 0 else 1.0] for k, t in enumerate(CUTS)]
 PUNCH += [[153.96, 1.14], [157.38, 1.22], [159.78, 1.14], [162.16, 1.22], [CTA_START, 1.14]]  # Peter FULL: nooit onder 1.14
 PUNCH.sort()
+
+# ---------- v3 (10 nov): eerste ventilatie-zin "Dan moet je even kijken naar ventilatie." (62.64–65.00 in v2-bron) eruit ----------
+# Alles hierboven staat in de v2-tijdlijn; remap() schuift het naar de nieuwe bron (−2.36 s na 65.00).
+CUT_A, CUT_B = 62.64, 65.0
+def remap(t):
+    return t if t < CUT_A else (CUT_A if t < CUT_B else round(t - (CUT_B - CUT_A), 2))
+WORDS = [[w, remap(a), remap(b)] for w, a, b in WORDS if not (CUT_A - 0.3 <= a < CUT_B)]
+for b in BEELDEN:
+    b["start"], b["end"] = remap(b["start"]), remap(b["end"])
+    b["pop"] = [[sel, remap(t)] for sel, t in b["pop"]]
+PUNCH = [[remap(t), z] for t, z in PUNCH]
+CTA_START = remap(CTA_START)
+HOOK = HOOK_END
 
 CONFIG = {
     "duration": DUR,
