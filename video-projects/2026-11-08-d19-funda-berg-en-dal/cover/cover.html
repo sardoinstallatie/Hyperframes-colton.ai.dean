@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<!-- Funda Fixer cover-template (1080×1920). Alle tekst binnen het 4:5-vlak (y 285–1635) zodat het profielraster niks afsnijdt.
+     Per aflevering aanpassen: nummer, label-van, plaats/type/bouwjaar, prijs, peter.jpg (frame uit de video), huis.png (Funda-hoofdfoto). -->
+<style>
+  @font-face { font-family: Poppins; font-weight: 600; src: url(fonts/poppins-latin-600-normal.woff2) format("woff2"); }
+  @font-face { font-family: Poppins; font-weight: 700; src: url(fonts/poppins-latin-700-normal.woff2) format("woff2"); }
+  @font-face { font-family: Poppins; font-weight: 800; src: url(fonts/poppins-latin-800-normal.woff2) format("woff2"); }
+  :root { --bg:#19191e; --surface:#24242b; --accent:#ffa62b; --text:#fff; --dim:#b8bcc6; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1080px; height:1920px; background:var(--bg); overflow:hidden; font-family:Poppins, sans-serif; color:var(--text); }
+  .peter { position:absolute; left:0; top:0; width:1080px; height:1300px; background:url(peter.jpg) center top / 1080px auto no-repeat; }
+  .peter::after { content:""; position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(25,25,30,.5) 0%, rgba(25,25,30,0) 14%, rgba(25,25,30,0) 60%, rgba(25,25,30,.88) 84%, #19191e 100%); }
+  .badge { position:absolute; left:60px; top:320px; background:var(--accent); color:var(--bg); font-weight:800; font-size:46px;
+    letter-spacing:.04em; padding:14px 34px; border-radius:999px; text-transform:uppercase; box-shadow:0 10px 40px rgba(0,0,0,.45); }
+  .head { position:absolute; left:0; right:0; top:1000px; text-align:center; font-weight:800; line-height:1.0;
+    text-shadow:0 6px 30px rgba(0,0,0,.6); }
+  .head .l1 { font-size:132px; letter-spacing:-.01em; }
+  .head .l1 .hl { color:var(--accent); }
+  .head .l2 { font-size:58px; font-weight:700; color:var(--dim); margin-top:18px; }
+  .card { position:absolute; left:90px; right:90px; top:1272px; height:350px; border-radius:36px; overflow:hidden;
+    background:var(--surface); box-shadow:0 20px 60px rgba(0,0,0,.5); border:2px solid #3a3a45; }
+  .card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 55%; }
+  .card .price { position:absolute; left:28px; bottom:26px; background:rgba(25,25,30,.88); border-radius:20px; padding:12px 26px;
+    font-weight:800; font-size:56px; color:var(--accent); }
+</style>
+</head>
+<body>
+  <div class="peter"></div>
+  <div class="badge">Funda Fixer #9</div>
+  <div class="head">
+    <div class="l1">Label <span class="hl">G</span> → <span class="hl">A</span></div>
+    <div class="l2">Vrijstaand · Berg en Dal · 1925</div>
+  </div>
+  <div class="card">
+    <img src="huis.png" alt="">
+    <div class="price">€ 475.000</div>
+  </div>
+</body>
+</html>
