@@ -70,4 +70,4 @@ Dagnummer (D) en Funda Fixer-volgnummer (#) staan in `video-projects/NUMMERS.md`
 - Controle: elk stuk los transcriberen (met `apad` erachter) en checken dat de laatste woorden erin zitten, en het dB-niveau van de laatste 0,8 s bekijken (geen -180 dB = digitale stilte).
 
 ## Funda Fixer-cover
-Vast sjabloon: `templates/funda-fixer-cover/` (zie README) = de look van #3/#5/#6/#8/#9 (NIET de afwijkende Wehl-cover #4). Lever bij elke Funda Fixer een cover naast de video en leg hem naast een vorige cover ter controle.
+**ALTIJD dit sjabloon (Peter, 10 nov 2026: "Maak de cover voor de funda fixers nu ALTIJD ZO!").** `templates/funda-fixer-cover/` (zie README) = de look van #3/#4/#5/#6/#8/#9: groot gezicht met een lach in de lens, oranje badge "FUNDA FIXER #n" gecentreerd, "Label X ➜ A" (oranje letters, blauwe pijl), huiskaart met oranje rand, "€…/mnd minder" rechtsboven, "Type · bouwjaar · plaats" linksonder. Niks aan de opmaak veranderen; alleen nummer, labelletter, besparing, tekst, foto's. Lever bij elke Funda Fixer een cover naast de video en leg hem naast een vorige cover (bv. #4 Wehl of #8 Druten) ter controle.

@@ -102,7 +102,7 @@ Is het een yapping-video (Peter zegt het, of categorie = Yapping)? **Gebruik `te
 1. Waar de video's staan + welke categorie je koos.
 2. Wat je hebt gemeld/aangenomen (bv. ontbrekend bedrag, tijdgevoelige hook).
 3. **Instagram-caption** (max 3 korte regels, taal groep 3-4, eindigt met het CTA-woord) + 3–5 hashtags (lokaal + onderwerp, bv. #arnhem #verduurzamen #warmtepomp).
-4. **Cover-tekst** (max 4 woorden).
+4. **Cover-tekst** (max 4 woorden). **Funda Fixer: lever ALTIJD een cover-PNG uit `templates/funda-fixer-cover/`** (zelfde look als alle vorige; alleen nummer/label/besparing/tekst/foto's wisselen; Peter-foto = lachmoment in de lens). Zie SARDO_FORMAT.md → Funda Fixer-cover.
 5. **Trial Reels-plan**: alle versies als Trial Reel (alleen niet-volgers), graduation op handmatig, zelfde caption/cover/tijdstip-blok. Na 48–72 uur vergelijken op: % dat na 3 s blijft kijken, gemiddelde kijktijd, shares+saves, reacties met CHECK/AANBOD. Winnaar delen naar profiel.
 6. **Tracker-regel**: `Video | Hook | Type (pijn/vraag/stelling) | Postdatum | 3-sec % | Kijktijd | Shares | Saves | CHECK/AANBOD | Winnaar?`
 7. Afsluiten met: "Feedback op deze? Zeg `/feedback`."

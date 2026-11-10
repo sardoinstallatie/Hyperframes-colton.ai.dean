@@ -1,4 +1,6 @@
-# Funda Fixer — cover (vast sjabloon)
+# Funda Fixer — cover (vast sjabloon, ALTIJD gebruiken)
+
+> Peter, 10 nov 2026: "Maak de cover voor de funda fixers nu ALTIJD ZO!" — opmaak nooit aanpassen, alleen de inhoud per aflevering.
 
 **Dit is de goedgekeurde look van #3, #5, #6, #8 en #9** (groot gezicht, badge gecentreerd, "Label X ➜ A" met blauwe pijl,
 huiskaart met oranje rand, "€…/mnd minder" rechtsboven, "Type · bouwjaar · plaats" linksonder).
